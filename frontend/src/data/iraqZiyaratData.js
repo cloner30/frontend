@@ -371,10 +371,18 @@ export const ziyaratSites = [
     description: 'The largest cemetery in the world and one of the most blessed burial grounds in Islam.',
     significance: 'Believers from around the world are brought here for burial. It is narrated that the souls of believers from all lands visit this cemetery.',
     
+    size: 'World\'s largest cemetery covering over 1,485.5 acres (6 km²)',
+    dailyBurials: 'Hundreds of bodies are brought here daily from across the world',
+    spiritualSignificance: 'Shia tradition holds that the souls of all believers, regardless of where they die, visit this cemetery',
+    
     notableSites: [
       {
-        name: 'Shrine of Prophets Hūd and Ṣāliḥ (a)',
-        description: 'Two Prophets mentioned in the Qurʾān, buried in this blessed cemetery'
+        name: 'Shrine of Prophet Hūd (a)',
+        description: 'Prophet sent to the people of ʿĀd, mentioned in the Qurʾān'
+      },
+      {
+        name: 'Shrine of Prophet Ṣāliḥ (a)',
+        description: 'Prophet sent to the people of Thamūd, mentioned in the Qurʾān'
       },
       {
         name: 'Maqām of Imam Zayn al-ʿĀbidīn (a)',
@@ -390,7 +398,7 @@ export const ziyaratSites = [
       }
     ],
     
-    practicalInfo: 'The cemetery is vast and it\'s recommended to visit with a guide. Many companions and scholars are buried here.'
+    practicalInfo: 'The cemetery is vast and it\'s recommended to visit with a guide. Many companions and scholars are buried here. It is considered blessed to be buried in this sacred ground.'
   },
 
   {
