@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Lock, User, Eye, EyeOff } from 'lucide-react';
+import { Lock, User, Eye, EyeOff, AlertCircle } from 'lucide-react';
 import { Button } from '../../components/ui/button';
 import { Input } from '../../components/ui/input';
 import { Label } from '../../components/ui/label';
 import { useToast } from '../../hooks/use-toast';
+import { useAdminAuth } from '../../contexts/AdminAuthContext';
 
 const AdminLogin = () => {
   const [credentials, setCredentials] = useState({ email: '', password: '' });
@@ -12,28 +13,31 @@ const AdminLogin = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { login, isAuthenticated } = useAdminAuth();
+
+  // Redirect if already authenticated
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/admin/dashboard');
+    }
+  }, [isAuthenticated, navigate]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // For now, simple hardcoded check (will be replaced with API)
-    if (credentials.email === 'admin@ziyarat.com' && credentials.password === 'admin123') {
-      localStorage.setItem('adminToken', 'mock-jwt-token');
-      localStorage.setItem('adminUser', JSON.stringify({
-        name: 'Admin User',
-        email: credentials.email,
-        role: 'admin'
-      }));
+    const result = await login(credentials.email, credentials.password);
+    
+    if (result.success) {
       toast({
         title: 'Login Successful',
-        description: 'Welcome to Ziyarat Admin Panel'
+        description: 'Welcome to Pilgrim Portal Admin Panel'
       });
       navigate('/admin/dashboard');
     } else {
       toast({
         title: 'Login Failed',
-        description: 'Invalid email or password',
+        description: result.error || 'Invalid email or password',
         variant: 'destructive'
       });
     }
