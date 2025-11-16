@@ -300,7 +300,7 @@ const IranZiyaratGuideEnhanced = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {iraqCities.map((city) => (
+              {iranCities.map((city) => (
                 <Card 
                   key={city.id} 
                   className="group cursor-pointer hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 hover:border-[#ffce05]"
