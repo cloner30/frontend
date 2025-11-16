@@ -837,7 +837,7 @@ const IraqZiyaratGuide = () => {
                   <div>
                     <div className="font-semibold mb-1">Between Cities:</div>
                     <ul className="list-disc list-inside text-gray-600">
-                      {practicalInfo.transportation['between Cities'].map((item, idx) => (
+                      {practicalInfo.transportation.betweenCities.map((item, idx) => (
                         <li key={idx}>{item}</li>
                       ))}
                     </ul>
