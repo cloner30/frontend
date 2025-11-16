@@ -178,7 +178,7 @@ const EnhancedSearchWidget = () => {
                     setShowFromSuggestions(true);
                   }}
                   onFocus={() => setShowFromSuggestions(true)}
-                  className="pl-10 h-12 border-2 focus:border-[#d4af37] transition-colors"
+                  className="pl-10 h-12 border-2 focus:border-[#ffce05] transition-colors"
                 />
               </div>
               {showFromSuggestions && fromCity && filteredFromCities.length > 0 && (
@@ -191,7 +191,7 @@ const EnhancedSearchWidget = () => {
                         setFromCity(city.name);
                         setShowFromSuggestions(false);
                       }}
-                      className="w-full text-left px-4 py-3 hover:bg-[#d4af37]/10 transition-colors border-b last:border-b-0"
+                      className="w-full text-left px-4 py-3 hover:bg-[#ffce05]/10 transition-colors border-b last:border-b-0"
                     >
                       <div className="font-semibold text-[#1a2f4a]">{city.name}</div>
                       <div className="text-sm text-gray-500">{city.country}</div>
@@ -218,7 +218,7 @@ const EnhancedSearchWidget = () => {
                   setShowSuggestions(true);
                 }}
                 onFocus={() => setShowSuggestions(true)}
-                className="pl-10 h-12 border-2 focus:border-[#d4af37] transition-colors"
+                className="pl-10 h-12 border-2 focus:border-[#ffce05] transition-colors"
                 required
               />
             </div>
@@ -232,7 +232,7 @@ const EnhancedSearchWidget = () => {
                       setDestination(city.name);
                       setShowSuggestions(false);
                     }}
-                    className="w-full text-left px-4 py-3 hover:bg-[#d4af37]/10 transition-colors border-b last:border-b-0"
+                    className="w-full text-left px-4 py-3 hover:bg-[#ffce05]/10 transition-colors border-b last:border-b-0"
                   >
                     <div className="font-semibold text-[#1a2f4a]">{city.name}</div>
                     <div className="text-sm text-gray-500">{city.country}</div>
@@ -252,7 +252,7 @@ const EnhancedSearchWidget = () => {
                 <Button
                   variant="outline"
                   className={cn(
-                    "w-full h-12 justify-start text-left font-normal border-2 hover:border-[#d4af37] transition-colors",
+                    "w-full h-12 justify-start text-left font-normal border-2 hover:border-[#ffce05] transition-colors",
                     !(searchType === 'hotels' ? checkInDate : departureDate) && "text-muted-foreground"
                   )}
                 >
@@ -287,7 +287,7 @@ const EnhancedSearchWidget = () => {
                   <Button
                     variant="outline"
                     className={cn(
-                      "w-full h-12 justify-start text-left font-normal border-2 hover:border-[#d4af37] transition-colors",
+                      "w-full h-12 justify-start text-left font-normal border-2 hover:border-[#ffce05] transition-colors",
                       !(searchType === 'hotels' ? checkOutDate : returnDate) && "text-muted-foreground"
                     )}
                   >
@@ -324,7 +324,7 @@ const EnhancedSearchWidget = () => {
               <PopoverTrigger asChild>
                 <Button
                   variant="outline"
-                  className="w-full h-12 justify-start text-left font-normal border-2 hover:border-[#d4af37] transition-colors"
+                  className="w-full h-12 justify-start text-left font-normal border-2 hover:border-[#ffce05] transition-colors"
                 >
                   <Users className="mr-2 h-5 w-5 text-gray-400" />
                   {searchType === 'hotels'
@@ -431,7 +431,7 @@ const EnhancedSearchWidget = () => {
                         type="button"
                         variant="outline"
                         onClick={addRoom}
-                        className="w-full border-dashed border-2 border-[#d4af37] text-[#1a2f4a] hover:bg-[#d4af37]/10"
+                        className="w-full border-dashed border-2 border-[#ffce05] text-[#1a2f4a] hover:bg-[#ffce05]/10"
                       >
                         <Plus className="h-4 w-4 mr-2" />
                         Add Another Room
@@ -577,7 +577,7 @@ const EnhancedSearchWidget = () => {
                 Class
               </Label>
               <Select value={flightClass} onValueChange={setFlightClass}>
-                <SelectTrigger className="h-12 border-2 focus:border-[#d4af37]">
+                <SelectTrigger className="h-12 border-2 focus:border-[#ffce05]">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -594,7 +594,7 @@ const EnhancedSearchWidget = () => {
         {/* Search Button */}
         <Button
           type="submit"
-          className="w-full bg-gradient-to-r from-[#d4af37] to-[#c49f27] hover:from-[#c49f27] hover:to-[#b38e16] text-[#1a2f4a] font-bold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.02] text-lg"
+          className="w-full bg-gradient-to-r from-[#ffce05] to-[#c49f27] hover:from-[#c49f27] hover:to-[#b38e16] text-[#1a2f4a] font-bold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.02] text-lg"
           size="lg"
         >
           <Search className="h-6 w-6 mr-2" />

@@ -210,7 +210,7 @@ const HotelDetail = () => {
                       <h1 className="text-3xl font-bold text-[#1a2f4a]">{hotel.name}</h1>
                       <div className="flex items-center">
                         {[...Array(hotel.stars)].map((_, i) => (
-                          <Star key={i} className="h-5 w-5 fill-[#d4af37] text-[#d4af37]" />
+                          <Star key={i} className="h-5 w-5 fill-[#ffce05] text-[#ffce05]" />
                         ))}
                       </div>
                     </div>
@@ -233,7 +233,7 @@ const HotelDetail = () => {
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {hotel.tags?.map((tag, idx) => (
-                    <Badge key={idx} className="bg-[#d4af37] text-[#1a2f4a]">
+                    <Badge key={idx} className="bg-[#ffce05] text-[#1a2f4a]">
                       {tag}
                     </Badge>
                   ))}
@@ -270,7 +270,7 @@ const HotelDetail = () => {
                   {hotel.roomTypes?.map((room, idx) => (
                     <div
                       key={idx}
-                      className="border border-gray-200 rounded-lg p-4 hover:border-[#d4af37] transition-colors"
+                      className="border border-gray-200 rounded-lg p-4 hover:border-[#ffce05] transition-colors"
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex-1">
@@ -305,7 +305,7 @@ const HotelDetail = () => {
                         className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
                       >
                         <div className="flex items-center">
-                          <MapPin className="h-5 w-5 mr-3 text-[#d4af37]" />
+                          <MapPin className="h-5 w-5 mr-3 text-[#ffce05]" />
                           <span className="font-medium text-[#1a2f4a]">{shrine.name}</span>
                         </div>
                         <div className="text-sm text-gray-600">
@@ -335,7 +335,7 @@ const HotelDetail = () => {
                           key={i}
                           className={`h-5 w-5 ${
                             i < Math.floor(reviewsData.average)
-                              ? 'fill-[#d4af37] text-[#d4af37]'
+                              ? 'fill-[#ffce05] text-[#ffce05]'
                               : 'text-gray-300'
                           }`}
                         />
@@ -349,7 +349,7 @@ const HotelDetail = () => {
                         <span className="text-sm text-gray-600 w-8">{stars}★</span>
                         <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden mx-2">
                           <div
-                            className="h-full bg-[#d4af37]"
+                            className="h-full bg-[#ffce05]"
                             style={{
                               width: `${(reviewsData.breakdown[stars] / reviewsData.total) * 100}%`
                             }}
@@ -373,7 +373,7 @@ const HotelDetail = () => {
                           {[...Array(review.rating)].map((_, i) => (
                             <Star
                               key={i}
-                              className="h-4 w-4 fill-[#d4af37] text-[#d4af37]"
+                              className="h-4 w-4 fill-[#ffce05] text-[#ffce05]"
                             />
                           ))}
                         </div>
@@ -392,14 +392,14 @@ const HotelDetail = () => {
                 <h2 className="text-2xl font-bold text-[#1a2f4a] mb-4">Hotel Policies</h2>
                 <div className="space-y-3 text-gray-700">
                   <div className="flex items-start">
-                    <Clock className="h-5 w-5 mr-3 mt-0.5 text-[#d4af37]" />
+                    <Clock className="h-5 w-5 mr-3 mt-0.5 text-[#ffce05]" />
                     <div>
                       <div className="font-medium">Check-in / Check-out</div>
                       <div className="text-sm text-gray-600">{hotel.policies}</div>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <Check className="h-5 w-5 mr-3 mt-0.5 text-[#d4af37]" />
+                    <Check className="h-5 w-5 mr-3 mt-0.5 text-[#ffce05]" />
                     <div>
                       <div className="font-medium">Cancellation Policy</div>
                       <div className="text-sm text-gray-600">
@@ -424,7 +424,7 @@ const HotelDetail = () => {
                   <div className="text-sm text-gray-500">per night</div>
                 </div>
 
-                <Button className="w-full bg-[#d4af37] hover:bg-[#c49d2f] text-[#1a2f4a] font-bold text-lg py-6 mb-4">
+                <Button className="w-full bg-[#ffce05] hover:bg-[#c49d2f] text-[#1a2f4a] font-bold text-lg py-6 mb-4">
                   Book Now
                 </Button>
 
@@ -434,13 +434,13 @@ const HotelDetail = () => {
 
                 <div className="border-t pt-4 space-y-3">
                   <div className="flex items-center text-sm">
-                    <Phone className="h-4 w-4 mr-2 text-[#d4af37]" />
+                    <Phone className="h-4 w-4 mr-2 text-[#ffce05]" />
                     <a href={`tel:${hotel.phone}`} className="text-[#1a2f4a] hover:underline">
                       {hotel.phone}
                     </a>
                   </div>
                   <div className="flex items-center text-sm">
-                    <Mail className="h-4 w-4 mr-2 text-[#d4af37]" />
+                    <Mail className="h-4 w-4 mr-2 text-[#ffce05]" />
                     <a href={`mailto:${hotel.email}`} className="text-[#1a2f4a] hover:underline">
                       {hotel.email}
                     </a>

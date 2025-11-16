@@ -24,27 +24,27 @@ const ZiyaratGuide = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Info Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <Card className="border-l-4 border-[#d4af37]">
+          <Card className="border-l-4 border-[#ffce05]">
             <CardContent className="p-6">
-              <MapPin className="h-8 w-8 text-[#d4af37] mb-3" />
+              <MapPin className="h-8 w-8 text-[#ffce05] mb-3" />
               <h3 className="font-bold text-lg text-[#1a2f4a] mb-2">Sacred Sites</h3>
               <p className="text-gray-600 text-sm">
                 Visit the most revered shrines and historical locations
               </p>
             </CardContent>
           </Card>
-          <Card className="border-l-4 border-[#d4af37]">
+          <Card className="border-l-4 border-[#ffce05]">
             <CardContent className="p-6">
-              <Navigation className="h-8 w-8 text-[#d4af37] mb-3" />
+              <Navigation className="h-8 w-8 text-[#ffce05] mb-3" />
               <h3 className="font-bold text-lg text-[#1a2f4a] mb-2">Guided Tours</h3>
               <p className="text-gray-600 text-sm">
                 Detailed information and visiting tips for each location
               </p>
             </CardContent>
           </Card>
-          <Card className="border-l-4 border-[#d4af37]">
+          <Card className="border-l-4 border-[#ffce05]">
             <CardContent className="p-6">
-              <Hotel className="h-8 w-8 text-[#d4af37] mb-3" />
+              <Hotel className="h-8 w-8 text-[#ffce05] mb-3" />
               <h3 className="font-bold text-lg text-[#1a2f4a] mb-2">Accommodations</h3>
               <p className="text-gray-600 text-sm">
                 Find nearby hotels and plan your stay
@@ -70,7 +70,7 @@ const ZiyaratGuide = () => {
                     <div className="absolute bottom-4 left-4 right-4">
                       <h3 className="text-2xl font-bold text-white mb-1">{city.name}</h3>
                       <p className="text-gray-200 text-sm mb-2">{city.country}</p>
-                      <Badge className="bg-[#d4af37] text-[#1a2f4a]">
+                      <Badge className="bg-[#ffce05] text-[#1a2f4a]">
                         {city.popularPlaces} {t('popularPlaces')}
                       </Badge>
                     </div>
@@ -82,7 +82,7 @@ const ZiyaratGuide = () => {
                         <Hotel className="h-4 w-4 mr-1" />
                         <span>{city.hotels} hotels</span>
                       </div>
-                      <span className="text-[#d4af37] font-medium">{t('exploreCity')} →</span>
+                      <span className="text-[#ffce05] font-medium">{t('exploreCity')} →</span>
                     </div>
                   </CardContent>
                 </Card>

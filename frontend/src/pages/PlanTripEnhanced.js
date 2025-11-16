@@ -309,8 +309,8 @@ const PlanTripEnhanced = () => {
               }}
               className={`p-4 border-2 rounded-lg transition-all ${
                 tripData.country === country
-                  ? 'border-[#d4af37] bg-[#d4af37]/10'
-                  : 'border-gray-300 hover:border-[#d4af37]/50'
+                  ? 'border-[#ffce05] bg-[#ffce05]/10'
+                  : 'border-gray-300 hover:border-[#ffce05]/50'
               }`}
             >
               <div className="font-semibold text-lg">{country}</div>
@@ -510,12 +510,12 @@ const PlanTripEnhanced = () => {
               onDragStart={(e) => handleDragStart(e, index)}
               onDragOver={handleDragOver}
               onDrop={(e) => handleDrop(e, index)}
-              className="bg-white border-2 border-gray-200 rounded-lg p-4 cursor-move hover:border-[#d4af37] transition-all"
+              className="bg-white border-2 border-gray-200 rounded-lg p-4 cursor-move hover:border-[#ffce05] transition-all"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <GripVertical className="h-5 w-5 text-gray-400" />
-                  <div className="w-8 h-8 bg-[#d4af37] text-[#1a2f4a] rounded-full flex items-center justify-center font-bold">
+                  <div className="w-8 h-8 bg-[#ffce05] text-[#1a2f4a] rounded-full flex items-center justify-center font-bold">
                     {index + 1}
                   </div>
                   <div>
@@ -525,7 +525,7 @@ const PlanTripEnhanced = () => {
                     </div>
                   </div>
                 </div>
-                <MapPin className="h-5 w-5 text-[#d4af37]" />
+                <MapPin className="h-5 w-5 text-[#ffce05]" />
               </div>
             </div>
           ))}
@@ -536,7 +536,7 @@ const PlanTripEnhanced = () => {
         <h2 className="text-2xl font-bold text-[#1a2f4a] mb-4">Allocate Nights per City</h2>
         <p className="text-gray-600 mb-4">
           Total nights to allocate: <span className="font-bold">{totalNights}</span> | 
-          Allocated: <span className="font-bold text-[#d4af37]">{getAllocatedNights()}</span> | 
+          Allocated: <span className="font-bold text-[#ffce05]">{getAllocatedNights()}</span> | 
           Remaining: <span className="font-bold text-[#1a2f4a]">{totalNights - getAllocatedNights()}</span>
         </p>
 
@@ -546,7 +546,7 @@ const PlanTripEnhanced = () => {
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <Hotel className="h-5 w-5 text-[#d4af37]" />
+                    <Hotel className="h-5 w-5 text-[#ffce05]" />
                     <div>
                       <div className="font-semibold">{city}</div>
                       <div className="text-xs text-gray-600">
@@ -625,8 +625,8 @@ const PlanTripEnhanced = () => {
               onClick={() => setTripData(prev => ({ ...prev, hotelCategory: category }))}
               className={`p-4 border-2 rounded-lg transition-all ${
                 tripData.hotelCategory === category
-                  ? 'border-[#d4af37] bg-[#d4af37]/10'
-                  : 'border-gray-300 hover:border-[#d4af37]/50'
+                  ? 'border-[#ffce05] bg-[#ffce05]/10'
+                  : 'border-gray-300 hover:border-[#ffce05]/50'
               }`}
             >
               <div className="font-semibold text-lg capitalize">
@@ -651,7 +651,7 @@ const PlanTripEnhanced = () => {
                   key={hotel.id}
                   className={`cursor-pointer transition-all ${
                     tripData.selectedHotels[city]?.id === hotel.id
-                      ? 'border-2 border-[#d4af37] shadow-lg'
+                      ? 'border-2 border-[#ffce05] shadow-lg'
                       : 'hover:shadow-lg'
                   }`}
                   onClick={() => {
@@ -680,7 +680,7 @@ const PlanTripEnhanced = () => {
                         </div>
                         <div className="flex items-center gap-1 mb-2">
                           {[...Array(hotel.stars)].map((_, i) => (
-                            <Star key={i} className="h-3 w-3 fill-[#d4af37] text-[#d4af37]" />
+                            <Star key={i} className="h-3 w-3 fill-[#ffce05] text-[#ffce05]" />
                           ))}
                         </div>
                         <div className="flex items-center text-sm text-gray-600 mb-2">
@@ -717,7 +717,7 @@ const PlanTripEnhanced = () => {
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <Plane className="h-6 w-6 text-[#d4af37]" />
+                <Plane className="h-6 w-6 text-[#ffce05]" />
                 <div>
                   <div className="font-semibold">Airport Pickup & Drop-off</div>
                   <div className="text-sm text-gray-600">Private transfer service</div>
@@ -758,7 +758,7 @@ const PlanTripEnhanced = () => {
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <Car className="h-6 w-6 text-[#d4af37]" />
+                      <Car className="h-6 w-6 text-[#ffce05]" />
                       <div>
                         <div className="font-semibold">{city} → {nextCity}</div>
                         <div className="text-sm text-gray-600">Private transport</div>
@@ -855,7 +855,7 @@ const PlanTripEnhanced = () => {
               key={addon.id}
               className={`cursor-pointer transition-all ${
                 tripData.addOns.includes(addon.id)
-                  ? 'border-2 border-[#d4af37] bg-[#d4af37]/5'
+                  ? 'border-2 border-[#ffce05] bg-[#ffce05]/5'
                   : 'hover:shadow-lg'
               }`}
               onClick={() => {
@@ -870,8 +870,8 @@ const PlanTripEnhanced = () => {
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-[#d4af37]/10 rounded-lg flex items-center justify-center">
-                      <Icon className="h-6 w-6 text-[#d4af37]" />
+                    <div className="w-12 h-12 bg-[#ffce05]/10 rounded-lg flex items-center justify-center">
+                      <Icon className="h-6 w-6 text-[#ffce05]" />
                     </div>
                     <div>
                       <div className="font-semibold">{addon.name}</div>
@@ -939,7 +939,7 @@ const PlanTripEnhanced = () => {
                     className="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-[#d4af37] text-[#1a2f4a] rounded-full flex items-center justify-center font-bold">
+                      <div className="w-10 h-10 bg-[#ffce05] text-[#1a2f4a] rounded-full flex items-center justify-center font-bold">
                         {cityIndex + 1}
                       </div>
                       <div className="text-left">
@@ -1055,7 +1055,7 @@ const PlanTripEnhanced = () => {
                 description: 'Redirecting to payment...'
               });
             }}
-            className="flex-1 bg-[#d4af37] hover:bg-[#c49f27] text-[#1a2f4a] font-bold"
+            className="flex-1 bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a] font-bold"
           >
             Proceed to Booking
           </Button>
@@ -1089,7 +1089,7 @@ const PlanTripEnhanced = () => {
                     <div
                       className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
                         isActive
-                          ? 'bg-[#d4af37] text-[#1a2f4a]'
+                          ? 'bg-[#ffce05] text-[#1a2f4a]'
                           : isCompleted
                           ? 'bg-green-500 text-white'
                           : 'bg-gray-200 text-gray-500'
@@ -1144,7 +1144,7 @@ const PlanTripEnhanced = () => {
                     <Button
                       onClick={nextStep}
                       disabled={!canProceedToNextStep()}
-                      className="bg-[#d4af37] hover:bg-[#c49f27] text-[#1a2f4a]"
+                      className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a]"
                     >
                       Next Step
                       <ArrowRight className="h-4 w-4 ml-2" />

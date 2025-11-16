@@ -44,7 +44,7 @@ const Account = () => {
       <div className="bg-[#1a2f4a] text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-4">
-            <div className="bg-[#d4af37] rounded-full p-4">
+            <div className="bg-[#ffce05] rounded-full p-4">
               <User className="h-8 w-8 text-[#1a2f4a]" />
             </div>
             <div>
@@ -101,7 +101,7 @@ const Account = () => {
                             {booking.title}
                           </h3>
                           <div className="flex items-center text-sm text-gray-600">
-                            <Calendar className="h-4 w-4 mr-2 text-[#d4af37]" />
+                            <Calendar className="h-4 w-4 mr-2 text-[#ffce05]" />
                             <span>{new Date(booking.date).toLocaleDateString()}</span>
                           </div>
                           <div className="mt-2">
@@ -162,7 +162,7 @@ const Account = () => {
                   </div>
                   <Button
                     onClick={handleSaveProfile}
-                    className="bg-[#d4af37] hover:bg-[#c49f27] text-[#1a2f4a]"
+                    className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a]"
                   >
                     Save Changes
                   </Button>

@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <h3 className="text-xl font-bold text-[#d4af37] mb-4">Ziyarat</h3>
+            <h3 className="text-xl font-bold text-[#ffce05] mb-4">Ziyarat</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Your trusted partner for sacred pilgrimages to Iran and Iraq. Experience spiritual journeys with comfort and care.
             </p>
@@ -20,25 +20,25 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4 text-[#d4af37]">Quick Links</h4>
+            <h4 className="font-semibold mb-4 text-[#ffce05]">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-[#d4af37] transition-colors">
+                <Link to="/" className="text-gray-300 hover:text-[#ffce05] transition-colors">
                   {t('home')}
                 </Link>
               </li>
               <li>
-                <Link to="/packages" className="text-gray-300 hover:text-[#d4af37] transition-colors">
+                <Link to="/packages" className="text-gray-300 hover:text-[#ffce05] transition-colors">
                   {t('packages')}
                 </Link>
               </li>
               <li>
-                <Link to="/groups" className="text-gray-300 hover:text-[#d4af37] transition-colors">
+                <Link to="/groups" className="text-gray-300 hover:text-[#ffce05] transition-colors">
                   {t('groups')}
                 </Link>
               </li>
               <li>
-                <Link to="/ziyarat-guide" className="text-gray-300 hover:text-[#d4af37] transition-colors">
+                <Link to="/ziyarat-guide" className="text-gray-300 hover:text-[#ffce05] transition-colors">
                   {t('ziyaratGuide')}
                 </Link>
               </li>
@@ -47,25 +47,25 @@ const Footer = () => {
 
           {/* Support */}
           <div>
-            <h4 className="font-semibold mb-4 text-[#d4af37]">Support</h4>
+            <h4 className="font-semibold mb-4 text-[#ffce05]">Support</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-[#d4af37] transition-colors">
+                <Link to="/about" className="text-gray-300 hover:text-[#ffce05] transition-colors">
                   {t('about')}
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-[#d4af37] transition-colors">
+                <Link to="/contact" className="text-gray-300 hover:text-[#ffce05] transition-colors">
                   {t('contact')}
                 </Link>
               </li>
               <li>
-                <Link to="/terms" className="text-gray-300 hover:text-[#d4af37] transition-colors">
+                <Link to="/terms" className="text-gray-300 hover:text-[#ffce05] transition-colors">
                   {t('terms')}
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="text-gray-300 hover:text-[#d4af37] transition-colors">
+                <Link to="/privacy" className="text-gray-300 hover:text-[#ffce05] transition-colors">
                   {t('privacy')}
                 </Link>
               </li>
@@ -74,7 +74,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4 text-[#d4af37]">Contact Us</h4>
+            <h4 className="font-semibold mb-4 text-[#ffce05]">Contact Us</h4>
             <ul className="space-y-3 text-sm text-gray-300">
               <li className="flex items-start space-x-2">
                 <Phone className="h-4 w-4 mt-1 flex-shrink-0" />

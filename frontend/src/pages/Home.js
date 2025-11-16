@@ -40,13 +40,13 @@ const Home = () => {
         <div className="bg-gradient-to-r from-[#1a2f4a] to-[#2a3f5a] rounded-2xl p-8 md:p-12 text-white">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-6 md:mb-0">
-              <h2 className="text-3xl font-bold mb-3 text-[#d4af37]">{t('planYourTrip')}</h2>
+              <h2 className="text-3xl font-bold mb-3 text-[#ffce05]">{t('planYourTrip')}</h2>
               <p className="text-gray-200 text-lg">{t('planYourTripDesc')}</p>
             </div>
             <Link to="/plan-trip">
               <Button
                 size="lg"
-                className="bg-[#d4af37] hover:bg-[#c49f27] text-[#1a2f4a] font-semibold"
+                className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a] font-semibold"
               >
                 {t('startPlanning')}
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -61,7 +61,7 @@ const Home = () => {
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-3xl font-bold text-[#1a2f4a]">{t('upcomingGroups')}</h2>
           <Link to="/groups">
-            <Button variant="ghost" className="text-[#1a2f4a] hover:text-[#d4af37]">
+            <Button variant="ghost" className="text-[#1a2f4a] hover:text-[#ffce05]">
               {t('viewAll')}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -85,14 +85,14 @@ const Home = () => {
                 <h3 className="font-bold text-lg mb-2 text-[#1a2f4a]">{group.title}</h3>
                 <div className="space-y-2 text-sm text-gray-600 mb-4">
                   <div className="flex items-center">
-                    <Calendar className="h-4 w-4 mr-2 text-[#d4af37]" />
+                    <Calendar className="h-4 w-4 mr-2 text-[#ffce05]" />
                     <span>
                       {new Date(group.departure).toLocaleDateString()} -{' '}
                       {new Date(group.return).toLocaleDateString()}
                     </span>
                   </div>
                   <div className="flex items-center">
-                    <MapPin className="h-4 w-4 mr-2 text-[#d4af37]" />
+                    <MapPin className="h-4 w-4 mr-2 text-[#ffce05]" />
                     <span>{group.cities.join(', ')}</span>
                   </div>
                 </div>
@@ -121,7 +121,7 @@ const Home = () => {
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold text-[#1a2f4a]">{t('featuredPackages')}</h2>
             <Link to="/packages">
-              <Button variant="ghost" className="text-[#1a2f4a] hover:text-[#d4af37]">
+              <Button variant="ghost" className="text-[#1a2f4a] hover:text-[#ffce05]">
                 {t('viewAll')}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -161,7 +161,7 @@ const Home = () => {
                       <span className="text-sm text-gray-500">{pkg.duration}</span>
                     </div>
                     <Link to={`/packages/${pkg.id}`}>
-                      <Button className="bg-[#d4af37] hover:bg-[#c49f27] text-[#1a2f4a]">
+                      <Button className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a]">
                         View Details
                       </Button>
                     </Link>
@@ -207,7 +207,7 @@ const Home = () => {
       {/* Testimonials */}
       <div className="bg-[#1a2f4a] py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#d4af37] text-center mb-8">
+          <h2 className="text-3xl font-bold text-[#ffce05] text-center mb-8">
             {t('testimonials')}
           </h2>
 

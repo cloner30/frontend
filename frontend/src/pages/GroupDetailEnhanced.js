@@ -115,7 +115,7 @@ const GroupDetailEnhanced = () => {
             <Button
               variant="ghost"
               onClick={() => navigate('/groups')}
-              className="mb-6 text-white hover:text-[#d4af37] hover:bg-white/10"
+              className="mb-6 text-white hover:text-[#ffce05] hover:bg-white/10"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Groups
@@ -174,7 +174,7 @@ const GroupDetailEnhanced = () => {
                     <div>
                       <h3 className="font-bold text-xl text-[#1a2f4a]">{group.organizer}</h3>
                       <div className="flex items-center mt-1">
-                        <Star className="h-4 w-4 fill-[#d4af37] text-[#d4af37] mr-1" />
+                        <Star className="h-4 w-4 fill-[#ffce05] text-[#ffce05] mr-1" />
                         <span className="font-semibold mr-2">{group.organizerRating}</span>
                         <span className="text-sm text-gray-500">({group.organizerReviews} reviews)</span>
                       </div>
@@ -193,7 +193,7 @@ const GroupDetailEnhanced = () => {
               <Card>
                 <CardContent className="p-6">
                   <h2 className="text-2xl font-bold text-[#1a2f4a] mb-4 flex items-center">
-                    <Award className="h-6 w-6 mr-2 text-[#d4af37]" />
+                    <Award className="h-6 w-6 mr-2 text-[#ffce05]" />
                     Tour Highlights
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -212,7 +212,7 @@ const GroupDetailEnhanced = () => {
             <Card>
               <CardContent className="p-6">
                 <h2 className="text-2xl font-bold text-[#1a2f4a] mb-4 flex items-center">
-                  <MapPin className="h-6 w-6 mr-2 text-[#d4af37]" />
+                  <MapPin className="h-6 w-6 mr-2 text-[#ffce05]" />
                   Destinations
                 </h2>
                 <div className="flex flex-wrap gap-3">
@@ -238,14 +238,14 @@ const GroupDetailEnhanced = () => {
                     {group.itinerary.map((day, idx) => (
                       <div
                         key={idx}
-                        className="border border-gray-200 rounded-lg overflow-hidden hover:border-[#d4af37] transition-colors"
+                        className="border border-gray-200 rounded-lg overflow-hidden hover:border-[#ffce05] transition-colors"
                       >
                         <button
                           onClick={() => setExpandedDay(expandedDay === idx ? null : idx)}
                           className="w-full p-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition-colors"
                         >
                           <div className="flex items-center text-left">
-                            <div className="w-10 h-10 bg-[#d4af37] text-[#1a2f4a] rounded-full flex items-center justify-center font-bold mr-4">
+                            <div className="w-10 h-10 bg-[#ffce05] text-[#1a2f4a] rounded-full flex items-center justify-center font-bold mr-4">
                               {day.day}
                             </div>
                             <div>
@@ -325,7 +325,7 @@ const GroupDetailEnhanced = () => {
                           <div className="font-semibold text-[#1a2f4a]">{review.name}</div>
                           <div className="flex items-center">
                             {[...Array(review.rating)].map((_, i) => (
-                              <Star key={i} className="h-4 w-4 fill-[#d4af37] text-[#d4af37]" />
+                              <Star key={i} className="h-4 w-4 fill-[#ffce05] text-[#ffce05]" />
                             ))}
                           </div>
                         </div>
@@ -346,7 +346,7 @@ const GroupDetailEnhanced = () => {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {similarTours.map((tour) => (
                       <Link key={tour.id} to={`/groups/${tour.id}`} className="group">
-                        <div className="border border-gray-200 rounded-lg overflow-hidden hover:border-[#d4af37] transition-all hover:shadow-lg">
+                        <div className="border border-gray-200 rounded-lg overflow-hidden hover:border-[#ffce05] transition-all hover:shadow-lg">
                           <div className="relative h-32">
                             <img src={tour.image} alt={tour.title} className="w-full h-full object-cover" />
                             <Badge className="absolute top-2 right-2 bg-red-500 text-white text-xs">
@@ -354,7 +354,7 @@ const GroupDetailEnhanced = () => {
                             </Badge>
                           </div>
                           <div className="p-3">
-                            <h3 className="font-semibold text-sm text-[#1a2f4a] mb-2 line-clamp-2 group-hover:text-[#d4af37]">
+                            <h3 className="font-semibold text-sm text-[#1a2f4a] mb-2 line-clamp-2 group-hover:text-[#ffce05]">
                               {tour.title}
                             </h3>
                             <div className="flex items-center justify-between">
@@ -391,7 +391,7 @@ const GroupDetailEnhanced = () => {
                   </div>
                   <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-[#d4af37] to-[#f4cf67]"
+                      className="h-full bg-gradient-to-r from-[#ffce05] to-[#f4cf67]"
                       style={{ width: `${percentBooked}%` }}
                     />
                   </div>
@@ -422,7 +422,7 @@ const GroupDetailEnhanced = () => {
                 </div>
 
                 <Button
-                  className="w-full bg-[#d4af37] hover:bg-[#c49f27] text-[#1a2f4a] font-bold text-lg py-6 mb-3"
+                  className="w-full bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a] font-bold text-lg py-6 mb-3"
                   onClick={() => setShowBookingForm(true)}
                   disabled={group.seatsLeft === 0}
                 >
@@ -464,7 +464,7 @@ const GroupDetailEnhanced = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-gray-600">Organizer Rating</span>
                     <span className="font-medium text-[#1a2f4a] flex items-center">
-                      <Star className="h-3 w-3 fill-[#d4af37] text-[#d4af37] mr-1" />
+                      <Star className="h-3 w-3 fill-[#ffce05] text-[#ffce05] mr-1" />
                       {group.organizerRating}
                     </span>
                   </div>
@@ -564,7 +564,7 @@ const GroupDetailEnhanced = () => {
                   </div>
                 </div>
 
-                <Button type="submit" className="w-full bg-[#d4af37] hover:bg-[#c49f27] text-[#1a2f4a] font-bold">
+                <Button type="submit" className="w-full bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a] font-bold">
                   Submit Booking Request
                 </Button>
 

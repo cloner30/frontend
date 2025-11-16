@@ -53,7 +53,7 @@ const CityGuide = () => {
           <Button
             variant="ghost"
             onClick={() => navigate('/ziyarat-guide')}
-            className="self-start mb-6 text-white hover:text-[#d4af37] hover:bg-white/10"
+            className="self-start mb-6 text-white hover:text-[#ffce05] hover:bg-white/10"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Guide
@@ -61,7 +61,7 @@ const CityGuide = () => {
           <h1 className="text-5xl font-bold text-white mb-3">{city.name}</h1>
           <p className="text-2xl text-gray-200 mb-4">{city.description}</p>
           <div className="flex items-center space-x-2">
-            <Badge className="bg-[#d4af37] text-[#1a2f4a] text-base px-4 py-1">
+            <Badge className="bg-[#ffce05] text-[#1a2f4a] text-base px-4 py-1">
               {city.country}
             </Badge>
             <Badge className="bg-white/20 text-white text-base px-4 py-1">
@@ -93,13 +93,13 @@ const CityGuide = () => {
                           {place.name}
                         </h3>
                         <div className="flex items-center text-gray-600">
-                          <MapPin className="h-4 w-4 mr-1 text-[#d4af37]" />
+                          <MapPin className="h-4 w-4 mr-1 text-[#ffce05]" />
                           <span className="text-sm">{place.distance} km from city center</span>
                         </div>
                       </div>
                       <Button
                         onClick={() => addToItinerary(place.name)}
-                        className="bg-[#d4af37] hover:bg-[#c49f27] text-[#1a2f4a]"
+                        className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a]"
                         size="sm"
                       >
                         <Plus className="h-4 w-4 mr-1" />
@@ -112,7 +112,7 @@ const CityGuide = () => {
                     {/* Visiting Tips */}
                     <div className="mb-3">
                       <div className="font-semibold text-[#1a2f4a] mb-1 flex items-center">
-                        <Clock className="h-4 w-4 mr-2 text-[#d4af37]" />
+                        <Clock className="h-4 w-4 mr-2 text-[#ffce05]" />
                         Visiting Tips
                       </div>
                       <p className="text-sm text-gray-600 ml-6">{place.visitingTips}</p>
@@ -121,7 +121,7 @@ const CityGuide = () => {
                     {/* Accessibility */}
                     <div className="mb-3">
                       <div className="font-semibold text-[#1a2f4a] mb-1 flex items-center">
-                        <Accessibility className="h-4 w-4 mr-2 text-[#d4af37]" />
+                        <Accessibility className="h-4 w-4 mr-2 text-[#ffce05]" />
                         Accessibility
                       </div>
                       <p className="text-sm text-gray-600 ml-6">{place.accessibility}</p>
@@ -151,7 +151,7 @@ const CityGuide = () => {
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-3xl font-bold text-[#1a2f4a]">Nearby Accommodations</h2>
               <Link to={`/search?type=hotels&destination=${city.name}`}>
-                <Button variant="ghost" className="text-[#1a2f4a] hover:text-[#d4af37]">
+                <Button variant="ghost" className="text-[#1a2f4a] hover:text-[#ffce05]">
                   View All
                 </Button>
               </Link>
@@ -169,7 +169,7 @@ const CityGuide = () => {
                   <CardContent className="p-4">
                     <h3 className="font-bold text-lg text-[#1a2f4a] mb-2">{hotel.name}</h3>
                     <div className="flex items-center text-sm text-gray-600 mb-3">
-                      <MapPin className="h-4 w-4 mr-1 text-[#d4af37]" />
+                      <MapPin className="h-4 w-4 mr-1 text-[#ffce05]" />
                       <span>{hotel.distanceToShrine} km to shrine</span>
                     </div>
                     <div className="flex items-center justify-between">

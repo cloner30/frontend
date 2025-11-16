@@ -159,7 +159,7 @@ const SearchResults = () => {
                     className="ml-2 flex items-center text-sm cursor-pointer"
                   >
                     {[...Array(stars)].map((_, i) => (
-                      <Star key={i} className="h-3 w-3 fill-[#d4af37] text-[#d4af37]" />
+                      <Star key={i} className="h-3 w-3 fill-[#ffce05] text-[#ffce05]" />
                     ))}
                     <span className="ml-1 text-gray-600">({stars} stars)</span>
                   </label>
@@ -252,7 +252,7 @@ const SearchResults = () => {
           <p className="text-gray-600">
             {filteredResults.length} {filteredResults.length === 1 ? 'result' : 'results'} found
             {results.length !== filteredResults.length && (
-              <span className="text-[#d4af37] ml-1">
+              <span className="text-[#ffce05] ml-1">
                 (filtered from {results.length})
               </span>
             )}
@@ -281,7 +281,7 @@ const SearchResults = () => {
                   <SlidersHorizontal className="h-4 w-4 mr-2" />
                   Filters & Sort
                   {(starRatings.length > 0 || selectedAmenities.length > 0) && (
-                    <Badge className="ml-2 bg-[#d4af37] text-[#1a2f4a]">
+                    <Badge className="ml-2 bg-[#ffce05] text-[#1a2f4a]">
                       {starRatings.length + selectedAmenities.length}
                     </Badge>
                   )}
@@ -313,7 +313,7 @@ const SearchResults = () => {
                 </Card>
               ) : type === 'hotels' ? (
                 filteredResults.map((hotel) => (
-                  <Card key={hotel.id} className="hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-[#d4af37]/30">
+                  <Card key={hotel.id} className="hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-[#ffce05]/30">
                     <CardContent className="p-0">
                       <div className="flex flex-col md:flex-row">
                         <div className="relative w-full md:w-72 h-56 md:h-auto flex-shrink-0">
@@ -327,7 +327,7 @@ const SearchResults = () => {
                               {hotel.tags.slice(0, 2).map((tag, idx) => (
                                 <Badge
                                   key={idx}
-                                  className="bg-[#d4af37] text-[#1a2f4a] font-semibold"
+                                  className="bg-[#ffce05] text-[#1a2f4a] font-semibold"
                                 >
                                   {tag}
                                 </Badge>
@@ -344,12 +344,12 @@ const SearchResults = () => {
                                 </h3>
                                 <div className="flex items-center">
                                   {[...Array(hotel.stars)].map((_, i) => (
-                                    <Star key={i} className="h-4 w-4 fill-[#d4af37] text-[#d4af37]" />
+                                    <Star key={i} className="h-4 w-4 fill-[#ffce05] text-[#ffce05]" />
                                   ))}
                                 </div>
                               </div>
                               <div className="flex items-center text-sm text-gray-600 mb-2">
-                                <MapPin className="h-4 w-4 mr-1 text-[#d4af37]" />
+                                <MapPin className="h-4 w-4 mr-1 text-[#ffce05]" />
                                 <span className="font-medium text-[#1a2f4a]">{hotel.distanceToShrine} km</span>
                                 <span className="mx-1">•</span>
                                 <span>{hotel.city}, {hotel.country}</span>

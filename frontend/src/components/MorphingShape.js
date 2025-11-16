@@ -9,7 +9,7 @@ const MorphingShape = ({ className = '' }) => {
     >
       <defs>
         <linearGradient id="morphGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style={{ stopColor: '#d4af37', stopOpacity: 0.6 }} />
+          <stop offset="0%" style={{ stopColor: '#ffce05', stopOpacity: 0.6 }} />
           <stop offset="100%" style={{ stopColor: '#c49f27', stopOpacity: 0.3 }} />
         </linearGradient>
       </defs>

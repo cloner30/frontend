@@ -32,7 +32,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-[#d4af37]">Ziyarat</div>
+            <div className="text-2xl font-bold text-[#ffce05]">Ziyarat</div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -41,8 +41,8 @@ const Navbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-sm font-medium transition-colors hover:text-[#d4af37] ${
-                  isActive(link.to) ? 'text-[#d4af37]' : 'text-white'
+                className={`text-sm font-medium transition-colors hover:text-[#ffce05] ${
+                  isActive(link.to) ? 'text-[#ffce05]' : 'text-white'
                 }`}
               >
                 {link.label}
@@ -55,7 +55,7 @@ const Navbar = () => {
             {/* Language Selector */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="text-white hover:text-[#d4af37] hover:bg-[#2a3f5a]">
+                <Button variant="ghost" size="sm" className="text-white hover:text-[#ffce05] hover:bg-[#2a3f5a]">
                   <Globe className="h-4 w-4 mr-2" />
                   {language.toUpperCase()}
                 </Button>
@@ -75,7 +75,7 @@ const Navbar = () => {
 
             {/* Account */}
             <Link to="/account">
-              <Button variant="ghost" size="sm" className="text-white hover:text-[#d4af37] hover:bg-[#2a3f5a]">
+              <Button variant="ghost" size="sm" className="text-white hover:text-[#ffce05] hover:bg-[#2a3f5a]">
                 <User className="h-4 w-4 mr-2" />
                 {t('myAccount')}
               </Button>
@@ -102,7 +102,7 @@ const Navbar = () => {
                 to={link.to}
                 className={`block py-2 px-3 rounded-lg transition-colors ${
                   isActive(link.to)
-                    ? 'bg-[#2a3f5a] text-[#d4af37]'
+                    ? 'bg-[#2a3f5a] text-[#ffce05]'
                     : 'text-white hover:bg-[#2a3f5a]'
                 }`}
                 onClick={() => setMobileMenuOpen(false)}

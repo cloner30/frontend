@@ -155,19 +155,19 @@ const EnhancedHome = () => {
       >
         {/* Floating particles effect */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute w-2 h-2 bg-[#d4af37] rounded-full opacity-30 animate-float" style={{ top: '20%', left: '10%', animationDelay: '0s' }} />
-          <div className="absolute w-3 h-3 bg-[#d4af37] rounded-full opacity-20 animate-float" style={{ top: '60%', left: '80%', animationDelay: '2s' }} />
+          <div className="absolute w-2 h-2 bg-[#ffce05] rounded-full opacity-30 animate-float" style={{ top: '20%', left: '10%', animationDelay: '0s' }} />
+          <div className="absolute w-3 h-3 bg-[#ffce05] rounded-full opacity-20 animate-float" style={{ top: '60%', left: '80%', animationDelay: '2s' }} />
           <div className="absolute w-2 h-2 bg-white rounded-full opacity-40 animate-float" style={{ top: '40%', right: '15%', animationDelay: '1s' }} />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
           <div className="text-center mb-8 animate-fadeIn">
-            <Badge className="bg-[#d4af37] text-[#1a2f4a] mb-4 text-sm px-4 py-1">
+            <Badge className="bg-[#ffce05] text-[#1a2f4a] mb-4 text-sm px-4 py-1">
               Trusted by 15,000+ Pilgrims
             </Badge>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Begin Your Sacred<br />
-              <span className="text-[#d4af37]">Spiritual Journey</span>
+              <span className="text-[#ffce05]">Spiritual Journey</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8">
               Experience the profound connection of Ziyarat to Iran & Iraq's holiest shrines
@@ -219,7 +219,7 @@ const EnhancedHome = () => {
       </div>
 
       {/* Special Offers Banner */}
-      <div className="bg-gradient-to-r from-[#d4af37] to-[#c49f27] py-8">
+      <div className="bg-gradient-to-r from-[#ffce05] to-[#c49f27] py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {specialOffers.map((offer) => (
@@ -227,7 +227,7 @@ const EnhancedHome = () => {
                 <Badge className={`${offer.color} text-white mb-3`}>{offer.discount}</Badge>
                 <h3 className="font-bold text-lg text-[#1a2f4a] mb-2">{offer.title}</h3>
                 <p className="text-gray-600 text-sm mb-4">{offer.description}</p>
-                <Button variant="ghost" className="text-[#1a2f4a] hover:text-[#d4af37] p-0">
+                <Button variant="ghost" className="text-[#1a2f4a] hover:text-[#ffce05] p-0">
                   Learn More <ArrowRight className="ml-1 h-4 w-4" />
                 </Button>
               </div>
@@ -264,7 +264,7 @@ const EnhancedHome = () => {
       {/* Popular Destinations */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-10">
-          <Badge className="bg-gradient-to-r from-[#d4af37] to-[#c49f27] text-[#1a2f4a] mb-4">
+          <Badge className="bg-gradient-to-r from-[#ffce05] to-[#c49f27] text-[#1a2f4a] mb-4">
             <TrendingUp className="h-4 w-4 mr-2 inline" />
             MOST VISITED
           </Badge>
@@ -280,12 +280,12 @@ const EnhancedHome = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-gradient-to-r from-[#1a2f4a] via-[#2a3f5a] to-[#1a2f4a] rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, #d4af37 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
+            <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, #ffce05 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
           </div>
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between">
             <div className="mb-6 md:mb-0 md:w-2/3">
-              <Badge className="bg-[#d4af37] text-[#1a2f4a] mb-4">NEW FEATURE</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#d4af37]">{t('planYourTrip')}</h2>
+              <Badge className="bg-[#ffce05] text-[#1a2f4a] mb-4">NEW FEATURE</Badge>
+              <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#ffce05]">{t('planYourTrip')}</h2>
               <p className="text-gray-200 text-lg mb-4">{t('planYourTripDesc')}</p>
               <div className="flex items-start space-x-3 text-sm">
                 <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
@@ -299,7 +299,7 @@ const EnhancedHome = () => {
             <Link to="/plan-trip">
               <Button
                 size="lg"
-                className="bg-[#d4af37] hover:bg-[#c49f27] text-[#1a2f4a] font-semibold px-8 py-6 text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a] font-semibold px-8 py-6 text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
               >
                 {t('startPlanning')}
                 <ArrowRight className="ml-2 h-6 w-6" />
@@ -312,7 +312,7 @@ const EnhancedHome = () => {
       {/* Upcoming Groups - Enhanced */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-10">
-          <Badge className="bg-[#d4af37] text-[#1a2f4a] mb-4">POPULAR CHOICE</Badge>
+          <Badge className="bg-[#ffce05] text-[#1a2f4a] mb-4">POPULAR CHOICE</Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-[#1a2f4a] mb-3">{t('upcomingGroups')}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Join fellow pilgrims on organized group tours with experienced guides
@@ -340,18 +340,18 @@ const EnhancedHome = () => {
               <CardContent className="p-5">
                 <div className="space-y-2 text-sm text-gray-600 mb-4">
                   <div className="flex items-center">
-                    <Calendar className="h-4 w-4 mr-2 text-[#d4af37]" />
+                    <Calendar className="h-4 w-4 mr-2 text-[#ffce05]" />
                     <span>
                       {new Date(group.departure).toLocaleDateString()} -{' '}
                       {new Date(group.return).toLocaleDateString()}
                     </span>
                   </div>
                   <div className="flex items-center">
-                    <MapPin className="h-4 w-4 mr-2 text-[#d4af37]" />
+                    <MapPin className="h-4 w-4 mr-2 text-[#ffce05]" />
                     <span>{group.cities.join(', ')}</span>
                   </div>
                   <div className="flex items-center">
-                    <Clock className="h-4 w-4 mr-2 text-[#d4af37]" />
+                    <Clock className="h-4 w-4 mr-2 text-[#ffce05]" />
                     <span>7 Days / 6 Nights</span>
                   </div>
                 </div>
@@ -363,7 +363,7 @@ const EnhancedHome = () => {
                     <span className="text-sm text-gray-500 ml-1">{t('perPerson')}</span>
                   </div>
                   <Link to={`/groups/${group.id}`}>
-                    <Button className="bg-[#1a2f4a] hover:bg-[#2a3f5a] group-hover:bg-[#d4af37] group-hover:text-[#1a2f4a] transition-colors">
+                    <Button className="bg-[#1a2f4a] hover:bg-[#2a3f5a] group-hover:bg-[#ffce05] group-hover:text-[#1a2f4a] transition-colors">
                       {t('bookNow')}
                     </Button>
                   </Link>
@@ -440,7 +440,7 @@ const EnhancedHome = () => {
                       <span className="text-sm text-gray-500">{pkg.duration}</span>
                     </div>
                     <Link to={`/packages/${pkg.id}`}>
-                      <Button className="bg-[#d4af37] hover:bg-[#c49f27] text-[#1a2f4a]" size="lg">
+                      <Button className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a]" size="lg">
                         View Details
                       </Button>
                     </Link>
@@ -465,9 +465,9 @@ const EnhancedHome = () => {
           {whyChooseUs.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <Card key={idx} className="text-center hover:shadow-xl transition-all duration-300 border-t-4 border-[#d4af37] group">
+              <Card key={idx} className="text-center hover:shadow-xl transition-all duration-300 border-t-4 border-[#ffce05] group">
                 <CardContent className="p-6">
-                  <div className="bg-[#1a2f4a] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#d4af37] transition-colors">
+                  <div className="bg-[#1a2f4a] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#ffce05] transition-colors">
                     <Icon className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="font-bold text-lg text-[#1a2f4a] mb-2">{item.title}</h3>
@@ -491,7 +491,7 @@ const EnhancedHome = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <Badge className="bg-[#d4af37] text-[#1a2f4a] mb-4 text-lg px-6 py-2">
+            <Badge className="bg-[#ffce05] text-[#1a2f4a] mb-4 text-lg px-6 py-2">
               ✨ NEW - COMPREHENSIVE GUIDE
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -507,9 +507,9 @@ const EnhancedHome = () => {
 
           {/* Feature Highlights */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <Card className="bg-white/10 backdrop-blur-sm border-[#d4af37]/30 hover:bg-white/20 transition-all duration-300">
+            <Card className="bg-white/10 backdrop-blur-sm border-[#ffce05]/30 hover:bg-white/20 transition-all duration-300">
               <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-[#d4af37] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#ffce05] rounded-full flex items-center justify-center mx-auto mb-4">
                   <MapPin className="h-8 w-8 text-[#1a2f4a]" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">4 Sacred Cities</h3>
@@ -519,9 +519,9 @@ const EnhancedHome = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 backdrop-blur-sm border-[#d4af37]/30 hover:bg-white/20 transition-all duration-300">
+            <Card className="bg-white/10 backdrop-blur-sm border-[#ffce05]/30 hover:bg-white/20 transition-all duration-300">
               <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-[#d4af37] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#ffce05] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Heart className="h-8 w-8 text-[#1a2f4a]" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Arabic Prayers</h3>
@@ -531,9 +531,9 @@ const EnhancedHome = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 backdrop-blur-sm border-[#d4af37]/30 hover:bg-white/20 transition-all duration-300">
+            <Card className="bg-white/10 backdrop-blur-sm border-[#ffce05]/30 hover:bg-white/20 transition-all duration-300">
               <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-[#d4af37] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#ffce05] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Award className="h-8 w-8 text-[#1a2f4a]" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Complete Information</h3>
@@ -547,7 +547,7 @@ const EnhancedHome = () => {
           {/* CTA Button */}
           <div className="text-center">
             <Link to="/iraq-ziyarat">
-              <Button size="lg" className="bg-[#d4af37] text-[#1a2f4a] hover:bg-[#c49d2f] text-xl px-12 py-6 rounded-full shadow-2xl hover:shadow-[#d4af37]/50 transition-all duration-300 transform hover:scale-105">
+              <Button size="lg" className="bg-[#ffce05] text-[#1a2f4a] hover:bg-[#c49d2f] text-xl px-12 py-6 rounded-full shadow-2xl hover:shadow-[#ffce05]/50 transition-all duration-300 transform hover:scale-105">
                 Explore Complete Guide
                 <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
@@ -563,7 +563,7 @@ const EnhancedHome = () => {
       <div className="bg-[#1a2f4a] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#d4af37] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#ffce05] mb-4">
               {t('testimonials')}
             </h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
@@ -602,13 +602,13 @@ const EnhancedHome = () => {
             {/* Carousel Controls */}
             <button
               onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white rounded-full p-3 shadow-lg hover:bg-[#d4af37] transition-colors"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white rounded-full p-3 shadow-lg hover:bg-[#ffce05] transition-colors"
             >
               <ChevronLeft className="h-6 w-6 text-[#1a2f4a]" />
             </button>
             <button
               onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-white rounded-full p-3 shadow-lg hover:bg-[#d4af37] transition-colors"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-white rounded-full p-3 shadow-lg hover:bg-[#ffce05] transition-colors"
             >
               <ChevronRight className="h-6 w-6 text-[#1a2f4a]" />
             </button>
@@ -620,7 +620,7 @@ const EnhancedHome = () => {
                   key={idx}
                   onClick={() => setCurrentTestimonial(idx)}
                   className={`w-2 h-2 rounded-full transition-all ${
-                    idx === currentTestimonial ? 'bg-[#d4af37] w-8' : 'bg-white/50'
+                    idx === currentTestimonial ? 'bg-[#ffce05] w-8' : 'bg-white/50'
                   }`}
                 />
               ))}
@@ -645,7 +645,7 @@ const EnhancedHome = () => {
               >
                 <span className="font-semibold text-[#1a2f4a]">{faq.question}</span>
                 <ChevronRight
-                  className={`h-5 w-5 text-[#d4af37] transition-transform ${
+                  className={`h-5 w-5 text-[#ffce05] transition-transform ${
                     openFaq === idx ? 'rotate-90' : ''
                   }`}
                 />
@@ -676,7 +676,7 @@ const EnhancedHome = () => {
               required
               className="flex-1 bg-white"
             />
-            <Button type="submit" className="bg-[#d4af37] hover:bg-[#c49f27] text-[#1a2f4a] font-semibold px-8">
+            <Button type="submit" className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a] font-semibold px-8">
               Subscribe
             </Button>
           </form>
@@ -691,7 +691,7 @@ const EnhancedHome = () => {
             Chat with us
           </span>
         </button>
-        <button className="bg-[#d4af37] text-[#1a2f4a] rounded-full p-4 shadow-2xl hover:bg-[#c49f27] transition-all hover:scale-110 group">
+        <button className="bg-[#ffce05] text-[#1a2f4a] rounded-full p-4 shadow-2xl hover:bg-[#c49f27] transition-all hover:scale-110 group">
           <Phone className="h-6 w-6" />
           <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
             Call us now

@@ -19,7 +19,7 @@ const TrustBadges = () => {
           {badges.map((badge, idx) => {
             const Icon = badge.icon;
             return (
-              <Card key={idx} className="text-center p-4 hover:shadow-lg transition-shadow duration-300 border-t-2 border-transparent hover:border-[#d4af37]">
+              <Card key={idx} className="text-center p-4 hover:shadow-lg transition-shadow duration-300 border-t-2 border-transparent hover:border-[#ffce05]">
                 <Icon className={`h-8 w-8 mx-auto mb-2 ${badge.color}`} />
                 <p className="text-xs font-semibold text-gray-700">{badge.text}</p>
               </Card>

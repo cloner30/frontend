@@ -38,7 +38,7 @@ const ProcessSteps = () => {
             <div key={idx} className="relative">
               {/* Connector Line */}
               {idx < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-12 left-full w-full h-1 bg-gradient-to-r from-[#d4af37] to-transparent -ml-8" />
+                <div className="hidden lg:block absolute top-12 left-full w-full h-1 bg-gradient-to-r from-[#ffce05] to-transparent -ml-8" />
               )}
               
               <div className="text-center">

@@ -50,7 +50,7 @@ const PopularDestinations = () => {
                 <p className="text-gray-300 text-sm mb-3">{city.description}</p>
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-gray-300">{city.bookings}+ bookings</span>
-                  <span className="text-[#d4af37] font-semibold group-hover:text-white transition-colors">
+                  <span className="text-[#ffce05] font-semibold group-hover:text-white transition-colors">
                     Explore →
                   </span>
                 </div>

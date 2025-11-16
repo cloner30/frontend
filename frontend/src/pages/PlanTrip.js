@@ -178,7 +178,7 @@ const PlanTrip = () => {
                       key={city.id}
                       className={`cursor-pointer transition-all ${
                         tripData.selectedCities.includes(city.id)
-                          ? 'ring-2 ring-[#d4af37] shadow-lg'
+                          ? 'ring-2 ring-[#ffce05] shadow-lg'
                           : 'hover:shadow-md'
                       }`}
                       onClick={() => handleCityToggle(city.id)}
@@ -190,7 +190,7 @@ const PlanTrip = () => {
                           className="w-full h-full object-cover rounded-t-lg"
                         />
                         {tripData.selectedCities.includes(city.id) && (
-                          <div className="absolute top-2 right-2 bg-[#d4af37] rounded-full p-1">
+                          <div className="absolute top-2 right-2 bg-[#ffce05] rounded-full p-1">
                             <Check className="h-4 w-4 text-[#1a2f4a]" />
                           </div>
                         )}
@@ -218,7 +218,7 @@ const PlanTrip = () => {
                         key={hotel.id}
                         className={`cursor-pointer transition-all ${
                           tripData.selectedHotels.includes(hotel.id)
-                            ? 'ring-2 ring-[#d4af37]'
+                            ? 'ring-2 ring-[#ffce05]'
                             : 'hover:shadow-md'
                         }`}
                         onClick={() => handleHotelToggle(hotel.id)}
@@ -369,7 +369,7 @@ const PlanTrip = () => {
           ) : (
             <Button
               onClick={handleSubmit}
-              className="bg-[#d4af37] hover:bg-[#c49f27] text-[#1a2f4a]"
+              className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a]"
             >
               Save Trip Plan
             </Button>

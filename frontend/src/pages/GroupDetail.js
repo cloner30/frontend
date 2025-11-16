@@ -45,7 +45,7 @@ const GroupDetail = () => {
         <Button
           variant="ghost"
           onClick={() => navigate('/groups')}
-          className="mb-6 text-[#1a2f4a] hover:text-[#d4af37]"
+          className="mb-6 text-[#1a2f4a] hover:text-[#ffce05]"
         >
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Groups
@@ -70,11 +70,11 @@ const GroupDetail = () => {
             <div>
               <h1 className="text-4xl font-bold text-[#1a2f4a] mb-3">{group.title}</h1>
               <div className="flex items-center text-gray-600 mb-2">
-                <Users className="h-5 w-5 mr-2 text-[#d4af37]" />
+                <Users className="h-5 w-5 mr-2 text-[#ffce05]" />
                 <span>Organized by {group.organizer}</span>
               </div>
               <div className="flex items-center text-gray-600">
-                <Clock className="h-5 w-5 mr-2 text-[#d4af37]" />
+                <Clock className="h-5 w-5 mr-2 text-[#ffce05]" />
                 <span>
                   {new Date(group.departure).toLocaleDateString()} -{' '}
                   {new Date(group.return).toLocaleDateString()}
@@ -89,7 +89,7 @@ const GroupDetail = () => {
                 <div className="flex flex-wrap gap-3">
                   {group.cities.map((city, idx) => (
                     <div key={idx} className="flex items-center bg-gray-100 rounded-lg px-4 py-2">
-                      <MapPin className="h-4 w-4 mr-2 text-[#d4af37]" />
+                      <MapPin className="h-4 w-4 mr-2 text-[#ffce05]" />
                       <span className="font-medium">{city}</span>
                     </div>
                   ))}
@@ -117,19 +117,19 @@ const GroupDetail = () => {
               <CardContent className="p-6">
                 <h2 className="text-2xl font-bold text-[#1a2f4a] mb-4">Sample Itinerary</h2>
                 <div className="space-y-4">
-                  <div className="border-l-4 border-[#d4af37] pl-4">
+                  <div className="border-l-4 border-[#ffce05] pl-4">
                     <div className="font-semibold text-[#1a2f4a]">Day 1: Departure & Arrival</div>
                     <p className="text-gray-600 text-sm mt-1">
                       Departure from origin city, arrival at destination, hotel check-in
                     </p>
                   </div>
-                  <div className="border-l-4 border-[#d4af37] pl-4">
+                  <div className="border-l-4 border-[#ffce05] pl-4">
                     <div className="font-semibold text-[#1a2f4a]">Day 2-6: Ziyarat Tours</div>
                     <p className="text-gray-600 text-sm mt-1">
                       Guided visits to holy shrines, prayer times, spiritual activities
                     </p>
                   </div>
-                  <div className="border-l-4 border-[#d4af37] pl-4">
+                  <div className="border-l-4 border-[#ffce05] pl-4">
                     <div className="font-semibold text-[#1a2f4a]">Day 7: Departure</div>
                     <p className="text-gray-600 text-sm mt-1">
                       Final prayers, hotel checkout, return journey
@@ -181,7 +181,7 @@ const GroupDetail = () => {
 
                 <Button
                   onClick={handleBooking}
-                  className="w-full bg-[#d4af37] hover:bg-[#c49f27] text-[#1a2f4a] font-semibold py-3"
+                  className="w-full bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a] font-semibold py-3"
                   size="lg"
                 >
                   {t('bookNow')}

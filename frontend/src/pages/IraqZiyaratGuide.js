@@ -111,7 +111,7 @@ const IraqZiyaratGuide = () => {
       >
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white max-w-4xl px-4">
-            <Badge className="bg-[#d4af37] text-[#1a2f4a] mb-4">
+            <Badge className="bg-[#ffce05] text-[#1a2f4a] mb-4">
               COMPREHENSIVE GUIDE
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-4">
@@ -151,10 +151,10 @@ const IraqZiyaratGuide = () => {
               Back
             </Button>
             <div className="flex items-center space-x-4 text-sm">
-              <a href="#cities" className="hover:text-[#d4af37] transition-colors">Cities</a>
-              <a href="#practical" className="hover:text-[#d4af37] transition-colors">Practical Info</a>
-              <a href="#tips" className="hover:text-[#d4af37] transition-colors">Tips</a>
-              <a href="#emergency" className="hover:text-[#d4af37] transition-colors">Emergency</a>
+              <a href="#cities" className="hover:text-[#ffce05] transition-colors">Cities</a>
+              <a href="#practical" className="hover:text-[#ffce05] transition-colors">Practical Info</a>
+              <a href="#tips" className="hover:text-[#ffce05] transition-colors">Tips</a>
+              <a href="#emergency" className="hover:text-[#ffce05] transition-colors">Emergency</a>
             </div>
           </div>
         </div>
@@ -183,7 +183,7 @@ const IraqZiyaratGuide = () => {
                   ref={tiltRef}
                   onClick={() => handleCitySelect(city)}
                   className={`cursor-pointer overflow-hidden transition-all duration-300 ${
-                    isSelected ? 'ring-4 ring-[#d4af37] shadow-2xl' : 'hover:shadow-xl'
+                    isSelected ? 'ring-4 ring-[#ffce05] shadow-2xl' : 'hover:shadow-xl'
                   }`}
                 >
                   <div className="relative h-56">
@@ -194,7 +194,7 @@ const IraqZiyaratGuide = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                     {isSelected && (
-                      <div className="absolute top-4 right-4 bg-[#d4af37] rounded-full p-2">
+                      <div className="absolute top-4 right-4 bg-[#ffce05] rounded-full p-2">
                         <CheckCircle className="h-6 w-6 text-[#1a2f4a]" />
                       </div>
                     )}
@@ -203,7 +203,7 @@ const IraqZiyaratGuide = () => {
                         {city.name}
                       </h3>
                       <p className="text-sm text-gray-200 mb-2">{city.nameArabic}</p>
-                      <Badge className="bg-[#d4af37] text-[#1a2f4a]">
+                      <Badge className="bg-[#ffce05] text-[#1a2f4a]">
                         {city.province}
                       </Badge>
                     </div>
@@ -217,7 +217,7 @@ const IraqZiyaratGuide = () => {
                         <MapPin className="inline h-4 w-4 mr-1" />
                         {city.population}
                       </span>
-                      <Button size="sm" variant="ghost" className="text-[#d4af37]">
+                      <Button size="sm" variant="ghost" className="text-[#ffce05]">
                         Explore <ChevronRight className="h-4 w-4 ml-1" />
                       </Button>
                     </div>
@@ -232,7 +232,7 @@ const IraqZiyaratGuide = () => {
         {selectedCity && (
           <div className="mb-16 animate-fadeIn">
             {/* City Overview Card */}
-            <Card className="mb-8 border-l-4 border-[#d4af37]">
+            <Card className="mb-8 border-l-4 border-[#ffce05]">
               <CardContent className="p-8">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                   <div className="lg:col-span-2">
@@ -245,7 +245,7 @@ const IraqZiyaratGuide = () => {
 
                     <div className="grid grid-cols-2 gap-4">
                       <div className="flex items-start space-x-3">
-                        <Calendar className="h-5 w-5 text-[#d4af37] mt-1" />
+                        <Calendar className="h-5 w-5 text-[#ffce05] mt-1" />
                         <div>
                           <div className="font-semibold text-sm">Best Time</div>
                           <div className="text-sm text-gray-600">
@@ -254,7 +254,7 @@ const IraqZiyaratGuide = () => {
                         </div>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <Navigation className="h-5 w-5 text-[#d4af37] mt-1" />
+                        <Navigation className="h-5 w-5 text-[#ffce05] mt-1" />
                         <div>
                           <div className="font-semibold text-sm">Airport</div>
                           <div className="text-sm text-gray-600">
@@ -263,7 +263,7 @@ const IraqZiyaratGuide = () => {
                         </div>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <DollarSign className="h-5 w-5 text-[#d4af37] mt-1" />
+                        <DollarSign className="h-5 w-5 text-[#ffce05] mt-1" />
                         <div>
                           <div className="font-semibold text-sm">Currency</div>
                           <div className="text-sm text-gray-600">
@@ -272,7 +272,7 @@ const IraqZiyaratGuide = () => {
                         </div>
                       </div>
                       <div className="flex items-start space-x-3">
-                        <Languages className="h-5 w-5 text-[#d4af37] mt-1" />
+                        <Languages className="h-5 w-5 text-[#ffce05] mt-1" />
                         <div>
                           <div className="font-semibold text-sm">Languages</div>
                           <div className="text-sm text-gray-600">
@@ -292,7 +292,7 @@ const IraqZiyaratGuide = () => {
                       {selectedCity.emergencyNumbers && Object.entries(selectedCity.emergencyNumbers).map(([key, value]) => (
                         <div key={key} className="flex justify-between">
                           <span className="capitalize">{key}:</span>
-                          <a href={`tel:${value}`} className="font-semibold text-[#d4af37]">
+                          <a href={`tel:${value}`} className="font-semibold text-[#ffce05]">
                             {value}
                           </a>
                         </div>
@@ -306,7 +306,7 @@ const IraqZiyaratGuide = () => {
             {/* Sacred Sites */}
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-[#1a2f4a] mb-6 flex items-center">
-                <Building className="h-6 w-6 mr-3 text-[#d4af37]" />
+                <Building className="h-6 w-6 mr-3 text-[#ffce05]" />
                 Sacred Sites in {selectedCity.name}
               </h3>
 
@@ -316,7 +316,7 @@ const IraqZiyaratGuide = () => {
                     key={site.id}
                     onClick={() => handleSiteSelect(site)}
                     className={`cursor-pointer hover:shadow-xl transition-all ${
-                      selectedSite?.id === site.id ? 'ring-2 ring-[#d4af37]' : ''
+                      selectedSite?.id === site.id ? 'ring-2 ring-[#ffce05]' : ''
                     }`}
                   >
                     <div className="relative h-48">
@@ -361,7 +361,7 @@ const IraqZiyaratGuide = () => {
               }}>
                 <div className="absolute inset-0 flex items-end">
                   <div className="p-8 text-white w-full">
-                    <Badge className="bg-[#d4af37] text-[#1a2f4a] mb-3">
+                    <Badge className="bg-[#ffce05] text-[#1a2f4a] mb-3">
                       {selectedSite.type}
                     </Badge>
                     <h2 className="text-4xl font-bold mb-2">{selectedSite.name}</h2>
@@ -375,23 +375,23 @@ const IraqZiyaratGuide = () => {
                 <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
                   <div className="border-b overflow-x-auto">
                     <TabsList className="w-full justify-start bg-white rounded-none h-auto p-0">
-                      <TabsTrigger value="overview" className="px-6 py-4 data-[state=active]:border-b-2 data-[state=active]:border-[#d4af37]">
+                      <TabsTrigger value="overview" className="px-6 py-4 data-[state=active]:border-b-2 data-[state=active]:border-[#ffce05]">
                         <Info className="h-4 w-4 mr-2" />
                         Overview
                       </TabsTrigger>
-                      <TabsTrigger value="visiting" className="px-6 py-4 data-[state=active]:border-b-2 data-[state=active]:border-[#d4af37]">
+                      <TabsTrigger value="visiting" className="px-6 py-4 data-[state=active]:border-b-2 data-[state=active]:border-[#ffce05]">
                         <Clock className="h-4 w-4 mr-2" />
                         Visiting Info
                       </TabsTrigger>
-                      <TabsTrigger value="facilities" className="px-6 py-4 data-[state=active]:border-b-2 data-[state=active]:border-[#d4af37]">
+                      <TabsTrigger value="facilities" className="px-6 py-4 data-[state=active]:border-b-2 data-[state=active]:border-[#ffce05]">
                         <Home className="h-4 w-4 mr-2" />
                         Facilities
                       </TabsTrigger>
-                      <TabsTrigger value="practical" className="px-6 py-4 data-[state=active]:border-b-2 data-[state=active]:border-[#d4af37]">
+                      <TabsTrigger value="practical" className="px-6 py-4 data-[state=active]:border-b-2 data-[state=active]:border-[#ffce05]">
                         <MapIcon className="h-4 w-4 mr-2" />
                         Practical
                       </TabsTrigger>
-                      <TabsTrigger value="prayers" className="px-6 py-4 data-[state=active]:border-b-2 data-[state=active]:border-[#d4af37]">
+                      <TabsTrigger value="prayers" className="px-6 py-4 data-[state=active]:border-b-2 data-[state=active]:border-[#ffce05]">
                         <Book className="h-4 w-4 mr-2" />
                         Prayers
                       </TabsTrigger>
@@ -414,28 +414,28 @@ const IraqZiyaratGuide = () => {
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-4">
                               <div className="flex items-start space-x-3">
-                                <Building className="h-5 w-5 text-[#d4af37] mt-1" />
+                                <Building className="h-5 w-5 text-[#ffce05] mt-1" />
                                 <div>
                                   <div className="font-semibold">Domes</div>
                                   <div className="text-gray-600">{selectedSite.architecture.domes}</div>
                                 </div>
                               </div>
                               <div className="flex items-start space-x-3">
-                                <Building className="h-5 w-5 text-[#d4af37] mt-1" />
+                                <Building className="h-5 w-5 text-[#ffce05] mt-1" />
                                 <div>
                                   <div className="font-semibold">Minarets</div>
                                   <div className="text-gray-600">{selectedSite.architecture.minarets}</div>
                                 </div>
                               </div>
                               <div className="flex items-start space-x-3">
-                                <MapPin className="h-5 w-5 text-[#d4af37] mt-1" />
+                                <MapPin className="h-5 w-5 text-[#ffce05] mt-1" />
                                 <div>
                                   <div className="font-semibold">Area</div>
                                   <div className="text-gray-600">{selectedSite.architecture.area}</div>
                                 </div>
                               </div>
                               <div className="flex items-start space-x-3">
-                                <Users className="h-5 w-5 text-[#d4af37] mt-1" />
+                                <Users className="h-5 w-5 text-[#ffce05] mt-1" />
                                 <div>
                                   <div className="font-semibold">Capacity</div>
                                   <div className="text-gray-600">{selectedSite.architecture.capacity}</div>
@@ -447,7 +447,7 @@ const IraqZiyaratGuide = () => {
                               <ul className="space-y-2">
                                 {selectedSite.architecture.features.map((feature, idx) => (
                                   <li key={idx} className="flex items-start space-x-2">
-                                    <Star className="h-4 w-4 text-[#d4af37] mt-1 flex-shrink-0" />
+                                    <Star className="h-4 w-4 text-[#ffce05] mt-1 flex-shrink-0" />
                                     <span className="text-gray-600">{feature}</span>
                                   </li>
                                 ))}
@@ -463,7 +463,7 @@ const IraqZiyaratGuide = () => {
                           <h3 className="text-2xl font-bold text-[#1a2f4a] mb-4">Special Events</h3>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {selectedSite.specialEvents.map((event, idx) => (
-                              <Card key={idx} className="border-l-4 border-[#d4af37]">
+                              <Card key={idx} className="border-l-4 border-[#ffce05]">
                                 <CardContent className="p-4">
                                   <div className="font-bold text-[#1a2f4a] mb-2">{event.event}</div>
                                   <div className="text-sm space-y-1">
@@ -487,7 +487,7 @@ const IraqZiyaratGuide = () => {
                       {selectedSite.visitingHours && (
                         <div>
                           <h3 className="text-2xl font-bold text-[#1a2f4a] mb-4 flex items-center">
-                            <Clock className="h-6 w-6 mr-3 text-[#d4af37]" />
+                            <Clock className="h-6 w-6 mr-3 text-[#ffce05]" />
                             Visiting Hours
                           </h3>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -505,13 +505,13 @@ const IraqZiyaratGuide = () => {
                                 </div>
                               </CardContent>
                             </Card>
-                            <Card className="bg-[#d4af37]/10">
+                            <Card className="bg-[#ffce05]/10">
                               <CardContent className="p-6">
                                 <div className="font-semibold mb-3 text-[#1a2f4a]">Best Times to Visit:</div>
                                 <ul className="space-y-2">
                                   {selectedSite.visitingHours.bestTimes.map((time, idx) => (
                                     <li key={idx} className="flex items-center space-x-2">
-                                      <CheckCircle className="h-4 w-4 text-[#d4af37]" />
+                                      <CheckCircle className="h-4 w-4 text-[#ffce05]" />
                                       <span>{time}</span>
                                     </li>
                                   ))}
@@ -550,7 +550,7 @@ const IraqZiyaratGuide = () => {
                             <AccordionItem value="dress">
                               <AccordionTrigger className="text-[#1a2f4a]">
                                 <div className="flex items-center">
-                                  <Heart className="h-5 w-5 mr-3 text-[#d4af37]" />
+                                  <Heart className="h-5 w-5 mr-3 text-[#ffce05]" />
                                   Dress Code
                                 </div>
                               </AccordionTrigger>
@@ -569,7 +569,7 @@ const IraqZiyaratGuide = () => {
                             <AccordionItem value="behavior">
                               <AccordionTrigger className="text-[#1a2f4a]">
                                 <div className="flex items-center">
-                                  <Users className="h-5 w-5 mr-3 text-[#d4af37]" />
+                                  <Users className="h-5 w-5 mr-3 text-[#ffce05]" />
                                   Behavior Guidelines
                                 </div>
                               </AccordionTrigger>
@@ -619,7 +619,7 @@ const IraqZiyaratGuide = () => {
                           <h3 className="text-2xl font-bold text-[#1a2f4a] mb-6">Available Facilities</h3>
                           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {Object.entries(selectedSite.facilities).map(([key, value]) => (
-                              <Card key={key} className="border-l-4 border-[#d4af37]">
+                              <Card key={key} className="border-l-4 border-[#ffce05]">
                                 <CardContent className="p-4">
                                   <div className="font-semibold text-[#1a2f4a] capitalize mb-2">
                                     {key.replace(/([A-Z])/g, ' $1').trim()}
@@ -649,7 +649,7 @@ const IraqZiyaratGuide = () => {
                                   </div>
                                   <div className="space-y-2 text-sm">
                                     <div className="flex items-center text-gray-600">
-                                      <MapPin className="h-4 w-4 mr-2 text-[#d4af37]" />
+                                      <MapPin className="h-4 w-4 mr-2 text-[#ffce05]" />
                                       {hotel.distance} from shrine
                                     </div>
                                     <div className="flex items-center justify-between">
@@ -676,7 +676,7 @@ const IraqZiyaratGuide = () => {
                       {selectedSite.transportation && (
                         <div>
                           <h3 className="text-2xl font-bold text-[#1a2f4a] mb-4 flex items-center">
-                            <Bus className="h-6 w-6 mr-3 text-[#d4af37]" />
+                            <Bus className="h-6 w-6 mr-3 text-[#ffce05]" />
                             Transportation
                           </h3>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -729,7 +729,7 @@ const IraqZiyaratGuide = () => {
                       {selectedSite.safetyTips && (
                         <div>
                           <h3 className="text-2xl font-bold text-[#1a2f4a] mb-4 flex items-center">
-                            <Shield className="h-6 w-6 mr-3 text-[#d4af37]" />
+                            <Shield className="h-6 w-6 mr-3 text-[#ffce05]" />
                             Safety Tips
                           </h3>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -751,7 +751,7 @@ const IraqZiyaratGuide = () => {
                       {selectedSite.ziyaratPrayers && (
                         <>
                           <h3 className="text-2xl font-bold text-[#1a2f4a] mb-6 flex items-center">
-                            <Book className="h-6 w-6 mr-3 text-[#d4af37]" />
+                            <Book className="h-6 w-6 mr-3 text-[#ffce05]" />
                             Recommended Ziyarat Prayers
                           </h3>
                           <div className="space-y-4">
@@ -760,7 +760,7 @@ const IraqZiyaratGuide = () => {
                                 <CardContent className="p-6">
                                   <div className="flex items-center justify-between">
                                     <div className="flex items-center space-x-3">
-                                      <div className="w-10 h-10 rounded-full bg-[#d4af37] flex items-center justify-center">
+                                      <div className="w-10 h-10 rounded-full bg-[#ffce05] flex items-center justify-center">
                                         <span className="text-[#1a2f4a] font-bold">{idx + 1}</span>
                                       </div>
                                       <span className="font-semibold text-[#1a2f4a]">{prayer}</span>
@@ -778,7 +778,7 @@ const IraqZiyaratGuide = () => {
                       )}
 
                       {/* Note about prayers */}
-                      <Card className="bg-[#d4af37]/10 border-l-4 border-[#d4af37]">
+                      <Card className="bg-[#ffce05]/10 border-l-4 border-[#ffce05]">
                         <CardContent className="p-6">
                           <h4 className="font-bold text-[#1a2f4a] mb-3 flex items-center">
                             <Info className="h-5 w-5 mr-2" />
@@ -808,7 +808,7 @@ const IraqZiyaratGuide = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-bold text-xl text-[#1a2f4a] mb-4 flex items-center">
-                  <Globe className="h-6 w-6 mr-3 text-[#d4af37]" />
+                  <Globe className="h-6 w-6 mr-3 text-[#ffce05]" />
                   Visa Information
                 </h3>
                 <div className="space-y-3 text-sm">
@@ -836,7 +836,7 @@ const IraqZiyaratGuide = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-bold text-xl text-[#1a2f4a] mb-4 flex items-center">
-                  <DollarSign className="h-6 w-6 mr-3 text-[#d4af37]" />
+                  <DollarSign className="h-6 w-6 mr-3 text-[#ffce05]" />
                   Currency
                 </h3>
                 <div className="space-y-3 text-sm">
@@ -854,7 +854,7 @@ const IraqZiyaratGuide = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-bold text-xl text-[#1a2f4a] mb-4 flex items-center">
-                  <Heart className="h-6 w-6 mr-3 text-[#d4af37]" />
+                  <Heart className="h-6 w-6 mr-3 text-[#ffce05]" />
                   Health
                 </h3>
                 <div className="space-y-3 text-sm">
@@ -874,7 +874,7 @@ const IraqZiyaratGuide = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-bold text-xl text-[#1a2f4a] mb-4 flex items-center">
-                  <Shield className="h-6 w-6 mr-3 text-[#d4af37]" />
+                  <Shield className="h-6 w-6 mr-3 text-[#ffce05]" />
                   Safety
                 </h3>
                 <div className="space-y-3 text-sm">
@@ -892,7 +892,7 @@ const IraqZiyaratGuide = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-bold text-xl text-[#1a2f4a] mb-4 flex items-center">
-                  <Bus className="h-6 w-6 mr-3 text-[#d4af37]" />
+                  <Bus className="h-6 w-6 mr-3 text-[#ffce05]" />
                   Transportation
                 </h3>
                 <div className="space-y-3 text-sm">
@@ -920,7 +920,7 @@ const IraqZiyaratGuide = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-bold text-xl text-[#1a2f4a] mb-4 flex items-center">
-                  <ShoppingBag className="h-6 w-6 mr-3 text-[#d4af37]" />
+                  <ShoppingBag className="h-6 w-6 mr-3 text-[#ffce05]" />
                   Shopping
                 </h3>
                 <div className="space-y-3 text-sm">
@@ -946,7 +946,7 @@ const IraqZiyaratGuide = () => {
             {culturalTips.map((tip, idx) => (
               <Card key={idx} className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-5 flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-[#d4af37] mt-1 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-[#ffce05] mt-1 flex-shrink-0" />
                   <span className="text-sm text-gray-700">{tip}</span>
                 </CardContent>
               </Card>

@@ -292,7 +292,7 @@ const Groups = () => {
             <p className="text-gray-600 text-lg">
               {filteredGroups.length} {filteredGroups.length === 1 ? 'tour' : 'tours'} found
               {upcomingGroups.length !== filteredGroups.length && (
-                <span className="text-[#d4af37] ml-1">
+                <span className="text-[#ffce05] ml-1">
                   (filtered from {upcomingGroups.length})
                 </span>
               )}
@@ -351,7 +351,7 @@ const Groups = () => {
                   const percentBooked = ((group.totalSeats - group.seatsLeft) / group.totalSeats) * 100;
                   
                   return (
-                    <Card key={group.id} className="overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#d4af37]/30">
+                    <Card key={group.id} className="overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#ffce05]/30">
                       <div className="relative h-56">
                         <img
                           src={group.image}
@@ -388,17 +388,17 @@ const Groups = () => {
                         {/* Details */}
                         <div className="space-y-3 mb-4">
                           <div className="flex items-center text-sm text-gray-600">
-                            <Calendar className="h-4 w-4 mr-2 text-[#d4af37] flex-shrink-0" />
+                            <Calendar className="h-4 w-4 mr-2 text-[#ffce05] flex-shrink-0" />
                             <span className="truncate">
                               {new Date(group.departure).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })} - {new Date(group.return).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                             </span>
                           </div>
                           <div className="flex items-center text-sm text-gray-600">
-                            <Clock className="h-4 w-4 mr-2 text-[#d4af37] flex-shrink-0" />
+                            <Clock className="h-4 w-4 mr-2 text-[#ffce05] flex-shrink-0" />
                             <span>{group.duration} days</span>
                           </div>
                           <div className="flex items-start text-sm text-gray-600">
-                            <MapPin className="h-4 w-4 mr-2 text-[#d4af37] flex-shrink-0 mt-0.5" />
+                            <MapPin className="h-4 w-4 mr-2 text-[#ffce05] flex-shrink-0 mt-0.5" />
                             <span className="line-clamp-2">{group.cities.join(' • ')}</span>
                           </div>
                         </div>
@@ -411,7 +411,7 @@ const Groups = () => {
                           </div>
                           <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
                             <div
-                              className="h-full bg-gradient-to-r from-[#d4af37] to-[#f4cf67] transition-all duration-300"
+                              className="h-full bg-gradient-to-r from-[#ffce05] to-[#f4cf67] transition-all duration-300"
                               style={{ width: `${percentBooked}%` }}
                             />
                           </div>
@@ -443,7 +443,7 @@ const Groups = () => {
                             </div>
                           </div>
                           <Link to={`/groups/${group.id}`}>
-                            <Button className="bg-[#d4af37] hover:bg-[#c49f27] text-[#1a2f4a] font-semibold">
+                            <Button className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a] font-semibold">
                               View Details
                             </Button>
                           </Link>
