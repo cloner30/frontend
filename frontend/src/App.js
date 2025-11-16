@@ -71,9 +71,7 @@ function App() {
             }
           >
             <Route path="dashboard" element={<AdminDashboard />} />
-            <Route path="hotels" element={<HotelsManager />} />
-            <Route path="group-tours" element={<GroupToursManager />} />
-            <Route path="packages" element={<PackagesManager />} />
+            <Route path="api-manager" element={<ApiManager />} />
             <Route path="testimonials" element={<TestimonialsManager />} />
             <Route path="cities" element={<CitiesManager />} />
             <Route path="home-content" element={<HomePageBuilder />} />
