@@ -953,7 +953,7 @@ export const ziyaratSites = [
     nameArabic: 'حرم الكاظمين',
     type: 'Primary Shrine',
     importance: 'Highest',
-    image: 'https://images.unsplash.com/photo-1629206755907-d0e179c07dd6',
+    image: 'https://images.pexels.com/photos/17340981/pexels-photo-17340981.jpeg',
     description: 'The golden-domed shrine housing two Imams - the 7th and 9th Imams of the Shia.',
     
     significance: 'This blessed shrine contains the graves of Imam Mūsā al-Kāẓim (a), known for his patience, and his grandson Imam Muḥammad al-Jawād (a), known for his knowledge at a young age. The shrine has enriched Baghdad with spiritual light.',
