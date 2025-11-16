@@ -245,7 +245,7 @@ export const iranCities = [
     country: 'Iran',
     province: 'Qom Province',
     coordinates: { lat: 34.6416, lng: 50.8746 },
-    image: 'https://images.unsplash.com/photo-1590077428593-a55bb07c4665',
+    image: 'https://images.unsplash.com/photo-1599968196544-69fac0b819d5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxRb20lMjBJcmFuJTIwY2l0eXxlbnwwfHx8fDE3NjMzMjMyNzR8MA&ixlib=rb-4.1.0&q=85',
     description: 'Sacred city housing the shrine of Fatima al-Ma\'suma (a), sister of Imam Ridha, and major center of Shia Islamic learning.',
     significance: 'Qom is home to the shrine of Fatima al-Ma\'suma (a), daughter of Imam Musa al-Kadhim (a) and sister of Imam Ali al-Ridha (a). It is also one of the most important centers of Shia scholarship in the world, hosting the famous Hawza \'Ilmiyya.',
     welcomeMessage: 'Welcome to Qom, the blessed city of Ma\'suma (a). This sacred land will be the starting point of Imam Mahdi\'s (aj) movement according to hadith.',
