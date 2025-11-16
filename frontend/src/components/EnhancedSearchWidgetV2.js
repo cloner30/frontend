@@ -13,13 +13,11 @@ import { cn } from '../lib/utils';
 const EnhancedSearchWidgetV2 = () => {
   const [searchType, setSearchType] = useState('hotels');
   const [destination, setDestination] = useState('');
-  const [checkInDate, setCheckInDate] = useState(null);
-  const [checkOutDate, setCheckOutDate] = useState(null);
-  const [departureDate, setDepartureDate] = useState(null);
-  const [returnDate, setReturnDate] = useState(null);
+  const [dateRange, setDateRange] = useState({ from: null, to: null });
   const [showDestinationSuggestions, setShowDestinationSuggestions] = useState(false);
   const [showGuestsDropdown, setShowGuestsDropdown] = useState(false);
   const [validationErrors, setValidationErrors] = useState({});
+  const [showDatePicker, setShowDatePicker] = useState(false);
   
   // Room configuration
   const [rooms, setRooms] = useState([
