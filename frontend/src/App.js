@@ -21,6 +21,7 @@ import CityGuide from './pages/CityGuide';
 import PlanTripEnhanced from './pages/PlanTripEnhanced';
 import Account from './pages/Account';
 import IraqZiyaratGuide from './pages/IraqZiyaratGuideEnhanced';
+import IranZiyaratGuide from './pages/IranGuideSimple';
 
 // Admin Pages
 import AdminLogin from './pages/admin/AdminLogin';
