@@ -59,31 +59,31 @@ const IranZiyaratGuideEnhanced = () => {
               </Badge>
             </div>
             <h1 className="text-6xl md:text-7xl font-bold mb-6 tracking-tight">
-              Iraq Ziyarat Guide
+              Iran Ziyarat Guide
             </h1>
             <p className="text-xl md:text-2xl text-gray-100 mb-8 leading-relaxed">
-              Your complete companion for sacred pilgrimages to Iraq's holiest shrines
+              Your complete companion for sacred pilgrimages to Iran's holiest shrines
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <MapPin className="h-8 w-8 mx-auto mb-2 text-[#ffce05]" />
-                <div className="text-2xl font-bold">4</div>
+                <div className="text-2xl font-bold">5</div>
                 <div className="text-sm text-gray-200">Major Cities</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <Building className="h-8 w-8 mx-auto mb-2 text-[#ffce05]" />
-                <div className="text-2xl font-bold">20+</div>
+                <div className="text-2xl font-bold">15+</div>
                 <div className="text-sm text-gray-200">Holy Sites</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <Users className="h-8 w-8 mx-auto mb-2 text-[#ffce05]" />
-                <div className="text-2xl font-bold">25M+</div>
+                <div className="text-2xl font-bold">30M+</div>
                 <div className="text-sm text-gray-200">Annual Pilgrims</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <Star className="h-8 w-8 mx-auto mb-2 text-[#ffce05]" />
-                <div className="text-2xl font-bold">6</div>
-                <div className="text-sm text-gray-200">Imam Shrines</div>
+                <div className="text-2xl font-bold">3</div>
+                <div className="text-sm text-gray-200">Imam/Imamzadeh Shrines</div>
               </div>
             </div>
           </div>
