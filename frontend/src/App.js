@@ -25,7 +25,8 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem('adminToken');
-  return token ? children : <Navigate to=\"/admin/login\" replace />;\n};
+  return token ? children : <Navigate to="/admin/login" replace />;
+};
 
 function App() {
   return (
