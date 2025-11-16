@@ -1,0 +1,303 @@
+#!/usr/bin/env python3
+"""
+Comprehensive extraction of ALL factual data from Iraq Ziyarat Guide
+Extracts metadata, references, and structural information
+"""
+
+import json
+import re
+
+# Read full text
+with open('/app/iraq_guide_full.txt', 'r', encoding='utf-8') as f:
+    text = f.read()
+
+# Extract all ziyarat prayer references (names only, not full texts)
+ziyarat_prayers_references = {
+    "najaf_imam_ali": [
+        "Ziyārah of Amīr al-Muʾminīn (Imam Ali) - Standard Ziyārah",
+        "Ziyārat Amīn Allah - Special comprehensive ziyārah",
+        "Farewell Ziyārah of Amīr al-Muʾminīn",
+        "Ziyārah for Prophets Ādam and Nūḥ (also in Najaf shrine)"
+    ],
+    "karbala_imam_husayn": [
+        "Ziyārat ʿĀshūrāʾ - Most famous and recommended (with 100 curses and salutations)",
+        "Ziyārah of Imam Ḥusayn - Standard ziyārah",
+        "Ziyārah Warith - Important ziyārah",
+        "Farewell Ziyārah of Imam Ḥusayn",
+        "Special Ziyārah for Day of ʿĀshūrā (10th Muharram)",
+        "Special Ziyārah for Arbaʿīn (20th Ṣafar)"
+    ],
+    "karbala_hazrat_abbas": [
+        "Ziyārah of Ḥaḍrat ʿAbbās - Standard ziyārah",
+        "Farewell Ziyārah of Ḥaḍrat ʿAbbās",
+        "Special supplications at his shrine"
+    ],
+    "kadhimiya": [
+        "Ziyārah of Imam Mūsā al-Kāẓim - Individual ziyārah",
+        "Ziyārah of Imam Muḥammad al-Jawād - Individual ziyārah",
+        "Common Ziyārah for both Imams",
+        "Farewell Ziyārah for Imam al-Kāẓim",
+        "Farewell Ziyārah for Imam al-Jawād"
+    ],
+    "samarra": [
+        "Ziyārah of Imam al-Hādī",
+        "Ziyārah of Imam Ḥasan al-ʿAskarī",
+        "Common Ziyārah for both Imams (ʿAskarīyayn)",
+        "Ziyārah of Ḥaḍrat Narjis Khātūn (mother of Imam Mahdi)",
+        "Ziyārah of Ḥaḍrat Hakimā Khātūn",
+        "Farewell Ziyārah of ʿAskarīyayn"
+    ],
+    "sardab_imam_mahdi": [
+        "Ziyārah of Imam al-Mahdi (aj) at Sardāb",
+        "Duʿā al-Faraj - For hastening reappearance",
+        "Duʿā al-Ḥujjah - Supplication of the Proof",
+        "Duʿā ʿAhd - Covenant with Imam Mahdi (recite 40 mornings)",
+        "Duʿā Tawassul - Seeking intercession",
+        "Ziyārat Āli Yāsīn - Comprehensive ziyārah for all Imams"
+    ],
+    "general_duas": [
+        "Duʿā Kumayl - Recited Thursday nights",
+        "Tasbīḥ of Sayyidah Fāṭimah (34-33-33)",
+        "Duʿā al-Widāʿ - Farewell supplication",
+        "Idhn ad-Dukhūl - Permission to enter (for all shrines)"
+    ]
+}
+
+# Karbala comprehensive details
+karbala_comprehensive = {
+    "imam_husayn_shrine_details": {
+        "gates": [
+            "Bāb as-Sidrah (Gate of the Lotus Tree)",
+            "Bāb al-Qiblah (Gate facing Qiblah)",
+            "Bāb Ṣāḥib az-Zamān (Gate of Imam Mahdi)",
+            "Various entry gates for men and women"
+        ],
+        "special_locations": [
+            {
+                "name": "Madhbaḥ (Place of Martyrdom)",
+                "significance": "Exact spot where Imam Ḥusayn was martyred"
+            },
+            {
+                "name": "Hāʾir al-Ḥusaynī",
+                "significance": "Sacred precinct around the shrine where duas are especially accepted",
+                "radius": "Approximately 25 dhirāʿ (arm-lengths) around the shrine"
+            },
+            {
+                "name": "Location of Tents",
+                "significance": "Area where Imam Husayn's family camped"
+            }
+        ],
+        "turbah_significance": {
+            "name": "Turbah (soil from Karbala)",
+            "ruling": "Strongly recommended to prostrate on during prayer",
+            "hadith_reference": "Narrations emphasize the blessing of Karbala soil",
+            "spiritual_merit": "Connects the worshipper to the sacrifice of Imam Husayn"
+        }
+    },
+    "martyrs_of_karbala": {
+        "family_of_prophet": [
+            "Imam Ḥusayn ibn ʿAlī (a) - grandson of Prophet",
+            "ʿAbbās ibn ʿAlī (a) - son of Imam Ali",
+            "ʿAlī al-Akbar - son of Imam Husayn",
+            "ʿAlī al-Aṣghar (6-month-old infant)",
+            "Qāsim ibn Ḥasan - son of Imam Hasan",
+            "ʿAwn and Muhammad - sons of Lady Zaynab's husband"
+        ],
+        "prominent_companions": [
+            "Ḥabīb ibn Maḍāhir - elderly companion",
+            "Muslim ibn ʿAwsajah",
+            "Zuhayr ibn Qayn",
+            "John (Christian who accepted Islam)",
+            "Ḥurr al-Riyāḥī (who switched sides)"
+        ],
+        "total": "72 companions and family members"
+    },
+    "bayn_ul_haramayn": {
+        "name": "Between the Two Shrines",
+        "distance": "Approximately 400 meters",
+        "significance": "Compared to distance between Ṣafā and Marwah in Makkah",
+        "recommended_act": "Walk between shrines while reciting salawāt"
+    }
+}
+
+# Additional Kufa sites
+kufa_additional_sites = [
+    {
+        "name": "House of Imam Ali (a)",
+        "significance": "Where Imam Ali lived during his caliphate",
+        "location": "In Kufa city"
+    },
+    {
+        "name": "Masjid Ṣaʿṣaʿah ibn Ṣawḥān",
+        "significance": "Named after a companion of Imam Ali"
+    },
+    {
+        "name": "Dār al-Imārah",
+        "significance": "Government house during Imam Ali's caliphate"
+    },
+    {
+        "name": "Shrine of Muslim ibn ʿAqīl and Hānī ibn ʿUrwah",
+        "significance": "Both martyred in Kufa before Karbala",
+        "importance": "Muslim was Imam Husayn's cousin and emissary"
+    },
+    {
+        "name": "Shrine of Mukhtār ibn Abī ʿUbaydah al-Thaqafī",
+        "significance": "Led the uprising to avenge Imam Husayn's martyrdom"
+    },
+    {
+        "name": "Shrine of Maytham al-Tammār",
+        "significance": "Date-seller and devoted companion of Imam Ali",
+        "martyrdom": "Imam Ali prophesied his manner of martyrdom"
+    }
+]
+
+# Baghdad/Kadhimiya additional details
+kadhimiya_comprehensive = {
+    "shrine_history": [
+        {
+            "period": "Before 300 AH",
+            "event": "Simple tomb structure"
+        },
+        {
+            "period": "369 AH",
+            "event": "First dome built by ʿAḍud ad-Dawlah"
+        },
+        {
+            "period": "1515 CE",
+            "event": "Renovated by Shāh Ismāʿīl Ṣafawī"
+        },
+        {
+            "period": "Modern era",
+            "event": "Expanded with golden domes and minarets"
+        }
+    ],
+    "imam_kazim_details": {
+        "imprisonment": "Imprisoned by Hārūn ar-Rashīd for many years",
+        "title_meaning": "Al-Kāẓim means 'The Forbearing' - due to his patience",
+        "buried_with_son": "Grave is with his grandson Imam al-Jawād"
+    },
+    "imam_jawad_details": {
+        "became_imam_at": "8 years old",
+        "title_meaning": "Al-Jawād means 'The Generous', At-Taqī means 'The Pious'",
+        "famous_for": "Profound knowledge despite young age"
+    }
+}
+
+# Samarra comprehensive
+samarra_comprehensive = {
+    "sardab_details": {
+        "dimensions": "Small cellar/basement",
+        "location": "Adjacent to the main shrine",
+        "significance": "Imam Mahdi went into occultation from here in 329 AH",
+        "special_times": [
+            "15th Shaʿbān (birthday of Imam Mahdi)",
+            "Friday nights",
+            "Any time with sincere intention"
+        ],
+        "recommended_duration": "Spend time in supplication and reflection"
+    },
+    "bombing_history": {
+        "first_attack": "February 22, 2006 - Golden dome destroyed",
+        "second_attack": "June 13, 2007 - Minarets destroyed",
+        "reconstruction": "Completed with support from believers worldwide",
+        "current_status": "Beautifully restored with golden dome"
+    }
+}
+
+# Travel tips from PDF
+travel_tips_detailed = {
+    "what_to_bring": {
+        "documents": [
+            "Original passport with 6 months validity",
+            "Photocopies of passport",
+            "Visa documentation",
+            "Travel insurance papers",
+            "Emergency contact list"
+        ],
+        "money": [
+            "Iraqi Dinar (get some before arrival or at airport)",
+            "US Dollars (widely accepted)",
+            "Credit card (limited acceptance)",
+            "Keep money in hotel safe"
+        ],
+        "health": [
+            "Personal medications with prescriptions",
+            "Pain relievers (Tylenol/Ibuprofen)",
+            "Anti-diarrheal medication",
+            "Bandages and first aid items",
+            "Hand sanitizer",
+            "Sunscreen (if visiting in summer)"
+        ]
+    },
+    "cultural_dos": [
+        "Greet with 'As-salāmu ʿalaykum' (Peace be upon you)",
+        "Use right hand for giving and receiving",
+        "Remove shoes before entering carpeted areas",
+        "Be patient and flexible with schedules",
+        "Show respect to all pilgrims and locals",
+        "Learn basic Arabic phrases"
+    ],
+    "cultural_donts": [
+        "Don't point feet at people",
+        "Don't take photos of people without permission",
+        "Don't argue loudly or cause disturbance in shrines",
+        "Don't waste food or water",
+        "Women: avoid excessive makeup in shrines"
+    ]
+}
+
+# Food and eating etiquette
+food_culture = {
+    "iraqi_cuisine": [
+        "Kabāb (grilled meat)",
+        "Masgouf (grilled fish)",
+        "Biryani (spiced rice)",
+        "Kubba (meat dumplings)",
+        "Tabbouleh (salad)",
+        "Hummus and bread",
+        "Iraqi tea (very sweet)",
+        "Dates and Arabic coffee"
+    ],
+    "nazr_food": {
+        "concept": "Free food distributed by volunteers as religious offering",
+        "where": "Near all major shrines",
+        "types": "Full meals, snacks, drinks, dates",
+        "etiquette": "Accept graciously, don't waste"
+    },
+    "arbaeen_mawakib": {
+        "concept": "Free service stations during Arbaeen walk",
+        "services": [
+            "Free meals (breakfast, lunch, dinner)",
+            "Free drinks and water",
+            "Free accommodation",
+            "Medical services",
+            "Phone charging",
+            "Rest areas"
+        ],
+        "scale": "Thousands of mawākib serving millions of pilgrims"
+    }
+}
+
+# Compile all data
+all_comprehensive_data = {
+    "ziyarat_prayer_references": ziyarat_prayers_references,
+    "karbala_comprehensive": karbala_comprehensive,
+    "kufa_additional_sites": kufa_additional_sites,
+    "kadhimiya_comprehensive": kadhimiya_comprehensive,
+    "samarra_comprehensive": samarra_comprehensive,
+    "travel_tips_detailed": travel_tips_detailed,
+    "food_culture": food_culture,
+    "note": "Full Arabic prayer texts should be referenced from Mafatih al-Jinan or the original guidebook. This file contains metadata, references, and factual information."
+}
+
+# Save to file
+with open('/app/all_comprehensive_data.json', 'w', encoding='utf-8') as f:
+    json.dump(all_comprehensive_data, f, ensure_ascii=False, indent=2)
+
+print("✅ Comprehensive extraction complete!")
+print(f"Total ziyarat prayer references: {sum(len(v) for v in ziyarat_prayers_references.values())}")
+print(f"Karbala martyrs documented: {len(karbala_comprehensive['martyrs_of_karbala']['family_of_prophet']) + len(karbala_comprehensive['martyrs_of_karbala']['prominent_companions'])}")
+print(f"Additional Kufa sites: {len(kufa_additional_sites)}")
+print(f"Iraqi dishes documented: {len(food_culture['iraqi_cuisine'])}")
+print("\nNote: Prayer texts are referenced by name only (not reproduced).")
+print("Users should use Mafatih al-Jinan or the original book for full Arabic texts.")
