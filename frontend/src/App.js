@@ -73,6 +73,11 @@ function App() {
           >
             <Route path="dashboard" element={<AdminDashboard />} />
             <Route path="hotels" element={<HotelsManager />} />
+            <Route path="group-tours" element={<GroupToursManager />} />
+            <Route path="packages" element={<PackagesManager />} />
+            <Route path="testimonials" element={<TestimonialsManager />} />
+            <Route path="cities" element={<CitiesManager />} />
+            <Route path="seo" element={<SeoManager />} />
             <Route
               path="ziyarat"
               element={
