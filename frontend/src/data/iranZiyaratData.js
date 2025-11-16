@@ -969,7 +969,7 @@ export const iranZiyaratSites = [
     nameFarsi: 'مزار امام خمینی',
     type: 'Modern Shrine',
     importance: 'Medium',
-    image: 'https://images.unsplash.com/photo-1564501197849-f7c9c4266d0b',
+    image: 'https://images.unsplash.com/photo-1625133098539-03485f20ac55?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxJbWFtJTIwS2hvbWVpbmklMjBtYXVzb2xldW18ZW58MHx8fHwxNzYzMzIzMjYzfDA&ixlib=rb-4.1.0&q=85',
     description: 'Grand mausoleum of Ayatollah Ruhollah Khomeini, founder of the Islamic Republic of Iran.',
     
     about: 'Imam Khomeini led the Islamic Revolution in Iran. His shrine is a symbol of modern Islamic Iran and attracts many visitors.',
