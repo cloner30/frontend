@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, MapPin, Calendar, Shield, Users, Award, Heart, CheckCircle, Clock, Phone, MessageCircle, ChevronLeft, ChevronRight, TrendingUp, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import SearchWidget from '../components/SearchWidget';
+import EnhancedSearchWidget from '../components/EnhancedSearchWidget';
 import { upcomingGroups, packages, cities, testimonials } from '../mock';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
