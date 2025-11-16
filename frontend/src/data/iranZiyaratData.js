@@ -278,7 +278,7 @@ export const iranCities = [
     country: 'Iran',
     province: 'Tehran Province',
     coordinates: { lat: 35.6892, lng: 51.3890 },
-    image: 'https://images.unsplash.com/photo-1564501197849-f7c9c4266d0b',
+    image: 'https://images.unsplash.com/photo-1684555150756-8c2117e75707?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwzfHxUZWhyYW4lMjBJcmFuJTIwQXphZGklMjB0b3dlcnxlbnwwfHx8fDE3NjMzMjMxODd8MA&ixlib=rb-4.1.0&q=85',
     description: 'Iran\'s capital city, home to several important shrines including Shah Abdol Azim and Imamzadeh Saleh.',
     significance: 'Tehran houses several significant ziyarat sites including the shrine of Shah Abdol Azim (great-grandson of Imam Hassan), Imamzadeh Saleh (brother of Imam Ridha), and other descendants of the Imams.',
     welcomeMessage: 'Welcome to Tehran, Iran\'s capital city. While modern and bustling, it holds sacred sites connected to the Ahl al-Bayt.',
