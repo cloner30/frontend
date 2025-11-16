@@ -5,7 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import EnhancedSearchWidget from '../components/EnhancedSearchWidget';
 import TrustBadges from '../components/TrustBadges';
 import QuickLinks from '../components/QuickLinks';
-import ComparisonTable from '../components/ComparisonTable';
+// Removed ComparisonTable - old component
 import ProcessSteps from '../components/ProcessSteps';
 import PopularDestinations from '../components/PopularDestinations';
 import { upcomingGroups, packages, cities, testimonials } from '../mock';
