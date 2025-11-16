@@ -793,7 +793,7 @@ export const ziyaratSites = [
     nameArabic: 'حرم العباس',
     type: 'Primary Shrine',
     importance: 'Highest',
-    image: 'https://images.unsplash.com/photo-1583948122608-29f7e528ec19',
+    image: 'https://images.unsplash.com/photo-1600356199555-0c66edfcef53?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxBYmJhcyUyMHNocmluZSUyMEthcmJhbGF8ZW58MHx8fHwxNzYzMzI1NTk2fDA&ixlib=rb-4.1.0&q=85',
     description: 'The magnificent shrine of Abbas ibn Ali (a), brother and standard-bearer of Imam Husayn, known for his unwavering loyalty and bravery.',
     
     significance: 'Ḥaḍrat Abbas (a) was the brave son of Imam Ali and Umm al-Banīn. He was the standard-bearer (Alamdār) of Imam Husayn and sacrificed his life trying to bring water to the thirsty children of the camp on the Day of Ashura.',
