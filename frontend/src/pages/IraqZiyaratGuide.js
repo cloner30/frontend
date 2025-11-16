@@ -11,7 +11,59 @@ import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
-import { iraqCities, ziyaratSites, practicalInfo, culturalTips, emergencyContacts } from '../data/iraqZiyaratData';
+import { 
+  iraqCities, 
+  ziyaratSites, 
+  preparationTips,
+  ziyarahEtiquette,
+  packingList,
+  specialEvents,
+  importantDuas,
+  travelInformation 
+} from '../data/iraqZiyaratData';
+
+// Compatibility layer - map new data structure to old component expectations
+const practicalInfo = {
+  visa: {
+    title: 'Visa Requirements',
+    description: travelInformation.visaAndEntry.visa,
+    requirements: travelInformation.visaAndEntry.requirements
+  },
+  transportation: {
+    title: 'Transportation',
+    options: travelInformation.transportation.betweenCities
+  },
+  accommodation: {
+    title: 'Accommodation',
+    options: travelInformation.accommodation.options,
+    tip: travelInformation.accommodation.recommendation
+  },
+  currency: {
+    title: 'Currency',
+    official: travelInformation.currency.official,
+    tip: travelInformation.currency.recommendation
+  },
+  health: {
+    title: 'Health & Safety',
+    tips: [...travelInformation.health.precautions, ...travelInformation.safety.general]
+  }
+};
+
+const culturalTips = {
+  etiquette: ziyarahEtiquette.rules.flatMap(rule => rule.items),
+  dressCode: {
+    men: ['Long pants', 'Shirts covering shoulders', 'Modest dress'],
+    women: ['Abaya (required)', 'Hijab and chador (required at shrines)', 'Socks (required at shrines)', 'Modest makeup or none']
+  },
+  general: travelInformation.culturalEtiquette
+};
+
+const emergencyContacts = {
+  police: '104',
+  ambulance: '122',
+  fire: '115',
+  note: 'These are standard Iraqi emergency numbers. Keep your embassy contact information handy.'
+};
 import { use3DTilt } from '../hooks/use3DTilt';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
