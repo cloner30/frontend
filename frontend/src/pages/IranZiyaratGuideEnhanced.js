@@ -20,7 +20,7 @@ import {
   iranTravelInfo
 } from '../data/iranZiyaratData';
 
-const IraqZiyaratGuideEnhanced = () => {
+const IranZiyaratGuideEnhanced = () => {
   const navigate = useNavigate();
   const [selectedCity, setSelectedCity] = useState(null);
   const [selectedSite, setSelectedSite] = useState(null);
