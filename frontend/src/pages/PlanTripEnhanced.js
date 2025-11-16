@@ -149,7 +149,7 @@ const PlanTripEnhanced = () => {
 
   // Get ziyarat places for a city
   const getZiyaratForCity = (city) => {
-    const cityData = iraqZiyaratData.cities.find(c => c.name === city);
+    const cityData = iraqZiyaratData.iraqCities.find(c => c.name === city);
     return cityData?.holySites || [];
   };
 
