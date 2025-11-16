@@ -1051,7 +1051,7 @@ export const ziyaratSites = [
     nameArabic: 'حرم العسكريين',
     type: 'Primary Shrine',
     importance: 'Highest',
-    image: 'https://images.unsplash.com/photo-1761475461178-ec5fea65a1a2',
+    image: 'https://images.unsplash.com/photo-1599832493416-8c9c10107437?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwyfHxTYW1hcnJhJTIwc2hyaW5lJTIwSXJhcXxlbnwwfHx8fDE3NjMzMjM1Nzl8MA&ixlib=rb-4.1.0&q=85',
     description: 'The magnificent shrine of the 10th and 11th Imams, beautifully reconstructed after the 2006/2007 bombings.',
     
     significance: 'This shrine houses two Imams who lived under house arrest in Samarra during the Abbasid period, hence called "Askariyayn" (the two who were in the military garrison). The shrine complex also contains the Holy Sardāb where Imam al-Mahdi (aj) went into occultation.',
