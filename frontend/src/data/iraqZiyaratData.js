@@ -367,7 +367,7 @@ export const ziyaratSites = [
     nameArabic: 'وادي السلام',
     type: 'Cemetery',
     importance: 'High',
-    image: 'https://images.unsplash.com/photo-1580655893699-756b0b3a9d3f',
+    image: 'https://images.unsplash.com/photo-1756626524138-9a1506623813?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxjZW1ldGVyeSUyME5hamFmfGVufDB8fHx8MTc2MzMyNTYwMXww&ixlib=rb-4.1.0&q=85',
     description: 'The largest cemetery in the world and one of the most blessed burial grounds in Islam.',
     significance: 'Believers from around the world are brought here for burial. It is narrated that the souls of believers from all lands visit this cemetery.',
     
