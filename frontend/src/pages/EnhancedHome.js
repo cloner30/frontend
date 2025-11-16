@@ -8,7 +8,7 @@ import QuickLinks from '../components/QuickLinks';
 // Removed ComparisonTable - old component
 import ProcessSteps from '../components/ProcessSteps';
 import PopularDestinations from '../components/PopularDestinations';
-import { getGroupTours, getPackages, getCities, getTestimonials } from '../services/api';
+import { upcomingGroups as mockGroups, packages as mockPackages, cities as mockCities, testimonials as mockTestimonials } from '../mock';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
