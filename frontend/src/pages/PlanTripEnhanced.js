@@ -890,8 +890,6 @@ const PlanTripEnhanced = () => {
 
   // Step 7: Review & Book
   const renderStep7 = () => {
-    const [expandedCity, setExpandedCity] = useState(null);
-
     return (
       <div className="space-y-6">
         <div>
