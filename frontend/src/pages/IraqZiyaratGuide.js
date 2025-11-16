@@ -27,36 +27,46 @@ const practicalInfo = {
   visa: {
     title: 'Visa Requirements',
     description: travelInformation.visaAndEntry.visa,
-    requirements: travelInformation.visaAndEntry.requirements
+    requirements: travelInformation.visaAndEntry.requirements || [],
+    onArrival: [travelInformation.visaAndEntry.onArrival || 'Available on arrival for many nationalities']
   },
   transportation: {
     title: 'Transportation',
-    options: travelInformation.transportation.betweenCities
+    options: travelInformation.transportation.betweenCities || [],
+    betweenCities: travelInformation.transportation.betweenCities || [],
+    inCity: travelInformation.transportation.withinCities || []
   },
   accommodation: {
     title: 'Accommodation',
-    options: travelInformation.accommodation.options,
-    tip: travelInformation.accommodation.recommendation
+    options: travelInformation.accommodation.options || [],
+    tip: travelInformation.accommodation.recommendation || ''
   },
   currency: {
     title: 'Currency',
-    official: travelInformation.currency.official,
-    tip: travelInformation.currency.recommendation
+    official: travelInformation.currency.official || 'Iraqi Dinar (IQD)',
+    exchange: travelInformation.currency.exchange || '',
+    tip: travelInformation.currency.recommendation || '',
+    usd: travelInformation.currency.usd || ''
   },
   health: {
     title: 'Health & Safety',
-    tips: [...travelInformation.health.precautions, ...travelInformation.safety.general]
+    vaccinations: travelInformation.health.vaccinations || 'Check recommended vaccinations',
+    medications: travelInformation.health.medications || '',
+    facilities: travelInformation.health.facilities || '',
+    insurance: travelInformation.health.insurance || ''
+  },
+  safety: {
+    general: travelInformation.safety.general || '',
+    shrineAreas: travelInformation.safety.shrineAreas || '',
+    valuables: travelInformation.safety.valuables || '',
+    women: travelInformation.safety.women || ''
+  },
+  shopping: {
+    items: ['Prayer beads (Tasbih)', 'Turbah (prayer stones)', 'Islamic books', 'Perfumes (Attar)', 'Dates', 'Traditional crafts']
   }
 };
 
-const culturalTips = {
-  etiquette: ziyarahEtiquette.rules.flatMap(rule => rule.items),
-  dressCode: {
-    men: ['Long pants', 'Shirts covering shoulders', 'Modest dress'],
-    women: ['Abaya (required)', 'Hijab and chador (required at shrines)', 'Socks (required at shrines)', 'Modest makeup or none']
-  },
-  general: travelInformation.culturalEtiquette
-};
+const culturalTips = travelInformation.culturalEtiquette || [];
 
 const emergencyContacts = {
   police: '104',
