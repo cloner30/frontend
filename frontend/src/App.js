@@ -33,6 +33,7 @@ function App() {
               <Route path="/ziyarat-guide/:id" element={<CityGuide />} />
               <Route path="/plan-trip" element={<PlanTrip />} />
               <Route path="/account" element={<Account />} />
+              <Route path="/iraq-ziyarat" element={<IraqZiyaratGuide />} />
             </Routes>
           </main>
           <Footer />
