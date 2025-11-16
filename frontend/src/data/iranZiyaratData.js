@@ -214,6 +214,7 @@ export const iranCities = [
     description: 'Historic city known for Shah Cheragh shrine, poetry, gardens, and rich cultural heritage.',
     significance: 'Shiraz is home to the magnificent Shah Cheragh shrine (brother of Imam Ridha) and is also famous for being the city of great Persian poets like Hafez and Saadi.',
     welcomeMessage: 'Welcome to Shiraz, the city of light, poetry, and sacred shrines. Experience the beauty of Persian culture alongside spiritual devotion.',
+    specialNote: 'Shah Cheragh means "King of the Lamp" - the shrine earned this name when light was seen emanating from the tomb, leading to its discovery.',
     population: '1.9 million+',
     bestTimeToVisit: 'Spring (March-May) for beautiful gardens, Fall (September-November)',
     airportDistance: 'Shiraz International Airport (10 km from city center)',
@@ -226,7 +227,7 @@ export const iranCities = [
       fire: '125'
     },
     primaryLandmarks: [
-      'Shah Cheragh Shrine',
+      'Shah Cheragh Shrine (Shah Shiragh)',
       'Tomb of Hafez',
       'Tomb of Saadi',
       'Nasir al-Mulk Mosque (Pink Mosque)',
