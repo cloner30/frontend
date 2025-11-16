@@ -25,7 +25,10 @@ import {
   specialDaysByWeekday,
   salahOfZiyarah,
   ziyaratNiyabah,
-  scholarsBuriedInNajaf
+  scholarsBuriedInNajaf,
+  ziyaratPrayerReferences,
+  martyrsOfKarbala,
+  iraqiFoodCulture
 } from '../data/iraqZiyaratData';
 
 const IraqZiyaratGuideEnhanced = () => {
