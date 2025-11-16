@@ -22,10 +22,10 @@ const AdminDashboard = () => {
   ];
 
   const quickActions = [
-    { title: 'Manage Hotels', href: '/admin/hotels', icon: MapPin, color: 'bg-blue-500' },
-    { title: 'Manage Reviews', href: '/admin/testimonials', icon: MessageSquare, color: 'bg-green-500' },
-    { title: 'Edit Ziyarat', href: '/admin/ziyarat', icon: Star, color: 'bg-purple-500' },
-    { title: 'Update SEO', href: '/admin/seo', icon: TrendingUp, color: 'bg-orange-500' },
+    { title: 'Manage Hotels', href: '/admin/hotels', icon: Home, color: 'bg-blue-500' },
+    { title: 'Group Tours', href: '/admin/group-tours', icon: Users, color: 'bg-green-500' },
+    { title: 'Manage Packages', href: '/admin/packages', icon: Package, color: 'bg-purple-500' },
+    { title: 'Testimonials', href: '/admin/testimonials', icon: MessageSquare, color: 'bg-orange-500' },
   ];
 
   const recentActivity = [
