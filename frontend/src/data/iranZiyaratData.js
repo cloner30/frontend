@@ -72,10 +72,11 @@ export const iranTravelInfo = {
   transportation: {
     title: "Transportation in Iran",
     tips: [
-      "Taxis are very cheap and widely available",
-      "Domestic flights connect major cities",
-      "Bus services available between cities",
-      "Metro systems in major cities like Tehran and Mashhad"
+      "Taxis are very cheap and widely available in all cities",
+      "Domestic flights connect major cities - Air Iran operates flights to Tehran Mehrabad International Airport",
+      "Bus services available between cities - may need to change buses at borders",
+      "Metro systems in major cities like Tehran and Mashhad",
+      "Confirm all connecting flights in advance (Tehran/Mashhad/Tehran)"
     ]
   },
   accommodation: {
@@ -84,7 +85,8 @@ export const iranTravelInfo = {
       "Five-star hotels available in major cities",
       "Affordable 2-3 star hotels at city centers",
       "Pilgrims' houses (Musaferkhanehs) available near shrines",
-      "Book in advance during peak pilgrimage seasons"
+      "Pilgrims House managed by Kanji family is recommended",
+      "Book in advance during peak pilgrimage seasons (Nowruz, religious anniversaries)"
     ]
   },
   communication: {
@@ -94,6 +96,105 @@ export const iranTravelInfo = {
       "WiFi available in most hotels and restaurants",
       "WhatsApp and some international apps may have restrictions",
       "Learn basic Farsi phrases for easier communication"
+    ]
+  },
+  flights: {
+    title: "Flight Information",
+    tips: [
+      "Air Iran operates flights to Tehran Mehrabad International Airport on Mondays and Thursdays",
+      "Flights from Damascus depart late evening, arrive Tehran around 11:00 PM",
+      "Confirm connecting flights between Tehran/Mashhad in advance",
+      "If traveling from Iran to Iraq, may need to change buses at border"
+    ]
+  }
+};
+
+export const iranShoppingGuide = {
+  title: "Shopping Guide for Iran",
+  bazaars: {
+    tehran: [
+      "Various bazaars in Tehran for different items",
+      "Traditional items and handicrafts available"
+    ],
+    mashhad: [
+      "Bazaar al-Ridha - for exclusive items near the shrine",
+      "Janatee Bazaar - popular shopping area",
+      "Shopping stores behind the Raudhah of Imam Ridha (a)"
+    ]
+  },
+  recommendedSouvenirs: {
+    title: "Recommended Souvenirs from Iran",
+    items: [
+      {
+        category: "Food Items",
+        items: [
+          "Saffron (Iran produces world's best saffron)",
+          "Pistachios (famous Persian pistachios)",
+          "Dates (various varieties)",
+          "Pastries and traditional sweets",
+          "Nuts (almonds, walnuts)"
+        ]
+      },
+      {
+        category: "Religious Items",
+        items: [
+          "Aqeeq (Agate) - gemstone rings",
+          "Feeroza (Turquoise) jewelry",
+          "Dur al-Najaf gemstones",
+          "Tasbih (prayer beads)",
+          "Prayer mats and religious decorations"
+        ]
+      },
+      {
+        category: "Handicrafts",
+        items: [
+          "Hand-woven Persian carpets (max 12 sq. m for export)",
+          "Persian rugs",
+          "Miniature paintings",
+          "Inlaid boxes (Khatam)",
+          "Decorative placements"
+        ]
+      }
+    ]
+  },
+  exportLimits: {
+    carpets: "One hand-woven carpet or two rugs (maximum 12 sq. m) - must not be antique",
+    gold: "150 grams of wrought gold without gems per passenger",
+    silver: "Up to 3 kg of wrought silverware without gems"
+  }
+};
+
+export const specialExperiences = {
+  mashhad: {
+    title: "Special Experiences in Mashhad",
+    experiences: [
+      {
+        name: "Lunch as Guest of Imam Ridha (a)",
+        description: "An opportunity to have a meal as a guest at the shrine. There is often a long waiting list for this blessed experience.",
+        tip: "Register early if you wish to participate"
+      },
+      {
+        name: "Visit During Thursday Nights",
+        description: "Thursday nights have a special spiritual atmosphere at the shrine with increased crowds and devotion"
+      },
+      {
+        name: "Attend Religious Gatherings",
+        description: "Participate in majalis and religious programs held regularly at the shrine"
+      }
+    ]
+  },
+  qom: {
+    title: "Special Experiences in Qom",
+    experiences: [
+      {
+        name: "Masjid Jamkaran on Tuesday Nights",
+        description: "Visit Masjid Jamkaran on Tuesday nights when Imam Mahdi (aj) is said to visit. Extremely crowded but spiritually powerful.",
+        tip: "Arrive early and write your hajat (requests) to drop in the well"
+      },
+      {
+        name: "Prayer at Masjid Jamkaran",
+        description: "Praying four Rakats at Masjid Jamkaran is said to be equal to praying inside the Ka'bah"
+      }
     ]
   }
 };
