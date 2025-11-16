@@ -32,10 +32,10 @@ const HotelDetail = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchHotel = async () => {
+    const fetchHotel = () => {
       try {
         setLoading(true);
-        const data = await getHotel(id);
+        const data = hotels.find(h => h.id === parseInt(id));
         setHotel(data);
       } catch (err) {
         console.error('Error fetching hotel:', err);
