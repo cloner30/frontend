@@ -29,14 +29,13 @@ const Groups = () => {
   const [selectedDepartureCities, setSelectedDepartureCities] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch group tours
+  // Load group tours from mock data
   useEffect(() => {
-    const fetchGroupTours = async () => {
+    const loadGroupTours = () => {
       try {
         setLoading(true);
-        const data = await getGroupTours();
-        setUpcomingGroups(data);
-        setFilteredGroups(data);
+        setUpcomingGroups(mockGroups);
+        setFilteredGroups(mockGroups);
       } catch (error) {
         console.error('Error fetching group tours:', error);
       } finally {
