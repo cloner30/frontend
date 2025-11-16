@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import EnhancedHome from './pages/EnhancedHome';
 import SearchResults from './pages/SearchResults';
+import HotelDetail from './pages/HotelDetail';
 import Groups from './pages/Groups';
 import GroupDetail from './pages/GroupDetail';
 import Packages from './pages/Packages';
@@ -26,6 +27,7 @@ function App() {
             <Routes>
               <Route path="/" element={<EnhancedHome />} />
               <Route path="/search" element={<SearchResults />} />
+              <Route path="/hotels/:id" element={<HotelDetail />} />
               <Route path="/groups" element={<Groups />} />
               <Route path="/groups/:id" element={<GroupDetail />} />
               <Route path="/packages" element={<Packages />} />
