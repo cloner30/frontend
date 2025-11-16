@@ -415,6 +415,19 @@ export const ziyaratSites = [
   },
 
   {
+    id: 'mirza-shirazi-tomb',
+    cityId: 'najaf',
+    name: 'Tomb of Mīrzā Shīrāzī',
+    nameArabic: 'مرقد الميرزا الشيرازي',
+    type: 'Scholar Tomb',
+    importance: 'Medium',
+    description: 'Tomb of the great scholar who issued the famous fatwa against tobacco.',
+    significance: 'Mīrzā Muḥammad Ḥasan Shīrāzī was a renowned Shia Marja who issued a historic fatwa in 1891 declaring the use of tobacco forbidden (haram) during the Tobacco Protest against the British monopoly in Iran. This fatwa played a crucial role in Iranian history and demonstrated the power of religious leadership.',
+    historicalImpact: 'His tobacco fatwa led to the cancellation of the British tobacco concession and showed the influence of religious scholars in protecting Muslim interests.',
+    contribution: 'One of the greatest scholars of the 19th century, teacher to many prominent maraji'
+  },
+
+  {
     id: 'masjid-hannana',
     cityId: 'najaf',
     name: 'Masjid Ḥannānah',
