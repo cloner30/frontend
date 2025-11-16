@@ -261,7 +261,7 @@ export const ziyaratSites = [
     nameArabic: 'حرم الإمام علي',
     type: 'Primary Shrine',
     importance: 'Highest',
-    image: 'https://images.unsplash.com/photo-1761474758252-6af7f4d61868',
+    image: 'https://images.pexels.com/photos/19113235/pexels-photo-19113235.jpeg',
     description: 'The magnificent golden-domed shrine of Imam Ali ibn Abi Talib (a), the first Imam and Commander of the Faithful.',
     
     buriedHere: [
