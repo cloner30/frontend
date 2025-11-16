@@ -12,7 +12,7 @@ import GroupDetailEnhanced from './pages/GroupDetailEnhanced';
 import Packages from './pages/Packages';
 import ZiyaratGuide from './pages/ZiyaratGuide';
 import CityGuide from './pages/CityGuide';
-import PlanTrip from './pages/PlanTrip';
+import PlanTripEnhanced from './pages/PlanTripEnhanced';
 import Account from './pages/Account';
 import IraqZiyaratGuide from './pages/IraqZiyaratGuideEnhanced';
 import { Toaster } from './components/ui/sonner';
