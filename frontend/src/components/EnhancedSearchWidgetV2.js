@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Calendar as CalendarIcon, Users, Plane, Hotel, MapPin, Plus, Minus, X, Check, UserCircle, Baby } from 'lucide-react';
+import { Search, Calendar as CalendarIcon, Users, Plane, Hotel, MapPin, Plus, Minus, X, Check, UserCircle, Baby, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from './ui/button';
@@ -7,7 +7,7 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 import { Calendar } from './ui/calendar';
-import { format } from 'date-fns';
+import { format, addDays } from 'date-fns';
 import { cn } from '../lib/utils';
 
 const EnhancedSearchWidgetV2 = () => {
