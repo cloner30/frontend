@@ -556,13 +556,16 @@ const IraqZiyaratGuideEnhanced = () => {
                             )}
                           </TabsContent>
                         </Tabs>
-                        </div>
                       </CardContent>
                     </Card>
                   </div>
-                </div>
-              </div>
-            )}
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      )}
+    
           </div>
         )}
 
