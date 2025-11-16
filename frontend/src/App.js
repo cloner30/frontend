@@ -31,7 +31,7 @@ import PackagesManager from './pages/admin/PackagesManager';
 import TestimonialsManager from './pages/admin/TestimonialsManager';
 import CitiesManager from './pages/admin/CitiesManager';
 import SeoManager from './pages/admin/SeoManager';
-import HomeContentManager from './pages/admin/HomeContentManager';
+import HomePageBuilder from './pages/admin/HomePageBuilder';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
