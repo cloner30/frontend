@@ -132,6 +132,9 @@ backend:
         - working: true
           agent: "main"
           comment: "Created complete CRUD endpoints for all collections. All endpoints tested: GET (list & single), POST (create), PUT (update), DELETE. Using proper HTTP status codes and error handling."
+        - working: true
+          agent: "testing"
+          comment: "COMPREHENSIVE TESTING COMPLETED: All priority API endpoints working perfectly. Packages (2 items), Hotels (2 items), Group Tours (1 item), Cities (6 items), Testimonials (3 items), Home Content (0 items), Ziyarat Places (4 items), Ziyarat Guide Cities (2 items), SEO Settings (3 items). All single-item endpoints tested successfully. 100% success rate on 10 priority tests. Backend service running smoothly with no errors in logs."
 
   - task: "Data Migration Script"
     implemented: true
