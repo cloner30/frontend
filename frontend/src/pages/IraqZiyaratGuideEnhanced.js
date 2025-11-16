@@ -971,6 +971,216 @@ const IraqZiyaratGuideEnhanced = () => {
           </div>
         )}
 
+        {/* Practical Laws Tab */}
+        {activeTab === 'laws' && (
+          <div className="space-y-12">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#1a2f4a] mb-4">Practical Laws (Aḥkām) for Ziyārah</h2>
+              <p className="text-xl text-gray-600">Important rulings and guidelines for pilgrimage</p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6">
+              <Card className="border-l-4 border-[#d4af37]">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-4">
+                    <Book className="h-6 w-6 text-[#d4af37] mr-3" />
+                    <h3 className="text-2xl font-bold text-[#1a2f4a]">Prayer in the Ḥaram</h3>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">{practicalLaws.prayerInHaram}</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-l-4 border-[#d4af37]">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-4">
+                    <Shield className="h-6 w-6 text-[#d4af37] mr-3" />
+                    <h3 className="text-2xl font-bold text-[#1a2f4a]">Respect for the Graves</h3>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">{practicalLaws.respectForGraves}</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-l-4 border-green-500">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-4">
+                    <CheckCircle className="h-6 w-6 text-green-600 mr-3" />
+                    <h3 className="text-2xl font-bold text-[#1a2f4a]">Full Prayer Locations</h3>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-4">Travelers can offer full (4 rakʿāt) prayers at these special locations:</p>
+                  <ul className="space-y-2">
+                    {practicalLaws.fullPrayerLocations.map((location, idx) => (
+                      <li key={idx} className="flex items-start space-x-3 p-3 bg-green-50 rounded-lg">
+                        <Star className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                        <span className="text-gray-700">{location}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="border-l-4 border-blue-500">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-4">
+                    <Sparkles className="h-6 w-6 text-blue-600 mr-3" />
+                    <h3 className="text-2xl font-bold text-[#1a2f4a]">Entering with Wuḍūʾ</h3>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">{practicalLaws.enteringWithWudu}</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-l-4 border-red-500">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-4">
+                    <AlertCircle className="h-6 w-6 text-red-600 mr-3" />
+                    <h3 className="text-2xl font-bold text-[#1a2f4a]">State Restrictions</h3>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">{practicalLaws.stateRestrictions}</p>
+                </CardContent>
+              </Card>
+
+              {/* Special Days by Weekday */}
+              <Card className="border-2 border-[#d4af37]/30 bg-gradient-to-br from-[#d4af37]/5 to-white">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-4">
+                    <Calendar className="h-6 w-6 text-[#d4af37] mr-3" />
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#1a2f4a]">{specialDaysByWeekday.title}</h3>
+                      <p className="text-sm text-gray-600 mt-1">{specialDaysByWeekday.description}</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                    {Object.entries(specialDaysByWeekday.days).map(([day, masumeen]) => (
+                      <div key={day} className="p-4 bg-white rounded-lg border border-[#d4af37]/20">
+                        <h4 className="font-bold text-[#1a2f4a] mb-2">{day}</h4>
+                        <ul className="space-y-1">
+                          {masumeen.map((masum, idx) => (
+                            <li key={idx} className="text-sm text-gray-700 flex items-center space-x-2">
+                              <Heart className="h-3 w-3 text-[#d4af37]" />
+                              <span>{masum}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Salah of Ziyarah */}
+              <Card className="border-l-4 border-purple-500">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-4">
+                    <Book className="h-6 w-6 text-purple-600 mr-3" />
+                    <h3 className="text-2xl font-bold text-[#1a2f4a]">{salahOfZiyarah.title}</h3>
+                  </div>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold mb-2">Recommended for:</h4>
+                      <ul className="space-y-2">
+                        {salahOfZiyarah.recommendedFor.map((item, idx) => (
+                          <li key={idx} className="flex items-center space-x-2">
+                            <CheckCircle className="h-4 w-4 text-purple-600" />
+                            <span className="text-gray-700">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="p-4 bg-purple-50 rounded-lg">
+                      <p className="text-sm text-gray-700">{salahOfZiyarah.forOthers}</p>
+                    </div>
+                    <div className="p-4 bg-[#d4af37]/10 rounded-lg border-l-4 border-[#d4af37]">
+                      <p className="font-semibold text-[#1a2f4a] mb-2">Method:</p>
+                      <p className="text-gray-700">{salahOfZiyarah.method}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Ziyarat an-Niyabah */}
+              <Card className="border-2 border-[#d4af37]/30">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-4">
+                    <Users className="h-6 w-6 text-[#d4af37] mr-3" />
+                    <h3 className="text-2xl font-bold text-[#1a2f4a]">{ziyaratNiyabah.title}</h3>
+                  </div>
+                  <div className="space-y-4">
+                    <p className="text-gray-700">{ziyaratNiyabah.concept}</p>
+                    <div className="p-4 bg-green-50 rounded-lg">
+                      <h4 className="font-semibold text-green-900 mb-2">Reward:</h4>
+                      <p className="text-sm text-gray-700">{ziyaratNiyabah.reward}</p>
+                    </div>
+                    <div className="p-4 bg-blue-50 rounded-lg">
+                      <h4 className="font-semibold text-blue-900 mb-2">Hadith:</h4>
+                      <p className="text-sm text-gray-700 italic">"{ziyaratNiyabah.hadith}"</p>
+                    </div>
+                    <div className="p-4 bg-[#d4af37]/10 rounded-lg border-l-4 border-[#d4af37]">
+                      <h4 className="font-semibold text-[#1a2f4a] mb-2">Special Salām:</h4>
+                      <p className="text-gray-700 italic">"{ziyaratNiyabah.specialSalaam}"</p>
+                    </div>
+                    <div className="p-4 bg-gray-50 rounded-lg">
+                      <p className="text-sm text-gray-700">{ziyaratNiyabah.groupZiyarah}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        )}
+
+        {/* Scholars Tab */}
+        {activeTab === 'scholars' && (
+          <div className="space-y-12">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#1a2f4a] mb-4">Renowned Scholars Buried in Najaf</h2>
+              <p className="text-xl text-gray-600">The great ʿulamāʾ who rest in the sacred city</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {scholarsBuriedInNajaf.map((scholar, idx) => (
+                <Card key={idx} className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-[#d4af37]">
+                  <CardContent className="p-6">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex-1">
+                        <h3 className="text-2xl font-bold text-[#1a2f4a] mb-2">{scholar.name}</h3>
+                        {scholar.period && (
+                          <Badge className="bg-[#d4af37] text-[#1a2f4a]">{scholar.period}</Badge>
+                        )}
+                      </div>
+                      <BookOpen className="h-8 w-8 text-[#d4af37]" />
+                    </div>
+
+                    <div className="space-y-3">
+                      <div>
+                        <span className="text-sm font-semibold text-gray-600">Significance:</span>
+                        <p className="text-gray-700">{scholar.significance}</p>
+                      </div>
+
+                      <div className="p-3 bg-[#d4af37]/10 rounded-lg">
+                        <span className="text-sm font-semibold text-[#1a2f4a]">Contribution:</span>
+                        <p className="text-sm text-gray-700 mt-1">{scholar.contribution}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <Card className="border-2 border-[#d4af37]/30 bg-gradient-to-r from-[#d4af37]/5 to-white">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-4">
+                  <Info className="h-6 w-6 text-[#d4af37] mr-3" />
+                  <h3 className="text-2xl font-bold text-[#1a2f4a]">The Hawza al-ʿIlmiyyah of Najaf</h3>
+                </div>
+                <div className="space-y-4 text-gray-700">
+                  <p>The Hawza of Najaf is one of the oldest and most prestigious Islamic seminaries in the Shia world. Established by Shaykh Ṭūsī in 436 AH, it has been a center of learning for over a thousand years.</p>
+                  <p>Thousands of scholars from around the world come to Najaf to study Islamic jurisprudence, theology, philosophy, and other sciences under the guidance of the great maraji.</p>
+                  <p>Many of these scholars, after dedicating their lives to Islamic knowledge, choose to be buried in Najaf near the shrine of Imam Ali (a), making the city a repository of Islamic scholarship and spirituality.</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
         {/* Events Tab */}
         {activeTab === 'events' && (
           <div className="space-y-12">
