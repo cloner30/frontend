@@ -131,7 +131,7 @@ const AdminLayout = () => {
                     const Icon = item.icon;
                     const isActive = location.pathname === item.href;
                     return (
-                      <Link
+                      <RouterLink
                         key={item.name}
                         to={item.href}
                         onClick={() => setSidebarOpen(false)}
@@ -143,7 +143,7 @@ const AdminLayout = () => {
                       >
                         <Icon className="mr-3 h-5 w-5" />
                         {item.name}
-                      </Link>
+                      </RouterLink>
                     );
                   })}
                 </nav>
