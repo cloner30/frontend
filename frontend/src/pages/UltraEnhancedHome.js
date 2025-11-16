@@ -392,9 +392,16 @@ const UltraEnhancedHome = () => {
       </div>
 
       {/* Package Comparison Table */}
-      <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16\">
-        <div className=\"text-center mb-10\">
-          <Badge className=\"bg-[#1a2f4a] text-white mb-4\">COMPARE PACKAGES</Badge>\n          <h2 className=\"text-3xl md:text-4xl font-bold text-[#1a2f4a] mb-3\">Choose Your Perfect Package</h2>\n          <p className=\"text-gray-600 max-w-2xl mx-auto\">\n            Compare features and find the package that best suits your needs\n          </p>\n        </div>\n        <ComparisonTable />\n      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center mb-10">
+          <Badge className="bg-[#1a2f4a] text-white mb-4">COMPARE PACKAGES</Badge>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1a2f4a] mb-3">Choose Your Perfect Package</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Compare features and find the package that best suits your needs
+          </p>
+        </div>
+        <ComparisonTable />
+      </div>
 
       {/* Upcoming Groups - Enhanced with Wishlist */}
       <div className="bg-gray-50 py-16">
