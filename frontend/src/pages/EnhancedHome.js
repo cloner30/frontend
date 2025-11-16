@@ -34,20 +34,14 @@ const EnhancedHome = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch data from APIs
+  // Load data from mock files
   useEffect(() => {
-    const fetchData = async () => {
+    const loadData = () => {
       try {
         setLoading(true);
-        const [groupsData, packagesData, citiesData, testimonialsData] = await Promise.all([
-          getGroupTours(),
-          getPackages(),
-          getCities(),
-          getTestimonials()
-        ]);
         
-        setUpcomingGroups(groupsData);
-        setPackages(packagesData);
+        setUpcomingGroups(mockGroups);
+        setPackages(mockPackages);
         setCities(citiesData);
         setTestimonials(testimonialsData);
       } catch (error) {
