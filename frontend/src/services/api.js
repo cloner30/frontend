@@ -197,14 +197,39 @@ export const deleteHotel = async (hotelId) => {
 };
 
 // ========================================
-// GROUP TOURS
+// GROUP TOURS (with External API Support)
 // ========================================
 export const getGroupTours = async (country = null) => {
+  // Check if external API is configured
+  const externalConfig = getExternalApiConfig('groups');
+  
+  if (externalConfig) {
+    try {
+      const endpoint = country ? `${externalConfig.endpoint}?country=${country}` : externalConfig.endpoint;
+      return await fetchExternalAPI(externalConfig, endpoint);
+    } catch (error) {
+      console.warn('External API failed, falling back to internal API:', error);
+    }
+  }
+  
+  // Use internal API
   const query = country ? `?country=${country}` : '';
   return fetchAPI(`/api/group-tours${query}`);
 };
 
 export const getGroupTour = async (tourId) => {
+  // Check if external API is configured
+  const externalConfig = getExternalApiConfig('groups');
+  
+  if (externalConfig) {
+    try {
+      return await fetchExternalAPI(externalConfig, `${externalConfig.endpoint}/${tourId}`);
+    } catch (error) {
+      console.warn('External API failed, falling back to internal API:', error);
+    }
+  }
+  
+  // Use internal API
   return fetchAPI(`/api/group-tours/${tourId}`);
 };
 
