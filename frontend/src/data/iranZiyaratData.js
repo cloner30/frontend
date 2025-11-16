@@ -913,7 +913,7 @@ export const iranZiyaratSites = [
     nameFarsi: 'آرامگاه فردوسی',
     type: 'Cultural Site',
     importance: 'Medium',
-    image: 'https://images.unsplash.com/photo-1576495199011-eb94736d05d6',
+    image: 'https://images.unsplash.com/photo-1720700955854-9b531294d025?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwzfHxhbmNpZW50JTIwUXVyYW4lMjBtYW51c2NyaXB0fGVufDB8fHx8MTc2MzMyMzI4MXww&ixlib=rb-4.1.0&q=85',
     description: 'Museum and tomb of Ferdowsi, the great Persian poet, author of Shahnameh.',
     
     about: 'Ferdowsi was one of the greatest Persian poets, author of the epic Shahnameh (Book of Kings). His tomb and museum are popular attractions near Mashhad.',
