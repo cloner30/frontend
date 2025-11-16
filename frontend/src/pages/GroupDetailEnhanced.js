@@ -22,7 +22,7 @@ import {
   Hotel,
   Utensils
 } from 'lucide-react';
-import { getGroupTour } from '../services/api';
+import { upcomingGroups } from '../mock';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
