@@ -276,3 +276,7 @@ agent_communication:
       message: "Phase 1 (Backend API Development) COMPLETED successfully. All backend APIs working, data migrated to MongoDB."
     - agent: "main"
       message: "Phase 2 (Frontend API Integration) COMPLETED successfully. All pages updated to fetch from backend APIs. Home, Hotels, Groups, and Packages pages all loading data from MongoDB via API endpoints. Loading states and error handling implemented."
+    - agent: "main"
+      message: "External API Integration COMPLETED. Updated api.js to support dynamic API switching for Hotels (already done), Group Tours (already done), and Packages (just added). The API Manager in admin panel now controls the data source for these three content types."
+    - agent: "main"
+      message: "Cleanup COMPLETED. Removed redundant HotelsManager, GroupToursManager, and PackagesManager files from admin section. API Manager is the single source for managing external API connections."
