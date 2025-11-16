@@ -147,7 +147,139 @@ const IraqZiyaratGuideEnhanced = () => {
         {/* Cities Tab */}
         {activeTab === 'cities' && (
           <div className="space-y-12">
-            {!selectedCity ? (
+            {/* City Modal Overlay */}
+            {selectedCity && (
+              <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 overflow-y-auto">
+                <div className="min-h-screen p-4 md:p-8">
+                  <div className="max-w-7xl mx-auto">
+                    <Card className="border-4 border-[#d4af37] shadow-2xl">
+                      <CardContent className="p-0">
+                        {/* Modal Header */}
+                        <div 
+                          className="relative h-80 bg-cover bg-center"
+                          style={{
+                            backgroundImage: `linear-gradient(rgba(26, 47, 74, 0.8), rgba(26, 47, 74, 0.8)), url('${selectedCity.image}')`,
+                          }}
+                        >
+                          <Button 
+                            variant="ghost" 
+                            onClick={() => setSelectedCity(null)}
+                            className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white backdrop-blur-sm"
+                            size="lg"
+                          >
+                            ✕ Close
+                          </Button>
+                          <div className="absolute inset-0 flex items-center justify-center text-white text-center p-8">
+                            <div>
+                              <h1 className="text-5xl font-bold mb-4">{selectedCity.name}</h1>
+                              <p className="text-2xl mb-4">{selectedCity.nameArabic}</p>
+                              {selectedCity.title && (
+                                <Badge className="bg-[#d4af37] text-[#1a2f4a] text-lg px-4 py-2">
+                                  {selectedCity.title}
+                                </Badge>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Modal Content */}
+                        <div className="p-8 max-h-[600px] overflow-y-auto">
+                          {selectedCity.welcomeMessage && (
+                            <div className="mb-6 p-4 bg-[#d4af37]/10 rounded-lg border-l-4 border-[#d4af37]">
+                              <p className="text-gray-700 italic">"{selectedCity.welcomeMessage}"</p>
+                            </div>
+                          )}
+
+                          {/* City Info Grid */}
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                            <Card className="border-l-4 border-[#d4af37]">
+                              <CardContent className="p-4">
+                                <div className="flex items-center mb-2">
+                                  <MapPin className="h-4 w-4 text-[#d4af37] mr-2" />
+                                  <h3 className="font-bold text-sm text-[#1a2f4a]">Location</h3>
+                                </div>
+                                <p className="text-xs text-gray-700">{selectedCity.province}</p>
+                                <p className="text-xs text-gray-600 mt-1">{selectedCity.airportDistance}</p>
+                              </CardContent>
+                            </Card>
+
+                            <Card className="border-l-4 border-[#d4af37]">
+                              <CardContent className="p-4">
+                                <div className="flex items-center mb-2">
+                                  <Calendar className="h-4 w-4 text-[#d4af37] mr-2" />
+                                  <h3 className="font-bold text-sm text-[#1a2f4a]">Best Time</h3>
+                                </div>
+                                <p className="text-xs text-gray-700">{selectedCity.bestTimeToVisit}</p>
+                              </CardContent>
+                            </Card>
+
+                            <Card className="border-l-4 border-[#d4af37]">
+                              <CardContent className="p-4">
+                                <div className="flex items-center mb-2">
+                                  <Phone className="h-4 w-4 text-[#d4af37] mr-2" />
+                                  <h3 className="font-bold text-sm text-[#1a2f4a]">Emergency</h3>
+                                </div>
+                                {selectedCity.emergencyNumbers && (
+                                  <div className="text-xs text-gray-700 space-y-1">
+                                    <div>Police: {selectedCity.emergencyNumbers.police}</div>
+                                    <div>Ambulance: {selectedCity.emergencyNumbers.ambulance}</div>
+                                  </div>
+                                )}
+                              </CardContent>
+                            </Card>
+                          </div>
+
+                          {/* Ziyarat Sites */}
+                          <div>
+                            <h2 className="text-2xl font-bold text-[#1a2f4a] mb-4">Holy Sites & Shrines</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              {citySites.map((site) => (
+                                <Card 
+                                  key={site.id}
+                                  className="group cursor-pointer hover:shadow-lg transition-all duration-300 border-2 hover:border-[#d4af37]"
+                                  onClick={() => handleSiteSelect(site)}
+                                >
+                                  <div className="relative h-32 overflow-hidden">
+                                    <img 
+                                      src={site.image || selectedCity.image} 
+                                      alt={site.name}
+                                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    />
+                                    <div className="absolute top-2 right-2">
+                                      <Badge className="bg-[#d4af37] text-[#1a2f4a] text-xs">
+                                        {site.importance}
+                                      </Badge>
+                                    </div>
+                                  </div>
+                                  <CardContent className="p-4">
+                                    <h3 className="text-lg font-bold text-[#1a2f4a] mb-1">{site.name}</h3>
+                                    <p className="text-xs text-gray-600 mb-2">{site.nameArabic}</p>
+                                    <p className="text-xs text-gray-700 line-clamp-2 mb-3">
+                                      {site.description}
+                                    </p>
+                                    <Button 
+                                      variant="ghost" 
+                                      size="sm"
+                                      className="w-full text-[#d4af37] hover:bg-[#d4af37]/10 text-xs"
+                                    >
+                                      View Details
+                                      <ChevronRight className="h-3 w-3 ml-1" />
+                                    </Button>
+                                  </CardContent>
+                                </Card>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* City Grid - Always Visible */}
+            {!selectedCity && (
               <>
                 <div className="text-center mb-12">
                   <h2 className="text-4xl font-bold text-[#1a2f4a] mb-4">Select Your Destination</h2>
