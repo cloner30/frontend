@@ -560,7 +560,7 @@ export const practicalInfo = {
   },
   
   transportation: {
-    between Cities: [
+    betweenCities: [
       'Buses available (air-conditioned)',
       'Private taxis can be hired',
       'Organized tours recommended'
