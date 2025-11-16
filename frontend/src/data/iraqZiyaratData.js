@@ -195,7 +195,7 @@ export const iraqCities = [
     country: 'Iraq',
     province: 'Karbala Governorate',
     coordinates: { lat: 32.6160, lng: 44.0245 },
-    image: 'https://images.unsplash.com/photo-1711594937687-eed59068e043',
+    image: 'https://images.pexels.com/photos/18766028/pexels-photo-18766028.jpeg',
     description: 'The holiest city for Shia Muslims, site of the Battle of Karbala and martyrdom of Imam Husayn (a) and his companions.',
     significance: 'Karbala holds immense spiritual significance as the location where Imam Husayn (a), grandson of Prophet Muhammad (s), was martyred on the 10th of Muharram, 61 AH (680 CE) along with 72 companions. The city attracts millions of pilgrims annually, especially during Ashura and Arbaeen.',
     specialSignificance: 'The area between the two shrines (Bayn ul-Ḥaramayn) is compared to the distance between Ṣafā and Marwah in Makkah. The Kaʿbah and Zamzam are paralleled by Karbala and the Euphrates River.',
