@@ -167,7 +167,7 @@ export const iraqCities = [
     country: 'Iraq',
     province: 'Najaf Governorate',
     coordinates: { lat: 31.9956, lng: 44.3145 },
-    image: 'https://images.unsplash.com/photo-1761474758252-6af7f4d61868',
+    image: 'https://images.unsplash.com/photo-1756626524138-b3dbbe1a95ea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwyfHxOYWphZiUyMElyYXElMjBjaXR5fGVufDB8fHx8MTc2MzMyMzU3NXww&ixlib=rb-4.1.0&q=85',
     description: 'Sacred city housing the shrine of Imam Ali (a), center of Shia Islamic learning, and home to Wadi as-Salam cemetery.',
     significance: 'Najaf is home to the shrine of Imam Ali ibn Abi Talib (a), the first Shia Imam and fourth Caliph of Islam. It is also a major center of Shia scholarship (Hawza al-Ilmiyyah) and houses the famous Wadi as-Salam cemetery, the largest cemetery in the world.',
     welcomeMessage: 'Welcome to Najaf al-Ashraf, the city of Amir al-Muʾminīn (a). As you walk these streets, remember that many of our Imāms walked here. According to aḥadīth, Imam ʿAlī (a), Prophet Ādam (a), and Prophet Nūḥ (a) are like your spiritual fathers - you have come to your fathers\' house.',
