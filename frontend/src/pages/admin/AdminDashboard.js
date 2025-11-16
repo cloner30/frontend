@@ -8,7 +8,9 @@ import {
   TrendingUp,
   Eye,
   MessageSquare,
-  ArrowRight
+  ArrowRight,
+  Home,
+  Package
 } from 'lucide-react';
 import { Card, CardContent } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
