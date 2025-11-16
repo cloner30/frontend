@@ -981,17 +981,159 @@ const IraqZiyaratGuideEnhanced = () => {
           </div>
         )}
 
-        {/* Prayer References Tab */}
+        {/* Arabic Prayers Tab */}
         {activeTab === 'prayers' && (
           <div className="space-y-12">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-[#1a2f4a] mb-4">Ziyārat Prayer References</h2>
-              <p className="text-xl text-gray-600 mb-4">Guide to prayers at each shrine</p>
-              <div className="max-w-3xl mx-auto p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded">
+              <h2 className="text-4xl font-bold text-[#1a2f4a] mb-4">Arabic Prayers with English Translation</h2>
+              <p className="text-xl text-gray-600 mb-4">Essential Islamic prayers and supplications</p>
+              <div className="max-w-3xl mx-auto p-4 bg-green-50 border-l-4 border-green-500 rounded">
                 <p className="text-sm text-gray-700">
-                  📖 <strong>Note:</strong> {ziyaratPrayerReferences.note}
+                  ✅ <strong>Full Arabic texts included</strong> - Islamic prayers are not copyrighted and are part of our religious heritage. Complete texts available in Mafatih al-Jinan.
                 </p>
               </div>
+            </div>
+
+            <div className="space-y-8">
+              {Object.entries(arabicPrayers).map(([key, prayer]) => (
+                <Card key={key} className="border-2 border-[#d4af37]/30">
+                  <CardContent className="p-8">
+                    <div className="flex items-start justify-between mb-6">
+                      <div>
+                        <h3 className="text-2xl font-bold text-[#1a2f4a] mb-2">{prayer.name}</h3>
+                        {prayer.when && <p className="text-sm text-gray-600">⏰ <strong>When:</strong> {prayer.when}</p>}
+                        {prayer.merit && <p className="text-sm text-green-700 mt-1">⭐ <strong>Merit:</strong> {prayer.merit}</p>}
+                      </div>
+                      <Book className="h-8 w-8 text-[#d4af37]" />
+                    </div>
+
+                    {/* Opening text */}
+                    {prayer.opening && (
+                      <div className="mb-6 p-4 bg-gradient-to-r from-[#d4af37]/10 to-transparent rounded-lg border-r-4 border-[#d4af37]">
+                        <p className="text-2xl text-right mb-3 font-arabic leading-loose" dir="rtl" lang="ar">
+                          {prayer.opening.arabic}
+                        </p>
+                        <p className="text-sm text-gray-600 italic mb-2">{prayer.opening.transliteration}</p>
+                        <p className="text-sm text-gray-700">{prayer.opening.english}</p>
+                      </div>
+                    )}
+
+                    {/* Short text */}
+                    {prayer.shortText && (
+                      <div className="mb-6 p-4 bg-gradient-to-r from-[#d4af37]/10 to-transparent rounded-lg border-r-4 border-[#d4af37]">
+                        <p className="text-2xl text-right mb-3 font-arabic leading-loose" dir="rtl" lang="ar">
+                          {prayer.shortText.arabic}
+                        </p>
+                        <p className="text-sm text-gray-600 italic mb-2">{prayer.shortText.transliteration}</p>
+                        <p className="text-sm text-gray-700">{prayer.shortText.english}</p>
+                      </div>
+                    )}
+
+                    {/* Full text */}
+                    {prayer.text && (
+                      <div className="mb-6 p-4 bg-gradient-to-r from-[#d4af37]/10 to-transparent rounded-lg border-r-4 border-[#d4af37]">
+                        <p className="text-xl text-right mb-3 font-arabic leading-loose" dir="rtl" lang="ar">
+                          {prayer.text.arabic}
+                        </p>
+                        <p className="text-sm text-gray-600 italic mb-2">{prayer.text.transliteration}</p>
+                        <p className="text-sm text-gray-700">{prayer.text.english}</p>
+                      </div>
+                    )}
+
+                    {/* Additional text */}
+                    {prayer.additional && (
+                      <div className="mb-6 p-4 bg-blue-50 rounded-lg border-r-4 border-blue-500">
+                        <p className="text-xl text-right mb-3 font-arabic leading-loose" dir="rtl" lang="ar">
+                          {prayer.additional.arabic}
+                        </p>
+                        <p className="text-sm text-gray-600 italic mb-2">{prayer.additional.transliteration}</p>
+                        <p className="text-sm text-gray-700">{prayer.additional.english}</p>
+                      </div>
+                    )}
+
+                    {/* Key section */}
+                    {prayer.keySection && (
+                      <div className="mb-6 p-4 bg-gradient-to-r from-green-50 to-transparent rounded-lg border-r-4 border-green-500">
+                        <p className="text-base text-right mb-3 font-arabic leading-loose" dir="rtl" lang="ar">
+                          {prayer.keySection.arabic}
+                        </p>
+                        <p className="text-xs text-gray-600 italic mb-2">{prayer.keySection.transliteration}</p>
+                        <p className="text-sm text-gray-700">{prayer.keySection.english}</p>
+                      </div>
+                    )}
+
+                    {/* Tasbih method */}
+                    {prayer.method && (
+                      <div className="space-y-3">
+                        {Object.entries(prayer.method).map(([stepKey, step]) => (
+                          <div key={stepKey} className="p-4 bg-gradient-to-r from-[#d4af37]/10 to-transparent rounded-lg border-r-4 border-[#d4af37]">
+                            <div className="flex items-center justify-between mb-2">
+                              <Badge className="bg-[#d4af37] text-[#1a2f4a]">{step.count}x</Badge>
+                            </div>
+                            <p className="text-2xl text-right mb-2 font-arabic leading-loose" dir="rtl" lang="ar">
+                              {step.arabic}
+                            </p>
+                            <p className="text-sm text-gray-600 italic mb-1">{step.transliteration}</p>
+                            <p className="text-sm text-gray-700">{step.english}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Key phrases */}
+                    {prayer.keyPhrases && (
+                      <div className="mt-6">
+                        <h4 className="font-bold text-[#1a2f4a] mb-3">Key Phrases:</h4>
+                        <div className="space-y-3">
+                          {prayer.keyPhrases.map((phrase, idx) => (
+                            <div key={idx} className="p-3 bg-gray-50 rounded-lg border-r-4 border-gray-300">
+                              <p className="text-lg text-right mb-2 font-arabic leading-loose" dir="rtl" lang="ar">
+                                {phrase.arabic}
+                              </p>
+                              <p className="text-xs text-gray-600 italic mb-1">{phrase.transliteration}</p>
+                              <p className="text-sm text-gray-700">{phrase.english}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Short and long forms */}
+                    {prayer.shortForm && (
+                      <div className="space-y-4">
+                        <div className="p-4 bg-green-50 rounded-lg border-r-4 border-green-500">
+                          <h4 className="font-semibold text-green-900 mb-3">Short Form:</h4>
+                          <p className="text-xl text-right mb-2 font-arabic leading-loose" dir="rtl" lang="ar">
+                            {prayer.shortForm.arabic}
+                          </p>
+                          <p className="text-sm text-gray-600 italic mb-1">{prayer.shortForm.transliteration}</p>
+                          <p className="text-sm text-gray-700">{prayer.shortForm.english}</p>
+                        </div>
+                        {prayer.longForm && (
+                          <div className="p-4 bg-blue-50 rounded-lg border-r-4 border-blue-500">
+                            <h4 className="font-semibold text-blue-900 mb-3">Long Form:</h4>
+                            <p className="text-xl text-right mb-2 font-arabic leading-loose" dir="rtl" lang="ar">
+                              {prayer.longForm.arabic}
+                            </p>
+                            <p className="text-sm text-gray-600 italic mb-1">{prayer.longForm.transliteration}</p>
+                            <p className="text-sm text-gray-700">{prayer.longForm.english}</p>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* OLD Prayer References section */}
+        {false && activeTab === 'old-prayers' && (
+          <div className="space-y-12">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#1a2f4a] mb-4">Prayer References by Location</h2>
+              <p className="text-xl text-gray-600 mb-4">Guide to prayers at each shrine</p>
             </div>
 
             <div className="space-y-8">
