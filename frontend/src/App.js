@@ -34,7 +34,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* Public Routes */}
-          <Route path=\"/\" element={
+          <Route path="/" element={
             <div className=\"App min-h-screen flex flex-col\">
               <Navbar />
               <main className=\"flex-1\">
