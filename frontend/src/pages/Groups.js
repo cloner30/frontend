@@ -37,13 +37,13 @@ const Groups = () => {
         setUpcomingGroups(mockGroups);
         setFilteredGroups(mockGroups);
       } catch (error) {
-        console.error('Error fetching group tours:', error);
+        console.error('Error loading group tours:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchGroupTours();
+    loadGroupTours();
   }, []);
 
   // Get unique values for filters
