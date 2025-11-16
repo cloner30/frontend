@@ -218,7 +218,7 @@ export const iraqCities = [
     country: 'Iraq',
     province: 'Baghdad',
     coordinates: { lat: 33.3792, lng: 44.3403 },
-    image: 'https://images.unsplash.com/photo-1629206755907-d0e179c07dd6',
+    image: 'https://images.unsplash.com/photo-1608925086961-dbcd276a0e71?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxCYWdoZGFkJTIwSXJhcXxlbnwwfHx8fDE3NjMzMjM1ODV8MA&ixlib=rb-4.1.0&q=85',
     description: 'Historic district of Baghdad containing the shrine of the 7th and 9th Shia Imams.',
     significance: 'Kadhimiya houses the shrine of Imam Musa al-Kadhim (a), the 7th Imam, and Imam Muhammad al-Jawad (a), the 9th Imam. It is one of the most important pilgrimage sites in Baghdad and has enriched the city with spiritual significance.',
     population: 'Part of Baghdad metropolitan area (8+ million)',
