@@ -1,0 +1,468 @@
+#!/usr/bin/env python3
+"""
+Script to extract structured data from the Iraq Ziyarat Guide PDF
+and prepare it for the React application
+"""
+
+import json
+import re
+
+def extract_section_content(text, start_marker, end_marker):
+    """Extract content between two markers"""
+    pattern = f"{re.escape(start_marker)}(.*?){re.escape(end_marker)}"
+    match = re.search(pattern, text, re.DOTALL)
+    return match.group(1).strip() if match else ""
+
+def parse_city_info(section_text):
+    """Parse information about a city"""
+    return {
+        "practical_tips": extract_practical_tips(section_text),
+        "etiquette": extract_etiquette(section_text),
+        "ziyarat_sites": []
+    }
+
+def extract_practical_tips(text):
+    """Extract practical travel tips"""
+    tips = []
+    
+    # Look for preparation sections
+    if "Preparing for Your Journey" in text:
+        tips.append({
+            "category": "Mental Preparation",
+            "description": "Expect challenges as stepping stones to spiritual perfection. Be open-minded, flexible, and positive."
+        })
+        tips.append({
+            "category": "Spiritual Preparation",
+            "items": [
+                "Listen to lectures and majālis",
+                "Read about the history and culture",
+                "Learn about the Imāms you will visit",
+                "Perform acts of worship and gift them to the Imāms",
+                "Recite duʿās and Qurʾān",
+                "Equip yourself with tawakkul (reliance on Allah) and ikhlāṣ (sincerity)"
+            ]
+        })
+        tips.append({
+            "category": "Physical Preparation",
+            "description": "Prepare for walking and physical exertion. Account for weather differences."
+        })
+    
+    return tips
+
+def extract_etiquette(text):
+    """Extract etiquette rules"""
+    etiquette_items = [
+        "Perform ghusl and enter the ḥaram in a state of ṭahārah (purity)",
+        "Wear clean, preferably white clothes and perfume",
+        "Avoid engaging in vain discussion about worldly matters",
+        "Walk towards the ḥaram with slow, small steps, with humility",
+        "Recite dhikr while walking, especially Allahu Akbar and Alḥamdulillāh",
+        "Ask for permission to enter (idhn ad-dukhūl)",
+        "Enter the ḥaram with your right foot",
+        "Recite takbīr 100 times before reciting the ziyārah",
+        "Face the ḍarīh with your back towards the Qiblah while reciting ziyārah",
+        "Offer a two-rakaʿāt prayer with the intention of ziyārah",
+        "Make duʿā and ask for your ḥājāt (lawful wishes) after Ṣalāh",
+        "Recite Qurʾān and gift that thawāb (reward) to the Maʿṣūm",
+        "Have hudhūr al-qalb (presence of heart)",
+        "Seek istighfār (forgiveness) for your sins",
+        "Recite Duʿā al-Widā (farewell duʿā) as your last ziyārah",
+        "Give ṣadaqah (charity)"
+    ]
+    
+    return etiquette_items
+
+def extract_packing_list(text):
+    """Extract suggested packing list"""
+    return {
+        "basics": [
+            "Passport & color copies",
+            "Flight itinerary & hotel details",
+            "Ziyārah group details",
+            "Mobile charger",
+            "Cash & international credit card",
+            "Small bag to take to the ḥaram",
+            "Earphones",
+            "Emergency contact information",
+            "Notebook/pen",
+            "Travel adaptor",
+            "Prescribed medicines",
+            "Additional medicine (tylenol, imodium, cough drops, bandaids)"
+        ],
+        "clothing": [
+            "Shirts",
+            "Comfortable pants",
+            "2-4 Abayas (for women)",
+            "Chador (for women)",
+            "Hijābs & caps (for women)",
+            "Comfortable walking shoes",
+            "Flip flops (for the restroom)",
+            "Socks (1 pair per day)",
+            "Sweater/jacket",
+            "Gloves, hat, scarf (if going in winter)"
+        ],
+        "prayer_items": [
+            "Qurʾān",
+            "Ziyārah guide",
+            "Duʿā books",
+            "Travel prayer rug & turbah"
+        ],
+        "notes": [
+            "For women, a chador and socks are required for entry into the ḥaram",
+            "Refrain from excessive make-up, as you may be prohibited from passing through the checkpoint"
+        ]
+    }
+
+# Create comprehensive data structure
+data = {
+    "general_etiquette": extract_etiquette(""),
+    "packing_list": extract_packing_list(""),
+    "preparation_tips": extract_practical_tips(""),
+    
+    "cities": {
+        "najaf": {
+            "key_sites": [
+                {
+                    "name": "Shrine of Imam Ali (a)",
+                    "includes": [
+                        "Grave of Imam Ali (a)",
+                        "Grave of Prophet Nūḥ (a)",
+                        "Grave of Prophet Ādam (a)",
+                        "Location where Imam Ḥusayn's head was buried previously",
+                        "Graves of various companions and scholars"
+                    ],
+                    "architecture": {
+                        "dome": "Golden dome built by Nādir Shāh Afshār (1156 AH)",
+                        "gates": [
+                            "Imām Riḍā Gate",
+                            "Muslim ibn ʿAqīl Gate (as-Sāʿah Gate/East Gate)",
+                            "At-Ṭūsī Gate (North Gate)",
+                            "Al-Faraj Gate (West Gate)",
+                            "Al-Qiblah Gate (South Gate)"
+                        ]
+                    },
+                    "scholars_buried": [
+                        "ʿAllāmah Ḥillī",
+                        "Shaykh Aʿẓam Murtaḍā Ansārī",
+                        "Ākhūnd Khūrāsānī",
+                        "Sayyid Abū al-Qāsim Khoei",
+                        "Mīrzā Ḥusayn Nūrī",
+                        "Shaykh ʿAbbās Qummī",
+                        "And many other renowned scholars"
+                    ],
+                    "special_days": [
+                        "1st night of Rabīʿ al-Awwal: Laylat ul-Mabīt",
+                        "13th Rajab: Birthday of Imam Ali (a)",
+                        "27th Rajab: Victory of Khaybar",
+                        "17th Ramaḍān: Victory during the Battle of Badr",
+                        "21st Ramaḍān: Shahādah of Imam Ali (a)",
+                        "18th Dhul Hijjah: Eid al-Ghadīr",
+                        "24th of Dhul Hijjah: Eid al-Mubāhalah",
+                        "25th Dhu al-Hijjah: Wedding anniversary of Imam Ali and Sayyidah Fāṭimah"
+                    ]
+                },
+                {
+                    "name": "Wādī as-Salām",
+                    "description": "The largest cemetery in the world, considered blessed land",
+                    "significance": "It is believed that the souls of believers visit this cemetery",
+                    "notable_graves": [
+                        "Prophet Hūd (a)",
+                        "Prophet Ṣāliḥ (a)",
+                        "Maqām of Imam Zayn al-ʿĀbidīn (a)",
+                        "Maqām Ṣāḥib az-Zamān (aj)",
+                        "Maqām of Amīr al-Muʾminīn (a)"
+                    ]
+                },
+                {
+                    "name": "Kumayl ibn Ziyād Shrine",
+                    "significance": "Companion of Imam Ali (a), famous for Duʿā Kumayl"
+                },
+                {
+                    "name": "Masjid Ḥannānah",
+                    "significance": "Contains shrine of the Holy Head of Imam Ḥusayn (a)"
+                }
+            ],
+            "nearby_kufa": {
+                "masjid_al_kufa": {
+                    "significance": "One of the most sacred mosques in Islam",
+                    "history": "Site of many historical events",
+                    "maqams": [
+                        "Maqām of Prophet Ibrāhīm",
+                        "Maqām al-Khiḍr",
+                        "Dakkat al-Qaḍā (Seat of Judgment)",
+                        "Bayt at-Ṭasht (House of the Washtub)",
+                        "Safīnat an-Nūḥ (The Ark of Nūḥ)",
+                        "Dakkat al-Miʿrāj (Seat of Miʿrāj)",
+                        "Maqām of Prophet Ādam (a)",
+                        "Maqām Jibrāʾīl",
+                        "Maqām Imam Zayn al-ʿĀbidīn (a)",
+                        "Bāb Al-Faraj (Maqām of Prophet Nūḥ)",
+                        "Miḥrāb of Amīr al-Mʾuminīn (where Imam Ali was struck)",
+                        "Maqām Imām aṣ-Ṣādiq (a)"
+                    ],
+                    "special_prayer": "Prayer of Hājāt (needs fulfillment) in Masjid al-Kūfah"
+                },
+                "masjid_al_sahlah": {
+                    "significance": "Blessed mosque with multiple maqams",
+                    "virtues": "One of the four mosques where prayers are especially recommended",
+                    "maqams": [
+                        "Maqām Imām aṣ-Ṣādiq (a)",
+                        "Maqām Prophet Ibrāhīm (a)",
+                        "Maqām & House of Prophet Idrīs (a)",
+                        "Maqām Prophet Khiḍr (a)",
+                        "Maqām aṣ-Ṣāliḥīn & Anbīyyāʾ (Station of Righteous & Prophets)",
+                        "Maqām Imam Zayn al-ʿĀbidīn (a)",
+                        "Maqām Imam al-Mahdī (aj)"
+                    ]
+                },
+                "other_sites": [
+                    {
+                        "name": "Shrine of Muslim ibn ʿAqīl",
+                        "significance": "Companion and cousin of Imam Husayn, martyred in Kufa"
+                    },
+                    {
+                        "name": "Mukhtār ibn Abī ʿUbaydah al-Thaqafī Shrine"
+                    },
+                    {
+                        "name": "Hānī ibn ʿUrwah Shrine"
+                    },
+                    {
+                        "name": "Maytham al-Tammār Shrine",
+                        "significance": "Faithful companion of Imam Ali (a)"
+                    },
+                    {
+                        "name": "The Home of Imām ʿAlī (a)"
+                    },
+                    {
+                        "name": "Masjid Ṣaʿṣaʿah ibn Ṣawḥān"
+                    },
+                    {
+                        "name": "Dār al-Imārah"
+                    }
+                ]
+            }
+        },
+        "karbala": {
+            "significance": "Site of the Battle of Karbala where Imam Husayn (a) was martyred",
+            "key_sites": [
+                {
+                    "name": "Shrine of Imam Husayn (a)",
+                    "description": "The holiest site for Shia Muslims",
+                    "architecture": {
+                        "golden_dome": "Main golden dome",
+                        "minarets": "Multiple golden minarets",
+                        "gates": [
+                            "Bāb as-Sidrah",
+                            "Various entrance gates"
+                        ]
+                    },
+                    "special_features": [
+                        "Hāʾir al-Ḥusaynī: A Place Where Duʿās Are Accepted",
+                        "Full prayers (not shortened) can be offered",
+                        "Pigeons are honored and protected",
+                        "Madhbaḥ: The Place of Martyrdom"
+                    ],
+                    "graves_within": [
+                        "Ḥabīb ibn Maḍāhir",
+                        "Sayyid Ibrāhīm al-Mujāb"
+                    ],
+                    "famous_ziyarat": [
+                        "Ziyārat ʿĀshūrāʾ (most recommended)",
+                        "Regular Ziyārah of Imam Husayn",
+                        "Farewell Ziyārah"
+                    ],
+                    "turbah": "Soil from Karbala used for prostration during prayer"
+                },
+                {
+                    "name": "Bayn ul-Ḥaramayn",
+                    "description": "The area between the two shrines",
+                    "significance": "Compared to Ṣafā and Marwah in Makkah"
+                },
+                {
+                    "name": "Shrine of Ḥaḍrat Abū al-Faḍl al-ʿAbbās (a)",
+                    "description": "Brother and standard-bearer of Imam Husayn",
+                    "special_etiquette": "Specific etiquette for visiting",
+                    "associated_shrine": "Shrine of Umm al-Banīn (mother of Abbas)",
+                    "maqams": [
+                        "Maqām of al-ʿAbbās's Right Hand",
+                        "Maqām of al-ʿAbbās's Left Hand",
+                        "Maqām of Ṣāḥib az-Zamān (aj)"
+                    ]
+                },
+                {
+                    "name": "The Euphrates River",
+                    "historical_significance": "Where Abbas was martyred fetching water"
+                },
+                {
+                    "name": "Al-Mukhayyam",
+                    "description": "The historical campsite of Imam Husayn's caravan"
+                },
+                {
+                    "name": "Tall az-Zaynabiyyah",
+                    "significance": "Hill with historical importance"
+                },
+                {
+                    "name": "Maqām Imām aṣ-Ṣādiq (a)"
+                },
+                {
+                    "name": "Shrine of Ḥurr al-Riyāḥī",
+                    "significance": "Commander who switched sides to support Imam Husayn"
+                },
+                {
+                    "name": "Ṭiflay Muslim Shrine",
+                    "description": "Sons of Muslim ibn ʿAqīl"
+                }
+            ],
+            "special_events": [
+                {
+                    "name": "Ziyārat Arbaʿīn",
+                    "description": "Walking pilgrimage 40 days after Ashura",
+                    "rewards": "Immense spiritual rewards for performing ziyārah on foot"
+                },
+                {
+                    "name": "15th of Shaʿbān",
+                    "description": "Birthday of Imam al-Mahdi (aj)"
+                }
+            ]
+        },
+        "kadhimiya": {
+            "also_known_as": "Kāẓimayn",
+            "location": "District of Baghdad",
+            "significance": "Burial place of two Imams",
+            "key_sites": [
+                {
+                    "name": "Shrine of Imam Mūsā al-Kāẓim (a) and Imam Muḥammad al-Jawād (a)",
+                    "imams": [
+                        {
+                            "name": "Imam Mūsā al-Kāẓim (a)",
+                            "title": "The Seventh Imam",
+                            "special_salawat": "Specific ṣalawāt for Imam al-Kāẓim"
+                        },
+                        {
+                            "name": "Imam Muḥammad al-Jawād (a)",
+                            "title": "The Ninth Imam",
+                            "special_salawat": "Specific ṣalawāt for Imam al-Jawād"
+                        }
+                    ],
+                    "ziyarat_texts": [
+                        "Individual Ziyārah for Imam al-Kāẓim",
+                        "Individual Ziyārah for Imam al-Jawād",
+                        "Common Ziyārah for both Imams",
+                        "Farewell Ziyārah"
+                    ],
+                    "scholars_buried": [
+                        {
+                            "name": "Khawājah Naṣīr al-Dīn Ṭūsī",
+                            "significance": "Renowned scholar and mathematician"
+                        },
+                        {
+                            "name": "Shaykh al-Mufīd",
+                            "significance": "Great theologian",
+                            "story": "The Vivid Dream of Shaykh al-Mufīd"
+                        },
+                        {
+                            "name": "Ibn Qūliwayh Qumī"
+                        },
+                        {
+                            "name": "Sayyid Murtaḍā & Sayyid Raḍī",
+                            "significance": "Brothers, both renowned scholars"
+                        }
+                    ]
+                }
+            ]
+        },
+        "samarra": {
+            "also_known_as": "Sāmarrā",
+            "significance": "Site of the 10th and 11th Imams and occultation of 12th Imam",
+            "key_sites": [
+                {
+                    "name": "ʿAskarīyayn Shrine",
+                    "full_name": "Shrine of Imam al-Hādī and Imam Ḥasan al-ʿAskarī (a)",
+                    "history": "Bombed in 2006 and 2007, later reconstructed",
+                    "imams": [
+                        {
+                            "name": "Imam ʿAlī al-Hādī (a)",
+                            "title": "The Tenth Imam"
+                        },
+                        {
+                            "name": "Imam Ḥasan al-ʿAskarī (a)",
+                            "title": "The Eleventh Imam"
+                        }
+                    ],
+                    "ladies_buried": [
+                        {
+                            "name": "Ḥaḍrat Narjis Khātūn (a)",
+                            "relation": "Mother of Imam al-Mahdi (aj)"
+                        },
+                        {
+                            "name": "Ḥaḍrat Hakimā Khātūn (a)",
+                            "relation": "Aunt of Imam al-Askari, present at birth of Imam Mahdi"
+                        },
+                        {
+                            "name": "Sawsan",
+                            "relation": "Mother of Imam Ḥasan al ʿAskari (a)"
+                        },
+                        {
+                            "name": "Ḥaḍrat Samānah",
+                            "relation": "Mother of Imam al-Hādī (a)"
+                        }
+                    ],
+                    "other_graves": [
+                        {
+                            "name": "Sayyid Muḥammad ibn ʿAlī",
+                            "significance": "Brother of Imam al-Hadi"
+                        },
+                        {
+                            "name": "Sayyid Ḥusayn ibn ʿAlī",
+                            "relation": "Brother of Imam Ḥasan al ʿAskarī (a)"
+                        },
+                        {
+                            "name": "Jaʿfar al-Kadhāb",
+                            "relation": "Brother of Imam Ḥasan al ʿAskarī (a)"
+                        },
+                        {
+                            "name": "Abū Hāshim Jaʿfarī"
+                        },
+                        {
+                            "name": "Jamīl ibn Darrāj Kūfī"
+                        },
+                        {
+                            "name": "Ibrāhīm ibn Mālik al-Ashtar"
+                        }
+                    ],
+                    "ziyarat_texts": [
+                        "Idhn Dukhūl (Permission to Enter)",
+                        "Ziyārah of Imam al-Hādī (a)",
+                        "Ziyārah of Imam Ḥasan al-ʿAskarī (a)",
+                        "Common Ziyārah of both Imams",
+                        "Ziyārah of Ḥaḍrat Narjis Khātūn (a)",
+                        "Ziyārah of Ḥaḍrat Hakimā Khātūn (a)",
+                        "Farewell Ziyārah of ʿAskarīyayn (a)"
+                    ]
+                },
+                {
+                    "name": "Holy Sardāb (Cellar)",
+                    "significance": "Place of occultation of Imam al-Mahdi (aj)",
+                    "description": "The 12th Imam went into occultation from this location",
+                    "best_time": "Special times for ziyārah mentioned in the guide",
+                    "special_prayers": [
+                        "Ziyārah of Imam az-Zamān (aj)",
+                        "Duʿā al-Faraj",
+                        "Duʿā al-Ḥujjah",
+                        "Duʿā ʿAhd",
+                        "Duʿā Tawassul",
+                        "Ziyārat Āli Yāsīn"
+                    ]
+                }
+            ]
+        }
+    }
+}
+
+# Write to JSON file
+with open('/app/extracted_ziyarat_data.json', 'w', encoding='utf-8') as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+
+print("Data extraction completed!")
+print(f"Total cities: {len(data['cities'])}")
+print("Data saved to: /app/extracted_ziyarat_data.json")
