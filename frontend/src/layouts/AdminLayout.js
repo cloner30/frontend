@@ -31,10 +31,8 @@ const AdminLayout = () => {
 
   const navigation = [
     { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
+    { name: 'API Manager', href: '/admin/api-manager', icon: Link },
     { name: 'Cities', href: '/admin/cities', icon: MapPin },
-    { name: 'Hotels', href: '/admin/hotels', icon: Home },
-    { name: 'Group Tours', href: '/admin/group-tours', icon: Users },
-    { name: 'Packages', href: '/admin/packages', icon: Package },
     { name: 'Testimonials', href: '/admin/testimonials', icon: MessageSquare },
     { name: 'Home Content', href: '/admin/home-content', icon: Layers },
     { name: 'SEO Settings', href: '/admin/seo', icon: Search },
