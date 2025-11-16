@@ -23,7 +23,7 @@ function App() {
           <Navbar />
           <main className="flex-1">
             <Routes>
-              <Route path="/" element={<EnhancedHome />} />
+              <Route path="/" element={<UltraEnhancedHome />} />
               <Route path="/search" element={<SearchResults />} />
               <Route path="/groups" element={<Groups />} />
               <Route path="/groups/:id" element={<GroupDetail />} />
