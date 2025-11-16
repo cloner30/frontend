@@ -8,7 +8,7 @@ import QuickLinks from '../components/QuickLinks';
 // Removed ComparisonTable - old component
 import ProcessSteps from '../components/ProcessSteps';
 import PopularDestinations from '../components/PopularDestinations';
-import { upcomingGroups, packages, cities, testimonials } from '../mock';
+import { getGroupTours, getPackages, getCities, getTestimonials } from '../services/api';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -26,6 +26,13 @@ const EnhancedHome = () => {
     countries: 0
   });
   const [email, setEmail] = useState('');
+  
+  // API data states
+  const [upcomingGroups, setUpcomingGroups] = useState([]);
+  const [packages, setPackages] = useState([]);
+  const [cities, setCities] = useState([]);
+  const [testimonials, setTestimonials] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // Animated counter effect
   useEffect(() => {
