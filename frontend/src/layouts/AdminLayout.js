@@ -26,9 +26,11 @@ const AdminLayout = () => {
 
   const navigation = [
     { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
+    { name: 'Cities', href: '/admin/cities', icon: MapPin },
     { name: 'Hotels', href: '/admin/hotels', icon: Home },
-    { name: 'Ziyarat Guide', href: '/admin/ziyarat', icon: MapPin },
-    { name: 'Home Content', href: '/admin/home-content', icon: Tag },
+    { name: 'Group Tours', href: '/admin/group-tours', icon: Users },
+    { name: 'Packages', href: '/admin/packages', icon: Package },
+    { name: 'Testimonials', href: '/admin/testimonials', icon: MessageSquare },
     { name: 'SEO Settings', href: '/admin/seo', icon: Search },
     { name: 'Settings', href: '/admin/settings', icon: Settings },
   ];
