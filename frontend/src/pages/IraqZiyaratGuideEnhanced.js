@@ -327,8 +327,6 @@ const IraqZiyaratGuideEnhanced = () => {
                 </Card>
               ))}
             </div>
-          </div>
-        )}
 
             {/* Site Details Modal - Nested on top of City Modal */}
             {selectedSite && (
