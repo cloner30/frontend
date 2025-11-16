@@ -710,8 +710,19 @@ export const ziyaratSites = [
     specialFeatures: [
       {
         name: 'Hāʾir al-Ḥusaynī',
-        description: 'The sacred precinct where duas are specially accepted. This is a blessed area around the shrine.',
+        description: 'Sacred precinct around the shrine where duas are especially accepted',
+        radius: 'Approximately 25 dhirāʿ (arm-lengths) around the shrine',
         significance: 'Supplications made in this area have special acceptance'
+      },
+      {
+        name: 'Madhbaḥ (Place of Martyrdom)',
+        description: 'The exact spot where Imam Ḥusayn (a) was martyred',
+        significance: 'Marked and highly venerated within the shrine complex'
+      },
+      {
+        name: 'Location of Tents',
+        description: 'Area where Imam Husayn\'s family camped during the events of Karbala',
+        significance: 'Historical location within the complex'
       },
       {
         name: 'Full Prayer Permission',
