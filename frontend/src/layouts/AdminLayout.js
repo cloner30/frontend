@@ -67,7 +67,7 @@ const AdminLayout = () => {
                 const Icon = item.icon;
                 const isActive = location.pathname === item.href;
                 return (
-                  <Link
+                  <RouterLink
                     key={item.name}
                     to={item.href}
                     className={`group flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-all ${
@@ -78,7 +78,7 @@ const AdminLayout = () => {
                   >
                     <Icon className="mr-3 h-5 w-5" />
                     {item.name}
-                  </Link>
+                  </RouterLink>
                 );
               })}
             </nav>
