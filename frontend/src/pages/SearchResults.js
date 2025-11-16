@@ -35,25 +35,41 @@ const SearchResults = () => {
   const allAmenities = ['Free WiFi', 'Breakfast', 'Prayer Room', 'Family Rooms', 'Restaurant', 'Parking', 'AC'];
 
   useEffect(() => {
-    const data = type === 'hotels' ? hotels : flights;
-    let filtered = data;
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        let data;
+        
+        if (type === 'hotels') {
+          data = await getHotels(destination || null);
+        } else {
+          data = flights; // Keep flights as mock for now
+        }
+        
+        let filtered = data;
 
-    if (destination) {
-      filtered = data.filter((item) =>
-        type === 'hotels'
-          ? item.city.toLowerCase().includes(destination.toLowerCase())
-          : item.to.toLowerCase().includes(destination.toLowerCase())
-      );
-    }
+        if (destination && type !== 'hotels') {
+          filtered = data.filter((item) =>
+            item.to.toLowerCase().includes(destination.toLowerCase())
+          );
+        }
 
-    // Set initial price range based on data
-    if (filtered.length > 0) {
-      const maxPrice = Math.max(...filtered.map(item => item.price));
-      setPriceRange([0, Math.min(200, maxPrice)]);
-    }
+        // Set initial price range based on data
+        if (filtered.length > 0) {
+          const maxPrice = Math.max(...filtered.map(item => item.price));
+          setPriceRange([0, Math.min(200, maxPrice)]);
+        }
 
-    setResults(filtered);
-    setFilteredResults(filtered);
+        setResults(filtered);
+        setFilteredResults(filtered);
+      } catch (error) {
+        console.error('Error fetching search results:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, [type, destination]);
 
   useEffect(() => {
