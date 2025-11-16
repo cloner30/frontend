@@ -517,32 +517,73 @@ export const ziyaratSites = [
     cityId: 'najaf',
     name: 'Masjid al-Sahlah',
     nameArabic: 'مسجد السهلة',
+    alternativeTitle: 'Bayt Imām al-Mahdī (aj) - The House of Imam Mahdi',
     type: 'Historic Mosque',
     importance: 'High',
     image: 'https://images.unsplash.com/photo-1564769662533-4f00a87b4056',
     description: 'One of the four mosques where prayers are especially recommended and duas are answered.',
-    significance: 'This blessed mosque is the "house" of Imam al-Mahdi (aj). Many righteous people and Prophets are associated with this place.',
+    significance: 'This blessed mosque is the "house" of Imam al-Mahdi (aj). One of the four mosques where prayers and supplications have special acceptance.',
     
-    virtues: 'Prayers and supplications in this mosque have special acceptance. It is one of the four mosques where duas are especially answered.',
-    
-    maqamsInside: [
-      { name: 'Maqām Imām aṣ-Ṣādiq (a)', significance: 'Station of the 6th Imam' },
-      { name: 'Maqām Prophet Ibrāhīm (a)', significance: 'Station of Prophet Abraham' },
-      { name: 'Maqām & House of Prophet Idrīs (a)', significance: 'Place associated with Prophet Enoch' },
-      { name: 'Maqām Prophet Khiḍr (a)', significance: 'Station of the eternal guide' },
-      { name: 'Maqām aṣ-Ṣāliḥīn & Anbīyyāʾ', description: 'Station of the Righteous Ones and Prophets' },
-      { name: 'Maqām Imam Zayn al-ʿĀbidīn (a)', significance: 'Station of the 4th Imam' },
-      { name: 'Maqām Imam al-Mahdī (aj)', significance: 'Most important - the house of the 12th Imam', special: true }
+    virtues: [
+      'Duas are especially answered here',
+      'Special connection to Imam al-Mahdi (aj)',
+      'Many prophets and righteous people are associated with this place',
+      'Recommended to visit on Tuesday and Thursday nights'
     ],
     
     recommendedActs: [
       'Pray 2 rakʿāt in each maqām',
       'Recite Duʿā for the reappearance of Imam al-Mahdi (aj)',
       'Spend time in remembrance and supplication',
-      'Visit on Tuesday nights for special blessings'
+      'Make specific prayers for needs'
     ],
     
-    bestTimeToVisit: 'Tuesday nights, Thursday nights',
+    maqamsInside: [
+      { 
+        name: 'Maqām Imām aṣ-Ṣādiq (a)', 
+        acts: 'Pray 2 rakʿāt and make duʿā',
+        significance: 'Station of the 6th Imam' 
+      },
+      { 
+        name: 'Maqām Prophet Ibrāhīm (a)', 
+        significance: 'Station of Prophet Abraham' 
+      },
+      { 
+        name: 'Maqām & House of Prophet Idrīs (a)', 
+        significance: 'Prophet Enoch\'s place of worship' 
+      },
+      { 
+        name: 'Maqām Prophet Khiḍr (a)', 
+        significance: 'The eternal guide and righteous servant' 
+      },
+      { 
+        name: 'Maqām aṣ-Ṣāliḥīn & Anbīyyāʾ', 
+        significance: 'Station of the Righteous Ones and Prophets' 
+      },
+      { 
+        name: 'Maqām Imam Zayn al-ʿĀbidīn (a)', 
+        significance: 'Station of the 4th Imam' 
+      },
+      { 
+        name: 'Maqām Imam al-Mahdī (aj)', 
+        significance: 'MOST IMPORTANT - The house and station of the 12th Imam',
+        specialPrayers: [
+          'Duʿā for his reappearance',
+          'Duʿā ʿAhd',
+          'Ziyārah of Imam al-Mahdi'
+        ],
+        note: 'This is considered the \'house\' of Imam Mahdi and has special spiritual importance',
+        special: true 
+      }
+    ],
+    
+    bestTimesToVisit: [
+      'Tuesday nights (highly recommended)',
+      'Thursday nights',
+      'Friday mornings',
+      '15th Shaʿbān (birthday of Imam Mahdi)'
+    ],
+    
     visitingHours: 'Open throughout the day and night'
   },
 
