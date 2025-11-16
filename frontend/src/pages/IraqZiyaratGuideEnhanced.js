@@ -556,7 +556,6 @@ const IraqZiyaratGuideEnhanced = () => {
                             )}
                           </TabsContent>
                         </Tabs>
-                        </div>
                       </CardContent>
                     </Card>
                   </div>
