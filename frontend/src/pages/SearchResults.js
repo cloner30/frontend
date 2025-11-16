@@ -351,7 +351,7 @@ const SearchResults = () => {
                             alt={hotel.name}
                             className="w-full h-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
                           />
-                          {hotel.tags && hotel.tags.length > 0 && (
+                          {hotel.tags && Array.isArray(hotel.tags) && hotel.tags.length > 0 && (
                             <div className="absolute top-3 left-3 flex gap-2">
                               {hotel.tags.slice(0, 2).map((tag, idx) => (
                                 <Badge
