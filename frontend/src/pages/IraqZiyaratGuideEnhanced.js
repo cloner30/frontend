@@ -980,6 +980,138 @@ const IraqZiyaratGuideEnhanced = () => {
           </div>
         )}
 
+        {/* Prayer References Tab */}
+        {activeTab === 'prayers' && (
+          <div className="space-y-12">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#1a2f4a] mb-4">Ziyārat Prayer References</h2>
+              <p className="text-xl text-gray-600 mb-4">Guide to prayers at each shrine</p>
+              <div className="max-w-3xl mx-auto p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded">
+                <p className="text-sm text-gray-700">
+                  📖 <strong>Note:</strong> {ziyaratPrayerReferences.note}
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              {Object.entries(ziyaratPrayerReferences).filter(([key]) => key !== 'note').map(([key, section]) => (
+                <Card key={key} className="border-2 border-[#d4af37]/30">
+                  <CardContent className="p-8">
+                    <h3 className="text-2xl font-bold text-[#1a2f4a] mb-6">{section.title}</h3>
+                    <div className="grid grid-cols-1 gap-4">
+                      {section.prayers.map((prayer, idx) => (
+                        <div key={idx} className="p-4 border-l-4 border-[#d4af37] bg-gradient-to-r from-[#d4af37]/5 to-transparent rounded-r-lg">
+                          <div className="flex items-start justify-between mb-2">
+                            <h4 className="font-bold text-[#1a2f4a] text-lg">{prayer.name}</h4>
+                            {prayer.special && (
+                              <Badge className="bg-red-500 text-white">Special</Badge>
+                            )}
+                          </div>
+                          <div className="space-y-1 text-sm">
+                            {prayer.type && <p><span className="font-semibold">Type:</span> {prayer.type}</p>}
+                            {prayer.timing && <p><span className="font-semibold">When:</span> {prayer.timing}</p>}
+                            {prayer.purpose && <p><span className="font-semibold">Purpose:</span> {prayer.purpose}</p>}
+                            {prayer.merit && (
+                              <p className="text-green-700"><span className="font-semibold">Merit:</span> {prayer.merit}</p>
+                            )}
+                            {prayer.instruction && (
+                              <p className="text-blue-700"><span className="font-semibold">Instruction:</span> {prayer.instruction}</p>
+                            )}
+                            {prayer.source && (
+                              <p className="text-gray-600"><span className="font-semibold">Source:</span> {prayer.source}</p>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Martyrs Tab */}
+        {activeTab === 'martyrs' && (
+          <div className="space-y-12">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#1a2f4a] mb-4">{martyrsOfKarbala.title}</h2>
+              <p className="text-xl text-gray-600">{martyrsOfKarbala.date}</p>
+            </div>
+
+            <Card className="border-2 border-red-500/30 bg-gradient-to-br from-red-50 to-white">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-6">
+                  <Heart className="h-8 w-8 text-red-600 mr-3" />
+                  <h3 className="text-2xl font-bold text-[#1a2f4a]">Family of the Prophet (s)</h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {martyrsOfKarbala.familyOfProphet.map((martyr, idx) => (
+                    <div key={idx} className="p-4 bg-white rounded-lg border border-red-200">
+                      <h4 className="font-bold text-red-900 mb-2">{martyr.name}</h4>
+                      <p className="text-sm text-gray-700 mb-1">{martyr.relation}</p>
+                      {martyr.age && <p className="text-sm text-gray-600">Age: {martyr.age}</p>}
+                      {martyr.title && (
+                        <Badge className="bg-[#d4af37] text-[#1a2f4a] mt-2">{martyr.title}</Badge>
+                      )}
+                      {martyr.martyrdom && (
+                        <p className="text-xs text-gray-600 mt-2 italic">{martyr.martyrdom}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-[#d4af37]/30">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-6">
+                  <Users className="h-8 w-8 text-[#d4af37] mr-3" />
+                  <h3 className="text-2xl font-bold text-[#1a2f4a]">Prominent Companions</h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {martyrsOfKarbala.prominentCompanions.map((companion, idx) => (
+                    <div key={idx} className="p-4 bg-[#d4af37]/5 rounded-lg border border-[#d4af37]/20">
+                      <h4 className="font-bold text-[#1a2f4a] mb-2">{companion.name}</h4>
+                      <p className="text-sm text-gray-700">{companion.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="border-l-4 border-red-600">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <AlertCircle className="h-6 w-6 text-red-600 mr-2" />
+                    <h3 className="text-xl font-bold text-[#1a2f4a]">Total Martyred</h3>
+                  </div>
+                  <p className="text-3xl font-bold text-red-600 mb-2">72</p>
+                  <p className="text-gray-700">{martyrsOfKarbala.total}</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-l-4 border-green-600">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <CheckCircle className="h-6 w-6 text-green-600 mr-2" />
+                    <h3 className="text-xl font-bold text-[#1a2f4a]">Survivors</h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {martyrsOfKarbala.survived.map((survivor, idx) => (
+                      <li key={idx} className="text-sm text-gray-700 flex items-start">
+                        <CheckCircle className="h-4 w-4 text-green-600 mr-2 mt-0.5 shrink-0" />
+                        <span>{survivor}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        )}
+
         {/* Practical Laws Tab */}
         {activeTab === 'laws' && (
           <div className="space-y-12">
