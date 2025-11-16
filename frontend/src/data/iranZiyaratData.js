@@ -213,7 +213,7 @@ export const iranCities = [
     country: 'Iran',
     province: 'Razavi Khorasan Province',
     coordinates: { lat: 36.2974, lng: 59.6059 },
-    image: 'https://images.unsplash.com/photo-1626005989833-34f64e3c3e7f',
+    image: 'https://images.unsplash.com/photo-1701154041826-08e674ef288a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxNYXNoaGFkJTIwSXJhbiUyMGNpdHl8ZW58MHx8fHwxNzYzMzIzMTk4fDA&ixlib=rb-4.1.0&q=85',
     description: 'Iran\'s holiest city, home to the magnificent shrine of Imam Ali al-Ridha (a), attracting millions of pilgrims annually.',
     significance: 'Mashhad, meaning "place of martyrdom," is home to the shrine of Imam Ali ibn Musa al-Ridha (a), the 8th Imam of Shia Islam. It is the second-largest city in Iran and one of the most important pilgrimage destinations in the Islamic world.',
     welcomeMessage: 'Welcome to Mashhad, the city of Imam Ridha (a). You are now in the blessed land where the 8th Imam was martyred and buried. May your ziyarat be accepted.',
