@@ -391,6 +391,7 @@ export const iranZiyaratSites = [
       {
         name: 'Imam Ali ibn Musa al-Ridha (a)',
         title: 'Eighth Imam, Dhamin (Guarantor)',
+        titleExplanation: 'Earned the title "Dhamin" (Guarantor) after saving a deer being chased by hunters. The deer sought refuge with the Imam, who gave his guarantee of safety. When the hunters arrived, the Imam asked them to leave the deer. They agreed, but one hunter doubted the deer would survive without their protection. The Imam guaranteed the deer\'s safety, and miraculously, it lived under divine protection. This demonstrated his power of guarantee, earning him the title "Imam Dhamin".',
         birthDate: '11th Dhul Qa\'dah, 148 AH (Medina)',
         martyrdomDate: 'Last day of Safar, 203 AH',
         ageAtMartyrdom: '55 years',
@@ -399,7 +400,7 @@ export const iranZiyaratSites = [
       }
     ],
     
-    historicalBackground: 'Imam Ridha (a) was born in Medina and lived there for 35 years before being invited by the Abbasid Caliph Ma\'mun to Khurasan (Mashhad). Ma\'mun appointed him as heir apparent to gain political legitimacy, but later poisoned him when the Imam\'s popularity grew. The Imam was buried in the garden of Hamid ibn Qahtaba, where the shrine now stands.',
+    historicalBackground: 'Imam Ridha (a) was born in Medina and lived there for 35 years before being invited by the Abbasid Caliph Ma\'mun to Khurasan (Mashhad). Ma\'mun appointed him as heir apparent to gain political legitimacy, but later poisoned him when the Imam\'s popularity grew. The famous story of the Imam saving a deer earned him the title "Dhamin" (Guarantor). The Imam was buried in the garden of Hamid ibn Qahtaba, where the magnificent shrine now stands.',
     
     architecture: {
       goldenDome: 'Majestic golden dome visible from across the city',
