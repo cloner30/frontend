@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
   MapPin, Clock, Calendar, Info, Camera, ShoppingBag, Utensils, 
@@ -12,9 +12,8 @@ import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
+import { getZiyaratGuideCities, getZiyaratGuidePlaces, getZiyaratGuideContent } from '../services/api';
 import { 
-  iraqCities, 
-  ziyaratSites, 
   preparationTips,
   ziyarahEtiquette,
   packingList,
@@ -37,6 +36,30 @@ const IraqZiyaratGuideEnhanced = () => {
   const [selectedCity, setSelectedCity] = useState(null);
   const [selectedSite, setSelectedSite] = useState(null);
   const [activeTab, setActiveTab] = useState('cities');
+  const [iraqCities, setIraqCities] = useState([]);
+  const [ziyaratSites, setZiyaratSites] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch data from backend
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const [citiesData, placesData] = await Promise.all([
+          getZiyaratGuideCities(),
+          getZiyaratGuidePlaces()
+        ]);
+        setIraqCities(citiesData || []);
+        setZiyaratSites(placesData || []);
+      } catch (error) {
+        console.error('Error fetching Ziyarat Guide data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleCitySelect = (city) => {
     setSelectedCity(city);
