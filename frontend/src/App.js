@@ -13,6 +13,7 @@ import ZiyaratGuide from './pages/ZiyaratGuide';
 import CityGuide from './pages/CityGuide';
 import PlanTrip from './pages/PlanTrip';
 import Account from './pages/Account';
+import IraqZiyaratGuide from './pages/IraqZiyaratGuide';
 import { Toaster } from './components/ui/sonner';
 
 function App() {
