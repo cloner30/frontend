@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
-import { AdminAuthProvider } from './contexts/AdminAuthContext';
 import { Toaster } from './components/ui/sonner';
 
 // Layouts
 import PublicLayout from './layouts/PublicLayout';
-import AdminLayout from './layouts/AdminLayout';
 
 // Public Pages
 import EnhancedHome from './pages/EnhancedHome';
@@ -23,26 +21,10 @@ import Account from './pages/Account';
 import IraqZiyaratGuide from './pages/IraqZiyaratGuideEnhanced';
 import IranZiyaratGuide from './pages/IranGuideSimple';
 
-// Admin Pages
-import AdminLogin from './pages/admin/AdminLogin';
-import AdminDashboard from './pages/admin/AdminDashboard';
-import ApiManager from './pages/admin/ApiManager';
-import TestimonialsManager from './pages/admin/TestimonialsManager';
-import CitiesManager from './pages/admin/CitiesManager';
-import SeoManager from './pages/admin/SeoManager';
-import HomePageBuilder from './pages/admin/HomePageBuilderEnhanced';
-
-// Protected Route Component
-const ProtectedRoute = ({ children }) => {
-  const token = localStorage.getItem('adminAuth');
-  return token ? children : <Navigate to="/admin/login" replace />;
-};
-
 function App() {
   return (
     <LanguageProvider>
       <BrowserRouter>
-        <AdminAuthProvider>
         <Routes>
           {/* Public Routes with Navbar/Footer */}
           <Route element={<PublicLayout />}>
@@ -59,58 +41,8 @@ function App() {
             <Route path="/iraq-ziyarat" element={<IraqZiyaratGuide />} />
             <Route path="/iran-ziyarat" element={<IranZiyaratGuide />} />
           </Route>
-
-          {/* Admin Login (No Layout) */}
-          <Route path="/admin/login" element={<AdminLogin />} />
-
-          {/* Admin Routes with Admin Layout */}
-          <Route
-            path="/admin"
-            element={
-              <ProtectedRoute>
-                <AdminLayout />
-              </ProtectedRoute>
-            }
-          >
-            <Route path="dashboard" element={<AdminDashboard />} />
-            <Route path="api-manager" element={<ApiManager />} />
-            <Route path="testimonials" element={<TestimonialsManager />} />
-            <Route path="cities" element={<CitiesManager />} />
-            <Route path="home-content" element={<HomePageBuilder />} />
-            <Route path="seo" element={<SeoManager />} />
-            <Route
-              path="home-content"
-              element={
-                <div className="text-center p-12">
-                  <h2 className="text-2xl font-bold text-[#1a2f4a] mb-4">
-                    Home Content Manager
-                  </h2>
-                  <p className="text-gray-600">Coming in Phase 2</p>
-                </div>
-              }
-            />
-            <Route
-              path="seo"
-              element={
-                <div className="text-center p-12">
-                  <h2 className="text-2xl font-bold text-[#1a2f4a] mb-4">SEO Manager</h2>
-                  <p className="text-gray-600">Coming in Phase 2</p>
-                </div>
-              }
-            />
-            <Route
-              path="settings"
-              element={
-                <div className="text-center p-12">
-                  <h2 className="text-2xl font-bold text-[#1a2f4a] mb-4">Settings</h2>
-                  <p className="text-gray-600">Coming in Phase 2</p>
-                </div>
-              }
-            />
-          </Route>
         </Routes>
         <Toaster />
-        </AdminAuthProvider>
       </BrowserRouter>
     </LanguageProvider>
   );
