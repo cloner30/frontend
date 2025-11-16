@@ -479,7 +479,7 @@ export const iranZiyaratSites = [
     nameFarsi: 'حرم حضرت معصومه',
     type: 'Primary Shrine',
     importance: 'Highest',
-    image: 'https://images.unsplash.com/photo-1590077428593-a55bb07c4665',
+    image: 'https://images.unsplash.com/photo-1680013541263-f254bd540f04?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwxfHxGYXRpbWElMjBNYXN1bWElMjBzaHJpbmUlMjBRb218ZW58MHx8fHwxNzYzMzIzMTY4fDA&ixlib=rb-4.1.0&q=85',
     description: 'The golden-domed shrine of Fatima al-Ma\'suma (a), daughter of Imam Musa al-Kadhim (a) and sister of Imam Ridha (a).',
     
     buriedHere: [
