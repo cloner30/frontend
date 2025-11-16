@@ -22,9 +22,9 @@ const AdminDashboard = () => {
   ];
 
   const quickActions = [
-    { title: 'Add Review', href: '/admin/home-content', icon: MessageSquare, color: 'bg-blue-500' },
-    { title: 'New Offer', href: '/admin/home-content', icon: Tag, color: 'bg-green-500' },
-    { title: 'Edit Ziyarat', href: '/admin/ziyarat', icon: MapPin, color: 'bg-purple-500' },
+    { title: 'Manage Hotels', href: '/admin/hotels', icon: MapPin, color: 'bg-blue-500' },
+    { title: 'Manage Reviews', href: '/admin/testimonials', icon: MessageSquare, color: 'bg-green-500' },
+    { title: 'Edit Ziyarat', href: '/admin/ziyarat', icon: Star, color: 'bg-purple-500' },
     { title: 'Update SEO', href: '/admin/seo', icon: TrendingUp, color: 'bg-orange-500' },
   ];
 
