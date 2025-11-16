@@ -279,61 +279,60 @@ const IraqZiyaratGuideEnhanced = () => {
             )}
 
             {/* City Grid - Always Visible */}
-            {!selectedCity && (
-              <>
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-[#1a2f4a] mb-4">Select Your Destination</h2>
-                  <p className="text-xl text-gray-600">Explore the holy cities and sacred shrines of Iraq</p>
-                </div>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#1a2f4a] mb-4">Select Your Destination</h2>
+              <p className="text-xl text-gray-600">Explore the holy cities and sacred shrines of Iraq</p>
+            </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {iraqCities.map((city) => (
-                    <Card 
-                      key={city.id} 
-                      className="group cursor-pointer hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 hover:border-[#d4af37]"
-                      onClick={() => handleCitySelect(city)}
-                    >
-                      <div className="relative h-64 overflow-hidden">
-                        <img 
-                          src={city.image} 
-                          alt={city.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                          <h3 className="text-3xl font-bold mb-2">{city.name}</h3>
-                          <p className="text-lg text-gray-200 mb-1">{city.nameArabic}</p>
-                          {city.title && (
-                            <Badge className="bg-[#d4af37] text-[#1a2f4a] mt-2">
-                              {city.title}
-                            </Badge>
-                          )}
-                        </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {iraqCities.map((city) => (
+                <Card 
+                  key={city.id} 
+                  className="group cursor-pointer hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 hover:border-[#d4af37]"
+                  onClick={() => handleCitySelect(city)}
+                >
+                  <div className="relative h-64 overflow-hidden">
+                    <img 
+                      src={city.image} 
+                      alt={city.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <h3 className="text-3xl font-bold mb-2">{city.name}</h3>
+                      <p className="text-lg text-gray-200 mb-1">{city.nameArabic}</p>
+                      {city.title && (
+                        <Badge className="bg-[#d4af37] text-[#1a2f4a] mt-2">
+                          {city.title}
+                        </Badge>
+                      )}
+                    </div>
+                  </div>
+                  <CardContent className="p-6">
+                    <p className="text-gray-700 mb-4 line-clamp-3">{city.description}</p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <MapPin className="h-4 w-4 mr-1" />
+                        {city.population}
                       </div>
-                      <CardContent className="p-6">
-                        <p className="text-gray-700 mb-4 line-clamp-3">{city.description}</p>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center text-sm text-gray-600">
-                            <MapPin className="h-4 w-4 mr-1" />
-                            {city.population}
-                          </div>
-                          <Button 
-                            variant="ghost" 
-                            className="text-[#d4af37] hover:bg-[#d4af37]/10"
-                          >
-                            Explore
-                            <ChevronRight className="h-4 w-4 ml-1" />
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </>
-            ) : (
-              <>
-                {/* Selected City Details */}
-                <div>
+                      <Button 
+                        variant="ghost" 
+                        className="text-[#d4af37] hover:bg-[#d4af37]/10"
+                      >
+                        Explore
+                        <ChevronRight className="h-4 w-4 ml-1" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* OLD SECTION TO REMOVE */}
+        {false && (
+          <div>
                   <Button 
                     variant="ghost" 
                     onClick={() => setSelectedCity(null)}
