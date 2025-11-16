@@ -93,7 +93,7 @@ const SearchResults = () => {
         // Amenities filter
         if (selectedAmenities.length > 0) {
           const hasAllAmenities = selectedAmenities.every(amenity =>
-            item.amenities.includes(amenity)
+            item.amenities && Array.isArray(item.amenities) && item.amenities.includes(amenity)
           );
           if (!hasAllAmenities) return false;
         }
