@@ -38,7 +38,7 @@ const IranZiyaratGuideEnhanced = () => {
   };
 
   const citySites = selectedCity 
-    ? ziyaratSites.filter(site => site.cityId === selectedCity.id)
+    ? iranZiyaratSites.filter(site => site.cityId === selectedCity.id)
     : [];
 
   return (
