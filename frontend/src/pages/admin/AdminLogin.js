@@ -110,10 +110,17 @@ const AdminLogin = () => {
             </Button>
           </form>
 
-          <div className="mt-6 text-center">
-            <p className="text-sm text-gray-600">
-              Default credentials: admin@ziyarat.com / admin123
-            </p>
+          <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <div className="flex items-start space-x-2">
+              <AlertCircle className="h-5 w-5 text-blue-600 mt-0.5" />
+              <div>
+                <p className="text-sm font-semibold text-blue-800 mb-1">Default Admin Credentials</p>
+                <p className="text-sm text-blue-700">
+                  <strong>Email:</strong> admin@pilgrimportal.com<br />
+                  <strong>Password:</strong> Admin123!
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
