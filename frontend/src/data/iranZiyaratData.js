@@ -541,7 +541,7 @@ export const iranZiyaratSites = [
     nameFarsi: 'مسجد جمکران',
     type: 'Holy Mosque',
     importance: 'Very High',
-    image: 'https://images.unsplash.com/photo-1591604021695-0c69b7c05981',
+    image: 'https://images.unsplash.com/photo-1601273325230-3f73635f03af?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxKYW1rYXJhbiUyMG1vc3F1ZSUyMFFvbXxlbnwwfHx8fDE3NjMzMjMxODB8MA&ixlib=rb-4.1.0&q=85',
     description: 'Sacred mosque built by command of Imam Mahdi (aj), located on the outskirts of Qom.',
     
     significance: 'According to narrations, Imam Mahdi (aj) appeared to Sheikh Hassan ibn Muthla Jamkarani in 373 AH and commanded him to build this mosque on this blessed land. The Imam visits this mosque every Tuesday night.',
