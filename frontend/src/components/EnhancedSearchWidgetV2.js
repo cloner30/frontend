@@ -233,30 +233,32 @@ const EnhancedSearchWidgetV2 = () => {
           <div className={searchType === 'flights' ? 'md:col-span-3' : 'md:col-span-4'}>
             <Popover open={showDatePicker} onOpenChange={setShowDatePicker}>
               <PopoverTrigger asChild>
-                <Button
-                  variant="outline"
-                  className={cn(
-                    "w-full h-12 justify-start text-left font-normal rounded-lg border-2 pl-10 hover:border-[#1a2f4a]",
-                    !dateRange.from && "text-gray-500",
-                    validationErrors.dates ? "border-red-500" : dateRange.from ? "border-green-500" : "border-gray-300"
-                  )}
-                >
-                  <CalendarIcon className="absolute left-3 h-4 w-4 text-[#ffce05]" />
-                  {dateRange.from ? (
-                    dateRange.to ? (
-                      <>
-                        {format(dateRange.from, 'MMM dd')} <ArrowRight className="h-3 w-3 mx-1" /> {format(dateRange.to, 'MMM dd')}
-                      </>
+                <div className="relative">
+                  <Button
+                    variant="outline"
+                    className={cn(
+                      "w-full h-12 justify-start text-left font-normal rounded-lg border-2 pl-10 pr-10 hover:border-[#1a2f4a]",
+                      !dateRange.from && "text-gray-500",
+                      validationErrors.dates ? "border-red-500" : dateRange.from ? "border-green-500" : "border-gray-300"
+                    )}
+                  >
+                    {dateRange.from ? (
+                      dateRange.to ? (
+                        <>
+                          {format(dateRange.from, 'MMM dd')} <ArrowRight className="h-3 w-3 mx-1" /> {format(dateRange.to, 'MMM dd')}
+                        </>
+                      ) : (
+                        format(dateRange.from, 'MMM dd, yyyy')
+                      )
                     ) : (
-                      format(dateRange.from, 'MMM dd, yyyy')
-                    )
-                  ) : (
-                    <span>Select dates</span>
-                  )}
+                      <span>Select dates</span>
+                    )}
+                  </Button>
+                  <CalendarIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-[#ffce05] pointer-events-none" />
                   {dateRange.from && (
-                    <Check className="absolute right-3 h-4 w-4 text-green-600" />
+                    <Check className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-green-600 pointer-events-none" />
                   )}
-                </Button>
+                </div>
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0" align="start">
                 <div className="p-3 border-b bg-gray-50">
