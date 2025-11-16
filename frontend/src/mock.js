@@ -105,47 +105,517 @@ export const ziyaratPlaces = [
 ];
 
 export const hotels = [
+  // Karbala Hotels
   {
     id: 1,
     name: 'Al-Warith Hotel',
     city: 'Karbala',
+    country: 'Iraq',
+    stars: 4,
     rating: 4.5,
     price: 85,
     currency: 'USD',
     image: 'https://images.unsplash.com/photo-1707172308283-e2d1e44d0be3',
+    images: [
+      'https://images.unsplash.com/photo-1707172308283-e2d1e44d0be3',
+      'https://images.unsplash.com/photo-1611892440504-42a792e24d32',
+      'https://images.unsplash.com/photo-1596436889106-be35e843f974'
+    ],
     distanceToShrine: 0.2,
-    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', 'Family Rooms'],
+    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', 'Family Rooms', '24/7 Reception', 'Laundry'],
     reviews: 245,
-    description: 'Comfortable hotel within walking distance of holy shrines.',
-    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 24 hours'
+    description: 'Comfortable hotel within walking distance of Imam Husain and Al-Abbas shrines. Perfect for families and pilgrims seeking proximity to holy sites.',
+    fullDescription: 'Al-Warith Hotel offers comfortable accommodation for pilgrims visiting the holy shrines of Karbala. Located just 200 meters from Imam Husain Shrine, our hotel provides easy access to all major religious sites. We offer family rooms, prayer facilities, and halal breakfast options. Our staff speaks Arabic, English, and Urdu to assist international pilgrims.',
+    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 24 hours',
+    tags: ['Popular', 'Family Friendly'],
+    roomTypes: [
+      { type: 'Standard Double', beds: '1 Double Bed', capacity: 2, price: 85 },
+      { type: 'Family Room', beds: '2 Double Beds', capacity: 4, price: 140 },
+      { type: 'Triple Room', beds: '3 Single Beds', capacity: 3, price: 115 }
+    ],
+    nearbyShrines: [
+      { name: 'Imam Husain Shrine', distance: 0.2, walkTime: 3 },
+      { name: 'Al-Abbas Shrine', distance: 0.4, walkTime: 6 }
+    ],
+    address: 'Al-Mukhayam Street, Old City, Karbala',
+    phone: '+964 32 123 4567',
+    email: 'info@alwarith-hotel.com'
   },
   {
     id: 2,
     name: 'Grand Husain Hotel',
     city: 'Karbala',
+    country: 'Iraq',
+    stars: 5,
     rating: 4.8,
     price: 120,
     currency: 'USD',
     image: 'https://images.unsplash.com/photo-1607320895054-c5c543e9a069',
+    images: [
+      'https://images.unsplash.com/photo-1607320895054-c5c543e9a069',
+      'https://images.unsplash.com/photo-1618773928121-c32242e63f39',
+      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b'
+    ],
     distanceToShrine: 0.1,
-    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', 'Restaurant', 'Elevator'],
+    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', 'Restaurant', 'Elevator', 'Room Service', 'Shrine Views'],
     reviews: 387,
-    description: 'Premium accommodation with shrine views.',
-    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 48 hours'
+    description: 'Premium accommodation with direct shrine views and luxury amenities.',
+    fullDescription: 'Experience luxury pilgrimage at Grand Husain Hotel. Our 5-star hotel offers unparalleled views of the golden dome of Imam Husain Shrine. With spacious rooms, fine dining restaurant serving halal cuisine, and dedicated prayer facilities on each floor, we ensure your spiritual journey is comfortable and memorable.',
+    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 48 hours',
+    tags: ['Luxury', 'Best Value', 'Shrine Views'],
+    roomTypes: [
+      { type: 'Deluxe Room', beds: '1 King Bed', capacity: 2, price: 120 },
+      { type: 'Shrine View Suite', beds: '1 King Bed', capacity: 2, price: 180 },
+      { type: 'Family Suite', beds: '1 King + 2 Single', capacity: 4, price: 220 }
+    ],
+    nearbyShrines: [
+      { name: 'Imam Husain Shrine', distance: 0.1, walkTime: 2 },
+      { name: 'Al-Abbas Shrine', distance: 0.3, walkTime: 4 }
+    ],
+    address: 'Bab Baghdad Street, Karbala',
+    phone: '+964 32 234 5678',
+    email: 'reservations@grandhusain.com'
   },
   {
     id: 3,
+    name: 'Karbala Rayhaan Hotel',
+    city: 'Karbala',
+    country: 'Iraq',
+    stars: 4,
+    rating: 4.3,
+    price: 95,
+    currency: 'USD',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945',
+    images: [
+      'https://images.unsplash.com/photo-1566073771259-6a8506099945',
+      'https://images.unsplash.com/photo-1595576508898-0ad5c879a061',
+      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304'
+    ],
+    distanceToShrine: 0.5,
+    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', 'Parking', 'Airport Shuttle'],
+    reviews: 156,
+    description: 'Modern hotel with excellent facilities and free parking.',
+    fullDescription: 'Karbala Rayhaan Hotel combines modern comfort with traditional hospitality. Our hotel features spacious rooms, complimentary breakfast buffet, and free shuttle service to the shrines. Ideal for pilgrims arriving by car with ample secure parking available.',
+    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 24 hours',
+    tags: ['Free Parking'],
+    roomTypes: [
+      { type: 'Standard Twin', beds: '2 Single Beds', capacity: 2, price: 95 },
+      { type: 'Family Room', beds: '1 Double + 2 Single', capacity: 4, price: 160 }
+    ],
+    nearbyShrines: [
+      { name: 'Imam Husain Shrine', distance: 0.5, walkTime: 8 },
+      { name: 'Al-Abbas Shrine', distance: 0.6, walkTime: 10 }
+    ],
+    address: 'Al-Hussainiya District, Karbala',
+    phone: '+964 32 345 6789',
+    email: 'info@karbalarayhaan.com'
+  },
+
+  // Najaf Hotels
+  {
+    id: 4,
     name: 'Imam Ali Plaza',
     city: 'Najaf',
+    country: 'Iraq',
+    stars: 4,
     rating: 4.6,
     price: 95,
     currency: 'USD',
     image: 'https://images.unsplash.com/photo-1707172308283-e2d1e44d0be3',
+    images: [
+      'https://images.unsplash.com/photo-1707172308283-e2d1e44d0be3',
+      'https://images.unsplash.com/photo-1611892440504-42a792e24d32',
+      'https://images.unsplash.com/photo-1582719508461-905c673771fd'
+    ],
     distanceToShrine: 0.3,
-    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', 'Parking'],
+    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', 'Parking', 'Restaurant'],
     reviews: 198,
-    description: 'Modern hotel near Imam Ali shrine.',
-    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 24 hours'
+    description: 'Modern hotel near Imam Ali shrine with excellent amenities.',
+    fullDescription: 'Imam Ali Plaza is strategically located near the holy shrine of Imam Ali. Our modern hotel offers comfortable rooms, traditional Iraqi cuisine in our restaurant, and a dedicated prayer area. Experience warm hospitality in the heart of Najaf.',
+    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 24 hours',
+    tags: ['Popular', 'Near Shrine'],
+    roomTypes: [
+      { type: 'Standard Room', beds: '2 Single Beds', capacity: 2, price: 95 },
+      { type: 'Triple Room', beds: '3 Single Beds', capacity: 3, price: 125 },
+      { type: 'Quad Room', beds: '4 Single Beds', capacity: 4, price: 155 }
+    ],
+    nearbyShrines: [
+      { name: 'Imam Ali Shrine', distance: 0.3, walkTime: 5 },
+      { name: 'Wadi Al-Salam Cemetery', distance: 1.2, walkTime: 18 }
+    ],
+    address: 'Al-Rasul Street, Old Najaf',
+    phone: '+964 33 123 4567',
+    email: 'reservations@imamali-plaza.com'
+  },
+  {
+    id: 5,
+    name: 'Najaf Grand Hotel',
+    city: 'Najaf',
+    country: 'Iraq',
+    stars: 5,
+    rating: 4.7,
+    price: 135,
+    currency: 'USD',
+    image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39',
+    images: [
+      'https://images.unsplash.com/photo-1618773928121-c32242e63f39',
+      'https://images.unsplash.com/photo-1590490360182-c33d57733427',
+      'https://images.unsplash.com/photo-1578683010236-d716f9a3f461'
+    ],
+    distanceToShrine: 0.2,
+    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', 'Restaurant', 'Spa', 'Gym', 'Concierge'],
+    reviews: 412,
+    description: 'Luxury 5-star hotel with spa and fine dining restaurant.',
+    fullDescription: 'Najaf Grand Hotel sets the standard for luxury pilgrimage accommodation. Our 5-star property features elegantly appointed rooms, rooftop restaurant with shrine views, wellness spa, and personalized concierge services. Perfect for discerning travelers seeking comfort and spirituality.',
+    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 72 hours',
+    tags: ['Luxury', 'Best Rated'],
+    roomTypes: [
+      { type: 'Deluxe Room', beds: '1 King Bed', capacity: 2, price: 135 },
+      { type: 'Executive Suite', beds: '1 King Bed', capacity: 2, price: 195 },
+      { type: 'Presidential Suite', beds: '1 King + Living Area', capacity: 3, price: 320 }
+    ],
+    nearbyShrines: [
+      { name: 'Imam Ali Shrine', distance: 0.2, walkTime: 3 }
+    ],
+    address: 'Al-Quds Street, Central Najaf',
+    phone: '+964 33 234 5678',
+    email: 'info@najafgrand.com'
+  },
+  {
+    id: 6,
+    name: 'Al-Salam Hotel',
+    city: 'Najaf',
+    country: 'Iraq',
+    stars: 3,
+    rating: 4.2,
+    price: 65,
+    currency: 'USD',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945',
+    images: [
+      'https://images.unsplash.com/photo-1566073771259-6a8506099945',
+      'https://images.unsplash.com/photo-1595576508898-0ad5c879a061'
+    ],
+    distanceToShrine: 0.8,
+    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', '24/7 Reception'],
+    reviews: 89,
+    description: 'Budget-friendly accommodation for pilgrims.',
+    fullDescription: 'Al-Salam Hotel offers clean, comfortable rooms at affordable prices. While simple, we ensure all essential amenities for a pleasant pilgrimage stay. Free breakfast and prayer facilities included.',
+    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 24 hours',
+    tags: ['Budget Friendly'],
+    roomTypes: [
+      { type: 'Standard Room', beds: '2 Single Beds', capacity: 2, price: 65 },
+      { type: 'Family Room', beds: '4 Single Beds', capacity: 4, price: 110 }
+    ],
+    nearbyShrines: [
+      { name: 'Imam Ali Shrine', distance: 0.8, walkTime: 12 }
+    ],
+    address: 'Al-Kufa Road, Najaf',
+    phone: '+964 33 345 6789',
+    email: 'info@alsalam-najaf.com'
+  },
+
+  // Mashhad Hotels (Iran)
+  {
+    id: 7,
+    name: 'Mashhad Grand Hotel',
+    city: 'Mashhad',
+    country: 'Iran',
+    stars: 5,
+    rating: 4.9,
+    price: 150,
+    currency: 'USD',
+    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b',
+    images: [
+      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b',
+      'https://images.unsplash.com/photo-1611892440504-42a792e24d32',
+      'https://images.unsplash.com/photo-1596436889106-be35e843f974'
+    ],
+    distanceToShrine: 0.15,
+    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', 'Restaurant', 'Shrine Views', 'Concierge', 'Tea House'],
+    reviews: 521,
+    description: 'Prestigious hotel adjacent to Imam Reza Shrine with luxury amenities.',
+    fullDescription: 'Mashhad Grand Hotel is the premier choice for pilgrims visiting Imam Reza Shrine. Located directly adjacent to the holy shrine complex, our hotel offers breathtaking views, traditional Persian hospitality, and modern luxury. Features include a Persian tea house, fine dining, and VIP shrine access.',
+    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 72 hours',
+    tags: ['Luxury', 'Best Location', 'Shrine Views'],
+    roomTypes: [
+      { type: 'Superior Room', beds: '2 Single Beds', capacity: 2, price: 150 },
+      { type: 'Shrine View Suite', beds: '1 King Bed', capacity: 2, price: 220 },
+      { type: 'Royal Suite', beds: '1 King + Living Room', capacity: 4, price: 380 }
+    ],
+    nearbyShrines: [
+      { name: 'Imam Reza Shrine', distance: 0.15, walkTime: 2 }
+    ],
+    address: 'Imam Reza Square, Mashhad',
+    phone: '+98 51 3232 4567',
+    email: 'reservations@mashhadgrand.ir'
+  },
+  {
+    id: 8,
+    name: 'Parsian Azadi Hotel',
+    city: 'Mashhad',
+    country: 'Iran',
+    stars: 4,
+    rating: 4.5,
+    price: 95,
+    currency: 'USD',
+    image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427',
+    images: [
+      'https://images.unsplash.com/photo-1590490360182-c33d57733427',
+      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304'
+    ],
+    distanceToShrine: 0.4,
+    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', 'Restaurant', 'Pool', 'Gym'],
+    reviews: 287,
+    description: 'Modern hotel with swimming pool and fitness center.',
+    fullDescription: 'Parsian Azadi Hotel offers contemporary comfort near Imam Reza Shrine. Enjoy our indoor pool, fitness center, and multiple dining options. Perfect for families seeking both comfort and spirituality.',
+    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 48 hours',
+    tags: ['Popular', 'Family Friendly'],
+    roomTypes: [
+      { type: 'Standard Room', beds: '2 Single Beds', capacity: 2, price: 95 },
+      { type: 'Family Room', beds: '1 Double + 2 Single', capacity: 4, price: 165 }
+    ],
+    nearbyShrines: [
+      { name: 'Imam Reza Shrine', distance: 0.4, walkTime: 6 }
+    ],
+    address: 'Tabarsi Street, Mashhad',
+    phone: '+98 51 3345 6789',
+    email: 'info@parsianazadi.ir'
+  },
+
+  // Qom Hotels (Iran)
+  {
+    id: 9,
+    name: 'Qom International Hotel',
+    city: 'Qom',
+    country: 'Iran',
+    stars: 4,
+    rating: 4.4,
+    price: 80,
+    currency: 'USD',
+    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304',
+    images: [
+      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304',
+      'https://images.unsplash.com/photo-1566073771259-6a8506099945'
+    ],
+    distanceToShrine: 0.5,
+    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', 'Restaurant', 'Parking'],
+    reviews: 142,
+    description: 'Comfortable hotel near Fatima Masumeh Shrine.',
+    fullDescription: 'Qom International Hotel provides excellent accommodation for pilgrims visiting the shrine of Hazrat Masumeh. Our hotel features traditional Persian architecture with modern amenities, serving authentic Iranian cuisine.',
+    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 24 hours',
+    tags: ['Popular'],
+    roomTypes: [
+      { type: 'Standard Room', beds: '2 Single Beds', capacity: 2, price: 80 },
+      { type: 'Triple Room', beds: '3 Single Beds', capacity: 3, price: 110 }
+    ],
+    nearbyShrines: [
+      { name: 'Fatima Masumeh Shrine', distance: 0.5, walkTime: 7 }
+    ],
+    address: 'Astane Square, Qom',
+    phone: '+98 25 3712 3456',
+    email: 'info@qominternational.ir'
+  },
+  {
+    id: 10,
+    name: 'Kowsar Hotel',
+    city: 'Qom',
+    country: 'Iran',
+    stars: 3,
+    rating: 4.1,
+    price: 55,
+    currency: 'USD',
+    image: 'https://images.unsplash.com/photo-1595576508898-0ad5c879a061',
+    images: [
+      'https://images.unsplash.com/photo-1595576508898-0ad5c879a061'
+    ],
+    distanceToShrine: 0.8,
+    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room'],
+    reviews: 76,
+    description: 'Affordable lodging for budget-conscious pilgrims.',
+    fullDescription: 'Kowsar Hotel offers clean, simple accommodation at reasonable prices. While basic, we ensure all essential amenities for a comfortable pilgrimage stay.',
+    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 24 hours',
+    tags: ['Budget Friendly'],
+    roomTypes: [
+      { type: 'Standard Room', beds: '2 Single Beds', capacity: 2, price: 55 },
+      { type: 'Family Room', beds: '4 Single Beds', capacity: 4, price: 95 }
+    ],
+    nearbyShrines: [
+      { name: 'Fatima Masumeh Shrine', distance: 0.8, walkTime: 12 }
+    ],
+    address: 'Shohada Street, Qom',
+    phone: '+98 25 3623 4567',
+    email: 'info@kowsarhotel.ir'
+  },
+
+  // Kadhimiya Hotels (Baghdad)
+  {
+    id: 11,
+    name: 'Al-Kadhimiya Palace Hotel',
+    city: 'Kadhimiya',
+    country: 'Iraq',
+    stars: 4,
+    rating: 4.4,
+    price: 90,
+    currency: 'USD',
+    image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461',
+    images: [
+      'https://images.unsplash.com/photo-1578683010236-d716f9a3f461',
+      'https://images.unsplash.com/photo-1611892440504-42a792e24d32'
+    ],
+    distanceToShrine: 0.3,
+    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', 'Restaurant', 'Elevator'],
+    reviews: 167,
+    description: 'Well-appointed hotel near Al-Kadhimiya Shrine.',
+    fullDescription: 'Al-Kadhimiya Palace Hotel offers comfortable accommodation in the historic Kadhimiya district. Close to the shrine of Imam Musa al-Kadhim and Imam Muhammad al-Jawad, our hotel provides easy access to religious sites and Baghdad attractions.',
+    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 24 hours',
+    tags: ['Near Shrine'],
+    roomTypes: [
+      { type: 'Standard Room', beds: '2 Single Beds', capacity: 2, price: 90 },
+      { type: 'Family Room', beds: '1 Double + 2 Single', capacity: 4, price: 145 }
+    ],
+    nearbyShrines: [
+      { name: 'Al-Kadhimiya Shrine', distance: 0.3, walkTime: 5 }
+    ],
+    address: 'Al-Kadhimiya District, Baghdad',
+    phone: '+964 1 523 4567',
+    email: 'info@kadhimiyapalace.com'
+  },
+
+  // Samarra Hotels
+  {
+    id: 12,
+    name: 'Al-Askari Hotel',
+    city: 'Samarra',
+    country: 'Iraq',
+    stars: 3,
+    rating: 4.0,
+    price: 70,
+    currency: 'USD',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945',
+    images: [
+      'https://images.unsplash.com/photo-1566073771259-6a8506099945'
+    ],
+    distanceToShrine: 0.4,
+    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', 'Parking'],
+    reviews: 94,
+    description: 'Simple accommodation near Al-Askari Shrine.',
+    fullDescription: 'Al-Askari Hotel provides basic but comfortable lodging for pilgrims visiting the holy Al-Askari Shrine in Samarra. We offer clean rooms, halal breakfast, and helpful staff to assist with your pilgrimage.',
+    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 24 hours',
+    tags: ['Near Shrine'],
+    roomTypes: [
+      { type: 'Standard Room', beds: '2 Single Beds', capacity: 2, price: 70 },
+      { type: 'Triple Room', beds: '3 Single Beds', capacity: 3, price: 95 }
+    ],
+    nearbyShrines: [
+      { name: 'Al-Askari Shrine', distance: 0.4, walkTime: 6 }
+    ],
+    address: 'Al-Mu\'tasim Street, Samarra',
+    phone: '+964 6 854 3210',
+    email: 'info@alaskarihotel.com'
+  },
+
+  // Additional Karbala Hotels
+  {
+    id: 13,
+    name: 'Safir Al-Zahra Hotel',
+    city: 'Karbala',
+    country: 'Iraq',
+    stars: 4,
+    rating: 4.4,
+    price: 100,
+    currency: 'USD',
+    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd',
+    images: [
+      'https://images.unsplash.com/photo-1582719508461-905c673771fd',
+      'https://images.unsplash.com/photo-1566073771259-6a8506099945'
+    ],
+    distanceToShrine: 0.3,
+    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', 'Family Rooms', 'Restaurant', 'Laundry'],
+    reviews: 203,
+    description: 'Family-friendly hotel with spacious rooms near the shrines.',
+    fullDescription: 'Safir Al-Zahra Hotel specializes in family accommodation with large rooms and child-friendly facilities. Located in the heart of Karbala, we offer easy access to both shrines and local markets.',
+    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 48 hours',
+    tags: ['Family Friendly', 'Popular'],
+    roomTypes: [
+      { type: 'Standard Double', beds: '1 Double Bed', capacity: 2, price: 100 },
+      { type: 'Family Suite', beds: '2 Double Beds', capacity: 5, price: 175 },
+      { type: 'Connecting Rooms', beds: '2 Rooms Connected', capacity: 6, price: 195 }
+    ],
+    nearbyShrines: [
+      { name: 'Imam Husain Shrine', distance: 0.3, walkTime: 5 },
+      { name: 'Al-Abbas Shrine', distance: 0.5, walkTime: 7 }
+    ],
+    address: 'Al-Imam Street, Karbala',
+    phone: '+964 32 456 7890',
+    email: 'reservations@safiralzahra.com'
+  },
+
+  // Additional Najaf Hotels
+  {
+    id: 14,
+    name: 'Najaf Harmony Hotel',
+    city: 'Najaf',
+    country: 'Iraq',
+    stars: 4,
+    rating: 4.3,
+    price: 88,
+    currency: 'USD',
+    image: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32',
+    images: [
+      'https://images.unsplash.com/photo-1611892440504-42a792e24d32',
+      'https://images.unsplash.com/photo-1566073771259-6a8506099945'
+    ],
+    distanceToShrine: 0.6,
+    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', 'Parking', 'Airport Shuttle', '24/7 Reception'],
+    reviews: 134,
+    description: 'Modern hotel with free airport shuttle service.',
+    fullDescription: 'Najaf Harmony Hotel offers convenient accommodation with complimentary airport transfers. Perfect for international pilgrims arriving at Najaf Airport. We provide comfortable rooms and helpful multilingual staff.',
+    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 24 hours',
+    tags: ['Free Shuttle', 'Airport Transfer'],
+    roomTypes: [
+      { type: 'Standard Room', beds: '2 Single Beds', capacity: 2, price: 88 },
+      { type: 'Executive Room', beds: '1 King Bed', capacity: 2, price: 115 },
+      { type: 'Family Room', beds: '1 Double + 2 Single', capacity: 4, price: 155 }
+    ],
+    nearbyShrines: [
+      { name: 'Imam Ali Shrine', distance: 0.6, walkTime: 9 }
+    ],
+    address: 'Airport Road, Najaf',
+    phone: '+964 33 456 7890',
+    email: 'info@najafharmony.com'
+  },
+
+  // Additional Mashhad Hotels
+  {
+    id: 15,
+    name: 'Sepehr Hotel Mashhad',
+    city: 'Mashhad',
+    country: 'Iran',
+    stars: 3,
+    rating: 4.2,
+    price: 70,
+    currency: 'USD',
+    image: 'https://images.unsplash.com/photo-1595576508898-0ad5c879a061',
+    images: [
+      'https://images.unsplash.com/photo-1595576508898-0ad5c879a061'
+    ],
+    distanceToShrine: 1.0,
+    amenities: ['Free WiFi', 'Breakfast', 'AC', 'Prayer Room', 'Restaurant'],
+    reviews: 118,
+    description: 'Affordable hotel with traditional Persian hospitality.',
+    fullDescription: 'Sepehr Hotel offers budget-friendly accommodation without compromising on comfort. Experience traditional Iranian hospitality with modern amenities. Our restaurant serves delicious Persian cuisine.',
+    policies: 'Check-in: 2 PM | Check-out: 12 PM | Free cancellation up to 24 hours',
+    tags: ['Budget Friendly', 'Good Value'],
+    roomTypes: [
+      { type: 'Standard Room', beds: '2 Single Beds', capacity: 2, price: 70 },
+      { type: 'Triple Room', beds: '3 Single Beds', capacity: 3, price: 95 }
+    ],
+    nearbyShrines: [
+      { name: 'Imam Reza Shrine', distance: 1.0, walkTime: 15 }
+    ],
+    address: 'Shirazi Street, Mashhad',
+    phone: '+98 51 3856 7890',
+    email: 'info@sepehrmashhad.ir'
   }
 ];
 
