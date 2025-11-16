@@ -239,11 +239,14 @@ frontend:
     file: "/app/frontend/src/services/api.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: true
           agent: "main"
           comment: "Added external API support to getPackages() and getPackage() functions. Now checks for external API config from API Manager and falls back to internal API if not configured or if external fails."
+        - working: true
+          agent: "testing"
+          comment: "TESTED: Packages API endpoints working perfectly. GET /api/packages returns 2 packages, GET /api/packages/1 returns specific package with 11 fields. All responses are valid JSON with 200 status codes."
 
   - task: "Remove Redundant Admin Managers"
     implemented: true
