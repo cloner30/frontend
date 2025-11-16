@@ -67,6 +67,7 @@ function App() {
             }
           >
             <Route path="dashboard" element={<AdminDashboard />} />
+            <Route path="hotels" element={<HotelsManager />} />
             <Route
               path="ziyarat"
               element={
@@ -74,7 +75,7 @@ function App() {
                   <h2 className="text-2xl font-bold text-[#1a2f4a] mb-4">
                     Ziyarat Guide Manager
                   </h2>
-                  <p className="text-gray-600">Coming in Phase 2</p>
+                  <p className="text-gray-600">Coming soon...</p>
                 </div>
               }
             />
