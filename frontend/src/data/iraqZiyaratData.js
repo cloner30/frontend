@@ -1909,6 +1909,7 @@ export default {
   salahOfZiyarah,
   ziyaratNiyabah,
   scholarsBuriedInNajaf,
+  arabicPrayers,
   ziyaratPrayerReferences,
   martyrsOfKarbala,
   iraqiFoodCulture,
