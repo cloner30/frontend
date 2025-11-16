@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, MapPin, Calendar, Shield, Users, Award, Heart, CheckCircle, Clock, Phone, MessageCircle, ChevronLeft, ChevronRight, TrendingUp, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import EnhancedSearchWidget from '../components/EnhancedSearchWidget';
+import EnhancedSearchWidget from '../components/EnhancedSearchWidgetV2';
 import TrustBadges from '../components/TrustBadges';
 import QuickLinks from '../components/QuickLinks';
 // Removed ComparisonTable - old component
