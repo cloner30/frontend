@@ -701,9 +701,10 @@ export const ziyaratSites = [
     },
     
     gates: [
-      { name: 'Bāb as-Sidrah', description: 'Main entrance gate' },
-      { name: 'Qiblah Gate' },
-      { name: 'Various other entrance gates for men and women' }
+      { name: 'Bāb as-Sidrah', description: 'Gate of the Lotus Tree - Main entrance' },
+      { name: 'Bāb al-Qiblah', description: 'Gate facing Qiblah (direction of Makkah)' },
+      { name: 'Bāb Ṣāḥib az-Zamān', description: 'Gate of Imam Mahdi (aj)' },
+      { name: 'Various entry gates', description: 'Separate gates for men and women' }
     ],
     
     specialFeatures: [
