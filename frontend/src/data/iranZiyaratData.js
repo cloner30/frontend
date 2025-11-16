@@ -345,7 +345,7 @@ export const iranCities = [
     country: 'Iran',
     province: 'Tehran Province (south of Tehran)',
     coordinates: { lat: 35.6058, lng: 51.4264 },
-    image: 'https://images.unsplash.com/photo-1585399000684-d2f72660f092',
+    image: 'https://images.unsplash.com/photo-1702247413104-05821cf6e8c7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwyfHxTaGFoJTIwQWJkb2wlMjBBemltJTIwc2hyaW5lfGVufDB8fHx8MTc2MzMyMzI1N3ww&ixlib=rb-4.1.0&q=85',
     description: 'Ancient city with the shrine of Shah Abdol Azim, one of the most important ziyarat destinations near Tehran.',
     significance: 'Rey is one of the oldest cities in Iran and houses the shrine of Shah Abdol Azim (great-grandson of Imam Hassan), along with several other Imamzadehs and the tomb of the great scholar Sheikh Sudduq.',
     welcomeMessage: 'Welcome to Rey, an ancient city with deep Islamic heritage. The descendants of the Imams rest here.',
