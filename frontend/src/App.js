@@ -8,7 +8,7 @@ import EnhancedHome from './pages/EnhancedHome';
 import SearchResults from './pages/SearchResults';
 import HotelDetail from './pages/HotelDetail';
 import Groups from './pages/Groups';
-import GroupDetail from './pages/GroupDetail';
+import GroupDetailEnhanced from './pages/GroupDetailEnhanced';
 import Packages from './pages/Packages';
 import ZiyaratGuide from './pages/ZiyaratGuide';
 import CityGuide from './pages/CityGuide';
@@ -29,7 +29,7 @@ function App() {
               <Route path="/search" element={<SearchResults />} />
               <Route path="/hotels/:id" element={<HotelDetail />} />
               <Route path="/groups" element={<Groups />} />
-              <Route path="/groups/:id" element={<GroupDetail />} />
+              <Route path="/groups/:id" element={<GroupDetailEnhanced />} />
               <Route path="/packages" element={<Packages />} />
               <Route path="/ziyarat-guide" element={<ZiyaratGuide />} />
               <Route path="/ziyarat-guide/:id" element={<CityGuide />} />
