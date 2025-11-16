@@ -265,8 +265,8 @@ metadata:
 
 test_plan:
   current_focus:
+    - "External API Integration - Packages"
     - "Backend CRUD API Endpoints"
-    - "Data Migration Script"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
