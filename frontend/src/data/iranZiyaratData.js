@@ -706,7 +706,7 @@ export const iranZiyaratSites = [
     nameFarsi: 'شاه چراغ',
     type: 'Major Shrine',
     importance: 'Very High',
-    image: 'https://images.unsplash.com/photo-1565027165018-84bbc2f89f02',
+    image: 'https://images.unsplash.com/photo-1750846361508-22ea14a91801?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwyfHxTaGFoJTIwQ2hlcmFnaCUyMHNocmluZSUyMFNoaXJheiUyMG1pcnJvcnxlbnwwfHx8fDE3NjMzMjMxNzR8MA&ixlib=rb-4.1.0&q=85',
     description: 'Magnificent mirrored shrine of Ahmad ibn Musa (a), brother of Imam Ridha (a), in Shiraz. Also known as Shah Shiragh.',
     
     buriedHere: [
