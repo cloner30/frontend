@@ -158,10 +158,10 @@ const UltraEnhancedHome = () => {
   const [openFaq, setOpenFaq] = useState(null);
 
   return (
-    <div className=\"min-h-screen\">
+    <div className="min-h-screen\">
       {/* Enhanced Hero Section with Video Background Option */}
       <div
-        className=\"relative h-[750px] flex items-center justify-center overflow-hidden\"
+        className="relative h-[750px] flex items-center justify-center overflow-hidden\"
         style={{
           backgroundImage: `linear-gradient(rgba(26, 47, 74, 0.75), rgba(26, 47, 74, 0.75)), url('https://images.unsplash.com/photo-1761475878231-32efb0aeff5d')`,
           backgroundSize: 'cover',
@@ -170,14 +170,14 @@ const UltraEnhancedHome = () => {
         }}
       >
         {/* Animated Gradient Overlay */}
-        <div className=\"absolute inset-0 bg-gradient-to-b from-transparent via-[#1a2f4a]/30 to-[#1a2f4a]/80\" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#1a2f4a]/30 to-[#1a2f4a]/80\" />
         
         {/* Floating particles effect */}
-        <div className=\"absolute inset-0 overflow-hidden pointer-events-none\">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none\">
           {[...Array(20)].map((_, i) => (
             <div
               key={i}
-              className=\"absolute bg-[#d4af37] rounded-full opacity-20 animate-float\"
+              className="absolute bg-[#d4af37] rounded-full opacity-20 animate-float\"
               style={{
                 width: `${Math.random() * 4 + 2}px`,
                 height: `${Math.random() * 4 + 2}px`,
@@ -190,40 +190,40 @@ const UltraEnhancedHome = () => {
           ))}
         </div>
 
-        <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10\">
-          <div className=\"text-center mb-8 animate-fadeIn\">
-            <Badge className=\"bg-gradient-to-r from-[#d4af37] to-[#c49f27] text-[#1a2f4a] mb-4 text-sm px-6 py-2 shadow-lg hover:scale-105 transition-transform\">
-              <Sparkles className=\"h-4 w-4 mr-2 inline\" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10\">
+          <div className="text-center mb-8 animate-fadeIn\">
+            <Badge className="bg-gradient-to-r from-[#d4af37] to-[#c49f27] text-[#1a2f4a] mb-4 text-sm px-6 py-2 shadow-lg hover:scale-105 transition-transform\">
+              <Sparkles className="h-4 w-4 mr-2 inline\" />
               Trusted by 15,000+ Pilgrims Worldwide
             </Badge>
-            <h1 className=\"text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight\">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight\">
               Begin Your Sacred<br />
-              <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-[#f0d785]\">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-[#f0d785]\">
                 Spiritual Journey
               </span>
             </h1>
-            <p className=\"text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed\">
+            <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed\">
               Experience the profound connection of Ziyarat to Iran & Iraq's holiest shrines<br />
-              <span className=\"text-[#d4af37] font-semibold\">with complete peace of mind</span>
+              <span className="text-[#d4af37] font-semibold\">with complete peace of mind</span>
             </p>
           </div>
           
           <EnhancedSearchWidget />
 
           {/* Live Booking Ticker - Enhanced */}
-          <div className=\"mt-6 bg-white/10 backdrop-blur-xl rounded-2xl p-4 max-w-4xl mx-auto border border-white/20 shadow-2xl\">
-            <div className=\"flex items-center justify-center flex-wrap gap-3 text-white text-sm\">
-              <TrendingUp className=\"h-5 w-5 text-green-400 animate-pulse\" />
-              <span className=\"font-bold text-[#d4af37]\">LIVE BOOKINGS:</span>
+          <div className="mt-6 bg-white/10 backdrop-blur-xl rounded-2xl p-4 max-w-4xl mx-auto border border-white/20 shadow-2xl\">
+            <div className="flex items-center justify-center flex-wrap gap-3 text-white text-sm\">
+              <TrendingUp className="h-5 w-5 text-green-400 animate-pulse\" />
+              <span className="font-bold text-[#d4af37]\">LIVE BOOKINGS:</span>
               {recentBookings.map((booking, idx) => (
-                <div key={idx} className=\"flex items-center space-x-2 bg-white/10 rounded-full px-4 py-1 animate-fadeIn\">
-                  <div className=\"w-6 h-6 rounded-full bg-gradient-to-br from-[#d4af37] to-[#c49f27] flex items-center justify-center text-[#1a2f4a] text-xs font-bold\">
+                <div key={idx} className="flex items-center space-x-2 bg-white/10 rounded-full px-4 py-1 animate-fadeIn\">
+                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#d4af37] to-[#c49f27] flex items-center justify-center text-[#1a2f4a] text-xs font-bold\">
                     {booking.avatar}
                   </div>
-                  <span className=\"text-xs\">
-                    <span className=\"font-semibold\">{booking.name}</span> booked <span className=\"text-[#d4af37]\">{booking.destination}</span>
+                  <span className="text-xs\">
+                    <span className="font-semibold\">{booking.name}</span> booked <span className="text-[#d4af37]\">{booking.destination}</span>
                   </span>
-                  <span className=\"text-gray-400 text-xs\">{booking.time}</span>
+                  <span className="text-gray-400 text-xs\">{booking.time}</span>
                 </div>
               ))}
             </div>
@@ -235,12 +235,12 @@ const UltraEnhancedHome = () => {
       <TrustBadges />
 
       {/* Animated Stats Section - Enhanced */}
-      <div className=\"bg-gradient-to-br from-white via-gray-50 to-white py-16 relative overflow-hidden\">
+      <div className="bg-gradient-to-br from-white via-gray-50 to-white py-16 relative overflow-hidden\">
         {/* Background Pattern */}
-        <div className=\"absolute inset-0 opacity-5\" style={{ backgroundImage: 'radial-gradient(circle, #1a2f4a 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
+        <div className="absolute inset-0 opacity-5\" style={{ backgroundImage: 'radial-gradient(circle, #1a2f4a 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
         
-        <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10\">
-          <div className=\"grid grid-cols-2 md:grid-cols-4 gap-8\">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10\">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8\">
             {[
               { label: 'Happy Pilgrims', value: stats.pilgrims, icon: Users, color: 'text-blue-600' },
               { label: 'Tours Completed', value: stats.tours, icon: CheckCircle, color: 'text-green-600' },
@@ -249,13 +249,13 @@ const UltraEnhancedHome = () => {
             ].map((stat, idx) => {
               const Icon = stat.icon;
               return (
-                <div key={idx} className=\"text-center group hover:scale-110 transition-transform duration-300\">
-                  <div className=\"bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-shadow\">
+                <div key={idx} className="text-center group hover:scale-110 transition-transform duration-300\">
+                  <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-shadow\">
                     <Icon className={`h-12 w-12 ${stat.color} mx-auto mb-4`} />
-                    <div className=\"text-5xl font-bold text-[#1a2f4a] mb-2\">
+                    <div className="text-5xl font-bold text-[#1a2f4a] mb-2\">
                       {stat.value.toLocaleString()}{stat.suffix || '+'}
                     </div>
-                    <div className=\"text-gray-600 font-medium\">{stat.label}</div>
+                    <div className="text-gray-600 font-medium\">{stat.label}</div>
                   </div>
                 </div>
               );
@@ -265,43 +265,43 @@ const UltraEnhancedHome = () => {
       </div>
 
       {/* Special Offers Banner - Enhanced Grid */}
-      <div className=\"bg-gradient-to-br from-[#1a2f4a] via-[#2a3f5a] to-[#1a2f4a] py-16 relative overflow-hidden\">
+      <div className="bg-gradient-to-br from-[#1a2f4a] via-[#2a3f5a] to-[#1a2f4a] py-16 relative overflow-hidden\">
         {/* Animated Background Elements */}
-        <div className=\"absolute inset-0 opacity-10\">
-          <div className=\"absolute top-0 left-0 w-96 h-96 bg-[#d4af37] rounded-full blur-3xl animate-pulse\" />
-          <div className=\"absolute bottom-0 right-0 w-96 h-96 bg-[#d4af37] rounded-full blur-3xl animate-pulse\" style={{ animationDelay: '1s' }} />
+        <div className="absolute inset-0 opacity-10\">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-[#d4af37] rounded-full blur-3xl animate-pulse\" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#d4af37] rounded-full blur-3xl animate-pulse\" style={{ animationDelay: '1s' }} />
         </div>
 
-        <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10\">
-          <div className=\"text-center mb-12\">
-            <Badge className=\"bg-[#d4af37] text-[#1a2f4a] mb-4 text-sm px-4 py-1\">
-              <Gift className=\"h-4 w-4 mr-2 inline\" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10\">
+          <div className="text-center mb-12\">
+            <Badge className="bg-[#d4af37] text-[#1a2f4a] mb-4 text-sm px-4 py-1\">
+              <Gift className="h-4 w-4 mr-2 inline\" />
               LIMITED TIME OFFERS
             </Badge>
-            <h2 className=\"text-4xl font-bold text-white mb-3\">Exclusive Savings</h2>
-            <p className=\"text-gray-300 text-lg\">Book now and enjoy incredible discounts on your pilgrimage journey</p>
+            <h2 className="text-4xl font-bold text-white mb-3\">Exclusive Savings</h2>
+            <p className="text-gray-300 text-lg\">Book now and enjoy incredible discounts on your pilgrimage journey</p>
           </div>
 
-          <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6\">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6\">
             {specialOffers.map((offer) => {
               const Icon = offer.icon;
               return (
-                <div key={offer.id} className=\"group cursor-pointer\">
-                  <div className=\"bg-white rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden\">
+                <div key={offer.id} className="group cursor-pointer\">
+                  <div className="bg-white rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden\">
                     {/* Gradient Background */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${offer.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
                     
-                    <div className=\"relative z-10\">
-                      <div className=\"flex items-center justify-between mb-4\">
+                    <div className="relative z-10\">
+                      <div className="flex items-center justify-between mb-4\">
                         <Badge className={`bg-gradient-to-r ${offer.color} text-white px-4 py-1 text-sm font-bold`}>
                           {offer.discount}
                         </Badge>
-                        <Icon className=\"h-8 w-8 text-[#d4af37]\" />
+                        <Icon className="h-8 w-8 text-[#d4af37]\" />
                       </div>
-                      <h3 className=\"font-bold text-xl text-[#1a2f4a] mb-2\">{offer.title}</h3>
-                      <p className=\"text-gray-600 text-sm mb-4\">{offer.description}</p>
-                      <Button variant=\"ghost\" className=\"text-[#1a2f4a] hover:text-[#d4af37] p-0 group-hover:translate-x-2 transition-transform\">
-                        Learn More <ArrowRight className=\"ml-1 h-4 w-4\" />
+                      <h3 className="font-bold text-xl text-[#1a2f4a] mb-2\">{offer.title}</h3>
+                      <p className="text-gray-600 text-sm mb-4\">{offer.description}</p>
+                      <Button variant=\"ghost\" className="text-[#1a2f4a] hover:text-[#d4af37] p-0 group-hover:translate-x-2 transition-transform\">
+                        Learn More <ArrowRight className="ml-1 h-4 w-4\" />
                       </Button>
                     </div>
                   </div>
@@ -313,10 +313,10 @@ const UltraEnhancedHome = () => {
       </div>
 
       {/* Quick Links Section */}
-      <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16\">
-        <div className=\"text-center mb-10\">
-          <h2 className=\"text-3xl md:text-4xl font-bold text-[#1a2f4a] mb-3\">Quick Access</h2>
-          <p className=\"text-gray-600 max-w-2xl mx-auto\">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16\">
+        <div className="text-center mb-10\">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1a2f4a] mb-3\">Quick Access</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto\">
             Everything you need for your pilgrimage journey in one place
           </p>
         </div>
@@ -324,12 +324,12 @@ const UltraEnhancedHome = () => {
       </div>
 
       {/* How It Works - Process Steps */}
-      <div className=\"bg-gradient-to-b from-gray-50 to-white py-16\">
-        <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">
-          <div className=\"text-center mb-12\">
-            <Badge className=\"bg-[#1a2f4a] text-white mb-4\">SIMPLE PROCESS</Badge>
-            <h2 className=\"text-3xl md:text-4xl font-bold text-[#1a2f4a] mb-3\">How It Works</h2>
-            <p className=\"text-gray-600 max-w-2xl mx-auto\">
+      <div className="bg-gradient-to-b from-gray-50 to-white py-16\">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">
+          <div className="text-center mb-12\">
+            <Badge className="bg-[#1a2f4a] text-white mb-4\">SIMPLE PROCESS</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1a2f4a] mb-3\">How It Works</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto\">
               Four simple steps to begin your spiritual journey
             </p>
           </div>
@@ -338,14 +338,14 @@ const UltraEnhancedHome = () => {
       </div>
 
       {/* Popular Destinations - Enhanced */}
-      <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16\">
-        <div className=\"text-center mb-10\">
-          <Badge className=\"bg-gradient-to-r from-[#d4af37] to-[#c49f27] text-[#1a2f4a] mb-4\">
-            <TrendingUp className=\"h-4 w-4 mr-2 inline\" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16\">
+        <div className="text-center mb-10\">
+          <Badge className="bg-gradient-to-r from-[#d4af37] to-[#c49f27] text-[#1a2f4a] mb-4\">
+            <TrendingUp className="h-4 w-4 mr-2 inline\" />
             MOST VISITED
           </Badge>
-          <h2 className=\"text-3xl md:text-4xl font-bold text-[#1a2f4a] mb-3\">Popular Destinations</h2>
-          <p className=\"text-gray-600 max-w-2xl mx-auto\">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1a2f4a] mb-3\">Popular Destinations</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto\">
             Explore the most sought-after pilgrimage destinations
           </p>
         </div>
