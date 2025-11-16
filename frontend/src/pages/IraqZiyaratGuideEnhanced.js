@@ -105,34 +105,46 @@ const IraqZiyaratGuideEnhanced = () => {
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Home
             </Button>
-            <div className="flex items-center space-x-6 text-sm font-medium">
+            <div className="flex items-center space-x-4 text-sm font-medium overflow-x-auto">
               <button 
                 onClick={() => setActiveTab('cities')} 
-                className={`hover:text-[#d4af37] transition-colors ${activeTab === 'cities' ? 'text-[#d4af37]' : 'text-gray-700'}`}
+                className={`hover:text-[#d4af37] transition-colors whitespace-nowrap ${activeTab === 'cities' ? 'text-[#d4af37]' : 'text-gray-700'}`}
               >
                 Cities
               </button>
               <button 
                 onClick={() => setActiveTab('preparation')} 
-                className={`hover:text-[#d4af37] transition-colors ${activeTab === 'preparation' ? 'text-[#d4af37]' : 'text-gray-700'}`}
+                className={`hover:text-[#d4af37] transition-colors whitespace-nowrap ${activeTab === 'preparation' ? 'text-[#d4af37]' : 'text-gray-700'}`}
               >
                 Preparation
               </button>
               <button 
                 onClick={() => setActiveTab('duas')} 
-                className={`hover:text-[#d4af37] transition-colors ${activeTab === 'duas' ? 'text-[#d4af37]' : 'text-gray-700'}`}
+                className={`hover:text-[#d4af37] transition-colors whitespace-nowrap ${activeTab === 'duas' ? 'text-[#d4af37]' : 'text-gray-700'}`}
               >
                 Duas & Prayers
               </button>
               <button 
+                onClick={() => setActiveTab('laws')} 
+                className={`hover:text-[#d4af37] transition-colors whitespace-nowrap ${activeTab === 'laws' ? 'text-[#d4af37]' : 'text-gray-700'}`}
+              >
+                Practical Laws
+              </button>
+              <button 
+                onClick={() => setActiveTab('scholars')} 
+                className={`hover:text-[#d4af37] transition-colors whitespace-nowrap ${activeTab === 'scholars' ? 'text-[#d4af37]' : 'text-gray-700'}`}
+              >
+                Scholars
+              </button>
+              <button 
                 onClick={() => setActiveTab('practical')} 
-                className={`hover:text-[#d4af37] transition-colors ${activeTab === 'practical' ? 'text-[#d4af37]' : 'text-gray-700'}`}
+                className={`hover:text-[#d4af37] transition-colors whitespace-nowrap ${activeTab === 'practical' ? 'text-[#d4af37]' : 'text-gray-700'}`}
               >
                 Travel Info
               </button>
               <button 
                 onClick={() => setActiveTab('events')} 
-                className={`hover:text-[#d4af37] transition-colors ${activeTab === 'events' ? 'text-[#d4af37]' : 'text-gray-700'}`}
+                className={`hover:text-[#d4af37] transition-colors whitespace-nowrap ${activeTab === 'events' ? 'text-[#d4af37]' : 'text-gray-700'}`}
               >
                 Events
               </button>
