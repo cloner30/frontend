@@ -39,6 +39,7 @@ const PlanTripEnhanced = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const [currentStep, setCurrentStep] = useState(1);
+  const [expandedCity, setExpandedCity] = useState(null);
   const [tripData, setTripData] = useState({
     // Step 1
     dateFrom: '',
