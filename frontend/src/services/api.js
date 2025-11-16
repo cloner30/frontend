@@ -1,6 +1,7 @@
 /**
  * API Service
  * Centralized service for all backend API calls
+ * Supports both internal and external (ACF Journeys) APIs
  */
 
 const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || '';
@@ -25,6 +26,52 @@ const fetchAPI = async (endpoint, options = {}) => {
     console.error(`API Error (${endpoint}):`, error);
     throw error;
   }
+};
+
+// External API wrapper for ACF Journeys
+const fetchExternalAPI = async (config, endpoint = '') => {
+  try {
+    const url = `${config.apiUrl}${endpoint || config.endpoint}`;
+    const headers = {
+      'Content-Type': 'application/json',
+      ...config.headers,
+    };
+
+    // Add API Key to headers
+    if (config.apiKey) {
+      headers['X-API-Key'] = config.apiKey;
+      headers['Authorization'] = `Bearer ${config.apiKey}`;
+    }
+
+    const response = await fetch(url, {
+      method: config.method || 'GET',
+      headers,
+    });
+
+    if (!response.ok) {
+      throw new Error(`External API Error: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('External API Error:', error);
+    throw error;
+  }
+};
+
+// Helper to check if external API is configured and enabled
+const getExternalApiConfig = (type) => {
+  const configKey = `api_config_${type}`;
+  const savedConfig = localStorage.getItem(configKey);
+  
+  if (savedConfig) {
+    const config = JSON.parse(savedConfig);
+    if (config.enabled && config.apiUrl && config.apiKey && config.status === 'connected') {
+      return config;
+    }
+  }
+  
+  return null;
 };
 
 // ========================================
