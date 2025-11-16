@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import UltraEnhancedHome from './pages/UltraEnhancedHome';
+import EnhancedHome from './pages/EnhancedHome';
 import SearchResults from './pages/SearchResults';
 import Groups from './pages/Groups';
 import GroupDetail from './pages/GroupDetail';
