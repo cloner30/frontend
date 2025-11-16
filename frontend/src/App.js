@@ -79,18 +79,9 @@ function App() {
             <Route path="packages" element={<PackagesManager />} />
             <Route path="testimonials" element={<TestimonialsManager />} />
             <Route path="cities" element={<CitiesManager />} />
+            <Route path="home-content" element={<HomeContentManager />} />
+            <Route path="ziyarat" element={<ZiyaratGuideManager />} />
             <Route path="seo" element={<SeoManager />} />
-            <Route
-              path="ziyarat"
-              element={
-                <div className="text-center p-12">
-                  <h2 className="text-2xl font-bold text-[#1a2f4a] mb-4">
-                    Ziyarat Guide Manager
-                  </h2>
-                  <p className="text-gray-600">Coming soon...</p>
-                </div>
-              }
-            />
             <Route
               path="home-content"
               element={
