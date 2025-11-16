@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { Star, MapPin, Filter, SlidersHorizontal, Award, Heart } from 'lucide-react';
-import { getHotels } from '../services/api';
-import { flights } from '../mock';
+import { hotels, flights } from '../mock';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
