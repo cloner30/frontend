@@ -424,7 +424,7 @@ const HotelDetail = () => {
                   <div className="text-sm text-gray-500">per night</div>
                 </div>
 
-                <Button className="w-full bg-[#ffce05] hover:bg-[#c49d2f] text-[#1a2f4a] font-bold text-lg py-6 mb-4">
+                <Button className="w-full bg-[#ffce05] hover:bg-[#e6b800] text-[#1a2f4a] font-bold text-lg py-6 mb-4">
                   Book Now
                 </Button>
 

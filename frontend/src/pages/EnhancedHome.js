@@ -547,7 +547,7 @@ const EnhancedHome = () => {
           {/* CTA Button */}
           <div className="text-center">
             <Link to="/iraq-ziyarat">
-              <Button size="lg" className="bg-[#ffce05] text-[#1a2f4a] hover:bg-[#c49d2f] text-xl px-12 py-6 rounded-full shadow-2xl hover:shadow-[#ffce05]/50 transition-all duration-300 transform hover:scale-105">
+              <Button size="lg" className="bg-[#ffce05] text-[#1a2f4a] hover:bg-[#e6b800] text-xl px-12 py-6 rounded-full shadow-2xl hover:shadow-[#ffce05]/50 transition-all duration-300 transform hover:scale-105">
                 Explore Complete Guide
                 <ArrowRight className="ml-3 h-6 w-6" />
               </Button>

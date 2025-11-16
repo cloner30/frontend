@@ -1542,7 +1542,7 @@ const IraqZiyaratGuideEnhanced = () => {
           <div className="flex justify-center space-x-4">
             <Button 
               size="lg" 
-              className="bg-[#ffce05] text-[#1a2f4a] hover:bg-[#c49d2f]"
+              className="bg-[#ffce05] text-[#1a2f4a] hover:bg-[#e6b800]"
               onClick={() => navigate('/')}
             >
               <Home className="h-5 w-5 mr-2" />
