@@ -42,10 +42,10 @@ const EnhancedHome = () => {
         
         setUpcomingGroups(mockGroups);
         setPackages(mockPackages);
-        setCities(citiesData);
-        setTestimonials(testimonialsData);
+        setCities(mockCities);
+        setTestimonials(mockTestimonials);
       } catch (error) {
-        console.error('Error fetching home data:', error);
+        console.error('Error loading home data:', error);
         toast({
           title: "Error",
           description: "Failed to load content. Please refresh the page.",
@@ -56,7 +56,7 @@ const EnhancedHome = () => {
       }
     };
     
-    fetchData();
+    loadData();
   }, [toast]);
 
   // Animated counter effect
