@@ -13,6 +13,7 @@ import { cn } from '../lib/utils';
 const EnhancedSearchWidgetV2 = () => {
   const [searchType, setSearchType] = useState('hotels');
   const [destination, setDestination] = useState('');
+  const [fromCity, setFromCity] = useState('');
   const [dateRange, setDateRange] = useState({ from: null, to: null });
   const [showDestinationSuggestions, setShowDestinationSuggestions] = useState(false);
   const [showGuestsDropdown, setShowGuestsDropdown] = useState(false);
@@ -39,17 +40,7 @@ const EnhancedSearchWidgetV2 = () => {
     { name: 'Karbala', country: 'Iraq', icon: '🕌' },
     { name: 'Najaf', country: 'Iraq', icon: '⭐' },
     { name: 'Mashhad', country: 'Iran', icon: '🌟' },
-    { name: 'Qom', country: 'Iran', icon: '🕋' },
-    { name: 'Baghdad', country: 'Iraq', icon: '🏛️' },
-    { name: 'Tehran', country: 'Iran', icon: '🏙️' }
-  ];
-
-  // Guest presets
-  const guestPresets = [
-    { label: 'Solo Traveler', adults: 1, children: 0, rooms: 1 },
-    { label: 'Couple', adults: 2, children: 0, rooms: 1 },
-    { label: 'Family (4)', adults: 2, children: 2, rooms: 1 },
-    { label: 'Large Group', adults: 4, children: 2, rooms: 2 }
+    { name: 'Qom', country: 'Iran', icon: '🕋' }
   ];
 
   const getTotalGuests = () => {
@@ -85,26 +76,6 @@ const EnhancedSearchWidgetV2 = () => {
     });
   };
 
-  const applyGuestPreset = (preset) => {
-    if (searchType === 'hotels') {
-      const newRooms = [];
-      for (let i = 0; i < preset.rooms; i++) {
-        newRooms.push({
-          adults: Math.floor(preset.adults / preset.rooms),
-          children: i === 0 ? preset.children : 0
-        });
-      }
-      setRooms(newRooms);
-    } else {
-      setFlightPassengers({
-        adults: preset.adults,
-        children: preset.children,
-        infants: 0
-      });
-    }
-    setShowGuestsDropdown(false);
-  };
-
   const validateSearch = () => {
     const errors = {};
     
@@ -112,17 +83,8 @@ const EnhancedSearchWidgetV2 = () => {
       errors.destination = 'Please enter a destination';
     }
     
-    if (searchType === 'hotels') {
-      if (!checkInDate) {
-        errors.checkIn = 'Select check-in date';
-      }
-      if (!checkOutDate) {
-        errors.checkOut = 'Select check-out date';
-      }
-    } else {
-      if (!departureDate) {
-        errors.departure = 'Select departure date';
-      }
+    if (!dateRange.from) {
+      errors.dates = 'Please select dates';
     }
     
     setValidationErrors(errors);
@@ -140,8 +102,8 @@ const EnhancedSearchWidgetV2 = () => {
       const params = new URLSearchParams({
         type: searchType,
         destination,
-        checkIn: checkInDate ? format(checkInDate, 'yyyy-MM-dd') : '',
-        checkOut: checkOutDate ? format(checkOutDate, 'yyyy-MM-dd') : '',
+        checkIn: dateRange.from ? format(dateRange.from, 'yyyy-MM-dd') : '',
+        checkOut: dateRange.to ? format(dateRange.to, 'yyyy-MM-dd') : '',
         rooms: rooms.length.toString(),
         guests: getTotalGuests().toString(),
       });
@@ -149,65 +111,100 @@ const EnhancedSearchWidgetV2 = () => {
     } else {
       const params = new URLSearchParams({
         type: searchType,
-        from: 'London',
+        from: fromCity || 'London',
         destination,
-        departure: departureDate ? format(departureDate, 'yyyy-MM-dd') : '',
-        return: returnDate ? format(returnDate, 'yyyy-MM-dd') : '',
+        departure: dateRange.from ? format(dateRange.from, 'yyyy-MM-dd') : '',
+        return: dateRange.to ? format(dateRange.to, 'yyyy-MM-dd') : '',
         passengers: getTotalFlightPassengers().toString(),
       });
       navigate(`/search?${params.toString()}`);
     }
   };
 
+  // Quick date presets
+  const applyDatePreset = (preset) => {
+    const today = new Date();
+    switch(preset) {
+      case 'today':
+        setDateRange({ from: today, to: addDays(today, 1) });
+        break;
+      case 'tomorrow':
+        setDateRange({ from: addDays(today, 1), to: addDays(today, 2) });
+        break;
+      case 'weekend':
+        setDateRange({ from: today, to: addDays(today, 3) });
+        break;
+      case 'week':
+        setDateRange({ from: today, to: addDays(today, 7) });
+        break;
+      default:
+        break;
+    }
+    setValidationErrors({ ...validationErrors, dates: null });
+  };
+
   return (
-    <div className="w-full bg-white rounded-3xl shadow-2xl p-8 border-2 border-gray-100">
-      {/* Search Type Tabs */}
-      <div className="flex gap-3 mb-8">
+    <div className="w-full bg-white rounded-2xl shadow-xl p-6 border border-gray-200">
+      {/* Search Type Tabs - More Compact */}
+      <div className="flex gap-2 mb-6">
         <button
           onClick={() => setSearchType('hotels')}
           className={cn(
-            "flex-1 py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300 flex items-center justify-center gap-3",
+            "flex-1 py-3 px-4 rounded-lg font-semibold text-base transition-all duration-300 flex items-center justify-center gap-2",
             searchType === 'hotels'
-              ? "bg-gradient-to-r from-[#1a2f4a] to-[#2a4f6a] text-white shadow-lg scale-105"
+              ? "bg-[#1a2f4a] text-white shadow-md"
               : "bg-gray-100 text-gray-600 hover:bg-gray-200"
           )}
         >
-          <Hotel className="h-6 w-6" />
+          <Hotel className="h-5 w-5" />
           Hotels
         </button>
         <button
           onClick={() => setSearchType('flights')}
           className={cn(
-            "flex-1 py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300 flex items-center justify-center gap-3",
+            "flex-1 py-3 px-4 rounded-lg font-semibold text-base transition-all duration-300 flex items-center justify-center gap-2",
             searchType === 'flights'
-              ? "bg-gradient-to-r from-[#1a2f4a] to-[#2a4f6a] text-white shadow-lg scale-105"
+              ? "bg-[#1a2f4a] text-white shadow-md"
               : "bg-gray-100 text-gray-600 hover:bg-gray-200"
           )}
         >
-          <Plane className="h-6 w-6" />
+          <Plane className="h-5 w-5" />
           Flights
         </button>
         <button
           onClick={() => navigate('/groups')}
-          className="flex-1 py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300 flex items-center justify-center gap-3 bg-gray-100 text-gray-600 hover:bg-gray-200"
+          className="flex-1 py-3 px-4 rounded-lg font-semibold text-base transition-all duration-300 flex items-center justify-center gap-2 bg-gray-100 text-gray-600 hover:bg-gray-200"
         >
-          <Users className="h-6 w-6" />
-          Group Tours
+          <Users className="h-5 w-5" />
+          Groups
         </button>
       </div>
 
       <form onSubmit={handleSearch}>
-        <div className="space-y-6">
-          {/* Destination with Popular Cities */}
-          <div>
-            <Label className="text-sm font-semibold text-gray-700 mb-2 block">
-              Where do you want to go?
-            </Label>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
+          {/* FROM CITY - Only for Flights */}
+          {searchType === 'flights' && (
+            <div className="md:col-span-3">
+              <div className="relative">
+                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-[#ffce05] z-10" />
+                <Input
+                  type="text"
+                  placeholder="From: London"
+                  value={fromCity}
+                  onChange={(e) => setFromCity(e.target.value)}
+                  className="h-12 pl-10 rounded-lg border-2 border-gray-300 focus:border-[#1a2f4a]"
+                />
+              </div>
+            </div>
+          )}
+
+          {/* DESTINATION */}
+          <div className={searchType === 'flights' ? 'md:col-span-3' : 'md:col-span-4'}>
             <div className="relative">
-              <MapPin className="absolute left-5 top-1/2 transform -translate-y-1/2 h-6 w-6 text-[#ffce05] z-10" />
+              <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-[#ffce05] z-10" />
               <Input
                 type="text"
-                placeholder="Enter destination (e.g., Karbala, Najaf, Mashhad)"
+                placeholder={searchType === 'hotels' ? 'Where to stay?' : 'To: Destination'}
                 value={destination}
                 onChange={(e) => {
                   setDestination(e.target.value);
@@ -218,470 +215,257 @@ const EnhancedSearchWidgetV2 = () => {
                 }}
                 onFocus={() => setShowDestinationSuggestions(true)}
                 className={cn(
-                  "h-16 pl-16 pr-12 text-lg rounded-xl border-2 transition-all",
+                  "h-12 pl-10 pr-10 rounded-lg border-2 transition-all",
                   validationErrors.destination 
-                    ? "border-red-500 focus:border-red-500" 
+                    ? "border-red-500" 
                     : destination 
-                    ? "border-green-500 focus:border-green-600" 
+                    ? "border-green-500" 
                     : "border-gray-300 focus:border-[#1a2f4a]"
                 )}
               />
               {destination && !validationErrors.destination && (
-                <Check className="absolute right-5 top-1/2 transform -translate-y-1/2 h-6 w-6 text-green-600" />
-              )}
-              {validationErrors.destination && (
-                <p className="text-red-500 text-sm mt-1">{validationErrors.destination}</p>
+                <Check className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-green-600" />
               )}
             </div>
-
-            {/* Popular Destinations */}
-            {(!destination || showDestinationSuggestions) && (
-              <div className="mt-3">
-                <p className="text-sm text-gray-600 mb-2">Popular destinations:</p>
-                <div className="flex flex-wrap gap-2">
-                  {popularDestinations.map((dest, idx) => (
-                    <button
-                      key={idx}
-                      type="button"
-                      onClick={() => {
-                        setDestination(dest.name);
-                        setShowDestinationSuggestions(false);
-                        setValidationErrors({ ...validationErrors, destination: null });
-                      }}
-                      className="px-4 py-2 bg-gray-100 hover:bg-[#ffce05] hover:text-[#1a2f4a] rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-2 border-2 border-transparent hover:border-[#ffce05]"
-                    >
-                      <span>{dest.icon}</span>
-                      <span>{dest.name}</span>
-                      <span className="text-xs text-gray-500">{dest.country}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
 
-          {/* Dates - Hotels */}
-          {searchType === 'hotels' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <Label className="text-sm font-semibold text-gray-700 mb-2 block">
-                  Check-in Date
-                </Label>
-                <Popover>
-                  <PopoverTrigger asChild>
+          {/* DATE RANGE PICKER */}
+          <div className={searchType === 'flights' ? 'md:col-span-3' : 'md:col-span-4'}>
+            <Popover open={showDatePicker} onOpenChange={setShowDatePicker}>
+              <PopoverTrigger asChild>
+                <Button
+                  variant="outline"
+                  className={cn(
+                    "w-full h-12 justify-start text-left font-normal rounded-lg border-2 pl-10 hover:border-[#1a2f4a]",
+                    !dateRange.from && "text-gray-500",
+                    validationErrors.dates ? "border-red-500" : dateRange.from ? "border-green-500" : "border-gray-300"
+                  )}
+                >
+                  <CalendarIcon className="absolute left-3 h-4 w-4 text-[#ffce05]" />
+                  {dateRange.from ? (
+                    dateRange.to ? (
+                      <>
+                        {format(dateRange.from, 'MMM dd')} <ArrowRight className="h-3 w-3 mx-1" /> {format(dateRange.to, 'MMM dd')}
+                      </>
+                    ) : (
+                      format(dateRange.from, 'MMM dd, yyyy')
+                    )
+                  ) : (
+                    <span>Select dates</span>
+                  )}
+                  {dateRange.from && (
+                    <Check className="absolute right-3 h-4 w-4 text-green-600" />
+                  )}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0" align="start">
+                <div className="p-3 border-b bg-gray-50">
+                  <p className="font-semibold mb-2 text-sm">Quick Select:</p>
+                  <div className="grid grid-cols-4 gap-2">
                     <Button
+                      size="sm"
                       variant="outline"
-                      className={cn(
-                        "w-full h-16 justify-start text-left font-normal text-lg rounded-xl border-2 pl-16 hover:border-[#1a2f4a]",
-                        !checkInDate && "text-gray-500",
-                        validationErrors.checkIn ? "border-red-500" : checkInDate ? "border-green-500" : "border-gray-300"
-                      )}
+                      onClick={() => applyDatePreset('today')}
+                      className="text-xs"
                     >
-                      <CalendarIcon className="absolute left-5 h-6 w-6 text-[#ffce05]" />
-                      {checkInDate ? format(checkInDate, 'PPP') : <span>Select check-in date</span>}
-                      {checkInDate && (
-                        <Check className="absolute right-5 h-6 w-6 text-green-600" />
-                      )}
+                      Today
                     </Button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <div className="p-3 border-b">
-                      <p className="font-semibold mb-2">Quick Select:</p>
-                      <div className="flex gap-2">
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          onClick={() => {
-                            setCheckInDate(new Date());
-                            setValidationErrors({ ...validationErrors, checkIn: null });
-                          }}
-                        >
-                          Today
-                        </Button>
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          onClick={() => {
-                            const tomorrow = new Date();
-                            tomorrow.setDate(tomorrow.getDate() + 1);
-                            setCheckInDate(tomorrow);
-                            setValidationErrors({ ...validationErrors, checkIn: null });
-                          }}
-                        >
-                          Tomorrow
-                        </Button>
-                      </div>
-                    </div>
-                    <Calendar
-                      mode="single"
-                      selected={checkInDate}
-                      onSelect={(date) => {
-                        setCheckInDate(date);
-                        setValidationErrors({ ...validationErrors, checkIn: null });
-                      }}
-                      disabled={(date) => date < new Date(new Date().setHours(0, 0, 0, 0))}
-                      initialFocus
-                    />
-                  </PopoverContent>
-                </Popover>
-                {validationErrors.checkIn && (
-                  <p className="text-red-500 text-sm mt-1">{validationErrors.checkIn}</p>
-                )}
-              </div>
-
-              <div>
-                <Label className="text-sm font-semibold text-gray-700 mb-2 block">
-                  Check-out Date
-                </Label>
-                <Popover>
-                  <PopoverTrigger asChild>
                     <Button
+                      size="sm"
                       variant="outline"
-                      className={cn(
-                        "w-full h-16 justify-start text-left font-normal text-lg rounded-xl border-2 pl-16 hover:border-[#1a2f4a]",
-                        !checkOutDate && "text-gray-500",
-                        validationErrors.checkOut ? "border-red-500" : checkOutDate ? "border-green-500" : "border-gray-300"
-                      )}
+                      onClick={() => applyDatePreset('tomorrow')}
+                      className="text-xs"
                     >
-                      <CalendarIcon className="absolute left-5 h-6 w-6 text-[#ffce05]" />
-                      {checkOutDate ? format(checkOutDate, 'PPP') : <span>Select check-out date</span>}
-                      {checkOutDate && (
-                        <Check className="absolute right-5 h-6 w-6 text-green-600" />
-                      )}
+                      Tomorrow
                     </Button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      mode="single"
-                      selected={checkOutDate}
-                      onSelect={(date) => {
-                        setCheckOutDate(date);
-                        setValidationErrors({ ...validationErrors, checkOut: null });
-                      }}
-                      disabled={(date) => 
-                        checkInDate 
-                          ? date <= checkInDate 
-                          : date < new Date(new Date().setHours(0, 0, 0, 0))
-                      }
-                      initialFocus
-                    />
-                  </PopoverContent>
-                </Popover>
-                {validationErrors.checkOut && (
-                  <p className="text-red-500 text-sm mt-1">{validationErrors.checkOut}</p>
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* Dates - Flights */}
-          {searchType === 'flights' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <Label className="text-sm font-semibold text-gray-700 mb-2 block">
-                  Departure Date
-                </Label>
-                <Popover>
-                  <PopoverTrigger asChild>
                     <Button
+                      size="sm"
                       variant="outline"
-                      className={cn(
-                        "w-full h-16 justify-start text-left font-normal text-lg rounded-xl border-2 pl-16 hover:border-[#1a2f4a]",
-                        !departureDate && "text-gray-500",
-                        validationErrors.departure ? "border-red-500" : departureDate ? "border-green-500" : "border-gray-300"
-                      )}
+                      onClick={() => applyDatePreset('weekend')}
+                      className="text-xs"
                     >
-                      <CalendarIcon className="absolute left-5 h-6 w-6 text-[#ffce05]" />
-                      {departureDate ? format(departureDate, 'PPP') : <span>Select departure date</span>}
-                      {departureDate && (
-                        <Check className="absolute right-5 h-6 w-6 text-green-600" />
-                      )}
+                      Weekend
                     </Button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      mode="single"
-                      selected={departureDate}
-                      onSelect={(date) => {
-                        setDepartureDate(date);
-                        setValidationErrors({ ...validationErrors, departure: null });
-                      }}
-                      disabled={(date) => date < new Date(new Date().setHours(0, 0, 0, 0))}
-                      initialFocus
-                    />
-                  </PopoverContent>
-                </Popover>
-                {validationErrors.departure && (
-                  <p className="text-red-500 text-sm mt-1">{validationErrors.departure}</p>
-                )}
-              </div>
-
-              <div>
-                <Label className="text-sm font-semibold text-gray-700 mb-2 block">
-                  Return Date (Optional)
-                </Label>
-                <Popover>
-                  <PopoverTrigger asChild>
                     <Button
+                      size="sm"
                       variant="outline"
-                      className={cn(
-                        "w-full h-16 justify-start text-left font-normal text-lg rounded-xl border-2 pl-16 hover:border-[#1a2f4a]",
-                        !returnDate && "text-gray-500",
-                        returnDate ? "border-green-500" : "border-gray-300"
-                      )}
+                      onClick={() => applyDatePreset('week')}
+                      className="text-xs"
                     >
-                      <CalendarIcon className="absolute left-5 h-6 w-6 text-[#ffce05]" />
-                      {returnDate ? format(returnDate, 'PPP') : <span>Select return date</span>}
-                      {returnDate && (
-                        <Check className="absolute right-5 h-6 w-6 text-green-600" />
-                      )}
+                      1 Week
                     </Button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      mode="single"
-                      selected={returnDate}
-                      onSelect={setReturnDate}
-                      disabled={(date) => 
-                        departureDate 
-                          ? date <= departureDate 
-                          : date < new Date(new Date().setHours(0, 0, 0, 0))
-                      }
-                      initialFocus
-                    />
-                  </PopoverContent>
-                </Popover>
-              </div>
-            </div>
-          )}
+                  </div>
+                </div>
+                <Calendar
+                  mode="range"
+                  selected={dateRange}
+                  onSelect={(range) => {
+                    setDateRange(range || { from: null, to: null });
+                    setValidationErrors({ ...validationErrors, dates: null });
+                    if (range?.from && range?.to) {
+                      setShowDatePicker(false);
+                    }
+                  }}
+                  disabled={(date) => date < new Date(new Date().setHours(0, 0, 0, 0))}
+                  numberOfMonths={2}
+                  initialFocus
+                />
+              </PopoverContent>
+            </Popover>
+          </div>
 
-          {/* Guests/Passengers */}
-          <div className="relative">
-            <Label className="text-sm font-semibold text-gray-700 mb-2 block">
-              {searchType === 'hotels' ? 'Rooms & Guests' : 'Passengers'}
-            </Label>
+          {/* GUESTS/PASSENGERS */}
+          <div className="md:col-span-2 relative">
             <button
               type="button"
               onClick={() => setShowGuestsDropdown(!showGuestsDropdown)}
-              className="w-full h-16 px-6 pl-16 text-left text-lg border-2 border-gray-300 rounded-xl hover:border-[#1a2f4a] transition-all bg-white flex items-center justify-between"
+              className="w-full h-12 px-3 pl-10 text-left border-2 border-gray-300 rounded-lg hover:border-[#1a2f4a] transition-all bg-white flex items-center justify-between text-sm"
             >
-              <div className="flex items-center">
-                <Users className="absolute left-5 h-6 w-6 text-[#ffce05]" />
-                <span className="font-medium text-gray-700">
-                  {searchType === 'hotels'
-                    ? `${getTotalGuests()} Guest${getTotalGuests() !== 1 ? 's' : ''}, ${rooms.length} Room${rooms.length !== 1 ? 's' : ''}`
-                    : `${getTotalFlightPassengers()} Passenger${getTotalFlightPassengers() !== 1 ? 's' : ''}`
-                  }
-                </span>
-              </div>
-              <div className={cn(
-                "transition-transform",
-                showGuestsDropdown && "rotate-180"
-              )}>
-                ▼
-              </div>
+              <Users className="absolute left-3 h-4 w-4 text-[#ffce05]" />
+              <span className="font-medium text-gray-700">
+                {searchType === 'hotels'
+                  ? `${getTotalGuests()} Guest${getTotalGuests() !== 1 ? 's' : ''}`
+                  : `${getTotalFlightPassengers()} Pax`
+                }
+              </span>
+              <div className={cn("transition-transform text-gray-400", showGuestsDropdown && "rotate-180")}>▼</div>
             </button>
 
-            {/* Guests Dropdown */}
             {showGuestsDropdown && (
-              <div className="absolute top-full left-0 right-0 mt-2 bg-white border-2 border-gray-200 rounded-xl shadow-2xl z-50 p-6">
-                {/* Quick Presets */}
-                <div className="mb-6">
-                  <p className="font-semibold text-sm text-gray-700 mb-3">Quick Select:</p>
-                  <div className="grid grid-cols-2 gap-2">
-                    {guestPresets.map((preset, idx) => (
-                      <button
-                        key={idx}
-                        type="button"
-                        onClick={() => applyGuestPreset(preset)}
-                        className="px-4 py-2 bg-gray-100 hover:bg-[#ffce05] hover:text-[#1a2f4a] rounded-lg text-sm font-medium transition-all"
-                      >
-                        {preset.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="border-t pt-4">
-                  {searchType === 'hotels' ? (
-                    // Hotel Rooms Configuration
-                    <div className="space-y-4">
-                      {rooms.map((room, index) => (
-                        <div key={index} className="border border-gray-200 rounded-lg p-4">
-                          <div className="flex items-center justify-between mb-4">
-                            <span className="font-semibold">Room {index + 1}</span>
-                            {rooms.length > 1 && (
-                              <button
-                                type="button"
-                                onClick={() => removeRoom(index)}
-                                className="text-red-500 hover:text-red-700"
-                              >
-                                <X className="h-5 w-5" />
+              <div className="absolute top-full left-0 right-0 mt-2 bg-white border-2 border-gray-200 rounded-lg shadow-2xl z-50 p-4 min-w-[300px]">
+                {searchType === 'hotels' ? (
+                  <div className="space-y-3">
+                    {rooms.map((room, index) => (
+                      <div key={index} className="border border-gray-200 rounded-lg p-3">
+                        <div className="flex items-center justify-between mb-3">
+                          <span className="font-semibold text-sm">Room {index + 1}</span>
+                          {rooms.length > 1 && (
+                            <button type="button" onClick={() => removeRoom(index)} className="text-red-500">
+                              <X className="h-4 w-4" />
+                            </button>
+                          )}
+                        </div>
+                        <div className="space-y-2">
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm">Adults</span>
+                            <div className="flex items-center gap-2">
+                              <button type="button" onClick={() => updateRoom(index, 'adults', room.adults - 1)} className="w-8 h-8 rounded-full bg-gray-200 hover:bg-[#ffce05]">
+                                <Minus className="h-3 w-3 mx-auto" />
                               </button>
-                            )}
-                          </div>
-
-                          <div className="space-y-3">
-                            <div className="flex items-center justify-between">
-                              <span className="text-sm flex items-center gap-2">
-                                <UserCircle className="h-4 w-4" />
-                                Adults
-                              </span>
-                              <div className="flex items-center gap-3">
-                                <button
-                                  type="button"
-                                  onClick={() => updateRoom(index, 'adults', room.adults - 1)}
-                                  className="w-10 h-10 rounded-full bg-gray-200 hover:bg-[#ffce05] font-bold transition-all flex items-center justify-center"
-                                >
-                                  <Minus className="h-4 w-4" />
-                                </button>
-                                <span className="w-8 text-center font-bold text-lg">{room.adults}</span>
-                                <button
-                                  type="button"
-                                  onClick={() => updateRoom(index, 'adults', room.adults + 1)}
-                                  className="w-10 h-10 rounded-full bg-gray-200 hover:bg-[#ffce05] font-bold transition-all flex items-center justify-center"
-                                >
-                                  <Plus className="h-4 w-4" />
-                                </button>
-                              </div>
+                              <span className="w-6 text-center font-bold">{room.adults}</span>
+                              <button type="button" onClick={() => updateRoom(index, 'adults', room.adults + 1)} className="w-8 h-8 rounded-full bg-gray-200 hover:bg-[#ffce05]">
+                                <Plus className="h-3 w-3 mx-auto" />
+                              </button>
                             </div>
-
-                            <div className="flex items-center justify-between">
-                              <span className="text-sm flex items-center gap-2">
-                                <Users className="h-4 w-4" />
-                                Children
-                              </span>
-                              <div className="flex items-center gap-3">
-                                <button
-                                  type="button"
-                                  onClick={() => updateRoom(index, 'children', room.children - 1)}
-                                  className="w-10 h-10 rounded-full bg-gray-200 hover:bg-[#ffce05] font-bold transition-all flex items-center justify-center"
-                                >
-                                  <Minus className="h-4 w-4" />
-                                </button>
-                                <span className="w-8 text-center font-bold text-lg">{room.children}</span>
-                                <button
-                                  type="button"
-                                  onClick={() => updateRoom(index, 'children', room.children + 1)}
-                                  className="w-10 h-10 rounded-full bg-gray-200 hover:bg-[#ffce05] font-bold transition-all flex items-center justify-center"
-                                >
-                                  <Plus className="h-4 w-4" />
-                                </button>
-                              </div>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm">Children</span>
+                            <div className="flex items-center gap-2">
+                              <button type="button" onClick={() => updateRoom(index, 'children', room.children - 1)} className="w-8 h-8 rounded-full bg-gray-200 hover:bg-[#ffce05]">
+                                <Minus className="h-3 w-3 mx-auto" />
+                              </button>
+                              <span className="w-6 text-center font-bold">{room.children}</span>
+                              <button type="button" onClick={() => updateRoom(index, 'children', room.children + 1)} className="w-8 h-8 rounded-full bg-gray-200 hover:bg-[#ffce05]">
+                                <Plus className="h-3 w-3 mx-auto" />
+                              </button>
                             </div>
                           </div>
                         </div>
-                      ))}
-
-                      {rooms.length < 5 && (
-                        <button
-                          type="button"
-                          onClick={addRoom}
-                          className="w-full py-3 border-2 border-dashed border-gray-300 rounded-lg hover:border-[#ffce05] hover:bg-[#ffce05]/10 transition-all flex items-center justify-center gap-2 font-medium"
-                        >
-                          <Plus className="h-5 w-5" />
-                          Add Another Room
+                      </div>
+                    ))}
+                    {rooms.length < 5 && (
+                      <button type="button" onClick={addRoom} className="w-full py-2 border-2 border-dashed border-gray-300 rounded-lg hover:border-[#ffce05] text-sm">
+                        + Add Room
+                      </button>
+                    )}
+                  </div>
+                ) : (
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm">Adults</span>
+                      <div className="flex items-center gap-2">
+                        <button type="button" onClick={() => updateFlightPassengers('adults', flightPassengers.adults - 1)} className="w-8 h-8 rounded-full bg-gray-200 hover:bg-[#ffce05]">
+                          <Minus className="h-3 w-3 mx-auto" />
                         </button>
-                      )}
-                    </div>
-                  ) : (
-                    // Flight Passengers
-                    <div className="space-y-4">
-                      <div className="flex items-center justify-between">
-                        <span className="flex items-center gap-2">
-                          <UserCircle className="h-5 w-5" />
-                          Adults (12+)
-                        </span>
-                        <div className="flex items-center gap-3">
-                          <button
-                            type="button"
-                            onClick={() => updateFlightPassengers('adults', flightPassengers.adults - 1)}
-                            className="w-10 h-10 rounded-full bg-gray-200 hover:bg-[#ffce05] font-bold transition-all flex items-center justify-center"
-                          >
-                            <Minus className="h-4 w-4" />
-                          </button>
-                          <span className="w-8 text-center font-bold text-lg">{flightPassengers.adults}</span>
-                          <button
-                            type="button"
-                            onClick={() => updateFlightPassengers('adults', flightPassengers.adults + 1)}
-                            className="w-10 h-10 rounded-full bg-gray-200 hover:bg-[#ffce05] font-bold transition-all flex items-center justify-center"
-                          >
-                            <Plus className="h-4 w-4" />
-                          </button>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-between">
-                        <span className="flex items-center gap-2">
-                          <Users className="h-5 w-5" />
-                          Children (2-11)
-                        </span>
-                        <div className="flex items-center gap-3">
-                          <button
-                            type="button"
-                            onClick={() => updateFlightPassengers('children', flightPassengers.children - 1)}
-                            className="w-10 h-10 rounded-full bg-gray-200 hover:bg-[#ffce05] font-bold transition-all flex items-center justify-center"
-                          >
-                            <Minus className="h-4 w-4" />
-                          </button>
-                          <span className="w-8 text-center font-bold text-lg">{flightPassengers.children}</span>
-                          <button
-                            type="button"
-                            onClick={() => updateFlightPassengers('children', flightPassengers.children + 1)}
-                            className="w-10 h-10 rounded-full bg-gray-200 hover:bg-[#ffce05] font-bold transition-all flex items-center justify-center"
-                          >
-                            <Plus className="h-4 w-4" />
-                          </button>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-between">
-                        <span className="flex items-center gap-2">
-                          <Baby className="h-5 w-5" />
-                          Infants (Under 2)
-                        </span>
-                        <div className="flex items-center gap-3">
-                          <button
-                            type="button"
-                            onClick={() => updateFlightPassengers('infants', flightPassengers.infants - 1)}
-                            className="w-10 h-10 rounded-full bg-gray-200 hover:bg-[#ffce05] font-bold transition-all flex items-center justify-center"
-                          >
-                            <Minus className="h-4 w-4" />
-                          </button>
-                          <span className="w-8 text-center font-bold text-lg">{flightPassengers.infants}</span>
-                          <button
-                            type="button"
-                            onClick={() => updateFlightPassengers('infants', flightPassengers.infants + 1)}
-                            className="w-10 h-10 rounded-full bg-gray-200 hover:bg-[#ffce05] font-bold transition-all flex items-center justify-center"
-                          >
-                            <Plus className="h-4 w-4" />
-                          </button>
-                        </div>
+                        <span className="w-6 text-center font-bold">{flightPassengers.adults}</span>
+                        <button type="button" onClick={() => updateFlightPassengers('adults', flightPassengers.adults + 1)} className="w-8 h-8 rounded-full bg-gray-200 hover:bg-[#ffce05]">
+                          <Plus className="h-3 w-3 mx-auto" />
+                        </button>
                       </div>
                     </div>
-                  )}
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => setShowGuestsDropdown(false)}
-                  className="w-full mt-4 py-3 bg-[#1a2f4a] text-white rounded-lg hover:bg-[#2a4f6a] font-semibold transition-all"
-                >
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm">Children</span>
+                      <div className="flex items-center gap-2">
+                        <button type="button" onClick={() => updateFlightPassengers('children', flightPassengers.children - 1)} className="w-8 h-8 rounded-full bg-gray-200 hover:bg-[#ffce05]">
+                          <Minus className="h-3 w-3 mx-auto" />
+                        </button>
+                        <span className="w-6 text-center font-bold">{flightPassengers.children}</span>
+                        <button type="button" onClick={() => updateFlightPassengers('children', flightPassengers.children + 1)} className="w-8 h-8 rounded-full bg-gray-200 hover:bg-[#ffce05]">
+                          <Plus className="h-3 w-3 mx-auto" />
+                        </button>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm">Infants</span>
+                      <div className="flex items-center gap-2">
+                        <button type="button" onClick={() => updateFlightPassengers('infants', flightPassengers.infants - 1)} className="w-8 h-8 rounded-full bg-gray-200 hover:bg-[#ffce05]">
+                          <Minus className="h-3 w-3 mx-auto" />
+                        </button>
+                        <span className="w-6 text-center font-bold">{flightPassengers.infants}</span>
+                        <button type="button" onClick={() => updateFlightPassengers('infants', flightPassengers.infants + 1)} className="w-8 h-8 rounded-full bg-gray-200 hover:bg-[#ffce05]">
+                          <Plus className="h-3 w-3 mx-auto" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <button type="button" onClick={() => setShowGuestsDropdown(false)} className="w-full mt-3 py-2 bg-[#1a2f4a] text-white rounded-lg text-sm font-semibold">
                   Done
                 </button>
               </div>
             )}
           </div>
 
-          {/* Search Button */}
-          <Button
-            type="submit"
-            className="w-full h-16 bg-gradient-to-r from-[#ffce05] to-[#e6b800] hover:from-[#e6b800] hover:to-[#ccaa00] text-[#1a2f4a] font-bold text-xl rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.02] flex items-center justify-center gap-3"
-          >
-            <Search className="h-6 w-6" />
-            {searchType === 'hotels' ? 'SEARCH HOTELS' : 'SEARCH FLIGHTS'}
-          </Button>
+          {/* SEARCH BUTTON */}
+          <div className="md:col-span-1">
+            <Button
+              type="submit"
+              className="w-full h-12 bg-gradient-to-r from-[#ffce05] to-[#e6b800] hover:from-[#e6b800] hover:to-[#ccaa00] text-[#1a2f4a] font-bold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center"
+            >
+              <Search className="h-5 w-5" />
+            </Button>
+          </div>
         </div>
+
+        {/* Popular Destinations - Below */}
+        {(!destination || showDestinationSuggestions) && (
+          <div className="mt-4">
+            <div className="flex flex-wrap gap-2">
+              {popularDestinations.map((dest, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => {
+                    setDestination(dest.name);
+                    setShowDestinationSuggestions(false);
+                    setValidationErrors({ ...validationErrors, destination: null });
+                  }}
+                  className="px-3 py-1.5 bg-gray-100 hover:bg-[#ffce05] hover:text-[#1a2f4a] rounded-full text-xs font-medium transition-all duration-200 flex items-center gap-1.5 border border-transparent hover:border-[#ffce05]"
+                >
+                  <span className="text-sm">{dest.icon}</span>
+                  <span>{dest.name}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Validation Errors */}
+        {(validationErrors.destination || validationErrors.dates) && (
+          <div className="mt-3 text-red-500 text-sm">
+            {validationErrors.destination || validationErrors.dates}
+          </div>
+        )}
       </form>
     </div>
   );
