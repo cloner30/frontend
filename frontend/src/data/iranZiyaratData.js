@@ -1002,5 +1002,7 @@ export default {
   iranZiyaratSites,
   iranPreparationTips,
   iranWeatherGuide,
-  iranTravelInfo
+  iranTravelInfo,
+  iranShoppingGuide,
+  specialExperiences
 };
