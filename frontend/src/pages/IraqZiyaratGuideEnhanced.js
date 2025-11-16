@@ -32,8 +32,7 @@ const IraqZiyaratGuideEnhanced = () => {
   const handleCitySelect = (city) => {
     setSelectedCity(city);
     setSelectedSite(null);
-    setActiveTab('sites');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Don't change tab or scroll - keep user in place
   };
 
   const handleSiteSelect = (site) => {
