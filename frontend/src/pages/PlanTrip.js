@@ -369,7 +369,7 @@ const PlanTrip = () => {
           ) : (
             <Button
               onClick={handleSubmit}
-              className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a]"
+              className="bg-[#ffce05] hover:bg-[#e6b800] text-[#1a2f4a]"
             >
               Save Trip Plan
             </Button>

@@ -443,7 +443,7 @@ const Groups = () => {
                             </div>
                           </div>
                           <Link to={`/groups/${group.id}`}>
-                            <Button className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a] font-semibold">
+                            <Button className="bg-[#ffce05] hover:bg-[#e6b800] text-[#1a2f4a] font-semibold">
                               View Details
                             </Button>
                           </Link>

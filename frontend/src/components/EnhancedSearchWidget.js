@@ -594,7 +594,7 @@ const EnhancedSearchWidget = () => {
         {/* Search Button */}
         <Button
           type="submit"
-          className="w-full bg-gradient-to-r from-[#ffce05] to-[#c49f27] hover:from-[#c49f27] hover:to-[#b38e16] text-[#1a2f4a] font-bold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.02] text-lg"
+          className="w-full bg-gradient-to-r from-[#ffce05] to-[#e6b800] hover:from-[#e6b800] hover:to-[#b38e16] text-[#1a2f4a] font-bold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.02] text-lg"
           size="lg"
         >
           <Search className="h-6 w-6 mr-2" />

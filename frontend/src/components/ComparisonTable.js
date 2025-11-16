@@ -57,7 +57,7 @@ const ComparisonTable = () => {
           plan.popular ? 'ring-4 ring-[#ffce05] shadow-2xl' : 'hover:shadow-xl'
         }`}>
           {plan.popular && (
-            <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-[#ffce05] to-[#c49f27] text-[#1a2f4a] text-center py-2 font-bold text-sm">
+            <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-[#ffce05] to-[#e6b800] text-[#1a2f4a] text-center py-2 font-bold text-sm">
               MOST POPULAR
             </div>
           )}
@@ -84,7 +84,7 @@ const ComparisonTable = () => {
             <Button 
               className={`w-full ${
                 plan.popular 
-                  ? 'bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a]' 
+                  ? 'bg-[#ffce05] hover:bg-[#e6b800] text-[#1a2f4a]' 
                   : 'bg-[#1a2f4a] hover:bg-[#2a3f5a] text-white'
               }`}
               size="lg"

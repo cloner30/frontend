@@ -422,7 +422,7 @@ const GroupDetailEnhanced = () => {
                 </div>
 
                 <Button
-                  className="w-full bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a] font-bold text-lg py-6 mb-3"
+                  className="w-full bg-[#ffce05] hover:bg-[#e6b800] text-[#1a2f4a] font-bold text-lg py-6 mb-3"
                   onClick={() => setShowBookingForm(true)}
                   disabled={group.seatsLeft === 0}
                 >
@@ -564,7 +564,7 @@ const GroupDetailEnhanced = () => {
                   </div>
                 </div>
 
-                <Button type="submit" className="w-full bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a] font-bold">
+                <Button type="submit" className="w-full bg-[#ffce05] hover:bg-[#e6b800] text-[#1a2f4a] font-bold">
                   Submit Booking Request
                 </Button>
 

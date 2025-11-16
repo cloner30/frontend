@@ -1055,7 +1055,7 @@ const PlanTripEnhanced = () => {
                 description: 'Redirecting to payment...'
               });
             }}
-            className="flex-1 bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a] font-bold"
+            className="flex-1 bg-[#ffce05] hover:bg-[#e6b800] text-[#1a2f4a] font-bold"
           >
             Proceed to Booking
           </Button>
@@ -1144,7 +1144,7 @@ const PlanTripEnhanced = () => {
                     <Button
                       onClick={nextStep}
                       disabled={!canProceedToNextStep()}
-                      className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a]"
+                      className="bg-[#ffce05] hover:bg-[#e6b800] text-[#1a2f4a]"
                     >
                       Next Step
                       <ArrowRight className="h-4 w-4 ml-2" />

@@ -46,7 +46,7 @@ const Home = () => {
             <Link to="/plan-trip">
               <Button
                 size="lg"
-                className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a] font-semibold"
+                className="bg-[#ffce05] hover:bg-[#e6b800] text-[#1a2f4a] font-semibold"
               >
                 {t('startPlanning')}
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -161,7 +161,7 @@ const Home = () => {
                       <span className="text-sm text-gray-500">{pkg.duration}</span>
                     </div>
                     <Link to={`/packages/${pkg.id}`}>
-                      <Button className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a]">
+                      <Button className="bg-[#ffce05] hover:bg-[#e6b800] text-[#1a2f4a]">
                         View Details
                       </Button>
                     </Link>

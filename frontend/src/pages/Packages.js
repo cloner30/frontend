@@ -86,7 +86,7 @@ const Packages = () => {
                     <span className="text-sm text-gray-500">{t('perPerson')}</span>
                   </div>
                   <Link to={`/packages/${pkg.id}`}>
-                    <Button className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a]" size="lg">
+                    <Button className="bg-[#ffce05] hover:bg-[#e6b800] text-[#1a2f4a]" size="lg">
                       View Details
                     </Button>
                   </Link>

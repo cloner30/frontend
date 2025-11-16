@@ -99,7 +99,7 @@ const CityGuide = () => {
                       </div>
                       <Button
                         onClick={() => addToItinerary(place.name)}
-                        className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a]"
+                        className="bg-[#ffce05] hover:bg-[#e6b800] text-[#1a2f4a]"
                         size="sm"
                       >
                         <Plus className="h-4 w-4 mr-1" />

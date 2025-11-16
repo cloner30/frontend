@@ -181,7 +181,7 @@ const GroupDetail = () => {
 
                 <Button
                   onClick={handleBooking}
-                  className="w-full bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a] font-semibold py-3"
+                  className="w-full bg-[#ffce05] hover:bg-[#e6b800] text-[#1a2f4a] font-semibold py-3"
                   size="lg"
                 >
                   {t('bookNow')}

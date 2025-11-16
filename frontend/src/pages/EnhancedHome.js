@@ -219,7 +219,7 @@ const EnhancedHome = () => {
       </div>
 
       {/* Special Offers Banner */}
-      <div className="bg-gradient-to-r from-[#ffce05] to-[#c49f27] py-8">
+      <div className="bg-gradient-to-r from-[#ffce05] to-[#e6b800] py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {specialOffers.map((offer) => (
@@ -264,7 +264,7 @@ const EnhancedHome = () => {
       {/* Popular Destinations */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-10">
-          <Badge className="bg-gradient-to-r from-[#ffce05] to-[#c49f27] text-[#1a2f4a] mb-4">
+          <Badge className="bg-gradient-to-r from-[#ffce05] to-[#e6b800] text-[#1a2f4a] mb-4">
             <TrendingUp className="h-4 w-4 mr-2 inline" />
             MOST VISITED
           </Badge>
@@ -299,7 +299,7 @@ const EnhancedHome = () => {
             <Link to="/plan-trip">
               <Button
                 size="lg"
-                className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a] font-semibold px-8 py-6 text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="bg-[#ffce05] hover:bg-[#e6b800] text-[#1a2f4a] font-semibold px-8 py-6 text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
               >
                 {t('startPlanning')}
                 <ArrowRight className="ml-2 h-6 w-6" />
@@ -440,7 +440,7 @@ const EnhancedHome = () => {
                       <span className="text-sm text-gray-500">{pkg.duration}</span>
                     </div>
                     <Link to={`/packages/${pkg.id}`}>
-                      <Button className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a]" size="lg">
+                      <Button className="bg-[#ffce05] hover:bg-[#e6b800] text-[#1a2f4a]" size="lg">
                         View Details
                       </Button>
                     </Link>
@@ -676,7 +676,7 @@ const EnhancedHome = () => {
               required
               className="flex-1 bg-white"
             />
-            <Button type="submit" className="bg-[#ffce05] hover:bg-[#c49f27] text-[#1a2f4a] font-semibold px-8">
+            <Button type="submit" className="bg-[#ffce05] hover:bg-[#e6b800] text-[#1a2f4a] font-semibold px-8">
               Subscribe
             </Button>
           </form>
@@ -691,7 +691,7 @@ const EnhancedHome = () => {
             Chat with us
           </span>
         </button>
-        <button className="bg-[#ffce05] text-[#1a2f4a] rounded-full p-4 shadow-2xl hover:bg-[#c49f27] transition-all hover:scale-110 group">
+        <button className="bg-[#ffce05] text-[#1a2f4a] rounded-full p-4 shadow-2xl hover:bg-[#e6b800] transition-all hover:scale-110 group">
           <Phone className="h-6 w-6" />
           <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
             Call us now
