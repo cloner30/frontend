@@ -577,7 +577,7 @@ export const iranZiyaratSites = [
     nameFarsi: 'حرم شاه عبدالعظیم حسنی',
     type: 'Major Shrine',
     importance: 'Very High',
-    image: 'https://images.unsplash.com/photo-1585399000684-d2f72660f092',
+    image: 'https://images.unsplash.com/photo-1673004688182-989c1f5187da?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw0fHxTaGFoJTIwQWJkb2wlMjBBemltJTIwc2hyaW5lfGVufDB8fHx8MTc2MzMyMzI1N3ww&ixlib=rb-4.1.0&q=85',
     description: 'Beautiful shrine of Shah Abdol Azim, great-grandson of Imam Hassan al-Mujtaba (a), in the ancient city of Rey.',
     
     buriedHere: [
