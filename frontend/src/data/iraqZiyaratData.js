@@ -668,7 +668,7 @@ export const ziyaratSites = [
     nameArabic: 'حرم الإمام الحسين',
     type: 'Primary Shrine',
     importance: 'Highest',
-    image: 'https://images.unsplash.com/photo-1711594937687-eed59068e043',
+    image: 'https://images.unsplash.com/photo-1587467729161-5a72070e603e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHw0fHxJbWFtJTIwSHVzc2FpbiUyMHNocmluZSUyMEthcmJhbGF8ZW58MHx8fHwxNzYzMzIzNTY4fDA&ixlib=rb-4.1.0&q=85',
     description: 'The golden-domed shrine of Imam Husayn ibn Ali (a), grandson of Prophet Muhammad (s), who was martyred in the Battle of Karbala on 10th Muharram 61 AH.',
     
     historicalBackground: 'Imam Husayn (a), the third Shia Imam, refused to pledge allegiance to the tyrant Yazid I and traveled toward Kufa upon invitation. He was intercepted at Karbala where he, along with 72 companions and family members including children, was brutally martyred in what is commemorated as the Day of Ashura. The shrine has been rebuilt numerous times, with the current structure featuring magnificent golden domes and intricate tilework.',
