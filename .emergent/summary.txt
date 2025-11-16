@@ -1,79 +1,88 @@
 <analysis>
-The trajectory outlines the iterative frontend development of a Pilgrimage Booking Platform. The AI engineer began by building a complete, multi-page frontend based on mock data, following the user's initial detailed specifications. This included setting up pages for home, search, groups, packages, and a Ziyarat guide, and ensuring functionality like RTL language support.
+The trajectory documents an intensive, multi-phase development effort focused on building and refining a comprehensive Iraq Ziyarat Guide for a pilgrimage booking platform. The work began with a user request to populate the guide using a large PDF file. The AI engineer first overcame technical hurdles to extract text from the PDF, using command-line tools () after initial tool failures. It then wrote Python scripts to parse this text and structure it into a JSON format.
 
-Following the initial build, the user made several requests for enhancements. The engineer first improved the home page's UI/UX, then built a more sophisticated search widget with advanced guest and flight options. A subsequent request for more UI enhancements led to a significant debugging effort where a newly created file () with syntax errors was abandoned in favor of augmenting the existing, stable  page.
+This structured data was used to massively expand a mock data file, . The development was highly iterative, driven by user feedback. The first version was functional but incomplete. A user request for a better UI led to the creation of an enhanced page (). Subsequent user feedback pointed out poor UX (scrolling issue) and missing data (prayers).
 
-The development pivoted when the user requested the implementation of advanced visual effects, but was immediately interrupted by a higher-priority task: to create a detailed Iraq Ziyarat Guide by analyzing a user-provided PDF. The engineer faced technical issues extracting data from the large file and instead generated the content from its knowledge base. The user then pointed out missing data and requested a more thorough analysis of the PDF. The work concluded with the engineer about to re-attempt the data extraction.
+This triggered a major refactoring effort. The engineer implemented a complex modal/overlay system to fix the UX, a process that involved significant debugging of nested JSX syntax errors and build cache issues. Simultaneously, the engineer performed multiple, increasingly comprehensive data extraction passes on the PDF, adding practical laws, scholar biographies, and finally, full Arabic prayer texts with RTL support, after user clarification on copyright.
+
+The trajectory concludes with the engineer acting on a new request to clean up the main home page () by removing outdated components.
 
 The user's primary language is English. Future responses should be in English.
 </analysis>
 
 <product_requirements>
-The goal is to build a responsive frontend for a unique, calm, and trustworthy online pilgrimage booking system for Shia Ziyarats in Iran and Iraq.
+The project goal is to build a responsive, trustworthy, and visually calm frontend for an online pilgrimage (Ziyarat) booking system for sites in Iran and Iraq.
 
-**Core Features & Pages:**
--   **Home Page:** Hero search widget (Hotels/Flights), upcoming groups, featured packages, and Ziyarat guides.
--   **Search Results:** Filterable, sortable lists for hotels and flights with a map view.
--   **Detail Pages:** For hotels, flights, and group departures.
--   **Packages:** Listing and detailed itinerary pages.
--   **Ziyarat Guide:** A comprehensive, interactive guide for key cities (Karbala, Najaf, etc.), built from a user-provided PDF. It must include shrine details, visiting info, practical tips, and prayers.
--   **User Accounts:** Dashboard for managing bookings.
+**Core Features:**
+- **Home Page:** A central hub with a search widget, featured packages, and guides.
+- **Search & Detail Pages:** Standard listings and detailed views for hotels, flights, and travel packages.
+- **Iraq Ziyarat Guide:** A key feature. This is an interactive, comprehensive guide built from a user-provided PDF. It must be mobile-first and include detailed information on holy sites (shrines, mosques), practical travel laws (Aḥkām), historical context, scholar biographies, and authentic prayer texts (Duas) in Arabic with translations.
+- **User Accounts:** For managing bookings.
 
-**Technical & UX Requirements:**
--   **Stack:** React with Tailwind CSS.
--   **Design:** Mobile-first, responsive, and accessible (WCAG AA). The visual style is specified as calm and respectful, using deep navy, soft gold, and warm neutrals.
--   **Localization:** Must support English, Farsi (FA), and Arabic (AR) with full Right-to-Left (RTL) layout support.
--   **Data:** Initially built with mock data, with a recent focus on populating the Iraq Ziyarat Guide with authentic data from a PDF.
+**Technical & UX Specifications:**
+- **Stack:** React, React Router, and Tailwind CSS.
+- **Design:** A mobile-first, responsive design using a calm color palette (deep navy, soft gold, warm neutrals).
+- **Localization:** Must support English and RTL languages (Farsi, Arabic). The Ziyarat Guide implementation has already addressed RTL for Arabic prayer texts.
+- **Data Source:** Initially built with mock data, the primary development effort has been to replace this with authentic, structured data extracted from a provided PDF.
 </product_requirements>
 
 <key_technical_concepts>
-- **Framework/Libraries:** React, React Router, Tailwind CSS,  for icons.
-- **UI Components:** Utilizes pre-built  components located in .
-- **State Management:** Component-level state (, ) and custom hooks (e.g., ).
-- **Development Pattern:** Frontend-first with mock data. API contracts are planned but not yet implemented.
-- **Routing:** Single Page Application (SPA) using  for client-side navigation.
+- **Frameworks:** React, React Router.
+- **Styling:** Tailwind CSS,  for icons.
+- **UI Components:**  and custom-built components.
+- **Data Handling:**
+  - Mock data management in a central JS file ().
+  - PDF text extraction using  ().
+  - Data structuring and parsing via Python scripts.
+- **UI/UX Patterns:**
+  - Single Page Application (SPA) routing.
+  - Implementation of nested modals to improve user experience.
+  - Right-to-Left (RTL) text rendering for Arabic content ().
+- **State Management:** Component-level state with  and .
 </key_technical_concepts>
 
 <code_architecture>
-The application follows a standard React project structure. All frontend code is located within the  directory.
+The application is a standard client-side rendered React application. The code is located in the  directory.
 
 
 
--   **/app/frontend/src/App.js**
-    -   **Importance:** This is the main entry point for routing. It uses  to define all application routes, mapping URLs like , , and  to their respective page components.
-    -   **Changes:** It has been repeatedly modified to add new routes for newly created pages, most recently for the  and to switch the home page from the initial version to .
+- ****
+  - **Importance:** This is the centerpiece of the recent development effort. It is the current, active page for the Iraq Ziyarat Guide, replacing a simpler version. It's designed to be highly interactive and data-rich.
+  - **Changes:** This file was created and heavily modified. A complex tabbed interface was added to display different categories of data (Cities, Practical Laws, Scholars, Arabic Prayers). A nested modal system was implemented to show city and site details without forcing the user to scroll, which required extensive JSX debugging and state management. Specific styling for RTL Arabic text was also added.
 
--   **/app/frontend/src/pages/EnhancedHome.js**
-    -   **Importance:** This is the current, active home page of the application. It aggregates multiple components like the header, the enhanced search widget, and various content sections.
-    -   **Changes:** This file was created to provide a better UI/UX than the initial home page. It was later modified to incorporate additional components like  and a  after a failed attempt to create an .
+- ****
+  - **Importance:** This file acts as the client-side database for the entire Ziyarat Guide. It exports JavaScript objects and arrays containing all content.
+  - **Changes:** This file underwent massive expansion. It started as a small mock data file and was iteratively overwritten with comprehensive data extracted from a PDF. It now contains structured information on cities, holy sites, historical events, scholar biographies, practical laws, and full Arabic prayer texts with transliterations and translations.
 
--   **/app/frontend/src/components/EnhancedSearchWidget.js**
-    -   **Importance:** This component provides the advanced search functionality on the home page, including tabs for Hotels/Flights, a complex guest/room selector, and a date range picker.
-    -   **Changes:** Created to replace the initial, simpler search widget based on a user request for more advanced features.
+- ****
+  - **Importance:** This is the application's main landing page. It features the primary search widget and links to other key sections.
+  - **Changes:** The most recent work involves modifying this file. The  component and a section linking to an old guide have been removed to declutter the page and direct users to the new, enhanced Ziyarat Guide.
 
--   **/app/frontend/src/pages/IraqZiyaratGuide.js**
-    -   **Importance:** A newly created page designed to be an interactive and comprehensive guide to pilgrimage sites in Iraq. It sources its information from .
-    -   **Changes:** This file was created from scratch to fulfill a specific user request.
+- ****
+  - **Importance:** The main router for the single-page application.
+  - **Changes:** This file was modified to update the route for  to render the newly created  component instead of the previous version.
 
--   **/app/frontend/src/data/iraqZiyaratData.js**
-    -   **Importance:** This file acts as a mock database for the Iraq Ziyarat Guide. It contains a structured JavaScript object with details about cities, shrines, practical tips, and more.
-    -   **Changes:** This file was generated by the AI based on its knowledge after failing to parse the user's PDF. It was later debugged to fix a syntax error. The current task is to update this file with more detailed data from the PDF.
+- ** (multiple files)**
+  - **Importance:** These Python scripts were temporary, single-use tools created to parse the raw text extracted from the PDF and structure it into a clean JSON format, which was then manually copied into .
+  - **Changes:** Multiple versions were created to perform increasingly detailed data extraction, from basic city info to scholar biographies and finally to Arabic prayer texts.
 </code_architecture>
 
 <pending_tasks>
-- **Implement Advanced Visual Effects:** The user selected several advanced effects (Hero Video Background, Parallax Scrolling, 3D Card Effects, etc.). The AI created the initial hook and component files for these but was interrupted before integrating them into the home page.
+- **Implement Advanced Visual Effects:** A user request to add effects like Hero Video Background and Parallax Scrolling was started but interrupted. The files were created but not integrated. This is a lower-priority task.
+- **Verify Home Page Edits:** The edits to remove components from the  page have been made but not yet tested.
 </pending_tasks>
 
 <current_work>
-The immediate focus is on enhancing the **Iraq Ziyarat Guide**. The previous AI engineer attempted to create this guide by analyzing a 165MB PDF () provided by the user. The data extraction failed due to tooling limitations (). As a workaround, the engineer generated the guide's content () and the corresponding page () from its own knowledge base.
+The immediate last task was to modify the home page based on the user's request. The user asked to remove outdated content from the home page to clean up the UI and ensure users are directed to the newly completed Iraq Ziyarat Guide.
 
-However, the user reviewed the generated page and found it incomplete, specifically requesting a more detailed analysis of the PDF to add missing data, including prayers. The last action from the AI was to acknowledge this request and state its intention to extract more detailed information from the PDF to update the data comprehensively. The current task is to retry this data extraction and update  accordingly.
+**Actions Taken:**
+1.  **File Targeted:** .
+2.  **Removal of Comparison Table:** The  component, which was previously displayed on the home page, was identified and removed. This included deleting the component's import statement and its JSX tag from the render method.
+3.  **Update Ziyarat Guide Section:** The old Ziyarat guide section was replaced with a new, visually enhanced section. This new section now correctly links to the  route, which displays the  component, ensuring users access the latest, most comprehensive version of the guide.
+
+The work concluded right after the  commands to perform these edits were successfully executed. The next logical step is to verify these changes.
 </current_work>
 
 <optional_next_step>
-Re-attempt to extract detailed information from the provided PDF () to comprehensively update the  file with all missing data, including prayers, as requested by the user.
+Check for lint errors and then take a screenshot of the home page to verify that the  and the old guide link are gone, and the new guide section is displayed correctly.
 </optional_next_step>
-
-User Request: did u analyse the whole pdf as some datas not there please analyse in detail and update data which note there please update prayers too
-
-AI's Last Action: Let me extract more detailed information from the PDF and update the data comprehensively:
