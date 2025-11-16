@@ -51,19 +51,19 @@ const GroupDetailEnhanced = () => {
   });
 
   useEffect(() => {
-    const fetchGroup = async () => {
+    const loadGroup = () => {
       try {
         setLoading(true);
-        const data = await getGroupTour(id);
+        const data = upcomingGroups.find(g => g.id === parseInt(id));
         setGroup(data);
       } catch (error) {
-        console.error('Error fetching group tour:', error);
+        console.error('Error loading group tour:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchGroup();
+    loadGroup();
   }, [id]);
 
   if (loading) {
