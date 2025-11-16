@@ -1330,6 +1330,118 @@ export const travelInformation = {
   ]
 };
 
+// ========================================
+// PRACTICAL LAWS (Aḥkām) FOR ZIYĀRAH
+// ========================================
+
+export const practicalLaws = {
+  prayerInHaram: "It is mustaḥab (recommended) to offer ṣalāh in the ḥarams of the Imāms (a); in fact, it is better than praying in a masjid because all of the ḥarams are, in fact, masājid (mosques).",
+  respectForGraves: "It is good to have ādāb (respect) and be careful not to pray ahead of the grave of the Prophet (ṣ) and Imāms (a) in a manner that would be considered disrespectful to the owner of that grave.",
+  fullPrayerLocations: [
+    "Ḥaram of Imām Ḥusayn (a) - travelers can choose full or shortened prayer",
+    "Masjid al-Kūfah - travelers can choose full or shortened prayer",
+    "Masjid al-Ḥarām (Makkah) - travelers can choose full or shortened prayer",
+    "Masjid an-Nabī (Madinah) - travelers can choose full or shortened prayer"
+  ],
+  enteringWithWudu: "It is mustaḥab to enter the ḥarams of the Imāms or their descendants with wuḍūʾ (ablution).",
+  stateRestrictions: "It is iḥtiyāt al-wājib (obligatory precaution) that a person who is in the state of janābah, ḥayḍ, or nifās should not enter the ḥaram of a Maʿṣūm and remain there (passing through is okay). The ḥaram, in this context, is that room that falls underneath the dome, where the ḍarīh is built."
+};
+
+// ========================================
+// SPECIAL DAYS BY WEEKDAY
+// ========================================
+
+export const specialDaysByWeekday = {
+  title: "Best Days to Visit Each Maʿṣūm",
+  description: "According to aḥādīth, each day of the week has been dedicated to some of the Maʿṣūmīn. It is recommended to visit the Maʿṣūm on that specific day for more thawāb (reward).",
+  days: {
+    Saturday: ["Prophet Muḥammad (ṣ)"],
+    Sunday: ["Imām ʿAlī (a)", "Sayyidah Fāṭimah (a)"],
+    Monday: ["Imām Ḥasan (a)", "Imām Ḥusayn (a)"],
+    Tuesday: ["Imām as-Ṣajjād (a)", "Imām al-Bāqir (a)", "Imām aṣ-Ṣādiq (a)"],
+    Wednesday: ["Imām Mūsā al-Kāẓim (a)", "Imām ar-Riḍā (a)", "Imām al-Jawād (a)", "Imām al-Hādī (a)"],
+    Thursday: ["Imām Ḥasan al-Askari (a)"],
+    Friday: ["Imām al-Mahdī (aj)"]
+  }
+};
+
+// ========================================
+// ṢALĀH OF ZIYĀRAH
+// ========================================
+
+export const salahOfZiyarah = {
+  title: "Ṣalāh of Ziyārah and Gifted Ṣalāh",
+  recommendedFor: [
+    "Maʿsūmīn (14 Infallibles)",
+    "Prophet Ādam (a)",
+    "Prophet Nūḥ (a)",
+    "Martyrs of Karbalā"
+  ],
+  forOthers: "For everyone else (other descendants, scholars, parents, friends, relatives), it is good to read a Ṣalāh after ziyārah with the intention of gifting the thawāb to their souls.",
+  method: "Offer a two-rakaʿāt prayer after completing the ziyārah"
+};
+
+// ========================================
+// ZIYĀRAT AN-NIYĀBAH (On Behalf of Someone)
+// ========================================
+
+export const ziyaratNiyabah = {
+  title: "Ziyārat an-Niyābah - Performing Ziyārah on Behalf of Others",
+  concept: "It is good to perform ziyārah on behalf of someone else (whether they are alive or passed away)",
+  reward: "Both the nāʾib (the one performing the ziyārah) and manūb ʿanhu (the one on whose behalf the ziyārah is being performed) will gain the reward of the ziyārah",
+  hadith: "Dāwūd Surmī said to Imām Ḥasan al-ʿAskarī (a), 'I have performed the ziyārah of your father and have made a nīyyah (intention) for the thawāb to be given to you.' The Imām (a) replied, 'There is a supreme reward for you from Allah, and from us, there is praise towards you.'",
+  specialSalaam: "Peace be upon you, O my master, on behalf of so-and-so. I have come to visit you on behalf of him/her, so intercede for him/her to your Lord.",
+  groupZiyarah: "Someone who would like to recite ziyārah on behalf of all of the believers or a specific group of believers can make the nīyyah verbally or in his/her heart before reciting the ziyārah."
+};
+
+// ========================================
+// RENOWNED SCHOLARS BURIED IN NAJAF
+// ========================================
+
+export const scholarsBuriedInNajaf = [
+  {
+    name: "ʿAllāmah Ḥillī",
+    period: "648-726 AH",
+    significance: "Great Shia jurist and scholar",
+    contribution: "Wrote numerous books on fiqh and kalām"
+  },
+  {
+    name: "Shaykh Murtaḍā Ansārī (Shaykh Aʿẓam)",
+    period: "1214-1281 AH",
+    significance: "Highest ranking scholar of his time",
+    contribution: "Revolutionized the study of Usul al-Fiqh"
+  },
+  {
+    name: "Ākhūnd Khūrāsānī",
+    period: "1255-1329 AH",
+    significance: "One of the 'Three Great Maraji' of his era",
+    contribution: "Famous for his work 'Kifāyat al-Uṣūl'"
+  },
+  {
+    name: "Sayyid Abū al-Qāsim Khoei",
+    period: "1317-1413 AH / 1899-1992 CE",
+    significance: "Grand Ayatollah and one of the highest ranking Shia scholars of 20th century",
+    contribution: "Established educational institutions worldwide"
+  },
+  {
+    name: "Mīrzā Ḥusayn Nūrī",
+    significance: "Author of Mustadrak al-Wasāʾil",
+    contribution: "Compiled additional hadith not in the original Wasāʾil"
+  },
+  {
+    name: "Shaykh ʿAbbās Qummī",
+    period: "1294-1359 AH / 1877-1941 CE",
+    significance: "Author of Mafatih al-Jinan",
+    contribution: "Most famous book of Shia prayers and supplications"
+  },
+  {
+    name: "Shaykh Ṭūsī",
+    period: "385-460 AH",
+    significance: "Established the Hawza of Najaf in 436 AH",
+    contribution: "Migrated from Baghdad and made Najaf a center of Shia learning"
+  }
+];
+
 // Default export
 export default {
   preparationTips,
@@ -1339,5 +1451,10 @@ export default {
   ziyaratSites,
   specialEvents,
   importantDuas,
-  travelInformation
+  travelInformation,
+  practicalLaws,
+  specialDaysByWeekday,
+  salahOfZiyarah,
+  ziyaratNiyabah,
+  scholarsBuriedInNajaf
 };
