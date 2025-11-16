@@ -90,11 +90,13 @@ const EnhancedHome = () => {
 
   // Auto-rotate testimonials
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+    if (testimonials.length > 0) {
+      const interval = setInterval(() => {
+        setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [testimonials]);
 
   const handleNewsletterSignup = (e) => {
     e.preventDefault();
