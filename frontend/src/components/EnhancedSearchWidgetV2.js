@@ -437,8 +437,8 @@ const EnhancedSearchWidgetV2 = () => {
           </div>
         </div>
 
-        {/* Popular Destinations - Below */}
-        {(!destination || showDestinationSuggestions) && (
+        {/* Popular Destinations - Below (HOTELS ONLY) */}
+        {searchType === 'hotels' && (!destination || showDestinationSuggestions) && (
           <div className="mt-4">
             <div className="flex flex-wrap gap-2">
               {popularDestinations.map((dest, idx) => (
