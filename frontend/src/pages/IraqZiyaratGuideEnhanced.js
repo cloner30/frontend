@@ -456,17 +456,29 @@ const IraqZiyaratGuideEnhanced = () => {
                   </div>
                 </div>
 
-                {/* Selected Site Details Modal/Section */}
-                {selectedSite && (
-                  <div className="mt-8 border-t-4 border-[#d4af37] pt-8">
-                    <Button 
-                      variant="ghost" 
-                      onClick={() => setSelectedSite(null)}
-                      className="mb-6"
-                    >
-                      <ArrowLeft className="h-4 w-4 mr-2" />
-                      Back to Sites
-                    </Button>
+            {/* Site Details Modal - Nested on top of City Modal */}
+            {selectedSite && (
+              <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[60] overflow-y-auto">
+                <div className="min-h-screen p-4 md:p-8">
+                  <div className="max-w-6xl mx-auto">
+                    <Card className="border-4 border-[#d4af37] shadow-2xl">
+                      <CardContent className="p-0">
+                        <div className="p-6 bg-gradient-to-r from-[#1a2f4a] to-[#2a4f6a] text-white flex items-center justify-between">
+                          <div>
+                            <h2 className="text-3xl font-bold mb-2">{selectedSite.name}</h2>
+                            <p className="text-lg">{selectedSite.nameArabic}</p>
+                          </div>
+                          <Button 
+                            variant="ghost" 
+                            onClick={() => setSelectedSite(null)}
+                            className="bg-white/20 hover:bg-white/40 text-white"
+                            size="lg"
+                          >
+                            ✕ Close
+                          </Button>
+                        </div>
+
+                        <div className="p-8 max-h-[70vh] overflow-y-auto">
 
                     <Card className="border-2 border-[#d4af37]/30">
                       <CardContent className="p-8">
