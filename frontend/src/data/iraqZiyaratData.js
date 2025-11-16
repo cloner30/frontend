@@ -421,9 +421,12 @@ export const ziyaratSites = [
     nameArabic: 'مسجد حنانة',
     type: 'Historic Mosque',
     importance: 'Medium',
+    location: 'On the route from Najaf to Kufa',
     description: 'Mosque containing the temporary burial place of Imam Husayn\'s (a) blessed head.',
-    significance: 'After the Battle of Karbala, the blessed head of Imam Husayn (a) was brought through this location. It is narrated that the head recited Qurʾān here.',
-    specialZiyarah: 'Ziyārah of the Holy Head of Imam Ḥusayn (a)'
+    significance: 'After the Battle of Karbala, the blessed head of Imam Husayn (a) was brought through this location and temporarily placed here.',
+    miracle: 'It is narrated that the blessed head recited Qurʾān at this location - a profound miracle demonstrating the spiritual power and connection to Allah even after martyrdom.',
+    specialZiyarah: 'Ziyārah of the Holy Head of Imam Ḥusayn (a)',
+    historicalContext: 'The caravan carrying the captives and the heads of the martyrs from Karbala to Damascus stopped at this location. The name "Ḥannānah" is derived from the tenderness and emotion associated with this sacred event.'
   },
 
   // KUFA SITES (near Najaf)
