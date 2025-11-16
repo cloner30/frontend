@@ -752,7 +752,7 @@ export const iranZiyaratSites = [
     nameFarsi: 'مسجد گوهرشاد',
     type: 'Historic Mosque',
     importance: 'High',
-    image: 'https://images.unsplash.com/photo-1626005989833-34f64e3c3e7f',
+    image: 'https://images.unsplash.com/photo-1724466146780-20b0f24aabdf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwyfHxJbWFtJTIwUmV6YSUyMHNocmluZSUyME1hc2hoYWR8ZW58MHx8fHwxNzYzMzIzMTYyfDA&ixlib=rb-4.1.0&q=85',
     description: 'Beautiful historic mosque within the Imam Ridha shrine complex, built by Goharshad Khatoon.',
     
     historicalBackground: 'Built by Goharshad Khatoon, wife of Indian King Shah Rukh Mirza. This mosque is an architectural masterpiece and an integral part of the Imam Ridha shrine complex.',
