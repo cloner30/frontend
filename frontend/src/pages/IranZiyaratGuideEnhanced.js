@@ -13,24 +13,12 @@ import { Badge } from '../components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { 
-  iraqCities, 
-  ziyaratSites, 
-  preparationTips,
-  ziyarahEtiquette,
-  packingList,
-  specialEvents,
-  importantDuas,
-  travelInformation,
-  practicalLaws,
-  specialDaysByWeekday,
-  salahOfZiyarah,
-  ziyaratNiyabah,
-  scholarsBuriedInNajaf,
-  arabicPrayers,
-  ziyaratPrayerReferences,
-  martyrsOfKarbala,
-  iraqiFoodCulture
-} from '../data/iraqZiyaratData';
+  iranCities, 
+  iranZiyaratSites,
+  iranPreparationTips,
+  iranWeatherGuide,
+  iranTravelInfo
+} from '../data/iranZiyaratData';
 
 const IraqZiyaratGuideEnhanced = () => {
   const navigate = useNavigate();
