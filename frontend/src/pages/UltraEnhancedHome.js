@@ -353,8 +353,43 @@ const UltraEnhancedHome = () => {
       </div>
 
       {/* Plan Your Trip Section - Ultra Enhanced */}
-      <div className=\"bg-gradient-to-br from-[#1a2f4a] via-[#2a3f5a] to-[#1a2f4a] py-20 relative overflow-hidden\">
-        <div className=\"absolute inset-0 opacity-10\">\n          <div className=\"absolute inset-0\" style={{ backgroundImage: 'radial-gradient(circle, #d4af37 1px, transparent 1px)', backgroundSize: '30px 30px' }} />\n        </div>\n        <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10\">\n          <div className=\"bg-white/5 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10\">\n            <div className=\"flex flex-col md:flex-row items-center justify-between\">\n              <div className=\"mb-6 md:mb-0 md:w-2/3\">\n                <Badge className=\"bg-[#d4af37] text-[#1a2f4a] mb-4\">✨ NEW FEATURE</Badge>\n                <h2 className=\"text-3xl md:text-5xl font-bold mb-4 text-white leading-tight\">\n                  {t('planYourTrip')}\n                </h2>\n                <p className=\"text-gray-200 text-lg mb-6 leading-relaxed\">\n                  Create your perfect pilgrimage itinerary with our intelligent planning tool\n                </p>\n                <div className=\"space-y-3\">\n                  {['Custom dates and flexible scheduling', 'Hand-picked accommodations', 'Expert local guides', 'Complete visa assistance'].map((feature, idx) => (\n                    <div key={idx} className=\"flex items-start space-x-3\">\n                      <CheckCircle className=\"h-6 w-6 text-green-400 flex-shrink-0 mt-0.5\" />\n                      <span className=\"text-gray-200\">{feature}</span>\n                    </div>\n                  ))}\n                </div>\n              </div>\n              <Link to=\"/plan-trip\">\n                <Button\n                  size=\"lg\"\n                  className=\"bg-gradient-to-r from-[#d4af37] to-[#f0d785] hover:from-[#c49f27] hover:to-[#d4af37] text-[#1a2f4a] font-bold px-10 py-8 text-xl shadow-2xl hover:shadow-[#d4af37]/50 transition-all duration-300 hover:scale-110\"\n                >\n                  {t('startPlanning')}\n                  <ArrowRight className=\"ml-3 h-7 w-7\" />\n                </Button>\n              </Link>\n            </div>\n          </div>\n        </div>\n      </div>
+      <div className="bg-gradient-to-br from-[#1a2f4a] via-[#2a3f5a] to-[#1a2f4a] py-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, #d4af37 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10">
+            <div className="flex flex-col md:flex-row items-center justify-between">
+              <div className="mb-6 md:mb-0 md:w-2/3">
+                <Badge className="bg-[#d4af37] text-[#1a2f4a] mb-4">✨ NEW FEATURE</Badge>
+                <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white leading-tight">
+                  {t('planYourTrip')}
+                </h2>
+                <p className="text-gray-200 text-lg mb-6 leading-relaxed">
+                  Create your perfect pilgrimage itinerary with our intelligent planning tool
+                </p>
+                <div className="space-y-3">
+                  {['Custom dates and flexible scheduling', 'Hand-picked accommodations', 'Expert local guides', 'Complete visa assistance'].map((feature, idx) => (
+                    <div key={idx} className="flex items-start space-x-3">
+                      <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-200">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <Link to="/plan-trip">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-[#d4af37] to-[#f0d785] hover:from-[#c49f27] hover:to-[#d4af37] text-[#1a2f4a] font-bold px-10 py-8 text-xl shadow-2xl hover:shadow-[#d4af37]/50 transition-all duration-300 hover:scale-110"
+                >
+                  {t('startPlanning')}
+                  <ArrowRight className="ml-3 h-7 w-7" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Package Comparison Table */}
       <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16\">
