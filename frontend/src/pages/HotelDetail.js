@@ -17,7 +17,7 @@ import {
   ChevronRight,
   X
 } from 'lucide-react';
-import { hotels } from '../mock';
+import { getHotel } from '../services/api';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -28,19 +28,42 @@ const HotelDetail = () => {
   const [hotel, setHotel] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const foundHotel = hotels.find((h) => h.id === parseInt(id));
-    if (foundHotel) {
-      setHotel(foundHotel);
-    }
+    const fetchHotel = async () => {
+      try {
+        setLoading(true);
+        const data = await getHotel(id);
+        setHotel(data);
+      } catch (err) {
+        console.error('Error fetching hotel:', err);
+        setError('Hotel not found');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchHotel();
   }, [id]);
 
-  if (!hotel) {
+  if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-[#1a2f4a] mb-4">Hotel not found</h2>
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-[#ffce05] mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading hotel details...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !hotel) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-[#1a2f4a] mb-4">{error || 'Hotel not found'}</h2>
           <Link to="/search?type=hotels">
             <Button className="bg-[#1a2f4a] hover:bg-[#2a3f5a]">
               Back to Search
