@@ -25,9 +25,7 @@ import IraqZiyaratGuide from './pages/IraqZiyaratGuideEnhanced';
 // Admin Pages
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
-import HotelsManager from './pages/admin/HotelsManager';
-import GroupToursManager from './pages/admin/GroupToursManager';
-import PackagesManager from './pages/admin/PackagesManager';
+import ApiManager from './pages/admin/ApiManager';
 import TestimonialsManager from './pages/admin/TestimonialsManager';
 import CitiesManager from './pages/admin/CitiesManager';
 import SeoManager from './pages/admin/SeoManager';
