@@ -138,14 +138,41 @@ export const deleteZiyaratPlace = async (placeId) => {
 };
 
 // ========================================
-// HOTELS
+// HOTELS (with External API Support)
 // ========================================
 export const getHotels = async (city = null) => {
+  // Check if external API is configured
+  const externalConfig = getExternalApiConfig('hotels');
+  
+  if (externalConfig) {
+    try {
+      const endpoint = city ? `${externalConfig.endpoint}?city=${city}` : externalConfig.endpoint;
+      return await fetchExternalAPI(externalConfig, endpoint);
+    } catch (error) {
+      console.warn('External API failed, falling back to internal API:', error);
+      // Fallback to internal API
+    }
+  }
+  
+  // Use internal API
   const query = city ? `?city=${city}` : '';
   return fetchAPI(`/api/hotels${query}`);
 };
 
 export const getHotel = async (hotelId) => {
+  // Check if external API is configured
+  const externalConfig = getExternalApiConfig('hotels');
+  
+  if (externalConfig) {
+    try {
+      return await fetchExternalAPI(externalConfig, `${externalConfig.endpoint}/${hotelId}`);
+    } catch (error) {
+      console.warn('External API failed, falling back to internal API:', error);
+      // Fallback to internal API
+    }
+  }
+  
+  // Use internal API
   return fetchAPI(`/api/hotels/${hotelId}`);
 };
 
