@@ -1,88 +1,86 @@
 <analysis>
-The trajectory documents an intensive, multi-phase development effort focused on building and refining a comprehensive Iraq Ziyarat Guide for a pilgrimage booking platform. The work began with a user request to populate the guide using a large PDF file. The AI engineer first overcame technical hurdles to extract text from the PDF, using command-line tools () after initial tool failures. It then wrote Python scripts to parse this text and structure it into a JSON format.
+The trajectory chronicles the development of a Pilgrim Portal frontend application, starting from a feature-poor MVP and evolving it into a rich, interactive user experience. The work was highly iterative and driven by direct user requests.
 
-This structured data was used to massively expand a mock data file, . The development was highly iterative, driven by user feedback. The first version was functional but incomplete. A user request for a better UI led to the creation of an enhanced page (). Subsequent user feedback pointed out poor UX (scrolling issue) and missing data (prayers).
+The initial major task was creating a comprehensive Iraq Ziyarat Guide by extracting data from a PDF, structuring it into a large mock data file (), and building a sophisticated UI () with tabs and modals to present the information effectively.
 
-This triggered a major refactoring effort. The engineer implemented a complex modal/overlay system to fix the UX, a process that involved significant debugging of nested JSX syntax errors and build cache issues. Simultaneously, the engineer performed multiple, increasingly comprehensive data extraction passes on the PDF, adding practical laws, scholar biographies, and finally, full Arabic prayer texts with RTL support, after user clarification on copyright.
+Subsequent work involved enhancing core product pages. The AI engineer implemented significant improvements for Hotel Search Results, Hotel Details, and Group Departure pages, each time expanding the mock data and creating new, feature-rich components. A complex, multi-step Plan Your Own Trip feature was also built from scratch, including debugging a React hook violation.
 
-The trajectory concludes with the engineer acting on a new request to clean up the main home page () by removing outdated components.
+The engineer then performed UI/UX refinements, including a global update of the accent color and a complete redesign of the home page search widget () to be more compact and user-friendly.
 
-The user's primary language is English. Future responses should be in English.
+The most recent and current task is the ground-up creation of a full-featured Admin Panel for content management. This involved setting up a new routing structure with dedicated layouts for public and admin areas, building the login page and dashboard, and beginning the implementation of the individual content management pages. The development is currently in the middle of building out the admin sections.
+
+The user's primary language is English. All future responses should be in English.
 </analysis>
 
 <product_requirements>
-The project goal is to build a responsive, trustworthy, and visually calm frontend for an online pilgrimage (Ziyarat) booking system for sites in Iran and Iraq.
+The primary goal is to build a feature-rich, responsive frontend for a pilgrimage booking platform (Ziyarat Portal). The application should feel professional, trustworthy, and visually calm.
 
-**Core Features:**
-- **Home Page:** A central hub with a search widget, featured packages, and guides.
-- **Search & Detail Pages:** Standard listings and detailed views for hotels, flights, and travel packages.
-- **Iraq Ziyarat Guide:** A key feature. This is an interactive, comprehensive guide built from a user-provided PDF. It must be mobile-first and include detailed information on holy sites (shrines, mosques), practical travel laws (Aḥkām), historical context, scholar biographies, and authentic prayer texts (Duas) in Arabic with translations.
-- **User Accounts:** For managing bookings.
+**Implemented Features:**
+*   **Comprehensive Iraq Ziyarat Guide:** An interactive guide with information on cities, holy sites, practical laws, scholars, and Arabic prayers with translations, all extracted from a user-provided PDF.
+*   **Enhanced Hotel & Group Tour Pages:** The application features redesigned and enhanced listing and detail pages for hotels and group tours, complete with advanced filtering, detailed information, and image galleries, all powered by extensive mock data.
+*   **Custom Trip Planner:** A powerful, multi-step Plan Your Own Trip feature allowing users to select dates, cities, hotels, and day-wise activities (suggested from the Ziyarat Guide data) to build a custom itinerary with dynamic cost estimation.
+*   **Enhanced Home Page:** The landing page features a highly user-friendly, multi-tabbed search widget for hotels, flights, and group tours.
 
-**Technical & UX Specifications:**
-- **Stack:** React, React Router, and Tailwind CSS.
-- **Design:** A mobile-first, responsive design using a calm color palette (deep navy, soft gold, warm neutrals).
-- **Localization:** Must support English and RTL languages (Farsi, Arabic). The Ziyarat Guide implementation has already addressed RTL for Arabic prayer texts.
-- **Data Source:** Initially built with mock data, the primary development effort has been to replace this with authentic, structured data extracted from a provided PDF.
+**In-Progress Feature:**
+*   **Admin Panel:** A secure, dedicated section for administrators to manage frontend content, including the Ziyarat Guide, home page reviews/offers, and SEO settings. The UI/UX foundation, login, and dashboard are complete.
 </product_requirements>
 
 <key_technical_concepts>
-- **Frameworks:** React, React Router.
-- **Styling:** Tailwind CSS,  for icons.
-- **UI Components:**  and custom-built components.
-- **Data Handling:**
-  - Mock data management in a central JS file ().
-  - PDF text extraction using  ().
-  - Data structuring and parsing via Python scripts.
+- **Framework/Libraries:** React, React Router,  (icons).
+- **Styling:** Tailwind CSS, including direct color value replacement using  for theme updates.
 - **UI/UX Patterns:**
-  - Single Page Application (SPA) routing.
-  - Implementation of nested modals to improve user experience.
-  - Right-to-Left (RTL) text rendering for Arabic content ().
-- **State Management:** Component-level state with  and .
+    - Component-based architecture with separate layouts for Public and Admin sections (, ).
+    - Multi-step forms for complex user flows (e.g., Plan Your Trip).
+    - Conditional rendering to differentiate UI (e.g., search bar tabs).
+- **State Management:** Component-level state using  and .
+- **Data Handling:** All application content is driven by mock data from a central  file.
 </key_technical_concepts>
 
 <code_architecture>
-The application is a standard client-side rendered React application. The code is located in the  directory.
+The application is a client-side rendered React app built with . The architecture was recently refactored to support a separate admin area using distinct layouts.
 
+**Directory Structure:**
 
 
 - ****
-  - **Importance:** This is the centerpiece of the recent development effort. It is the current, active page for the Iraq Ziyarat Guide, replacing a simpler version. It's designed to be highly interactive and data-rich.
-  - **Changes:** This file was created and heavily modified. A complex tabbed interface was added to display different categories of data (Cities, Practical Laws, Scholars, Arabic Prayers). A nested modal system was implemented to show city and site details without forcing the user to scroll, which required extensive JSX debugging and state management. Specific styling for RTL Arabic text was also added.
+    - **Importance:** The main application router. It orchestrates which layout (public or admin) and which page to render based on the URL.
+    - **Changes:** This file was completely rewritten from a simple list of routes to a more sophisticated structure that uses the  hook to conditionally render either the  (containing the  and ) or the  for routes prefixed with . This was a critical architectural change to support the admin panel.
+
+- ** & **
+    - **Importance:** These new files establish a clean separation between the user-facing site and the back-office admin panel.  contains the admin sidebar and main content area, while  wraps the public pages.
+    - **Changes:** Created to solve routing and layout conflicts when introducing the admin panel.
 
 - ****
-  - **Importance:** This file acts as the client-side database for the entire Ziyarat Guide. It exports JavaScript objects and arrays containing all content.
-  - **Changes:** This file underwent massive expansion. It started as a small mock data file and was iteratively overwritten with comprehensive data extracted from a PDF. It now contains structured information on cities, holy sites, historical events, scholar biographies, practical laws, and full Arabic prayer texts with transliterations and translations.
+    - **Importance:** The main landing page for the admin panel after successful login. It displays key stats and quick actions.
+    - **Changes:** Created as a new file, it serves as the central hub for the admin experience, featuring a professional UI with data cards and navigation links.
 
 - ****
-  - **Importance:** This is the application's main landing page. It features the primary search widget and links to other key sections.
-  - **Changes:** The most recent work involves modifying this file. The  component and a section linking to an old guide have been removed to declutter the page and direct users to the new, enhanced Ziyarat Guide.
+    - **Importance:** The new, user-friendly search component on the home page.
+    - **Changes:** Created to replace the previous version which was deemed too big. This version features a compact, single-row design, conditional fields for Hotels vs. Flights, and an improved date range picker. It also addresses a bug by correctly positioning the calendar icon.
 
 - ****
-  - **Importance:** The main router for the single-page application.
-  - **Changes:** This file was modified to update the route for  to render the newly created  component instead of the previous version.
+    - **Importance:** A major feature implementation providing a multi-step custom trip planning flow.
+    - **Changes:** This complex component was created from scratch. Development involved fixing a significant Rendered more hooks than during the previous render error by moving  calls to the top level of the component, demonstrating an understanding of React hook rules.
 
-- ** (multiple files)**
-  - **Importance:** These Python scripts were temporary, single-use tools created to parse the raw text extracted from the PDF and structure it into a clean JSON format, which was then manually copied into .
-  - **Changes:** Multiple versions were created to perform increasingly detailed data extraction, from basic city info to scholar biographies and finally to Arabic prayer texts.
+- ****
+    - **Importance:** This is the first content management page being built for the admin panel.
+    - **Changes:** This file was the last one created in the trajectory, marking the beginning of the build-out of the specific admin functionalities.
 </code_architecture>
 
 <pending_tasks>
-- **Implement Advanced Visual Effects:** A user request to add effects like Hero Video Background and Parallax Scrolling was started but interrupted. The files were created but not integrated. This is a lower-priority task.
-- **Verify Home Page Edits:** The edits to remove components from the  page have been made but not yet tested.
+- **Complete Admin Panel Content Sections:** Build the UI and logic for the remaining admin pages: Home Content Manager, SEO Manager, and Settings.
+- **Backend API Integration:** Integrate the frontend with the ACF Journeys API for dynamic data (Hotels, Packages, Group Departures, Flights, Users). This task was explicitly deferred.
+- **Implement Advanced Visual Effects:** A low-priority task to add a Hero Video Background and Parallax Scrolling effects, for which files were previously created but not integrated.
 </pending_tasks>
 
 <current_work>
-The immediate last task was to modify the home page based on the user's request. The user asked to remove outdated content from the home page to clean up the UI and ensure users are directed to the newly completed Iraq Ziyarat Guide.
+The current work is **Phase 2 of the Admin Panel implementation**: building out the individual content management sections.
 
-**Actions Taken:**
-1.  **File Targeted:** .
-2.  **Removal of Comparison Table:** The  component, which was previously displayed on the home page, was identified and removed. This included deleting the component's import statement and its JSX tag from the render method.
-3.  **Update Ziyarat Guide Section:** The old Ziyarat guide section was replaced with a new, visually enhanced section. This new section now correctly links to the  route, which displays the  component, ensuring users access the latest, most comprehensive version of the guide.
+Following a user request for a complete admin system to manage frontend content, the foundational work (Phase 1) was completed. This included creating the routing structure in  with separate  and , and building the  and  pages. The routing was debugged to fix a blank page issue, resulting in a fully functional and accessible login and dashboard interface.
 
-The work concluded right after the  commands to perform these edits were successfully executed. The next logical step is to verify these changes.
+The work concluded immediately after successfully establishing this foundation. The last action taken was beginning Phase 2 by creating the file for the first management section: . The next step in the immediate plan was to create the . The system is now poised for the creation and implementation of all the specific content management UIs (Ziyarat Guide, Home Content, SEO, etc.) within the established admin framework.
 </current_work>
 
 <optional_next_step>
-Check for lint errors and then take a screenshot of the home page to verify that the  and the old guide link are gone, and the new guide section is displayed correctly.
+Continue with Phase 2 of the admin panel implementation by creating the  component, followed by the  and  pages, to complete the planned admin sections.
 </optional_next_step>
