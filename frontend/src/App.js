@@ -57,6 +57,7 @@ function App() {
             <Route path="/plan-trip" element={<PlanTripEnhanced />} />
             <Route path="/account" element={<Account />} />
             <Route path="/iraq-ziyarat" element={<IraqZiyaratGuide />} />
+            <Route path="/iran-ziyarat" element={<IranZiyaratGuide />} />
           </Route>
 
           {/* Admin Login (No Layout) */}
