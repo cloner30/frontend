@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Star, Clock, MapPin } from 'lucide-react';
-import { getPackages } from '../services/api';
+import { packages as mockPackages } from '../mock';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
