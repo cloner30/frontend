@@ -1,86 +1,81 @@
 <analysis>
-The trajectory chronicles the development of a Pilgrim Portal frontend application, starting from a feature-poor MVP and evolving it into a rich, interactive user experience. The work was highly iterative and driven by direct user requests.
+The trajectory outlines the development of a Pilgrim Portal application, evolving from a mock-data-driven MVP into a full-stack solution with a comprehensive admin panel. The work was executed in three distinct, user-approved phases.
 
-The initial major task was creating a comprehensive Iraq Ziyarat Guide by extracting data from a PDF, structuring it into a large mock data file (), and building a sophisticated UI () with tabs and modals to present the information effectively.
+Phase 1 involved building a complete FastAPI backend. This included defining Pydantic models, creating CRUD API endpoints for all data entities (hotels, tours, etc.), and writing a migration script to populate a MongoDB database from existing frontend mock files. The AI engineer thoroughly tested all endpoints.
 
-Subsequent work involved enhancing core product pages. The AI engineer implemented significant improvements for Hotel Search Results, Hotel Details, and Group Departure pages, each time expanding the mock data and creating new, feature-rich components. A complex, multi-step Plan Your Own Trip feature was also built from scratch, including debugging a React hook violation.
+Phase 2 focused on frontend integration. The engineer created a centralized API service and systematically refactored all public-facing pages (Home, Search Results, Hotel Details, etc.) to fetch data from the new backend instead of local mock files, implementing loading states for better UX.
 
-The engineer then performed UI/UX refinements, including a global update of the accent color and a complete redesign of the home page search widget () to be more compact and user-friendly.
+Phase 3 was the creation of a feature-rich admin panel. This began with authentication, a dashboard, and a full CRUD manager for Hotels. Following user requests, the panel was expanded to include managers for all content types. A key development was addressing a user concern about data sources by creating a sophisticated, drag-and-drop Home Page Builder and a dedicated API Manager to configure connections to an external ACF Journeys API, resolving the conflict between internal and external data management.
 
-The most recent and current task is the ground-up creation of a full-featured Admin Panel for content management. This involved setting up a new routing structure with dedicated layouts for public and admin areas, building the login page and dashboard, and beginning the implementation of the individual content management pages. The development is currently in the middle of building out the admin sections.
-
-The user's primary language is English. All future responses should be in English.
+The latest task involves implementing the logic for this API switch, starting with the hotel data fetches. The user's primary language is English; future interactions should continue in English.
 </analysis>
 
 <product_requirements>
-The primary goal is to build a feature-rich, responsive frontend for a pilgrimage booking platform (Ziyarat Portal). The application should feel professional, trustworthy, and visually calm.
+The project is a Ziyarat Portal, a responsive frontend application for a pilgrimage booking platform. The goal is to provide a professional and feature-rich user experience for booking tours, hotels, and planning custom trips, while also giving administrators powerful tools for content management.
 
 **Implemented Features:**
-*   **Comprehensive Iraq Ziyarat Guide:** An interactive guide with information on cities, holy sites, practical laws, scholars, and Arabic prayers with translations, all extracted from a user-provided PDF.
-*   **Enhanced Hotel & Group Tour Pages:** The application features redesigned and enhanced listing and detail pages for hotels and group tours, complete with advanced filtering, detailed information, and image galleries, all powered by extensive mock data.
-*   **Custom Trip Planner:** A powerful, multi-step Plan Your Own Trip feature allowing users to select dates, cities, hotels, and day-wise activities (suggested from the Ziyarat Guide data) to build a custom itinerary with dynamic cost estimation.
-*   **Enhanced Home Page:** The landing page features a highly user-friendly, multi-tabbed search widget for hotels, flights, and group tours.
-
-**In-Progress Feature:**
-*   **Admin Panel:** A secure, dedicated section for administrators to manage frontend content, including the Ziyarat Guide, home page reviews/offers, and SEO settings. The UI/UX foundation, login, and dashboard are complete.
+*   **Full-Stack Architecture:** The application has a complete FastAPI backend with a MongoDB database, serving data to a React frontend.
+*   **Comprehensive Admin Panel:** A secure admin area with authentication allows for extensive content management. Key features include:
+    *   A drag-and-drop **Home Page Builder** for complete control over the landing page layout and content.
+    *   CRUD managers for internal content like Cities and Testimonials.
+    *   An **API Manager** to configure and toggle connections to an external ACF Journeys API for dynamic data like Hotels, Packages, and Group Tours.
+*   **Data-Driven Frontend:** All public pages (Home, Hotel/Group listings, Details) are now powered by the backend API, replacing the initial mock data.
+*   **Original MVP Features:** The app retains its core features like the Iraq Ziyarat Guide and a multi-step custom trip planner, which are now ready for backend integration.
 </product_requirements>
 
 <key_technical_concepts>
-- **Framework/Libraries:** React, React Router,  (icons).
-- **Styling:** Tailwind CSS, including direct color value replacement using  for theme updates.
-- **UI/UX Patterns:**
-    - Component-based architecture with separate layouts for Public and Admin sections (, ).
-    - Multi-step forms for complex user flows (e.g., Plan Your Trip).
-    - Conditional rendering to differentiate UI (e.g., search bar tabs).
-- **State Management:** Component-level state using  and .
-- **Data Handling:** All application content is driven by mock data from a central  file.
+- **Frameworks:** React (frontend), FastAPI (backend).
+- **Database:** MongoDB.
+- **Styling:** Tailwind CSS.
+- **Key Libraries:**  for routing,  for drag-and-drop functionality,  for icons.
+- **Architecture:**
+    - Client-Server model with a RESTful API.
+    - Separate layouts for public and admin areas (, ).
+    - Centralized API service () with logic to dynamically switch between internal DB and external API data sources based on admin configuration.
 </key_technical_concepts>
 
 <code_architecture>
-The application is a client-side rendered React app built with . The architecture was recently refactored to support a separate admin area using distinct layouts.
+The application is a monorepo with a React frontend and a Python/FastAPI backend. The architecture is designed for a clean separation of concerns between the user-facing site and the administrative panel.
 
-**Directory Structure:**
-
-
-- ****
-    - **Importance:** The main application router. It orchestrates which layout (public or admin) and which page to render based on the URL.
-    - **Changes:** This file was completely rewritten from a simple list of routes to a more sophisticated structure that uses the  hook to conditionally render either the  (containing the  and ) or the  for routes prefixed with . This was a critical architectural change to support the admin panel.
 
 - ** & **
-    - **Importance:** These new files establish a clean separation between the user-facing site and the back-office admin panel.  contains the admin sidebar and main content area, while  wraps the public pages.
-    - **Changes:** Created to solve routing and layout conflicts when introducing the admin panel.
+    - **Importance:** These files form the entire backend.  defines the Pydantic data models, and  establishes all the FastAPI CRUD endpoints that serve data to the frontend.
+    - **Changes:** Created from scratch in Phase 1 to build the application's backend logic and API.
 
 - ****
-    - **Importance:** The main landing page for the admin panel after successful login. It displays key stats and quick actions.
-    - **Changes:** Created as a new file, it serves as the central hub for the admin experience, featuring a professional UI with data cards and navigation links.
+    - **Importance:** This is the data-fetching nerve center of the frontend. It centralizes all communication with the backend. It's designed to be flexible, supporting the dynamic switch between fetching data from the internal database and the external ACF Journeys API.
+    - **Changes:** Created in Phase 2 to eliminate mock data usage. It is currently being modified to implement the logic for fetching from external APIs as configured in the .
 
 - ****
-    - **Importance:** The new, user-friendly search component on the home page.
-    - **Changes:** Created to replace the previous version which was deemed too big. This version features a compact, single-row design, conditional fields for Hotels vs. Flights, and an improved date range picker. It also addresses a bug by correctly positioning the calendar icon.
+    - **Importance:** This is a highly advanced, feature-rich admin component. It provides a drag-and-drop interface for an administrator to completely customize the layout and content of the public home page.
+    - **Changes:** Created in Phase 3 in response to a user request for more powerful home page management, replacing a simpler form-based manager. It uses .
 
 - ****
-    - **Importance:** A major feature implementation providing a multi-step custom trip planning flow.
-    - **Changes:** This complex component was created from scratch. Development involved fixing a significant Rendered more hooks than during the previous render error by moving  calls to the top level of the component, demonstrating an understanding of React hook rules.
+    - **Importance:** This component is the solution to the strategic conflict between managing data internally vs. using an external provider. It provides a UI for administrators to configure, enable/disable, and test API connections for Hotels, Packages, and Group Tours.
+    - **Changes:** Created near the end of the trajectory to give the user control over the data source for key dynamic content.
 
 - ****
-    - **Importance:** This is the first content management page being built for the admin panel.
-    - **Changes:** This file was the last one created in the trajectory, marking the beginning of the build-out of the specific admin functionalities.
+    - **Importance:** The main router for the React application. It uses  to direct traffic to the correct page and crucially wraps routes in either a  or an  to separate the two application areas.
+    - **Changes:** Heavily edited throughout Phase 3 to add routes for the numerous admin management pages.
 </code_architecture>
 
 <pending_tasks>
-- **Complete Admin Panel Content Sections:** Build the UI and logic for the remaining admin pages: Home Content Manager, SEO Manager, and Settings.
-- **Backend API Integration:** Integrate the frontend with the ACF Journeys API for dynamic data (Hotels, Packages, Group Departures, Flights, Users). This task was explicitly deferred.
-- **Implement Advanced Visual Effects:** A low-priority task to add a Hero Video Background and Parallax Scrolling effects, for which files were previously created but not integrated.
+- **Complete External API Integration:** Finish updating  to handle external API calls for Group Tours and Packages, similar to what was started for Hotels.
+- **Frontend Component Adaptation:** Ensure frontend pages that consume Hotel, Package, and Group Tour data can handle the data structure from the new external API.
+- **Remove Redundant Admin Managers:** Once the API Manager is fully integrated, remove the internal CRUD managers for Hotels, Group Tours, and Packages from the admin panel to avoid confusion.
+- **Connect Remaining Pages:** Integrate the  and  pages with their respective backend APIs.
 </pending_tasks>
 
 <current_work>
-The current work is **Phase 2 of the Admin Panel implementation**: building out the individual content management sections.
+The current task is to complete the integration of the external ACF Journeys API as the primary data source for hotels, packages, and group tours, a feature managed via the newly created  in the admin panel.
 
-Following a user request for a complete admin system to manage frontend content, the foundational work (Phase 1) was completed. This included creating the routing structure in  with separate  and , and building the  and  pages. The routing was debugged to fix a blank page issue, resulting in a fully functional and accessible login and dashboard interface.
+Work was focused on refactoring the central data fetching service, . The goal is to make the data-fetching functions dynamic: they should first check if an external API is configured and enabled in the . If so, they fetch from that external source; otherwise, they fall back to the application's internal backend API.
 
-The work concluded immediately after successfully establishing this foundation. The last action taken was beginning Phase 2 by creating the file for the first management section: . The next step in the immediate plan was to create the . The system is now poised for the creation and implementation of all the specific content management UIs (Ziyarat Guide, Home Content, SEO, etc.) within the established admin framework.
+The AI engineer had already started implementing this logic. It successfully updated the  and  functions to incorporate this conditional fetching mechanism. The work was interrupted immediately before applying the same pattern to the functions for Group Tours and Packages.
+
+The  file is currently in a partially updated state, with the Hotel functions modernized but the Group Tour and Package functions still using the old, internal-only API logic.
 </current_work>
 
 <optional_next_step>
-Continue with Phase 2 of the admin panel implementation by creating the  component, followed by the  and  pages, to complete the planned admin sections.
+Continue updating  to add external API support with an internal fallback for the Group Tours and Packages functions, mirroring the logic just implemented for Hotels.
 </optional_next_step>
