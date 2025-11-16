@@ -37,7 +37,7 @@ const IraqZiyaratGuideEnhanced = () => {
 
   const handleSiteSelect = (site) => {
     setSelectedSite(site);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Don't scroll - keep modal in view
   };
 
   const citySites = selectedCity 
