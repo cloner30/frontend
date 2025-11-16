@@ -124,10 +124,10 @@ const IraqZiyaratGuideEnhanced = () => {
                 Preparation
               </button>
               <button 
-                onClick={() => setActiveTab('duas')} 
-                className={`hover:text-[#d4af37] transition-colors whitespace-nowrap ${activeTab === 'duas' ? 'text-[#d4af37]' : 'text-gray-700'}`}
+                onClick={() => setActiveTab('prayers')} 
+                className={`hover:text-[#d4af37] transition-colors whitespace-nowrap ${activeTab === 'prayers' ? 'text-[#d4af37]' : 'text-gray-700'}`}
               >
-                Duas & Prayers
+                Prayer References
               </button>
               <button 
                 onClick={() => setActiveTab('laws')} 
@@ -140,6 +140,12 @@ const IraqZiyaratGuideEnhanced = () => {
                 className={`hover:text-[#d4af37] transition-colors whitespace-nowrap ${activeTab === 'scholars' ? 'text-[#d4af37]' : 'text-gray-700'}`}
               >
                 Scholars
+              </button>
+              <button 
+                onClick={() => setActiveTab('martyrs')} 
+                className={`hover:text-[#d4af37] transition-colors whitespace-nowrap ${activeTab === 'martyrs' ? 'text-[#d4af37]' : 'text-gray-700'}`}
+              >
+                Martyrs
               </button>
               <button 
                 onClick={() => setActiveTab('practical')} 
