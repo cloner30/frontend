@@ -773,7 +773,7 @@ export const iranZiyaratSites = [
     nameFarsi: 'موزه قرآن',
     type: 'Museum',
     importance: 'High',
-    image: 'https://images.unsplash.com/photo-1584267877837-1a8ff8e4e14e',
+    image: 'https://images.unsplash.com/photo-1720701575003-51dafcf39cb4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxhbmNpZW50JTIwUXVyYW4lMjBtYW51c2NyaXB0fGVufDB8fHx8MTc2MzMyMzI4MXww&ixlib=rb-4.1.0&q=85',
     description: 'Museum within the Imam Ridha shrine complex containing pages of Quran written by the Imams.',
     
     specialFeatures: [
