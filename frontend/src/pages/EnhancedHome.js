@@ -236,6 +236,46 @@ const EnhancedHome = () => {
         </div>
       </div>
 
+      {/* Quick Links Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1a2f4a] mb-3">Quick Access</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Everything you need for your pilgrimage journey in one place
+          </p>
+        </div>
+        <QuickLinks />
+      </div>
+
+      {/* How It Works */}
+      <div className="bg-gradient-to-b from-gray-50 to-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <Badge className="bg-[#1a2f4a] text-white mb-4">SIMPLE PROCESS</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1a2f4a] mb-3">How It Works</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Four simple steps to begin your spiritual journey
+            </p>
+          </div>
+          <ProcessSteps />
+        </div>
+      </div>
+
+      {/* Popular Destinations */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center mb-10">
+          <Badge className="bg-gradient-to-r from-[#d4af37] to-[#c49f27] text-[#1a2f4a] mb-4">
+            <TrendingUp className="h-4 w-4 mr-2 inline" />
+            MOST VISITED
+          </Badge>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1a2f4a] mb-3">Popular Destinations</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Explore the most sought-after pilgrimage destinations
+          </p>
+        </div>
+        <PopularDestinations />
+      </div>
+
       {/* Plan Your Trip Section - Enhanced */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-gradient-to-r from-[#1a2f4a] via-[#2a3f5a] to-[#1a2f4a] rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
