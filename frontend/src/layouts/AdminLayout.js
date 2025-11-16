@@ -11,7 +11,10 @@ import {
   Menu,
   X,
   User,
-  Bell
+  Bell,
+  Users,
+  Package,
+  MessageSquare
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { useToast } from '../hooks/use-toast';
