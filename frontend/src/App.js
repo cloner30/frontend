@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
+import { AdminAuthProvider } from './contexts/AdminAuthContext';
 import { Toaster } from './components/ui/sonner';
 
 // Layouts
@@ -27,7 +28,7 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
-  const token = localStorage.getItem('adminToken');
+  const token = localStorage.getItem('adminAuth');
   return token ? children : <Navigate to="/admin/login" replace />;
 };
 
@@ -35,6 +36,7 @@ function App() {
   return (
     <LanguageProvider>
       <BrowserRouter>
+        <AdminAuthProvider>
         <Routes>
           {/* Public Routes with Navbar/Footer */}
           <Route element={<PublicLayout />}>
