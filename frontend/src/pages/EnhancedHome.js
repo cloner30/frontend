@@ -191,8 +191,11 @@ const EnhancedHome = () => {
         </div>
       </div>
 
+      {/* Trust Badges */}
+      <TrustBadges />
+
       {/* Trust Indicators & Stats */}
-      <div className="bg-white py-12 shadow-md relative z-20 -mt-16">
+      <div className="bg-white py-12 shadow-md relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
