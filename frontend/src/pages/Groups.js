@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, MapPin, Users, Clock, Filter, SlidersHorizontal, Star, TrendingUp, AlertCircle } from 'lucide-react';
-import { upcomingGroups } from '../mock';
+import { getGroupTours } from '../services/api';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
@@ -19,13 +19,33 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '../c
 
 const Groups = () => {
   const { t } = useLanguage();
-  const [filteredGroups, setFilteredGroups] = useState(upcomingGroups);
+  const [upcomingGroups, setUpcomingGroups] = useState([]);
+  const [filteredGroups, setFilteredGroups] = useState([]);
   const [priceRange, setPriceRange] = useState([0, 3000]);
   const [sortBy, setSortBy] = useState('date-asc');
   const [selectedDestinations, setSelectedDestinations] = useState([]);
   const [selectedDurations, setSelectedDurations] = useState([]);
   const [selectedEvents, setSelectedEvents] = useState([]);
   const [selectedDepartureCities, setSelectedDepartureCities] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch group tours
+  useEffect(() => {
+    const fetchGroupTours = async () => {
+      try {
+        setLoading(true);
+        const data = await getGroupTours();
+        setUpcomingGroups(data);
+        setFilteredGroups(data);
+      } catch (error) {
+        console.error('Error fetching group tours:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchGroupTours();
+  }, []);
 
   // Get unique values for filters
   const allDestinations = [...new Set(upcomingGroups.flatMap(g => g.cities))];
@@ -38,6 +58,8 @@ const Groups = () => {
   ];
 
   useEffect(() => {
+    if (upcomingGroups.length === 0) return;
+    
     let filtered = upcomingGroups.filter((group) => {
       // Price filter
       if (group.price < priceRange[0] || group.price > priceRange[1]) return false;
