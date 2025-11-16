@@ -235,7 +235,7 @@ export const iraqCities = [
     country: 'Iraq',
     province: 'Saladin Governorate',
     coordinates: { lat: 34.1950, lng: 43.8742 },
-    image: 'https://images.unsplash.com/photo-1761475461178-ec5fea65a1a2',
+    image: 'https://images.pexels.com/photos/34745054/pexels-photo-34745054.jpeg',
     description: 'Historic city containing the Al-Askari Shrine (ʿAskarīyayn) with its iconic golden dome.',
     significance: 'Samarra is home to the Al-Askari Shrine, burial place of Imam Ali al-Hadi (a), the 10th Imam, and Imam Hasan al-Askari (a), the 11th Imam. It is also the believed location of the occultation of Imam al-Mahdi (aj), the 12th Imam, from the Holy Sardāb (cellar).',
     specialNote: 'The shrine was bombed in 2006 and 2007 but has been beautifully reconstructed.',
