@@ -311,7 +311,7 @@ export const iranCities = [
     country: 'Iran',
     province: 'Fars Province',
     coordinates: { lat: 29.5918, lng: 52.5836 },
-    image: 'https://images.unsplash.com/photo-1565027165018-84bbc2f89f02',
+    image: 'https://images.unsplash.com/photo-1756808911527-14a6763bf5df?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxTaGlyYXolMjBJcmFuJTIwY2l0eXxlbnwwfHx8fDE3NjMzMjMxOTF8MA&ixlib=rb-4.1.0&q=85',
     description: 'Historic city known for Shah Cheragh shrine, poetry, gardens, and rich cultural heritage.',
     significance: 'Shiraz is home to the magnificent Shah Cheragh shrine (brother of Imam Ridha) and is also famous for being the city of great Persian poets like Hafez and Saadi.',
     welcomeMessage: 'Welcome to Shiraz, the city of light, poetry, and sacred shrines. Experience the beauty of Persian culture alongside spiritual devotion.',
