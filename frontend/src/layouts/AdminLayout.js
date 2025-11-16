@@ -36,7 +36,6 @@ const AdminLayout = () => {
     { name: 'Group Tours', href: '/admin/group-tours', icon: Users },
     { name: 'Packages', href: '/admin/packages', icon: Package },
     { name: 'Testimonials', href: '/admin/testimonials', icon: MessageSquare },
-    { name: 'Ziyarat Guide', href: '/admin/ziyarat', icon: Book },
     { name: 'Home Content', href: '/admin/home-content', icon: Layers },
     { name: 'SEO Settings', href: '/admin/seo', icon: Search },
     { name: 'Settings', href: '/admin/settings', icon: Settings },
