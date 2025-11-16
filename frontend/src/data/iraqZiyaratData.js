@@ -733,11 +733,6 @@ export const ziyaratSites = [
         name: 'The Pigeons',
         description: 'The pigeons around the shrine are honored and protected',
         story: 'It is narrated that Imam Husayn (a) has a special relationship with the pigeons'
-      },
-      {
-        name: 'Madhbaḥ',
-        description: 'The exact spot where Imam Husayn (a) was martyred',
-        significance: 'Marked and venerated within the shrine complex'
       }
     ],
     
