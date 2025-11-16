@@ -605,11 +605,11 @@ export const iranZiyaratSites = [
     type: 'Major Shrine',
     importance: 'Very High',
     image: 'https://images.unsplash.com/photo-1565027165018-84bbc2f89f02',
-    description: 'Magnificent mirrored shrine of Ahmad ibn Musa (a), brother of Imam Ridha (a), in Shiraz.',
+    description: 'Magnificent mirrored shrine of Ahmad ibn Musa (a), brother of Imam Ridha (a), in Shiraz. Also known as Shah Shiragh.',
     
     buriedHere: [
       {
-        name: 'Ahmad ibn Musa al-Kadhim (Shah Cheragh)',
+        name: 'Ahmad ibn Musa al-Kadhim (Shah Cheragh / Shah Shiragh)',
         lineage: 'Son of Imam Musa al-Kadhim (a), brother of Imam Ali al-Ridha (a)',
         story: 'Traveled through Shiraz and passed away there. His tomb was discovered when a light was seen emanating from his grave, earning him the title "Shah Cheragh" (King of the Lamp)',
         significance: 'Brother of the 8th Imam'
@@ -639,6 +639,258 @@ export const iranZiyaratSites = [
     ],
     
     nearbyShrine: 'Shrine of Seyed Alaeddin Hossein (another brother of Imam Ridha) nearby'
+  },
+  
+  // Additional Mashhad Sites
+  {
+    id: 'goharshad-mosque',
+    cityId: 'mashhad',
+    name: 'Goharshad Mosque',
+    nameArabic: 'مسجد گوهرشاد',
+    nameFarsi: 'مسجد گوهرشاد',
+    type: 'Historic Mosque',
+    importance: 'High',
+    image: 'https://images.unsplash.com/photo-1626005989833-34f64e3c3e7f',
+    description: 'Beautiful historic mosque within the Imam Ridha shrine complex, built by Goharshad Khatoon.',
+    
+    historicalBackground: 'Built by Goharshad Khatoon, wife of Indian King Shah Rukh Mirza. This mosque is an architectural masterpiece and an integral part of the Imam Ridha shrine complex.',
+    
+    specialFeatures: [
+      'Beautiful Islamic architecture and tile work',
+      'Located within the Imam Ridha shrine complex',
+      'Named after its patron Goharshad Khatoon',
+      'Important historical mosque'
+    ]
+  },
+  
+  {
+    id: 'quran-museum-mashhad',
+    cityId: 'mashhad',
+    name: 'Museum of Quran',
+    nameArabic: 'متحف القرآن',
+    nameFarsi: 'موزه قرآن',
+    type: 'Museum',
+    importance: 'High',
+    image: 'https://images.unsplash.com/photo-1584267877837-1a8ff8e4e14e',
+    description: 'Museum within the Imam Ridha shrine complex containing pages of Quran written by the Imams.',
+    
+    specialFeatures: [
+      'Pages of Quran written by Imams (a)',
+      'Rare Quranic manuscripts',
+      'Historical Islamic artifacts',
+      'Within the Haram of Imam Ridha (a)'
+    ],
+    
+    significance: 'Contains priceless manuscripts including pages written in the handwriting of the Infallible Imams'
+  },
+  
+  {
+    id: 'imamzada-sultan-ahmed',
+    cityId: 'mashhad',
+    name: 'Tomb of Imamzada Sultan Ahmed',
+    nameArabic: 'إمامزاده سلطان احمد',
+    nameFarsi: 'امامزاده سلطان احمد',
+    type: 'Imamzadeh Shrine',
+    importance: 'Medium',
+    description: 'Shrine of Imamzada Sultan Ahmed in Mashhad.',
+    
+    buriedHere: [
+      {
+        name: 'Imamzada Sultan Ahmed R.A.',
+        significance: 'Descendant of the Holy Prophet (saw)'
+      }
+    ]
+  },
+  
+  {
+    id: 'khwaja-abu-salt',
+    cityId: 'mashhad',
+    name: 'Tomb of Khwaja Abu Salt Harvi',
+    nameArabic: 'قبر خواجه ابو الصلت الهروي',
+    nameFarsi: 'قبر خواجه ابوالصلت هروی',
+    type: 'Companion Shrine',
+    importance: 'High',
+    image: 'https://images.unsplash.com/photo-1584267877837-1a8ff8e4e14e',
+    description: 'Resting place of Khwaja Abu Salt Harvi, close friend and companion of Imam Ridha (a).',
+    
+    buriedHere: [
+      {
+        name: 'Khwaja Abu Salt Harvi R.A.',
+        significance: 'Close friend and companion of Imam Ali al-Ridha (a)',
+        story: 'He was a trusted friend of Imam Ridha (a) and received the Imam\'s will. He was present during the Imam\'s final moments and witnessed his martyrdom.',
+        role: 'Companion and confidant of Imam Ridha (a)'
+      }
+    ],
+    
+    visitation: 'Highly recommended to visit when in Mashhad, as he was very close to Imam Ridha (a)'
+  },
+  
+  {
+    id: 'khwaja-rabi',
+    cityId: 'mashhad',
+    name: 'Tomb of Khwaja Rabi',
+    nameArabic: 'قبر خواجه ربيع',
+    nameFarsi: 'قبر خواجه ربیع',
+    type: 'Companion Shrine',
+    importance: 'High',
+    description: 'Tomb of Khwaja Rabi, devoted friend and servant of Imam Ridha (a).',
+    
+    buriedHere: [
+      {
+        name: 'Khwaja Rabi R.A.',
+        significance: 'Friend and servant of Imam Ali al-Ridha (a)',
+        story: 'He was a devoted companion of Imam Ridha (a) and narrated many incidents about the Imam\'s life. His tomb is visited by pilgrims seeking blessings.',
+        role: 'Narrator of hadith from Imam Ridha (a)'
+      }
+    ]
+  },
+  
+  {
+    id: 'khwaja-murad',
+    cityId: 'mashhad',
+    name: 'Tomb of Khwaja Murad',
+    nameArabic: 'قبر خواجه مراد',
+    nameFarsi: 'قبر خواجه مراد',
+    type: 'Companion Shrine',
+    importance: 'Medium',
+    description: 'Tomb of Khwaja Murad, companion of Imam Ridha (a).',
+    
+    buriedHere: [
+      {
+        name: 'Khwaja Murad R.A.',
+        significance: 'Companion of Imam Ridha (a)'
+      }
+    ]
+  },
+  
+  {
+    id: 'qadamgah-mashhad',
+    cityId: 'mashhad',
+    name: 'Qadamgah (Place of Footprints)',
+    nameArabic: 'قدمگاه',
+    nameFarsi: 'قدمگاه',
+    type: 'Historic Site',
+    importance: 'High',
+    description: 'Sacred place where Imam Ridha (a) delivered a speech and prayed, leaving his blessed footprints.',
+    
+    significance: 'At this location, Imam Ali al-Ridha (a) delivered a speech and performed prayers. His blessed footprints remained imprinted on the stone, making this a sacred site for pilgrims.',
+    
+    specialFeatures: [
+      'Footprints of Imam Ridha (a) preserved on stone',
+      'Place where Imam gave a speech',
+      'Pilgrims visit to pray and seek blessings',
+      'Historical significance'
+    ]
+  },
+  
+  {
+    id: 'sayyed-ibrahim-shrine',
+    cityId: 'mashhad',
+    name: 'Raudhah of Sayyed Ibrahim',
+    nameArabic: 'روضة السيد إبراهيم',
+    nameFarsi: 'روضه سید ابراهیم',
+    type: 'Imamzadeh Shrine',
+    importance: 'High',
+    description: 'Shrine of Sayyed Ibrahim, brother of Imam Ali al-Ridha (a).',
+    
+    buriedHere: [
+      {
+        name: 'Sayyed Ibrahim A.S.',
+        lineage: 'Son of Imam Musa al-Kadhim (a), brother of Imam Ali al-Ridha (a)',
+        significance: 'Brother of the 8th Imam'
+      }
+    ]
+  },
+  
+  // Historic Tombs near Mashhad
+  {
+    id: 'ferdowsi-tomb',
+    cityId: 'mashhad',
+    name: 'Museum and Tomb of Ferdowsi',
+    nameArabic: 'قبر فردوسي',
+    nameFarsi: 'آرامگاه فردوسی',
+    type: 'Cultural Site',
+    importance: 'Medium',
+    image: 'https://images.unsplash.com/photo-1576495199011-eb94736d05d6',
+    description: 'Museum and tomb of Ferdowsi, the great Persian poet, author of Shahnameh.',
+    
+    about: 'Ferdowsi was one of the greatest Persian poets, author of the epic Shahnameh (Book of Kings). His tomb and museum are popular attractions near Mashhad.',
+    
+    location: 'Located outside Mashhad in the town of Tus'
+  },
+  
+  {
+    id: 'attar-tomb',
+    cityId: 'mashhad',
+    name: 'Tomb of Attar',
+    nameArabic: 'قبر عطار',
+    nameFarsi: 'آرامگاه عطار',
+    type: 'Cultural Site',
+    importance: 'Medium',
+    description: 'Tomb of Attar Nishapuri, renowned Persian poet and Sufi mystic.',
+    
+    about: 'Farid ud-Din Attar was a famous Persian poet and Sufi mystic, known for works like "The Conference of the Birds"'
+  },
+  
+  {
+    id: 'omar-khayyam-tomb',
+    cityId: 'mashhad',
+    name: 'Tomb of Omar Khayyam',
+    nameArabic: 'قبر عمر الخيام',
+    nameFarsi: 'آرامگاه عمر خیام',
+    type: 'Cultural Site',
+    importance: 'Medium',
+    description: 'Tomb of Omar Khayyam, astronomical mathematician, poet, and philosopher.',
+    
+    about: 'Omar Khayyam was a Persian polymath - mathematician, astronomer, philosopher, and poet, famous for his Rubaiyat'
+  },
+  
+  {
+    id: 'kamal-al-mulk-tomb',
+    cityId: 'mashhad',
+    name: 'Tomb of Kamal-Al-Mulk',
+    nameArabic: 'قبر كمال الملك',
+    nameFarsi: 'آرامگاه کمال‌الملک',
+    type: 'Cultural Site',
+    importance: 'Low',
+    description: 'Tomb of Kamal-Al-Mulk, celebrated Persian painter and artist.',
+    
+    about: 'Kamal-Al-Mulk was one of Iran\'s most celebrated painters, known for his realistic style and mastery of light'
+  },
+  
+  // Tehran Additional Sites
+  {
+    id: 'imam-khomeini-shrine',
+    cityId: 'tehran',
+    name: 'Mazaar of Imam Khomeini',
+    nameArabic: 'مزار الإمام الخميني',
+    nameFarsi: 'مزار امام خمینی',
+    type: 'Modern Shrine',
+    importance: 'Medium',
+    image: 'https://images.unsplash.com/photo-1564501197849-f7c9c4266d0b',
+    description: 'Grand mausoleum of Ayatollah Ruhollah Khomeini, founder of the Islamic Republic of Iran.',
+    
+    about: 'Imam Khomeini led the Islamic Revolution in Iran. His shrine is a symbol of modern Islamic Iran and attracts many visitors.',
+    
+    architecture: {
+      description: 'Large modern complex with golden dome',
+      location: 'On the way from Qom to Tehran'
+    }
+  },
+  
+  {
+    id: 'behesht-zahra',
+    cityId: 'tehran',
+    name: 'Behesht-e Zahra Cemetery',
+    nameArabic: 'بهشت الزهراء',
+    nameFarsi: 'بهشت زهرا',
+    type: 'Cemetery',
+    importance: 'Medium',
+    description: 'Largest cemetery in Iran, final resting place of many martyrs, scholars, and notable figures.',
+    
+    significance: 'Many martyrs of the Iran-Iraq war are buried here, along with notable personalities. It is a place of remembrance and prayer.',
+    
+    location: 'South of Tehran, often visited on the way from Qom'
   }
 ];
 
