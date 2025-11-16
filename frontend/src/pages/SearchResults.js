@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { Star, MapPin, Filter, SlidersHorizontal, Award, Heart } from 'lucide-react';
-import { hotels, flights } from '../mock';
+import { getHotels } from '../services/api';
+import { flights } from '../mock';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -28,6 +29,7 @@ const SearchResults = () => {
   const [starRatings, setStarRatings] = useState([]);
   const [maxDistance, setMaxDistance] = useState([2.0]);
   const [selectedAmenities, setSelectedAmenities] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // Get all unique amenities from hotels
   const allAmenities = ['Free WiFi', 'Breakfast', 'Prayer Room', 'Family Rooms', 'Restaurant', 'Parking', 'AC'];
