@@ -20,7 +20,12 @@ import {
   packingList,
   specialEvents,
   importantDuas,
-  travelInformation 
+  travelInformation,
+  practicalLaws,
+  specialDaysByWeekday,
+  salahOfZiyarah,
+  ziyaratNiyabah,
+  scholarsBuriedInNajaf
 } from '../data/iraqZiyaratData';
 
 const IraqZiyaratGuideEnhanced = () => {
