@@ -479,51 +479,82 @@ const EnhancedHome = () => {
         </div>
       </div>
 
-      {/* Package Comparison */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-10">
-          <Badge className="bg-[#1a2f4a] text-white mb-4">COMPARE PACKAGES</Badge>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1a2f4a] mb-3">Choose Your Perfect Package</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Compare features and find the package that best suits your needs
-          </p>
+      {/* Iraq Ziyarat Guide - Enhanced CTA */}
+      <div className="relative bg-gradient-to-br from-[#1a2f4a] via-[#2a4f6a] to-[#1a2f4a] py-20 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }} />
         </div>
-        <ComparisonTable />
-      </div>
 
-      {/* Ziyarat Guide - Enhanced */}
-      <div className="bg-gradient-to-b from-white to-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <Badge className="bg-[#d4af37] text-[#1a2f4a] mb-4">EXPLORE</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1a2f4a] mb-3">{t('ziyaratGuideTitle')}</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Comprehensive guides to sacred cities with detailed information on holy sites
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12">
+            <Badge className="bg-[#d4af37] text-[#1a2f4a] mb-4 text-lg px-6 py-2">
+              ✨ NEW - COMPREHENSIVE GUIDE
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Iraq Ziyarat Guide
+            </h2>
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-4">
+              Your complete companion for sacred pilgrimages to Iraq's holiest shrines
+            </p>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              📖 2,000+ lines of comprehensive data • 🕌 7 prayers with full Arabic text • 🎓 72 martyrs documented • 📚 7 renowned scholars
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {cities.map((city) => (
-              <Link key={city.id} to={`/ziyarat-guide/${city.id}`}>
-                <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 group">
-                  <div className="relative h-40">
-                    <img
-                      src={city.image}
-                      alt={city.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                    <div className="absolute bottom-2 left-2 right-2">
-                      <h3 className="font-bold text-white text-sm">{city.name}</h3>
-                      <p className="text-xs text-gray-300">{city.country}</p>
-                    </div>
-                    <Badge className="absolute top-2 right-2 bg-[#d4af37] text-[#1a2f4a] text-xs">
-                      {city.popularPlaces}
-                    </Badge>
-                  </div>
-                </Card>
-              </Link>
-            ))}
+          {/* Feature Highlights */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <Card className="bg-white/10 backdrop-blur-sm border-[#d4af37]/30 hover:bg-white/20 transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-[#d4af37] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="h-8 w-8 text-[#1a2f4a]" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">4 Sacred Cities</h3>
+                <p className="text-gray-300 text-sm">
+                  Najaf, Karbala, Kadhimiya, Samarra with 20+ holy sites
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/10 backdrop-blur-sm border-[#d4af37]/30 hover:bg-white/20 transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-[#d4af37] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Heart className="h-8 w-8 text-[#1a2f4a]" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Arabic Prayers</h3>
+                <p className="text-gray-300 text-sm">
+                  7 major prayers with full Arabic text, transliteration & English
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/10 backdrop-blur-sm border-[#d4af37]/30 hover:bg-white/20 transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-[#d4af37] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Award className="h-8 w-8 text-[#1a2f4a]" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Complete Information</h3>
+                <p className="text-gray-300 text-sm">
+                  Martyrs, scholars, history, practical tips, and travel info
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center">
+            <Link to="/iraq-ziyarat">
+              <Button size="lg" className="bg-[#d4af37] text-[#1a2f4a] hover:bg-[#c49d2f] text-xl px-12 py-6 rounded-full shadow-2xl hover:shadow-[#d4af37]/50 transition-all duration-300 transform hover:scale-105">
+                Explore Complete Guide
+                <ArrowRight className="ml-3 h-6 w-6" />
+              </Button>
+            </Link>
+            <p className="text-sm text-gray-400 mt-4">
+              📱 Perfect modal UX • No scrolling needed • 9 comprehensive sections
+            </p>
           </div>
         </div>
       </div>
