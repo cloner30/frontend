@@ -62,7 +62,7 @@ const SearchResults = () => {
         setResults(filtered);
         setFilteredResults(filtered);
       } catch (error) {
-        console.error('Error fetching search results:', error);
+        console.error('Error loading data:', error);
       } finally {
         setLoading(false);
       }
