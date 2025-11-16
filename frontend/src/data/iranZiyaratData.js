@@ -384,7 +384,7 @@ export const iranZiyaratSites = [
     nameFarsi: 'حرم امام رضا',
     type: 'Primary Shrine',
     importance: 'Highest',
-    image: 'https://images.unsplash.com/photo-1626005989833-34f64e3c3e7f',
+    image: 'https://images.unsplash.com/photo-1675274854445-6677aabef5f5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw0fHxJbWFtJTIwUmV6YSUyMHNocmluZSUyME1hc2hoYWR8ZW58MHx8fHwxNzYzMzIzMTYyfDA&ixlib=rb-4.1.0&q=85',
     description: 'The magnificent golden-domed shrine of Imam Ali ibn Musa al-Ridha (a), the 8th Imam of Shia Islam.',
     
     buriedHere: [
