@@ -158,17 +158,65 @@ backend:
           comment: "Tested all CRUD operations successfully. GET /api/cities returns data, POST creates new items, PUT updates, DELETE removes. All endpoints returning correct responses."
 
 frontend:
-  - task: "Phase 2 - Frontend API Integration"
-    implemented: false
-    working: "NA"
-    file: "N/A"
+  - task: "API Service Utility"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/services/api.js"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
     status_history:
-        - working: "NA"
+        - working: true
           agent: "main"
-          comment: "Phase 2 not started yet. Will update frontend pages to fetch from APIs instead of mock files."
+          comment: "Created centralized API service with all CRUD operations for all collections. Includes proper error handling."
+
+  - task: "Home Page API Integration"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/EnhancedHome.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Updated EnhancedHome to fetch cities, packages, group tours, and testimonials from API. Added loading states and error handling."
+
+  - task: "Hotels Pages API Integration"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/SearchResults.js, HotelDetail.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Updated SearchResults and HotelDetail to fetch from API. Hotels loading correctly with all filters working."
+
+  - task: "Group Tours API Integration"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/Groups.js, GroupDetailEnhanced.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Updated Groups and GroupDetailEnhanced to fetch from API. Group tours loading with all filters functional."
+
+  - task: "Packages Page API Integration"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/Packages.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Updated Packages page to fetch from API. Packages loading successfully."
 
   - task: "Phase 3 - Admin Panel UI"
     implemented: false
@@ -180,7 +228,7 @@ frontend:
     status_history:
         - working: "NA"
           agent: "main"
-          comment: "Phase 3 not started yet. Will build admin management interfaces after Phase 2 completion."
+          comment: "Phase 3 not started yet. Will build admin management interfaces for CRUD operations."
 
 metadata:
   created_by: "main_agent"
