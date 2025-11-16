@@ -35,109 +35,109 @@ function App() {
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={
-            <div className=\"App min-h-screen flex flex-col\">
+            <div className="App min-h-screen flex flex-col">
               <Navbar />
-              <main className=\"flex-1\">
+              <main className="flex-1">
                 <EnhancedHome />
               </main>
               <Footer />
               <Toaster />
             </div>
           } />
-          <Route path=\"/search\" element={
-            <div className=\"App min-h-screen flex flex-col\">
+          <Route path="/search" element={
+            <div className="App min-h-screen flex flex-col">
               <Navbar />
-              <main className=\"flex-1\">
+              <main className="flex-1">
                 <SearchResults />
               </main>
               <Footer />
               <Toaster />
             </div>
           } />
-          <Route path=\"/hotels/:id\" element={
-            <div className=\"App min-h-screen flex flex-col\">
+          <Route path="/hotels/:id" element={
+            <div className="App min-h-screen flex flex-col">
               <Navbar />
-              <main className=\"flex-1\">
+              <main className="flex-1">
                 <HotelDetail />
               </main>
               <Footer />
               <Toaster />
             </div>
           } />
-          <Route path=\"/groups\" element={
-            <div className=\"App min-h-screen flex flex-col\">
+          <Route path="/groups" element={
+            <div className="App min-h-screen flex flex-col">
               <Navbar />
-              <main className=\"flex-1\">
+              <main className="flex-1">
                 <Groups />
               </main>
               <Footer />
               <Toaster />
             </div>
           } />
-          <Route path=\"/groups/:id\" element={
-            <div className=\"App min-h-screen flex flex-col\">
+          <Route path="/groups/:id" element={
+            <div className="App min-h-screen flex flex-col">
               <Navbar />
-              <main className=\"flex-1\">
+              <main className="flex-1">
                 <GroupDetailEnhanced />
               </main>
               <Footer />
               <Toaster />
             </div>
           } />
-          <Route path=\"/packages\" element={
-            <div className=\"App min-h-screen flex flex-col\">
+          <Route path="/packages" element={
+            <div className="App min-h-screen flex flex-col">
               <Navbar />
-              <main className=\"flex-1\">
+              <main className="flex-1">
                 <Packages />
               </main>
               <Footer />
               <Toaster />
             </div>
           } />
-          <Route path=\"/ziyarat-guide\" element={
-            <div className=\"App min-h-screen flex flex-col\">
+          <Route path="/ziyarat-guide" element={
+            <div className="App min-h-screen flex flex-col">
               <Navbar />
-              <main className=\"flex-1\">
+              <main className="flex-1">
                 <ZiyaratGuide />
               </main>
               <Footer />
               <Toaster />
             </div>
           } />
-          <Route path=\"/ziyarat-guide/:id\" element={
-            <div className=\"App min-h-screen flex flex-col\">
+          <Route path="/ziyarat-guide/:id" element={
+            <div className="App min-h-screen flex flex-col">
               <Navbar />
-              <main className=\"flex-1\">
+              <main className="flex-1">
                 <CityGuide />
               </main>
               <Footer />
               <Toaster />
             </div>
           } />
-          <Route path=\"/plan-trip\" element={
-            <div className=\"App min-h-screen flex flex-col\">
+          <Route path="/plan-trip" element={
+            <div className="App min-h-screen flex flex-col">
               <Navbar />
-              <main className=\"flex-1\">
+              <main className="flex-1">
                 <PlanTripEnhanced />
               </main>
               <Footer />
               <Toaster />
             </div>
           } />
-          <Route path=\"/account\" element={
-            <div className=\"App min-h-screen flex flex-col\">
+          <Route path="/account" element={
+            <div className="App min-h-screen flex flex-col">
               <Navbar />
-              <main className=\"flex-1\">
+              <main className="flex-1">
                 <Account />
               </main>
               <Footer />
               <Toaster />
             </div>
           } />
-          <Route path=\"/iraq-ziyarat\" element={
-            <div className=\"App min-h-screen flex flex-col\">
+          <Route path="/iraq-ziyarat" element={
+            <div className="App min-h-screen flex flex-col">
               <Navbar />
-              <main className=\"flex-1\">
+              <main className="flex-1">
                 <IraqZiyaratGuide />
               </main>
               <Footer />
@@ -146,17 +146,17 @@ function App() {
           } />
 
           {/* Admin Routes */}
-          <Route path=\"/admin/login\" element={<AdminLogin />} />
-          <Route path=\"/admin\" element={
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={
             <ProtectedRoute>
               <AdminLayout />
             </ProtectedRoute>
           }>
-            <Route path=\"dashboard\" element={<AdminDashboard />} />
-            <Route path=\"ziyarat\" element={<div className=\"text-center p-12\"><h2 className=\"text-2xl font-bold text-[#1a2f4a]\">Ziyarat Guide Manager - Coming in Phase 2</h2></div>} />
-            <Route path=\"home-content\" element={<div className=\"text-center p-12\"><h2 className=\"text-2xl font-bold text-[#1a2f4a]\">Home Content Manager - Coming in Phase 2</h2></div>} />
-            <Route path=\"seo\" element={<div className=\"text-center p-12\"><h2 className=\"text-2xl font-bold text-[#1a2f4a]\">SEO Manager - Coming in Phase 2</h2></div>} />
-            <Route path=\"settings\" element={<div className=\"text-center p-12\"><h2 className=\"text-2xl font-bold text-[#1a2f4a]\">Settings - Coming in Phase 2</h2></div>} />
+            <Route path="dashboard" element={<AdminDashboard />} />
+            <Route path="ziyarat" element={<div className="text-center p-12"><h2 className="text-2xl font-bold text-[#1a2f4a]">Ziyarat Guide Manager - Coming in Phase 2</h2></div>} />
+            <Route path="home-content" element={<div className="text-center p-12"><h2 className="text-2xl font-bold text-[#1a2f4a]">Home Content Manager - Coming in Phase 2</h2></div>} />
+            <Route path="seo" element={<div className="text-center p-12"><h2 className="text-2xl font-bold text-[#1a2f4a]">SEO Manager - Coming in Phase 2</h2></div>} />
+            <Route path="settings" element={<div className="text-center p-12"><h2 className="text-2xl font-bold text-[#1a2f4a]">Settings - Coming in Phase 2</h2></div>} />
           </Route>
 
           <Toaster />
