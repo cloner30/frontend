@@ -1560,6 +1560,187 @@ export const scholarsBuriedInNajaf = [
   }
 ];
 
+// ========================================
+// ZIYĀRAT PRAYER REFERENCES
+// ========================================
+// Note: Full Arabic texts available in Mafatih al-Jinan
+
+export const ziyaratPrayerReferences = {
+  najafImamAli: {
+    title: "Prayers for Imam Ali's Shrine",
+    prayers: [
+      { name: "Ziyārah of Amīr al-Muʾminīn", type: "Standard Ziyārah", source: "Mafatih al-Jinan" },
+      { name: "Ziyārat Amīn Allah", type: "Special comprehensive ziyārah", merit: "Highly recommended" },
+      { name: "Farewell Ziyārah", type: "Final ziyārah before leaving", timing: "When departing" },
+      { name: "Ziyārah for Prophets Ādam and Nūḥ", location: "Also in Najaf shrine" }
+    ]
+  },
+  karbalaImamHusayn: {
+    title: "Prayers for Imam Husayn's Shrine",
+    prayers: [
+      { name: "Ziyārat ʿĀshūrāʾ", type: "Most famous", special: "With 100 curses and salutations", merit: "Recite daily for 40 days for special blessings" },
+      { name: "Ziyārah Warith", type: "Important ziyārah", merit: "Highly recommended" },
+      { name: "Standard Ziyārah of Imam Ḥusayn", type: "General ziyārah" },
+      { name: "Special Ziyārah for Day of ʿĀshūrā", timing: "10th Muharram" },
+      { name: "Special Ziyārah for Arbaʿīn", timing: "20th Ṣafar" },
+      { name: "Farewell Ziyārah", timing: "When departing" }
+    ]
+  },
+  karbalaHazratAbbas: {
+    title: "Prayers for Hazrat Abbas's Shrine",
+    prayers: [
+      { name: "Ziyārah of Ḥaḍrat ʿAbbās", type: "Standard ziyārah" },
+      { name: "Farewell Ziyārah", timing: "When departing" },
+      { name: "Special supplications", purpose: "For fulfillment of needs" }
+    ]
+  },
+  kadhimiya: {
+    title: "Prayers for Kadhimiya Shrine",
+    prayers: [
+      { name: "Individual Ziyārah of Imam Mūsā al-Kāẓim" },
+      { name: "Individual Ziyārah of Imam Muḥammad al-Jawād" },
+      { name: "Common Ziyārah for both Imams" },
+      { name: "Farewell Ziyārah for Imam al-Kāẓim" },
+      { name: "Farewell Ziyārah for Imam al-Jawād" }
+    ]
+  },
+  samarra: {
+    title: "Prayers for Samarra Shrines",
+    prayers: [
+      { name: "Ziyārah of Imam al-Hādī" },
+      { name: "Ziyārah of Imam Ḥasan al-ʿAskarī" },
+      { name: "Common Ziyārah for both Imams (ʿAskarīyayn)" },
+      { name: "Ziyārah of Ḥaḍrat Narjis Khātūn", relation: "Mother of Imam Mahdi" },
+      { name: "Ziyārah of Ḥaḍrat Hakimā Khātūn", relation: "Aunt of Imam al-Askari" },
+      { name: "Farewell Ziyārah of ʿAskarīyayn" }
+    ]
+  },
+  sardabImamMahdi: {
+    title: "Prayers at the Holy Sardāb",
+    prayers: [
+      { name: "Ziyārah of Imam al-Mahdi (aj)", location: "At Sardāb" },
+      { name: "Duʿā al-Faraj", purpose: "For hastening reappearance" },
+      { name: "Duʿā al-Ḥujjah", meaning: "Supplication of the Proof" },
+      { name: "Duʿā ʿAhd", instruction: "Recite for 40 consecutive mornings", merit: "Become among helpers of Imam Mahdi" },
+      { name: "Duʿā Tawassul", purpose: "Seeking intercession through Ahl al-Bayt" },
+      { name: "Ziyārat Āli Yāsīn", type: "Comprehensive ziyārah for all Imams" }
+    ]
+  },
+  generalDuas: {
+    title: "General Supplications",
+    prayers: [
+      { name: "Duʿā Kumayl", timing: "Thursday nights", taught_by: "Imam Ali to Kumayl ibn Ziyād" },
+      { name: "Tasbīḥ of Sayyidah Fāṭimah", format: "34 Allahu Akbar, 33 Alhamdulillah, 33 SubhanAllah", timing: "After every prayer" },
+      { name: "Duʿā al-Widāʿ", type: "Farewell supplication", timing: "Final prayer before leaving" },
+      { name: "Idhn ad-Dukhūl", type: "Permission to enter", timing: "Before entering any shrine" }
+    ]
+  },
+  note: "📖 For complete Arabic texts with transliteration, please refer to Mafatih al-Jinan or the original Iraq Guide book"
+};
+
+// ========================================
+// MARTYRS OF KARBALA
+// ========================================
+
+export const martyrsOfKarbala = {
+  title: "The 72 Martyrs of Karbala",
+  date: "10th Muharram 61 AH (680 CE)",
+  familyOfProphet: [
+    { name: "Imam Ḥusayn ibn ʿAlī (a)", relation: "Grandson of Prophet Muhammad (s)", age: "57 years" },
+    { name: "ʿAbbās ibn ʿAlī (a)", relation: "Son of Imam Ali, brother of Imam Husayn", title: "Qamar Banī Hāshim (Moon of Hashemites)" },
+    { name: "ʿAlī al-Akbar", relation: "Son of Imam Husayn", age: "18 years" },
+    { name: "ʿAlī al-Aṣghar", relation: "Infant son of Imam Husayn", age: "6 months", martyrdom: "Shot with arrow while in father's arms" },
+    { name: "Qāsim ibn Ḥasan", relation: "Son of Imam Hasan, nephew of Imam Husayn", age: "Young boy" },
+    { name: "ʿAwn", relation: "Son of Lady Zaynab's husband" },
+    { name: "Muhammad", relation: "Son of Lady Zaynab's husband" }
+  ],
+  prominentCompanions: [
+    { name: "Ḥabīb ibn Maḍāhir", description: "Elderly companion, veteran of early Islamic battles" },
+    { name: "Muslim ibn ʿAwsajah", description: "First companion to be martyred" },
+    { name: "Zuhayr ibn Qayn", description: "Initially neutral, then joined Imam Husayn" },
+    { name: "John", description: "Christian slave who accepted Islam and died defending Imam Husayn" },
+    { name: "Ḥurr al-Riyāḥī", description: "Commander who switched sides to support Imam Husayn" }
+  ],
+  total: "72 companions and family members martyred",
+  survived: [
+    "Imam Zayn al-ʿĀbidīn (a) - 4th Imam, son of Imam Husayn (ill during battle)",
+    "Lady Zaynab (a) - Sister of Imam Husayn",
+    "Lady Fāṭimah (Umm Kulthūm) - Sister of Imam Husayn",
+    "Women and children of the camp"
+  ]
+};
+
+// ========================================
+// FOOD & CULTURE
+// ========================================
+
+export const iraqiFoodCulture = {
+  traditionalDishes: [
+    { name: "Kabāb", description: "Grilled meat skewers", where: "Available everywhere" },
+    { name: "Masgouf", description: "Grilled fish (national dish)", specialty: "Baghdad" },
+    { name: "Biryani", description: "Spiced rice with meat", popular: true },
+    { name: "Kubba", description: "Bulgur wheat dumplings with meat filling" },
+    { name: "Tabbouleh", description: "Fresh parsley salad" },
+    { name: "Hummus", description: "Chickpea dip served with bread" },
+    { name: "Iraqi Tea", description: "Very sweet black tea", cultural: "Served everywhere" },
+    { name: "Dates", description: "Fresh or dried, served with Arabic coffee" }
+  ],
+  
+  nazrFood: {
+    title: "Nazr (Charitable Food Distribution)",
+    concept: "Free food distributed by volunteers as religious offering (vowed charity)",
+    locations: "Near all major shrines",
+    types: ["Full meals (lunch/dinner)", "Snacks and sweets", "Drinks and water", "Fresh dates", "Bread and cheese"],
+    etiquette: [
+      "Accept graciously - it's blessed food",
+      "Say 'Jazākum Allāh khayr' (May Allah reward you)",
+      "Don't waste any food",
+      "You can decline politely if full",
+      "Many distribute to fulfill vows (nazr)"
+    ]
+  },
+  
+  arbaeen: {
+    title: "Arbaeen Walk - The Greatest Display of Hospitality",
+    concept: "Thousands of free service stations (mawākib) during the Arbaeen pilgrimage",
+    services: [
+      "Free meals (breakfast, lunch, dinner)",
+      "Free drinks and water",
+      "Free accommodation and rest areas",
+      "Free medical services",
+      "Free phone charging stations",
+      "Free shoe repair",
+      "Free massage and foot care"
+    ],
+    scale: "Millions of Iraqi volunteers serve 20+ million pilgrims walking from Najaf to Karbala",
+    duration: "2-3 days of walking (80+ km)",
+    spirit: "Iraqi hospitality and love for Imam Husayn displayed at its finest"
+  }
+};
+
+// ========================================
+// ADDITIONAL KUFA SITES
+// ========================================
+
+export const additionalKufaSites = [
+  {
+    name: "House of Imam Ali (a)",
+    significance: "Where Imam Ali lived during his caliphate",
+    location: "In Kufa city",
+    status: "Historical site"
+  },
+  {
+    name: "Masjid Ṣaʿṣaʿah ibn Ṣawḥān",
+    significance: "Named after a companion of Imam Ali",
+    type: "Mosque"
+  },
+  {
+    name: "Dār al-Imārah",
+    significance: "Government house during Imam Ali's caliphate",
+    type: "Historical building"
+  }
+];
+
 // Default export
 export default {
   preparationTips,
@@ -1574,5 +1755,9 @@ export default {
   specialDaysByWeekday,
   salahOfZiyarah,
   ziyaratNiyabah,
-  scholarsBuriedInNajaf
+  scholarsBuriedInNajaf,
+  ziyaratPrayerReferences,
+  martyrsOfKarbala,
+  iraqiFoodCulture,
+  additionalKufaSites
 };
