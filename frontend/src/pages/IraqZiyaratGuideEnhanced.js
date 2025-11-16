@@ -343,7 +343,7 @@ const IraqZiyaratGuideEnhanced = () => {
                           <Button 
                             variant="ghost" 
                             onClick={() => setSelectedSite(null)}
-                            className="bg-white/20 hover:bg-white/40 text-white"
+                            className="bg-white/20 hover:bg-white/40 text-white z-50"
                             size="lg"
                           >
                             ✕ Close
