@@ -334,8 +334,14 @@ const IraqZiyaratGuideEnhanced = () => {
               <p className="text-xl text-gray-600">Explore the holy cities and sacred shrines of Iraq</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {iraqCities.map((city) => (
+            {loading ? (
+              <div className="text-center py-12">
+                <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-[#ffce05] mx-auto"></div>
+                <p className="mt-4 text-gray-600">Loading cities...</p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {iraqCities.map((city) => (
                 <Card 
                   key={city.id} 
                   className="group cursor-pointer hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 hover:border-[#ffce05]"
