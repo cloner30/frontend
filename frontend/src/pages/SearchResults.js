@@ -34,15 +34,15 @@ const SearchResults = () => {
   const allAmenities = ['Free WiFi', 'Breakfast', 'Prayer Room', 'Family Rooms', 'Restaurant', 'Parking', 'AC'];
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = () => {
       try {
         setLoading(true);
         let data;
         
         if (type === 'hotels') {
-          data = await getHotels(destination || null);
+          data = hotels;
         } else {
-          data = flights; // Keep flights as mock for now
+          data = flights;
         }
         
         let filtered = data;
