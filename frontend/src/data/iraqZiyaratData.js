@@ -450,7 +450,7 @@ export const ziyaratSites = [
     nameArabic: 'مسجد الكوفة',
     type: 'Historic Mosque',
     importance: 'Highest',
-    image: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa',
+    image: 'https://images.unsplash.com/photo-1710807960776-e6d39e19b702?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwyfHxLdWZhJTIwbW9zcXVlfGVufDB8fHx8MTc2MzMyNTU5MXww&ixlib=rb-4.1.0&q=85',
     description: 'One of the oldest and most sacred mosques in Islam, located in the nearby city of Kufa.',
     significance: 'This mosque witnessed countless historical events. It was here that Imam Ali (a) led prayers and was struck by the poisoned sword of Ibn Muljim. The mosque contains numerous blessed locations (maqāms).',
     
