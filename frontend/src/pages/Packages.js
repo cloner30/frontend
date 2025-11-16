@@ -13,19 +13,18 @@ const Packages = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPackages = async () => {
+    const loadPackages = () => {
       try {
         setLoading(true);
-        const data = await getPackages();
-        setPackages(data);
+        setPackages(mockPackages);
       } catch (error) {
-        console.error('Error fetching packages:', error);
+        console.error('Error loading packages:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchPackages();
+    loadPackages();
   }, []);
 
   if (loading) {
