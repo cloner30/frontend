@@ -34,6 +34,37 @@ const EnhancedHome = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Fetch data from APIs
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const [groupsData, packagesData, citiesData, testimonialsData] = await Promise.all([
+          getGroupTours(),
+          getPackages(),
+          getCities(),
+          getTestimonials()
+        ]);
+        
+        setUpcomingGroups(groupsData);
+        setPackages(packagesData);
+        setCities(citiesData);
+        setTestimonials(testimonialsData);
+      } catch (error) {
+        console.error('Error fetching home data:', error);
+        toast({
+          title: "Error",
+          description: "Failed to load content. Please refresh the page.",
+          variant: "destructive"
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchData();
+  }, [toast]);
+
   // Animated counter effect
   useEffect(() => {
     const targets = { pilgrims: 15000, tours: 500, satisfaction: 98, countries: 45 };
