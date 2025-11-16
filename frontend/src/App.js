@@ -26,6 +26,11 @@ import IraqZiyaratGuide from './pages/IraqZiyaratGuideEnhanced';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import HotelsManager from './pages/admin/HotelsManager';
+import GroupToursManager from './pages/admin/GroupToursManager';
+import PackagesManager from './pages/admin/PackagesManager';
+import TestimonialsManager from './pages/admin/TestimonialsManager';
+import CitiesManager from './pages/admin/CitiesManager';
+import SeoManager from './pages/admin/SeoManager';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
