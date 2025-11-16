@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
+import EnhancedHome from './pages/EnhancedHome';
 import SearchResults from './pages/SearchResults';
 import Groups from './pages/Groups';
 import GroupDetail from './pages/GroupDetail';
@@ -23,7 +23,7 @@ function App() {
           <Navbar />
           <main className="flex-1">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<EnhancedHome />} />
               <Route path="/search" element={<SearchResults />} />
               <Route path="/groups" element={<Groups />} />
               <Route path="/groups/:id" element={<GroupDetail />} />
