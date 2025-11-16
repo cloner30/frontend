@@ -394,12 +394,12 @@ const SearchResults = () => {
                           </div>
                           <p className="text-gray-600 mb-4 text-sm line-clamp-2">{hotel.description}</p>
                           <div className="flex flex-wrap gap-2 mb-4">
-                            {hotel.amenities.slice(0, 5).map((amenity, idx) => (
+                            {hotel.amenities && Array.isArray(hotel.amenities) && hotel.amenities.slice(0, 5).map((amenity, idx) => (
                               <Badge key={idx} variant="secondary" className="text-xs">
                                 {amenity}
                               </Badge>
                             ))}
-                            {hotel.amenities.length > 5 && (
+                            {hotel.amenities && hotel.amenities.length > 5 && (
                               <Badge variant="secondary" className="text-xs">
                                 +{hotel.amenities.length - 5} more
                               </Badge>
