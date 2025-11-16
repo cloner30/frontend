@@ -25,6 +25,7 @@ import IraqZiyaratGuide from './pages/IraqZiyaratGuideEnhanced';
 // Admin Pages
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
+import HotelsManager from './pages/admin/HotelsManager';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
