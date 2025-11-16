@@ -1565,4 +1565,4 @@ const Activity = ({ className }) => (
   </svg>
 );
 
-export default IraqZiyaratGuideEnhanced;
+export default IranZiyaratGuideEnhanced;
