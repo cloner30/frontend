@@ -116,40 +116,10 @@ const IranZiyaratGuideEnhanced = () => {
                 Preparation
               </button>
               <button 
-                onClick={() => setActiveTab('prayers')} 
-                className={`hover:text-[#ffce05] transition-colors whitespace-nowrap ${activeTab === 'prayers' ? 'text-[#ffce05]' : 'text-gray-700'}`}
-              >
-                Prayer References
-              </button>
-              <button 
-                onClick={() => setActiveTab('laws')} 
-                className={`hover:text-[#ffce05] transition-colors whitespace-nowrap ${activeTab === 'laws' ? 'text-[#ffce05]' : 'text-gray-700'}`}
-              >
-                Practical Laws
-              </button>
-              <button 
-                onClick={() => setActiveTab('scholars')} 
-                className={`hover:text-[#ffce05] transition-colors whitespace-nowrap ${activeTab === 'scholars' ? 'text-[#ffce05]' : 'text-gray-700'}`}
-              >
-                Scholars
-              </button>
-              <button 
-                onClick={() => setActiveTab('martyrs')} 
-                className={`hover:text-[#ffce05] transition-colors whitespace-nowrap ${activeTab === 'martyrs' ? 'text-[#ffce05]' : 'text-gray-700'}`}
-              >
-                Martyrs
-              </button>
-              <button 
                 onClick={() => setActiveTab('practical')} 
                 className={`hover:text-[#ffce05] transition-colors whitespace-nowrap ${activeTab === 'practical' ? 'text-[#ffce05]' : 'text-gray-700'}`}
               >
                 Travel Info
-              </button>
-              <button 
-                onClick={() => setActiveTab('events')} 
-                className={`hover:text-[#ffce05] transition-colors whitespace-nowrap ${activeTab === 'events' ? 'text-[#ffce05]' : 'text-gray-700'}`}
-              >
-                Events
               </button>
             </div>
           </div>
