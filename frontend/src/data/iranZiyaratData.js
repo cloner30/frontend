@@ -812,7 +812,7 @@ export const iranZiyaratSites = [
     nameFarsi: 'قبر خواجه ابوالصلت هروی',
     type: 'Companion Shrine',
     importance: 'High',
-    image: 'https://images.unsplash.com/photo-1584267877837-1a8ff8e4e14e',
+    image: 'https://images.unsplash.com/photo-1687583674251-085dfb5b1361?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwyfHxQZXJzaWFuJTIwSXNsYW1pYyUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3NjMzMjMyNjl8MA&ixlib=rb-4.1.0&q=85',
     description: 'Resting place of Khwaja Abu Salt Harvi, close friend and companion of Imam Ridha (a).',
     
     buriedHere: [
