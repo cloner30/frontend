@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, MapPin, Users, Clock, Filter, SlidersHorizontal, Star, TrendingUp, AlertCircle } from 'lucide-react';
-import { getGroupTours } from '../services/api';
+import { upcomingGroups as mockGroups } from '../mock';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
