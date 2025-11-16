@@ -109,6 +109,7 @@ function App() {
           </Route>
         </Routes>
         <Toaster />
+        </AdminAuthProvider>
       </BrowserRouter>
     </LanguageProvider>
   );
