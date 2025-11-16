@@ -479,6 +479,18 @@ const EnhancedHome = () => {
         </div>
       </div>
 
+      {/* Package Comparison */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center mb-10">
+          <Badge className="bg-[#1a2f4a] text-white mb-4">COMPARE PACKAGES</Badge>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1a2f4a] mb-3">Choose Your Perfect Package</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Compare features and find the package that best suits your needs
+          </p>
+        </div>
+        <ComparisonTable />
+      </div>
+
       {/* Ziyarat Guide - Enhanced */}
       <div className="bg-gradient-to-b from-white to-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
