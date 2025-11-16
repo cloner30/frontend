@@ -430,30 +430,83 @@ export const ziyaratSites = [
     description: 'One of the oldest and most sacred mosques in Islam, located in the nearby city of Kufa.',
     significance: 'This mosque witnessed countless historical events. It was here that Imam Ali (a) led prayers and was struck by the poisoned sword of Ibn Muljim. The mosque contains numerous blessed locations (maqāms).',
     
-    specialPrayers: 'Prayer of Hājāt (for fulfillment of needs) in Masjid al-Kūfah is highly recommended',
+    historicalSignificance: [
+      'One of the earliest mosques in Islam',
+      'Built during the time of Khalifa Umar',
+      'Imam Ali (a) made it his base during his caliphate',
+      'Site where Imam Ali was struck by Ibn Muljim\'s poisoned sword on 19th Ramadan',
+      'Prophet Nuh\'s ark rested here after the Great Flood',
+      'Site associated with many prophets'
+    ],
+    
+    virtuesFromAhadith: [
+      'Praying in Masjid al-Kūfah is equal to the reward of a thousand prayers in other mosques',
+      'The land of Masjid al-Kūfah is blessed and sacred',
+      'It is one of the four mosques where prayers are especially answered'
+    ],
+    
+    prayerOfHajat: {
+      method: 'Special prayer for fulfillment of needs',
+      time: 'Best performed on specific nights',
+      reward: 'Highly recommended for those seeking Allah\'s help'
+    },
     
     maqamsInside: [
-      { name: 'Maqām of Prophet Ibrāhīm (a)', significance: 'Place associated with Prophet Abraham' },
-      { name: 'Maqām al-Khiḍr', significance: 'Station of the immortal guide al-Khiḍr' },
-      { name: 'Dakkat al-Qaḍā', description: 'Seat of Judgment - where Imam Ali judged' },
-      { name: 'Bayt at-Ṭasht', description: 'House of the Washtub' },
-      { name: 'Safīnat an-Nūḥ', description: 'Place where Prophet Nūḥ\'s Ark settled' },
-      { name: 'Dakkat al-Miʿrāj', description: 'Seat of Miʿrāj (Night Journey)' },
-      { name: 'Maqām of Prophet Ādam (a)', significance: 'Station of the first Prophet' },
-      { name: 'Maqām Jibrāʾīl', significance: 'Station of Angel Gabriel' },
-      { name: 'Maqām Imām Zayn al-ʿĀbidīn (a)', significance: '4th Imam' },
-      { name: 'Bāb Al-Faraj', description: 'Gate of Relief, Maqām of Prophet Nūḥ' },
-      { name: 'Miḥrāb of Amīr al-Mʾuminīn', significance: 'Prayer niche where Imam Ali was struck' },
-      { name: 'Maqām Imām aṣ-Ṣādiq (a)', significance: '6th Imam' }
+      { 
+        name: 'Maqām of Prophet Ibrāhīm (a)', 
+        location: 'Inside the mosque',
+        significance: 'Place associated with Prophet Abraham\'s prayers' 
+      },
+      { 
+        name: 'Maqām al-Khiḍr', 
+        significance: 'Station of the immortal guide al-Khiḍr (a)' 
+      },
+      { 
+        name: 'Dakkat al-Qaḍā (Seat of Judgment)', 
+        significance: 'Where Imam Ali (a) sat to judge between people with divine wisdom' 
+      },
+      { 
+        name: 'Bayt at-Ṭasht (House of the Washtub)', 
+        significance: 'Historical location within the mosque' 
+      },
+      { 
+        name: 'Safīnat an-Nūḥ (The Ark of Nūḥ)', 
+        significance: 'Place where Prophet Nūḥ\'s Ark settled after the Great Flood' 
+      },
+      { 
+        name: 'Dakkat al-Miʿrāj (Seat of Miʿrāj)', 
+        significance: 'Connected to the Prophet Muhammad\'s (s) night journey' 
+      },
+      { 
+        name: 'Maqām of Prophet Ādam (a)', 
+        significance: 'Station of the first Prophet and father of humanity' 
+      },
+      { 
+        name: 'Maqām Jibrāʾīl', 
+        significance: 'Station of Angel Gabriel (Jibrāʾīl)' 
+      },
+      { 
+        name: 'Maqām Imām Zayn al-ʿĀbidīn (a)', 
+        significance: 'Station of the 4th Imam' 
+      },
+      { 
+        name: 'Bāb Al-Faraj (Gate of Relief)', 
+        significance: 'Also Maqām of Prophet Nūḥ (a)' 
+      },
+      { 
+        name: 'Miḥrāb of Amīr al-Mʾuminīn', 
+        significance: 'Prayer niche where Imam Ali (a) was struck by Ibn Muljim on 19th Ramadan while praying Fajr. He passed away on 21st Ramadan.',
+        note: 'Most sacred spot in the mosque' 
+      },
+      { 
+        name: 'Maqām Imām aṣ-Ṣādiq (a)', 
+        significance: 'Station of the 6th Imam' 
+      }
     ],
     
-    historicalSignificance: [
-      'Imam Ali (a) led prayers here during his khilāfah',
-      'Location where Imam Ali was struck by Ibn Muljim on 19th Ramadan',
-      'Site of Prophet Nūḥ\'s Ark after the flood',
-      'Many Prophets have prayed here',
-      'The Miʿrāj of the Prophet (s) is connected to this location'
-    ],
+    gates: ['Multiple entrance gates around the mosque'],
+    capacity: 'Large mosque with expansive courtyards',
+    currentStatus: 'Active mosque with regular prayers and ziyarah',
     
     etiquette: 'Enter through the main gate. Recite the specific duʿā for entering. Pray 2 rakʿāt in different maqāms.',
     visitingHours: 'Open for all prayer times and throughout the day'
