@@ -17,7 +17,7 @@ import {
   ChevronRight,
   X
 } from 'lucide-react';
-import { getHotel } from '../services/api';
+import { hotels } from '../mock';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
