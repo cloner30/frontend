@@ -621,7 +621,7 @@ export const iranZiyaratSites = [
     nameFarsi: 'امامزاده صالح',
     type: 'Imamzadeh Shrine',
     importance: 'High',
-    image: 'https://images.unsplash.com/photo-1564501197849-f7c9c4266d0b',
+    image: 'https://images.unsplash.com/photo-1643919782693-0bb8d9f5897e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxQZXJzaWFuJTIwSXNsYW1pYyUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3NjMzMjMyNjl8MA&ixlib=rb-4.1.0&q=85',
     description: 'Shrine of Imamzadeh Saleh, son of Imam Musa al-Kadhim (a) and brother of Imam Ridha (a), in northern Tehran.',
     
     buriedHere: [
