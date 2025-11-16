@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import {
   Calendar,
@@ -22,7 +22,7 @@ import {
   Hotel,
   Utensils
 } from 'lucide-react';
-import { upcomingGroups } from '../mock';
+import { getGroupTour } from '../services/api';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
@@ -38,6 +38,8 @@ const GroupDetailEnhanced = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
   
+  const [group, setGroup] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [numberOfTravelers, setNumberOfTravelers] = useState(1);
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [expandedDay, setExpandedDay] = useState(null);
@@ -48,7 +50,32 @@ const GroupDetailEnhanced = () => {
     message: ''
   });
 
-  const group = upcomingGroups.find((g) => g.id === parseInt(id));
+  useEffect(() => {
+    const fetchGroup = async () => {
+      try {
+        setLoading(true);
+        const data = await getGroupTour(id);
+        setGroup(data);
+      } catch (error) {
+        console.error('Error fetching group tour:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchGroup();
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-[#ffce05] mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading tour details...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!group) {
     return (
