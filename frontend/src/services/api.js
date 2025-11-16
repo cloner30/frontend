@@ -254,13 +254,39 @@ export const deleteGroupTour = async (tourId) => {
 };
 
 // ========================================
-// PACKAGES
+// PACKAGES (with External API Support)
 // ========================================
 export const getPackages = async () => {
+  // Check if external API is configured
+  const externalConfig = getExternalApiConfig('packages');
+  
+  if (externalConfig) {
+    try {
+      return await fetchExternalAPI(externalConfig, externalConfig.endpoint);
+    } catch (error) {
+      console.warn('External API failed, falling back to internal API:', error);
+      // Fallback to internal API
+    }
+  }
+  
+  // Use internal API
   return fetchAPI('/api/packages');
 };
 
 export const getPackage = async (packageId) => {
+  // Check if external API is configured
+  const externalConfig = getExternalApiConfig('packages');
+  
+  if (externalConfig) {
+    try {
+      return await fetchExternalAPI(externalConfig, `${externalConfig.endpoint}/${packageId}`);
+    } catch (error) {
+      console.warn('External API failed, falling back to internal API:', error);
+      // Fallback to internal API
+    }
+  }
+  
+  // Use internal API
   return fetchAPI(`/api/packages/${packageId}`);
 };
 
