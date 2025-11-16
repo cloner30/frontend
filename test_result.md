@@ -270,9 +270,7 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus:
-    - "External API Integration - Packages"
-    - "Backend CRUD API Endpoints"
+  current_focus: []
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
