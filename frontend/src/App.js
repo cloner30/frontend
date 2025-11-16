@@ -78,7 +78,7 @@ function App() {
             <Route path="packages" element={<PackagesManager />} />
             <Route path="testimonials" element={<TestimonialsManager />} />
             <Route path="cities" element={<CitiesManager />} />
-            <Route path="home-content" element={<HomeContentManager />} />
+            <Route path="home-content" element={<HomePageBuilder />} />
             <Route path="seo" element={<SeoManager />} />
             <Route
               path="home-content"
