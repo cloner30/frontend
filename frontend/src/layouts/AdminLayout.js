@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate, useLocation, Outlet } from 'react-router-dom';
+import { Link as RouterLink, useNavigate, useLocation, Outlet } from 'react-router-dom';
 import {
   LayoutDashboard,
   MapPin,
@@ -16,7 +16,8 @@ import {
   Package,
   MessageSquare,
   Book,
-  Layers
+  Layers,
+  Link
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { useToast } from '../hooks/use-toast';
